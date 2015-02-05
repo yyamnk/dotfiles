@@ -1,12 +1,13 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Feb-04.
+# Last Change:2015-Feb-05.
 #************************************************************
 
 #-------------------------------------------------------#
 # for unix
 #-------------------------------------------------------#
-alias la='ls -G -F -t' # lsに色付け
+# lsに色付け
+alias la='ls -G -F -t'
 alias laa='ls -G -F -tal'
 alias lg='ls -G -F -t | grep'
 
@@ -26,7 +27,7 @@ alias g=grep
 
 # for git
 alias gt='git tree'
-alias gst='git status' # ghostscript置き換え
+alias gst='git status'
 alias ga='git add .'
 alias gc='git commit'
 alias gca='git commit --amend'
@@ -47,10 +48,13 @@ alias proxy_off="source $DOTSDIR/bin/proxy_off.sh"
 #-------------------------------------------------------#
 alias caskroom="cd /usr/local/Caskroom/"
 
-alias rm='rmtrash'         # rm -> move trash
-alias maxima='rmaxima'     # for maxima, 矢印や補完を使えるrmaximaを使用する
+# rm -> move trash
+alias rm='rmtrash'
+# for maxima, 矢印や補完を使えるrmaximaを使用する
+alias maxima='rmaxima'
 alias op='open'
-alias gx='open ./ -a gitX' # open current with gitX
+# open current with gitX
+alias gx='open ./ -a gitX'
 
 # matlab
 alias mat='/Applications/MATLAB_R2014a.app/bin/matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
@@ -110,10 +114,10 @@ alias rdo='remote_do_matfuncs.sh'
 
 # for mongoDB
 alias mongod='mongod --dbpath ~/db/mongoDB'
-
-alias mp4_m4a='afconvert -f m4af -d aac' # mp4 to m4a
-# nkf
-alias nkfu='nkf -w -Lu --overwrite' # 文字コードをUTF-8, 改行コードをLFに変換
+# mp4 to m4a
+alias mp4_m4a='afconvert -f m4af -d aac'
+# nkf 文字コードをUTF-8, 改行コードをLFに変換
+alias nkfu='nkf -w -Lu --overwrite'
 
 #gollum
 # alias start_wiki='gollum --mathjax --allow-uploads --show-all > ~/.gollum.log &'
