@@ -28,9 +28,11 @@ alias g=grep
 # for git
 alias gt='git tree'
 alias gst='git status'
-alias ga='git add .'
+alias ga='git add'
 alias gc='git commit'
 alias gca='git commit --amend'
+alias gb='git branch'
+alias gco='git checkout'
 
 # for rsh tesla
 alias stes13='ssh gr rsh tesla13'
