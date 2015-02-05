@@ -27,3 +27,12 @@ fi
     echo 'update symbolic links ...' && \
     bash $dotfiles/bin/link_dots.sh
 
+source $HOME/.zshrc
+
+# neobundle install
+echo 'Installing neobundle.vim ...'
+curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+
+# brew install
+echo 'Installing brew ...'
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
