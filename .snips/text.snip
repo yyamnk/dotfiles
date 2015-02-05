@@ -1,0 +1,60 @@
+#********************** text.snip ************************ #
+# create: 2014/04/17
+# Last Change: 2015-Jan-10.
+#
+# test
+#****************************************************************** #
+
+snippet		description
+abbr		details of this file
+options		head
+	#****************** `expand('%')` *******************#
+	# created	 : `strftime("%Y/%m/%d")`
+	# Last Change: .
+	#
+	# --- about this file ---
+	# ${1:#:hoge}
+	#************************************************************#
+	${0}
+
+snippet		folding
+abbr		% {{{
+	#--------- ${1:#:hoge} ---------# {{{
+	${0}
+	# {{{
+
+
+snippet		comment-section
+alias		com3
+abbr		3 row comment
+	#-------------------------------------------------------#
+	# ${1:#:hoge}
+	#-------------------------------------------------------# {{{
+	${0}
+	# }}}
+
+snippet		comment-small
+alias		coms
+abbr		#---- hoge
+	#---- ${0}
+
+snippet		comment-bold
+alias		comb
+abbr		#========= hoge
+	#======== ${0}
+
+snippet		comment-long
+alias		coml
+abbr		#---------- hoge
+	#----------------------------- ${0}
+
+snippet		comment-medium
+alias		comm
+abbr		#**** hoge ****#
+	#******************** ${0} ********************#
+
+snippet		comment-large
+alias		clarge
+abbr		#//// hoge ////#
+	#/////////////////// ${0} /////////////////#
+

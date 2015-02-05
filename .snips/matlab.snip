@@ -1,0 +1,155 @@
+# ********************** matlab.snip ************************ #
+# create: 2013/11/15
+# Last Change: 2015-Feb-05.
+#
+# MATLAB用 snippet
+#
+# log
+# ****************************************************************** #
+
+snippet		description
+abbr		scripts details
+options		head
+	%****************** `expand('%:t')` *******************
+	% created	 : `strftime("%Y-%b-%d")`
+	% Last Change: .
+	%------------------------------------------------------------
+	% ${1:#:hoge}
+	%
+	%------- change log -------
+	%************************************************************
+	${0}
+
+snippet		functionhead
+alias		func head
+abbr		function details
+options		head
+	%****************** $3 *******************
+	% created	 : `strftime("%Y-%b-%d")`
+	% Last Change: .
+	%------------------------------------------------------------
+	% output : $1
+	% inputs : $4
+	%------------------------------------------------------------
+	% ${5:#:detail}
+	%
+	%--- change log ---
+	%************************************************************
+	function ${1:#:outputs} ${2:=} ${3:`expand('%:r')`}( ${4:#:input} )
+		${0}
+	end % $3
+
+snippet		function
+alias		func desc
+abbr		Inner function
+	%****************** $3 *******************
+	% output : $1
+	% inputs : $4
+	%------------------------------------------------------------
+	% ${5:detail}
+	%************************************************************ {{{
+	function ${1:#:outputs} ${2:#:=} ${3:func_name}( ${4:#:inputs} )
+		${0:#:hoge}
+	end % $3  % }}}
+
+snippet		option_input
+alias		input
+abbr		任意入力引数の設定
+options		head
+	%-------------------------------------------------------%
+	% 引数処理
+	%-------------------------------------------------------% {{{
+	% 入力が無い場合にデフォルト値を入れる
+	if ~exist('${1:#:hoge}', 'var'); $1 = ${2:#:false}; end;
+	% }}}
+
+
+snippet		comment_short
+alias		coms
+abbr		% ---- hoge
+	%---- ${1:#:hoge}
+	${0}
+
+snippet		comment_medium
+alias		comm
+abbr		% ========= hoge
+	%========= ${1:#:hoge}
+	${0}
+
+snippet		comment_long
+alias		coml
+abbr		% --------- hoge
+	%----------------------------- ${1:#:hoge}
+	${0}
+
+
+snippet		comment_large
+alias		clarge large
+abbr		% //// hoge /////
+	% /////////////////// ${1:#:hoge} ///////////////// %
+	${0}
+
+snippet		comment-section
+alias		com3
+abbr		3 row comment
+	%-------------------------------------------------------%
+	% ${1:#:hoge}
+	%-------------------------------------------------------%
+	${0}
+
+snippet		comment-section-fold
+alias		com3f
+abbr		3 row comment [folding]
+	%-------------------------------------------------------%
+	% ${1:#:hoge}
+	%-------------------------------------------------------% {{{
+	${0}
+	% }}}
+
+snippet		fold_start
+alias		fstart flds
+abbr		% --- hoge --- % {{{ [CR] % }}}
+	%--------- ${1:#:hoge} ---------% {{{
+	${0}
+	% }}}
+
+
+
+snippet for
+abbr	for end
+	for ${1:i} = ${2:1:vector}
+		${0}
+	end
+
+snippet if
+abbr	if end
+	if ${1:#:condition}
+		${0}
+	end
+
+snippet		error
+abbr		エラーメッセージ出力
+	if ${1:#:condition}
+		msg = 'Error detected: ${1:#:error-msg}';
+		error( msg );
+	end
+
+snippet		texlabel_x
+alias		xlabel
+abbr		xlabel with latex
+	xlabel('$$ ${1:#:tex-hoge} $$', 'interpreter', 'latex')
+
+snippet		texlabel_y
+alias		ylabel
+abbr		ylabel with latex
+	ylabel('$$ ${1:#:tex-hoge} $$', 'interpreter', 'latex')
+
+snippet		rotate_ylabel
+alias		rote, rot, yrot
+abbr		rotate ylabel with 0 deg
+	set(get(gca, 'ylabel'), 'Rotation', 0); % labelの定義とそろえること
+
+snippet		disp
+abbr		disp();
+	disp(${1:#:hoge});
+	${0}

@@ -1,0 +1,24 @@
+# ********************** ruby.snip ************************ #
+# create: 2014/05/16
+# ****************************************************************** #
+snippet		description
+abbr		details of this file
+options		head
+	#!/usr/bin/env ruby
+	#****************** `expand('%')` *******************
+	# created: `strftime("%Y/%m/%d")`
+	# Last Change: .
+	# ${1:#:hoge}
+	#************************************************************
+	${0}
+
+snippet			logger
+alias				log, debug
+abbr				output log
+	logger.debug
+
+snippet			totalspace
+abbr				require totalspace2
+options			head
+	require 'rubygems'
+	require 'totalspaces2'

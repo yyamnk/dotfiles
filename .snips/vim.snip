@@ -1,0 +1,78 @@
+# ********************** /Users/vent-mh/.mySnippets/vim.snip ************************ #
+# create: 2014/01/20
+#
+# for vimrc snippet
+# ****************************************************************** #
+
+snippet		comment-medium
+alias		cmedium
+abbr		" **** hoge ****
+	" ******************** ${0} ******************** "
+
+snippet		comment-large
+alias		clarge
+abbr		" //// hoge ////
+	" /////////////////// ${0} ///////////////// "
+
+snippet		fold-start
+alias		fstart
+abbr		" --- hoge ---- " {{{
+options		head
+	"--------- ${1} ---------" {{{
+
+
+snippet		fold-end
+alias		fend
+abbr		" --- }}}
+options		head
+	"-----------------------" }}}
+
+
+snippet		comment-section
+alias		com3
+abbr		3 row comment
+options		head
+	"-------------------------------------------------------"
+	" ${1}
+	"-------------------------------------------------------" {{{
+	${0}
+	" }}}
+
+snippet		comment_short1
+alias		cmt1
+abbr		" ------
+	"------- ${1:#:hoge}
+	${0}
+
+snippet		comment_short2
+alias		cmt2
+abbr		" =========
+	"============ ${1:#:hoge}
+	${0}
+
+snippet		comment_medium
+alias		cmtm cmt3
+abbr		" -----------------
+	"----------------------------- ${1:#:hoge}
+	${0}
+
+
+snippet		comment_long
+alias		cmtl cmt4
+abbr		" *************
+	"********************${1:#:hoge}******************** "
+	${0}
+
+snippet		comment_large
+alias		clarge cmt5
+abbr		" /////////////
+	"///////////////////${1:#:hoge}/////////////////"
+	${0}
+
+snippet		fold_start
+alias		fstart flds
+abbr		" ---- {{{ }}} -----
+	"---------${1:#:hoge} " {{{
+	${0}
+	" }}}
+

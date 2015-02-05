@@ -1,0 +1,575 @@
+
+"------------------------------------------------------------
+" neocomplete setting
+" https://github.com/Shougo/neocomplete.vim
+"------------------------------------------------------------ " {{{
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" シンタックスをキャッシュするときの最小文字長
+let g:neocomplete#sources#syntax#min_keyword_length = 2
+" キャメルケースを区別してマッチ
+let g:neocomplete#enable_camel_case = 1
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" 最初の候補を自動で選択
+let g:neocomplete#enable_auto_select = 1
+" 区切り自動挿入
+let g:neocomplete#enable_auto_delimiter = 1
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+    \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" ruby omni補完
+" let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+"
+" ---------------------------------------------------------- " }}}
+
+
+"------------------------------------------------------------
+" snippets setting
+"------------------------------------------------------------" {{{
+" デフォルトのスニペット保存先：'.vim/bundle/neosnippet/autoload/neosnippet/snippets/'
+" 優先して読み込むスニペットファイルの配置場所. 重複する場合には置き換えられる.
+" let g:neosnippet#snippets_directory='~/.mySnippets, ~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.snips/'
+" }}}
+
+"------------------------------------------------------------
+" neocomplcache and snippets key-mappings
+"------------------------------------------------------------" {{{
+" Plugin key-mappings.
+inoremap <expr><C-r> neocomplete#undo_completion()
+" 確定 " CRと同じ挙動をする気がする
+inoremap <expr><C-y> neocomplete#close_popup()
+
+" 一致するところまで補完
+" neocom単体ならこれだけで素晴らしい
+inoremap <expr><Tab>
+\ neocomplete#complete_common_string() != '' ?
+\   neocomplete#complete_common_string() :
+\ pumvisible() ? "\<C-n>" : "\<Tab>"
+
+imap <expr><C-t>
+\ neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<C-n>"
+
+" インソートモードを抜けたらマーカーを削除
+autocmd InsertLeave * NeoSnippetClearMarkers
+
+" }}}
+
+"------------------------------------------------------------
+" vim-airline
+" http://d.hatena.ne.jp/itchyny/20130820/1376978742
+" 何も設定せずとも普通に動いとる...
+"------------------------------------------------------------" {{{
+" let g:airline#extensions#tabline#enabled = 1 " 1にするとneosnippetと競合する
+let g:airline_theme='molokai'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+" }}}
+
+" ----------------------
+" Vim-LaTeX
+" http://vim-latex.sourceforge.net/documentation/latex-suite/index.html
+" --------- settings --------- " {{{
+filetype plugin on
+let tex_flavor = 'latex'
+set grepprg=grep\ -nH\ $*
+filetype indent off " OPTIONAL: This enables automatic indentation as you type.
+let g:Tex_DefaultTargetFormat = 'pdf' "標準で.pdfにコンパイルして開く
+let g:Tex_FormatDependency_pdf = 'dvi,pdf' " 依存関係を明示
+" dvi生成
+" ***.texのファイルがあるディレクトリから ./logs/へ中間ファイルを吐き出す
+" let g:Tex_CompileRule_dvi = 'platex --kanji=utf8 -synctex=1 -output-directory ./logs -interaction=nonstopmode $*'
+" let g:Tex_CompileRule_dvi = 'platex -output-directory ./logs -interaction=nonstopmode $*'
+" let g:Tex_CompileRule_dvi = 'eptex -output-directory ./logs -interaction=nonstopmode $*'
+let g:Tex_CompileRule_dvi = 'platex -interaction=nonstopmode $*.tex && pbibtex $*.aux && platex -interaction=nonstopmode $*.tex && platex -interaction=nonstopmode $*.tex'
+" pdf生成
+let g:Tex_CompileRule_pdf = 'dvipdfmx -I 3 $*.dvi'
+" dvipdfmx keep cash 3 hours
+" let g:Tex_CompileRule_pdf = 'dvipdfmx ./logs/$*.dvi'
+" let g:Tex_CompileRule_pdf = 'lualatex main.tex'
+" let g:Tex_CompileRule_pdf = 'lualatex -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
+" 吐出された中間ファイルのdviからpdfを生成 出力先は ***.texと同じディレクトリ
+" let g:Tex_BIBINPUTS = 'yyama'
+let g:Tex_BibtexFlavor = 'pbibtex'
+" pdfのビューア
+" let g:Tex_ViewRule_pdf = 'open -a Preview.app' "PDFはPreview.appで開く
+let g:Tex_ViewRule_pdf = 'open -a Skim.app' "PDFはSkim.appで開く. Skim -> preference -> sync -> autoloadにしとくと楽
+
+" bibtexを含めて複数回コンパイルするか？
+let g:Tex_MultipleCompileFormats = 'pdf' "  pdf出力時に有効化
+
+" 警告を無視
+" https://github.com/ykarino/dotfiles/blob/master/.vimrc
+let g:Tex_IgnoredWarnings =
+      \"Underfull\n".
+      \"Overfull\n".
+      \"specifier changed to\n".
+      \"You have requested\n".
+      \"Missing number, treated as zero.\n".
+      \"There were undefined references\n".
+      \"Citation %.%# undefined\n".
+      \"Float too large\n".
+      \"contains only floats\n".
+      \"Label %.%# multiply defined\n".
+      \"Label `table:n30D30t3000' multiply defined\n".
+      \"There were multiply-defined labels\n".
+      \"LaTeX Font Warning:"
+let g:Tex_IgnoreLevel = 13
+
+" texのmath記号自動変換を無効にする
+" http://tex.stackexchange.com/questions/96741/vim-latex-suite-unwanted-in-editor-math-symbol-conversion
+let g:tex_conceal = ""
+
+" autoで<++>が挿入されるのを防ぐ
+" http://tex.stackexchange.com/questions/20829/what-does-signify-when-using-vim-latexsuite
+let g:Imap_UsePlaceHolders = 0  " カーソル移動を防ぐ
+let g:Tex_AutoFolding = 0   " 折り畳みを無効に
+let g:Tex_GotoError=0   " ErrorがでたときにErrorウインドウにフォーカスしない
+let g:Imap_FreezeImap=1 " latex-suite macro disable
+let g:Tex_ShowErrorContext = 0 " prev-mode window( below the quick window )をinhibit
+
+" ----------------------- " }}}
+
+" ------------------------------------------------------- "
+" smartchr
+" ------------------------------------------------------- " {{{
+" 参考
+" http://hinagishi.hateblo.jp/entry/2011/12/24/194319
+" paste等でsmartchrを適用させないようにするには
+" set pasteを使用すること（neosnippetも適用されない）
+"
+" global
+inoremap <buffer><expr> , smartchr#loop(', ', ',')
+inoremap <buffer><expr> ( smartchr#loop('()<LEFT>', '(')
+inoremap <buffer><expr> [ smartchr#loop('[]<LEFT>', '[')
+" inoremap <buffer><expr> # smartchr#loop('# ', '#')
+
+" for tex
+autocmd FileType *tex inoremap <buffer><expr> . smartchr#loop('. ', '.', '...')
+" autocmd FileType *tex inoremap <buffer><expr> , smartchr#loop(', ', ',')
+autocmd FileType *tex inoremap <buffer><expr> % smartchr#loop('% ', '%')
+
+" for matlab
+" autocmd FileType *matlab inoremap <buffer><expr> % smartchr#loop('% ', '%')
+autocmd FileType *matlab inoremap <buffer><expr> = smartchr#loop(' = ', ' == ', '=')
+" autocmd FileType *matlab inoremap <buffer><expr> ~ smartchr#loop(' ~= ', '~')
+" autocmd FileType *matlab inoremap <buffer><expr> < smartchr#loop(' < ', ' <= ', '<')
+" autocmd FileType *matlab inoremap <buffer><expr> > smartchr#loop(' > ', ' >= ', '>')
+" autocmd FileType *matlab inoremap <buffer><expr> + smartchr#loop(' + ', '+')
+" autocmd FileType *matlab inoremap <buffer><expr> - smartchr#loop(' - ', '-', ' -> ')
+" autocmd FileType *matlab inoremap <buffer><expr> * smartchr#loop(' * ', '*')
+" autocmd FileType *matlab inoremap <buffer><expr> ^ smartchr#loop(' ^ ', '^')
+" autocmd FileType *matlab inoremap <buffer><expr> / smartchr#loop(' / ', '/')
+" autocmd FileType *matlab inoremap <buffer><expr> & smartchr#loop(' & ', '&')
+
+" for vim
+autocmd FileType *vim inoremap <buffer><expr> " smartchr#loop('" ', '"" ', '"')
+" }}}
+
+" ------------------------------------------------------- "
+" taglist
+" ------------------------------------------------------- " {{{
+let Tlist_Exit_OnlyWindow = 1 " taglistのウインドウだけならVimを閉じる
+let Tlist_Auto_Open = 0       " auto open ( on:1, off:0 )
+let Tlist_Auto_Update = 1     " auto update ( on:1, off:0 )
+" }}}
+
+" ----------------------
+" Unite.vim
+" --------- settings --------- " {{{
+let g:unite_enable_start_insert=1 " インサートモードで開始する
+"  大文字小文字を区別しない
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+let g:unite_source_history_yank_enable =1  " history/yankの有効化
+
+" OS判定してsourceを登録する ...
+if has('macunix')
+    let s:mysrc = $HOME . '/Dropbox/Lab/sources/'
+elseif has('unix')
+    let s:mysrc = $HOME . '/sources/'
+else
+    let s:mysrc = $HOME
+endif
+
+noremap <Leader>uy :Unite history/yank<CR>
+noremap <Leader>ub :Unite buffer file_mru<CR>
+noremap <Leader>uf :Unite file_rec/async:!<CR>
+" noremap <Leader><Space> :Unite file_rec/async:!<CR>
+noremap <Leader>u. :Unite file_rec/async:$HOME/Dropbox/settings/dotfiles/<CR>.
+noremap <Leader>s :Unite line<CR>
+" noremap / :Unite line<CR>
+noremap <Leader>ud :Unite directory_mru directory_rec/async:<CR>
+" noremap <Leader>um :Unite directory_mru<CR>
+noremap <Leader>uo :Unite outline<CR>
+noremap <Leader>ur :Unite file_rec/async:$HOME/Dropbox/mybrain/<CR>
+" unite-dwm 必要
+noremap <Leader>w :Unite dwm<CR>
+
+
+" 参考:
+" http://www.bloglovin.com/viewer?post=1097550103&group=0&frame_type=b&context=&context_ids=&blog=5938831&frame=1&click=0&user=0
+autocmd FileType unite call s:unite_my_settings()
+function! s:unite_my_settings()
+    " 上下に分割して開く
+    nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+    inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+    " 左右に分割して開く
+    nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+    inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+    " vimfiler で開く
+    nnoremap <silent> <buffer> <expr> <C-O> unite#do_action('vimfiler')
+    inoremap <silent> <buffer> <expr> <C-O> unite#do_action('vimfiler')
+    " dwm.vim で開く
+    nnoremap <silent> <buffer> <expr> <C-N> unite#do_action('dwm_new')
+    inoremap <silent> <buffer> <expr> <C-N> unite#do_action('dwm_new')
+    " 終了
+    nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+    inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+endfunction
+
+" grep検索
+" http://blog.monochromegane.com/blog/2013/09/18/ag-and-unite/
+" nnoremap <silent> <Leader>g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" nnoremap <silent> <Leader>g  :<C-u>Unite grep -buffer-name=search-buffer<CR>
+nnoremap <silent> <Leader>g  :Unite grep<CR>
+
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
+" ----------------------- " }}}
+
+" ----------------------
+" VimFiler
+" --------- settings --------- " {{{
+" vimデフォルトのエクスプローラをvimfilerで置き換える
+" noremap <C-f> :VimFiler -project<CR>
+noremap <Leader>vf :VimFiler<CR>
+" セーフモードを無効にした状態で起動する
+let g:vimfiler_as_default_explorer = 1
+" システムのデフォルトの関連付けで開く
+let g:vimfiler_safe_mode_by_default = 0
+" それ以外はとりあえずvimで開く
+call vimfiler#set_execute_file('bmp,jpg,png,gif,pdf', 'open')
+call vimfiler#set_execute_file('_', 'vim')
+" 自動cd
+let g:vimfiler_enable_auto_cd = 1
+" 更新日時準でsort
+let g:vimfiler_sort_type = 'Time' " S-sで一覧を確認してもいい
+
+" vimfilerの検索コマンド/をunite.vimへ変更
+" 上の階層を基準に再帰的に検索
+" autocmd FileType vimfiler
+"     \ nnoremap <buffer><silent>/
+"     \ :<C-u>Unite -default-action=vimfiler file_rec/async:../ <CR>
+" uniteで選択後はvimfilerに渡さない
+" autocmd FileType vimfiler
+"     \ nnoremap <buffer><silent>/
+"     \ :<C-u>Unite file_rec/async:../ <CR>
+" ----------------------- " }}}
+
+" ----------------------
+" wauto, auto :w
+" ----------------------
+let g:auto_write = 1 " 有効無効を決定
+
+" ------------------------------------------------------- "
+" yankround, 貼付け時にヤンク履歴を使う
+" https://github.com/LeafCage/yankround.vim
+" ------------------------------------------------------- " {{{
+nmap p <Plug>(yankround-p)
+xmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+" }}}
+
+" ----------------------
+" Quick Look対策
+" http://d.hatena.ne.jp/uasi/20110523/1306079612
+" --------- settings --------- " {{{
+" 10.6.8では効果なし...
+" au BufWritePost * call SetUTF8Xattr(expand("<afile>"))
+"
+" function! SetUTF8Xattr(file)
+"   let isutf8 = &fileencoding == "utf-8" || ( &fileencoding == "" && &encoding == "utf-8")
+"   if has("unix") && match(system("uname"),'Darwin') != -1 && isutf8
+"       call system("xattr -w com.apple.TextEncoding 'utf-8;134217984' '" . a:file . "'")
+"   endif
+" endfunction
+" ----------------------- " }}}
+
+" ------------------------------------------------------- "
+" foldCC
+" http://leafcage.hateblo.jp/entry/2013/04/24/053113
+" foldCC
+" ------------------------------------------------------- " {{{
+set foldtext=FoldCCtext() "" foldCCによる折り畳みを有効化
+" set g:foldCCtext_maxchars = 83
+let g:foldCCtext_tail = 'printf("   %s[%4d lines  Lv%-2d]",
+\ v:folddashes, v:foldend-v:foldstart+1, v:foldlevel)'
+" }}}
+
+" ----------------------
+" indent guides
+" http://chiiiiiiiii.hatenablog.com/entry/2012/12/02/102815
+"" --------- settings --------- " {{{
+" vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
+let g:indent_guides_enable_on_vim_startup=1
+" ガイドをスタートするインデントの量
+let g:indent_guides_start_level=2
+" ガイドの幅
+let g:indent_guides_guide_size=4
+au BufNewFile,BufRead *.rhtml let g:indent_guides_guide_size=2
+au BufNewFile,BufRead *.rb    let g:indent_guides_guide_size=2
+au BufNewFile,BufRead *.erb   let g:indent_guides_guide_size=2
+au BufNewFile,BufRead *.yml   let g:indent_guides_guide_size=2
+au BufNewFile,BufRead *.css   let g:indent_guides_guide_size=2
+au BufNewFile,BufRead *.js    let g:indent_guides_guide_size=2
+au BufNewFile,BufRead *.xml   let g:indent_guides_guide_size=2
+" 自動カラーを無効にする
+let g:indent_guides_auto_colors=0
+" 奇数インデントのカラー
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=233
+" 偶数インデントのカラー
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#4c3c3c ctermbg=238
+" ハイライト色の変化の幅
+let g:indent_guides_color_change_percent=20
+" ----------------------- " }}}
+
+" ----------------------
+" vim-choosewin
+" http://d.hatena.ne.jp/t9md/20140112/1389542181
+" --------- settings --------- " {{{
+" '-' で呼び出し
+" nmap -  <Plug>(choosewin)
+nmap <Leader>a <Plug>(choosewin)
+" オーバーレイを使う
+let g:choosewin_overlay_enable = 1
+" マルチバイトバッファでオーバーレイフォントを崩さないように
+let g:choosewin_overlay_clear_multibyte = 1
+
+let g:choosewin_blink_on_land      = 0 "  頼むから着地時にカーソル点滅をさせないでくれ！
+let g:choosewin_statusline_replace = 0 "  どうかステータスラインリプレイスしないで下さい!
+let g:choosewin_tabline_replace    = 0 "  どうかタブラインもリプレイスしないでいただきたい！
+" ----------------------- " }}}
+
+" ------------------------------------------------------- "
+" winresizer
+" ------------------------------------------------------- {{{
+let g:winresizer_start_key = '<C-t>'
+" }}}
+
+" ------------------------------------------------------- "
+" easy motion
+" http://blog.remora.cx/2012/08/vim-easymotion.html
+" easymotion
+" leader + j -> 前方の行番号にショートカットを貼る
+" leader + k -> 後方の行番号にショートカットを貼る
+" leader + w -> カーソル後方の単語にショートカットを貼る
+" leader + b -> カーソル前方の単語にショートカットを貼る
+" ------------------------------------------------------- " {{{
+" f + 何かにマッピング
+" let g:EasyMotion_leader_key="f" " 1 ストローク選択を優先する
+" let g:EasyMotion_grouping=1
+"  カラー設定変更
+" hi EasyMotionTarget ctermbg=none ctermfg=red
+" hi EasyMotionShade  ctermbg=none ctermfg=blue
+"
+" easymotion leader 変更
+let g:EasyMotion_leader_key = '1'
+"  ホームポジションに近いキーを使う
+" let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+let g:EasyMotion_keys='uhetonaskmjwqpgyfxbUHETONASKMJWQPGYFXB'
+nmap s <Plug>(easymotion-s2)
+xmap s <Plug>(easymotion-s2)
+nmap f <Plug>(easymotion-fl)
+nmap F <Plug>(easymotion-Fl)
+map <Leader>j <Plug>(easymotion-sol-j)
+map <Leader>k <Plug>(easymotion-sol-k)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+" 日本語でもマッチさせる
+let g:EasyMotion_use_migemo = 1
+" ----------------------------------------------------- }}}
+
+" -----------------------------
+" syntastic
+" ----------------------------- " {{{
+let g:syntastic_check_on_open = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 2
+" 構文チェックとスペルチェックを区別する
+
+" }}}
+
+" -----------------------------
+" quickrun
+" ----------------------------- " {{{
+" 一番下にウィンドウを分割させて出力, 出力が無ければ閉じる
+" runner/vimproc/updatetime で出力バッファの更新間隔をミリ秒で設定できます
+" updatetime が一時的に書き換えられてしまうので注意して下さい
+let g:quickrun_config = {
+\   "_" : {
+\       "outputter/buffer/split" : ":botright",
+\       "outputter/buffer/close_on_empty" : 1,
+\       "runner" : "vimproc",
+\       "runner/vimproc/updatetime" : 60
+\   },
+\}
+
+let g:quickrun_config.markdown = {
+    \ 'outputter' : 'null',
+    \ 'command'   : 'open',
+    \ 'cmdopt'    : '-a',
+    \ 'args'      : 'Marked\ 2',
+    \ 'exec'      : '%c %o %a %s',
+    \ }
+
+" for browser view
+" let g:quickrun_config.markdown = {
+"     \ 'outputter': 'browser',
+"     \ 'exec': '%c --from=markdown --to=html %o %s %a',
+"     \ }
+
+nnoremap <Leader>qr :QuickRun<CR>
+" ------------------ " }}}
+
+" -----------------------------
+" previm, markdown preview with browser
+" ----------------------------- " {{{
+" 現在のファイルを対象としてブラウザを開く
+nnoremap <Leader>mp :PrevimOpen<CR>
+" }}}
+
+" -----------------------------
+" vimshell
+" ----------------------------- " {{{
+" ,vs: シェルを起動
+nnoremap <silent> <Leader>vs :VimShell<CR>
+nnoremap <silent> <Leader>vp :VimShellPop<CR>
+" <Leader>ss: 非同期で開いたインタプリタに現在の行を評価させる
+" vmap <silent> <Leader>ss :VimShellSendString<CR>
+" 選択中に<Leader>ss: 非同期で開いたインタプリタに選択行を評価させる
+" nnoremap <silent> <Leader>ss <S-v>:VimShellSendString<CR>
+" プロンプト
+" let g:vimshell_prompt_expr = 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
+" let g:vimshell_prompt_pattern = '^\(\f\|\\.\)\+> '
+let g:vimshell_prompt = "% "
+let g:vimshell_secondary_prompt = "> "
+
+" vimshell 履歴をuniteから使う
+" inoremap <buffer> <expr><silent> <C-l>
+"     \ unite#sources#vimshell_history#start_complete()
+"
+" neosnippetの選択で競合する
+" inoremap <buffer> <expr><silent> <UP>
+"     \ unite#sources#vimshell_history#start_complete(!0)
+" " }}}
+
+" ------------------------------------------------------- "
+" vim-over
+" ------------------------------------------------------- " {{{
+nnoremap <Leader>o :OverCommandLine<CR>%s/
+vnoremap <Leader>o :OverCommandLine<CR>s/
+" }}}
+"
+" ------------------------------------------------------- "
+" ctrlp.vim
+" ------------------------------------------------------- "
+" {{{
+" <C-p>して適当に入力. スペースとかいらない.
+" noremap <Leader>cp :<C-u>CtrlP<Space>
+" let g:ctrlp_map = '<Nop>' " デフォルトのキーマップを解除
+let g:ctrlp_working_path_mode = 'ra' " Guess vcs root dir
+let g:ctrlp_open_new_file = 'r' " Open new file in current window
+let g:ctrlp_clear_cache_on_exit = 0   " 終了時キャッシュをクリアしない
+" ----------------------------------------------------- }}}
+
+" ------------------------------------------------------- "
+" for autodate.vim
+" https://github.com/vim-scripts/autodate.vim
+" ------------------------------------------------------- "
+" {{{
+" By default, autodate.vim searches a keyword 'Last Change:.'
+let g:autodate_format = '%Y-%b-%d'
+let g:autodate_lines = 5 " 最初の5行でのみ有効化 -> neosnippet対策
+"  au FileType neosnippet set autodetaOFF " snippet では無効
+" ----------------------------------------------------- }}}
+
+" ------------------------------------------------------- "
+" for alignta
+" ------------------------------------------------------- "
+" {{{
+" :Alignta で実行されるデフォルト
+" let g:alignta_default_arguments = '<<10 [ <<11 = <<01 , <<00 ], <<01 ;'
+let g:alignta_default_arguments = '= <<01 , <<01 ; %'
+vnoremap <Leader>a :Alignta<SPACE>
+" ----------------------------------------------------- }}}
+
+" ------------------------------------------------------- "
+" for vim-session
+" http://qiita.com/take/items/3be8908bbf4ad5b49e46
+" ------------------------------------------------------- "
+" {{{
+" セッションを上書き
+let g:session_default_overwrite = 1
+" vimを辞める時に自動保存
+let g:session_autosave = 'yes'
+" 1分間に1回自動保存
+let g:session_autosave_periodic = 1
+" 引数なしでvimを起動した時にsession保存ディレクトリのdefault.vimを開く
+" let g:session_autoload = 'yes'
+let g:session_autoload = 'prompt'
+" 再開時に最後のセッションを起動
+let g:session_default_to_last = 1
+" ----------------------------------------------------- }}}
+
+" ------------------------------------------------------- "
+" for CtrlSF
+" ------------------------------------------------------- "
+" {{{
+noremap <Leader>c :CtrlSF<Space>
+" ----------------------------------------------------- }}}o
+
+
+" ------------------------------------------------------- "
+" indent line
+" ------------------------------------------------------- " {{{
+let g:indentLine_char='¦'
+let g:indentLine_color_term = 244
+" }}}
+
+" ------------------------------------------------------- "
+" DWM
+" ------------------------------------------------------- " {{{
+nnoremap <C-f> :call DWM_Focus()<CR>
+" }}}

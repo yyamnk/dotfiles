@@ -1,0 +1,72 @@
+# ********************** xml.snip ************************ #
+# create: 2014/08/20
+#
+# for xml
+# ****************************************************************** #
+snippet			comment
+abbr				<!-- -->
+options			head
+	<!-- ${1:#:hoge} -->
+	${0}
+
+snippet			commentstart
+alias				cstart
+abbr				<!--
+	<!-- ${0}
+
+snippet			commentend
+alias				cend
+abbr				-->
+	-->
+	${0}
+
+snippet			item
+abbr				<item></item>
+options			head
+	<item>
+		${0}
+	</item>
+
+snippet			name
+abbr				<name></name>
+options			head
+	<name>${1}</name>
+	${0}
+
+snippet			identifier
+abbr				<identifier></identifier>
+options			head
+	<identifier>${1}</identifier>
+	${0}
+
+snippet			keytokey
+abbr				__KeyToKey__
+options			head
+	__KeyToKey__
+
+snippet			keycode
+abbr				KeyCode::
+	KeyCode::
+
+snippet			modifierflag
+abbr				ModifierFlag::
+	ModifierFlag::
+
+snippet			entry
+alias				new
+abbr				add new entry <item>...</item>
+options			head
+	<item>
+		<name>${1:#:hoge}</name>
+		<identifier>${2:#:hoge}</identifier>
+		<autogen>
+			${0}
+		</autogen>
+	</item>
+
+snippet			appendix
+abbr				<appendix></appendix>
+options			head
+	<appendix>${0}</appendix>
+
+

@@ -1,0 +1,40 @@
+# ********************** markdown.snip **************************** #
+# create: 2014/05/21
+#
+# markdown snippet
+# ****************************************************************** #
+
+snippet		mathJax
+alias		math jax mathjax
+options		head
+	<!-- latex codeを埋め込む {{{ -->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ["\\(","\\)"]],
+				displayMath: [['$$', '$$'], ['\\[', '\\]']],
+			},
+			TeX:{
+				Macros:{
+					bm: ["\\boldsymbol{#1}", 1]
+				}
+			}
+		});
+	</script>
+	<script type="text/javascript"
+	  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	<!-- latex codeを埋め込む設定 }}} -->
+
+	${0}
+
+snippet		dxdt
+abbr		\farc{dx(t)}{dt}
+	\frac{dx(t)}{dt}
+
+snippet		align
+abbr		\begin{align} ... \end{align}
+	$$\begin{align}
+		${0}
+	\end{align}$$
+

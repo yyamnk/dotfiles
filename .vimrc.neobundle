@@ -1,0 +1,146 @@
+" Last Change:2015-Feb-05.
+
+" ------------------------
+" NeoBundleを読み込む
+" 参考 http://vimblog.hatenablog.com/entry/vimrc_plugin_management
+" ------------------------
+" プロキシ対策 gitで使用するプロトコルをhttpsへ
+let g:neobundle_default_git_protocol = 'https'
+
+" NeoBundle がインストールされていない時、
+" もしくは、プラグインの初期化に失敗した時の処理
+function! s:WithoutBundles()
+    colorscheme desert
+    " その他の処理
+endfunction
+
+" NeoBundle よるプラグインのロードと各プラグインの初期化
+" --------- NeoBundle List --------- "
+function! s:LoadBundles()
+    " 読み込むプラグインの指定
+    NeoBundle 'Shougo/neobundle.vim'
+    NeoBundleFetch 'Shougo/neobundle.vim' " NeoBundle自身をNeoBundleで管理させる
+    " ------ vimshell
+    NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin'  : 'make -f make_cygwin.mak',
+      \     'mac'     : 'make -f make_mac.mak',
+      \     'unix'    : 'make -f make_unix.mak',
+      \    },
+      \ }
+    NeoBundle 'Shougo/vimshell'
+    " ------ unite関連
+    NeoBundle 'Shougo/unite.vim'
+    NeoBundle 'https://github.com/Shougo/neomru.vim'
+    NeoBundle 'Shougo/vimfiler'
+    NeoBundle 'h1mesuke/unite-outline'
+    NeoBundle 'vim-scripts/taglist.vim'
+    "------- git関連
+    NeoBundle 'tpope/vim-fugitive' " Gitコマンドを実行
+    " ------ 補完・スニペット
+    " NeoBundle 'Shougo/neocomplcache'
+    " Insertモードに入るまではneocompleteはロードされない
+    NeoBundle 'Shougo/neocomplete.vim'
+    NeoBundle 'Shougo/neosnippet'
+    NeoBundle 'Shougo/neosnippet-snippets'
+    NeoBundle 'honza/vim-snippets'
+    NeoBundle 'https://github.com/ujihisa/neco-look.git' " lookを使って英単語補完
+    " ------ カーソル移動
+    NeoBundle 'Lokaltog/vim-easymotion'
+    " ------ その他入力補助
+    NeoBundle 'scrooloose/syntastic'     " syntax check
+    NeoBundle 'osyo-manga/vim-over'      " :s/hoge/HOGE をリアルタイム表示
+    NeoBundle 'syui/wauto.vim'           " インサートモードを終えたら自動保存する
+    NeoBundle 'kana/vim-smartchr'        " 入力キー置換
+    NeoBundle 'LeafCage/yankround.vim'   " 貼付け後にヤンク履歴を遡ってテキストを貼り付ける
+    NeoBundle 'tpope/vim-surround'       " 使い方: http://doruby.kbmj.com/aisi/20100310/surround.vim
+    NeoBundle 'h1mesuke/vim-alignta.git' " <<hogefuga % -> %で左寄せ, 余白 hoga%fuga
+    NeoBundle 'gerw/vim-latex-suite'     " vim-latex, vimからplatex, dvipdfmx実行
+    NeoBundle 'jimsei/winresizer.git'    " windowをhjklで変更 :WinResizeStartResize, or c-e
+    NeoBundle 't9md/vim-choosewin'       " 各ウインドウにオーバーレイ表示->選択で移動 可能
+    NeoBundle 'thinca/vim-quickrun'      " vimで編集中に実行
+    NeoBundle 'vim-scripts/autodate.vim' " 最終更新日を自動挿入
+    NeoBundle 'deton/jasegment.vim'      " vim 日本語 utf8で単語移動を可能に
+    " ------ matlab用
+    NeoBundle 'lazywei/vim-matlab'       " matlab用syntax
+    " ------ 見た目変更
+    NeoBundle 'bling/vim-airline'
+    NeoBundle 'ujihisa/unite-colorscheme'
+    NeoBundle 'ujihisa/unite-font'
+    NeoBundle 'LeafCage/foldCC'     " foldingでインデントを反映させる
+    NeoBundle 'Yggdroot/indentLine' " インデント可視化
+    " ---- colorscheme ----
+    NeoBundle 'altercation/vim-colors-solarized'
+    NeoBundle 'w0ng/vim-hybrid'
+    NeoBundle 'croaker/mustang-vim'
+    NeoBundle 'jeffreyiacono/vim-colors-wombat'
+    NeoBundle 'nanotech/jellybeans.vim'
+    NeoBundle 'vim-scripts/Lucius'
+    NeoBundle 'vim-scripts/Zenburn'
+    NeoBundle 'mrkn/mrkn256.vim'
+    NeoBundle 'jpo/vim-railscasts-theme'
+    NeoBundle 'therubymug/vim-pyte'
+    NeoBundle 'tomasr/molokai'
+    NeoBundle 'rainux/vim-desert-warm-256'
+
+    " ------- MarkDown
+    " NeoBundle 'plasticboy/vim-markdown'
+    NeoBundle 'nelstrom/vim-markdown-folding'
+    " filetypeがmkdに固定される？
+    " NeoBundle 'tpope/vim-markdown'
+    NeoBundle 'kannokanno/previm'
+    NeoBundle 'tyru/open-browser.vim'
+    " ------- その他
+    " Qiita
+    NeoBundle 'mattn/webapi-vim'
+    NeoBundle 'mattn/qiita-vim'
+    " 検索
+    NeoBundle 'ctrlpvim/ctrlp.vim'
+    NeoBundle 'dyng/ctrlsf.vim'
+    " 英文法チェック
+    NeoBundle 'vim-scripts/LanguageTool'
+    " セッション自動保存
+    NeoBundle 'xolox/vim-session', {
+            \ 'depends' : 'xolox/vim-misc',
+          \ }
+    " ウインドウマネージャ
+    NeoBundle 'spolu/dwm.vim'
+    NeoBundle 'kannokanno/unite-dwm' " :Unite dwm, dwm_new を追加
+
+    filetype plugin on
+    filetype indent on
+endfunction
+" ----------------------- "
+
+
+" NeoBundle がインストールされているなら LoadBundles()
+" そうでないなら WithoutBundles()
+" ---------  --------- " {{{
+function! s:InitNeoBundle()
+    if isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
+        filetype plugin indent off
+        if has('vim_starting')
+            set runtimepath+=~/.vim/bundle/neobundle.vim/
+        endif
+        try
+            call neobundle#begin(expand('~/.vim/bundle/'))
+            NeoBundleFetch 'Shougo/neobundle.vim'
+            call neobundle#end()
+            call s:LoadBundles()
+        catch
+            call s:WithoutBundles()
+        endtry
+    else
+        call s:WithoutBundles()
+    endif
+
+    filetype indent plugin on
+    syntax on
+endfunction
+
+call s:InitNeoBundle()
+
+" 自動チェック
+NeoBundleCheck
+" ----------------------- " }}}

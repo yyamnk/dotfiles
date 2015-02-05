@@ -1,0 +1,32 @@
+# ********************** neosnippet.snip ************************ #
+# create: 2013/11/14
+# Last changed: .
+# .snip or .snippet 用 snippet
+# ****************************************************************** #
+
+snippet			description
+abbr				describe this file
+options			head
+	# ********************** `expand('%')` ************************ #
+	# created	  : `strftime("%Y/%m/%d")`
+	# Last changed: .
+	# ${0}
+	# ****************************************************************** #
+
+snippet			comment-small
+abbr				----
+options  word
+	# ---- ${0}
+
+snippet			comment-large
+abbr				////
+options  word
+		# /////////////////// ${0} ///////////////// #
+
+snippet			comment-section
+abbr				3 row comment
+options			head
+	# ------------------------------------------------------- #
+	# ${1}
+	# ------------------------------------------------------- #
+	${2}

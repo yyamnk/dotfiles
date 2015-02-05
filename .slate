@@ -1,0 +1,44 @@
+#================
+# .slate
+#
+# Last Change: 2015-Feb-05.
+# for dvorak user
+#================
+
+# ----- grobal configs -----
+# https://github.com/jigish/slate/wiki/Global-Configs#wiki-layoutFocusOnActivate
+config windowHintsIgnoreHiddenWindows false # 隠れているウインドウのhintsも表示する
+config windowHintsShowIcons true            # hintにアプリのアイコンを表示
+config windowHintsDuration 10               # ヒントを表示[s]
+config windowHintsSpread true               # 重なっているときヒントをspered
+config windowHintsSpreadSearchWidth 80      # def 40
+config windowHintsSpreadSearchHeight 80     # def 40
+config keyboardLayout dvorak                # ヒントをdvorakに
+
+# focus
+bind d:alt focus left
+bind h:alt focus down
+bind t:alt focus up
+bind n:alt focus right
+
+# 下に隠れているウィンドウをフォーカス
+bind c:alt focus behind
+
+# nudge Bindings, 移動
+# 1/8で12.5%
+bind d:alt;cmd nudge -12.5% +0   # h for qwerty
+bind h:alt;cmd nudge +0   +12.5% # j for qwerty
+bind t:alt;cmd nudge +0   -12.5% # k for qwerty
+bind n:alt;cmd nudge +12.5% +0   # l for qwerty
+
+# Resize Bindings
+bind d:alt;ctrl;cmd resize -12.5% +0  # h for qwerty
+bind h:alt;ctrl;cmd resize +0 +25%    # j for qwerty
+bind t:alt;ctrl;cmd resize +0 -25%    # k for qwerty
+bind n:alt;ctrl;cmd resize +12.5% +0  # l for qwerty
+
+# Window Hints
+bind s:alt hint UHIDETONAS
+
+# grid
+#bind g:alt grid padding:5 2550x1440:16,4

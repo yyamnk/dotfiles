@@ -1,0 +1,162 @@
+#****************** .aliases *******************
+# created: 2015/02/03
+# Last Change:2015-Feb-04.
+#************************************************************
+
+#-------------------------------------------------------#
+# for unix
+#-------------------------------------------------------#
+alias la='ls -G -F -t' # lsに色付け
+alias laa='ls -G -F -tal'
+alias lg='ls -G -F -t | grep'
+
+alias h='~'
+alias dots='cd $DOTSDIR'
+alias v='vim'
+alias vv="vim $DOTSDIR/.vimrc"
+alias vn="vim $DOTSDIR/.vimrc.neobundle"
+alias vp="vim $DOTSDIR/.vimrc.plugin"
+alias vz="vim $DOTSDIR/.zshrc"
+alias va="vim $DOTSDIR/.aliases"
+alias sz="source $DOTSDIR/.zshrc"
+alias vp="vim $DOTSDIR/.vimrc.plugin"
+alias ....='cd ../../'
+alias grep='grep --color'
+alias g=grep
+
+# for git
+alias gt='git tree'
+alias gst='git status' # ghostscript置き換え
+alias ga='git add .'
+alias gc='git commit'
+alias gca='git commit --amend'
+
+# for rsh tesla
+alias stes13='ssh gr rsh tesla13'
+alias stes14='ssh gr rsh tesla14'
+alias stes15='ssh gr rsh tesla15'
+alias stes16='ssh gr rsh tesla16'
+
+# proxy 切替
+alias proxy_on="source $DOTSDIR/bin/proxy_on.sh"
+alias proxy_off="source $DOTSDIR/bin/proxy_off.sh"
+
+
+#-------------------------------------------------------#
+# for mac
+#-------------------------------------------------------#
+alias caskroom="cd /usr/local/Caskroom/"
+
+alias rm='rmtrash'         # rm -> move trash
+alias maxima='rmaxima'     # for maxima, 矢印や補完を使えるrmaximaを使用する
+alias op='open'
+alias gx='open ./ -a gitX' # open current with gitX
+
+# matlab
+alias mat='/Applications/MATLAB_R2014a.app/bin/matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
+alias matd='/Applications/MATLAB_R2014a.app/bin/matlab -nosplash -nodesktop'
+alias mat7='/Applications/MATLAB_R2007b/bin/matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
+alias mat7d='/Applications/MATLAB_R2007b/bin/matlab -nojvm -nosplash -nodesktop'
+
+# MATLAB_R2007B関連
+# alias matlab='DYLD_LIBRARY_PATH=/System/Library/Frameworks/JavaVM.framework/Libraries \
+#     /Applications/MATLAB_R2007b/bin/matlab -nojvm -nosplash -desktop -nodisplay'
+# alias matlabDisp='DYLD_LIBRARY_PATH=/System/Library/Frameworks/JavaVM.framework/Libraries \
+#     /Applications/MATLAB_R2007b/bin/matlab -nodesktop -nosplash -nojvm'
+# alias matlabJave='DYLD_LIBRARY_PATH=/System/Library/Frameworks/JavaVM.framework/Libraries \
+#     /Applications/MATLAB_R2007b/bin/matlab -nodesktop -nosplash'
+#
+
+# tex
+# alias tex2dvi='platex FILENAME.tex'
+# alias dvi2pdf='dvipdfmx -f hiragino.map FILENAME.dvi'
+# alias tex2text='detex -e align, equation, eqnarray, cases, subnumcases, tabular main.tex > main.txt'
+alias tlmgr='tlmgr --no-persistent-downloads'
+# alias sudo tlmgr='sudo tlmgr --no-persistent-downloads'
+alias stlmgr='sudo tlmgr --no-persistent-downloads'
+alias latexmkc='latexmk -pvc -interaction=nonstopmode'
+alias latexmkclear='latexmk -c'
+alias latexmkp='latexmk -interaction=nonstopmode -pv'
+
+alias vma='vim main.tex'
+
+# postgreSQL
+# http://qiita.com/tstomoki/items/0f1a930bd42a8e1fdaac
+# set default postgresql
+export PGDATA=/usr/local/var/postgres
+alias pgup='pg_ctl start -l ~/.pgserver.log'
+alias pgdown='pg_ctl stop -s -m fast'
+alias pgstat='pg_ctl status'
+
+
+# karabiner
+alias karabiner-cd='cd ~/db/apps/Karabiner/'
+alias karabiner-edit='vim ~/Library/Application\ Support/Karabiner/private.xml'
+alias karabiner-backup='/Applications/Karabiner.app/Contents/Library/bin/karabiner export > ~/db/apps/Karabiner/karabiner-import.sh'
+alias karabiner-restore='sh ~/db/apps/Karabiner/karabiner-import.sh'
+alias karabiner='/Applications/Karabiner.app/Contents/Library/bin/karabiner'
+
+# rsync関連
+# circuit 3-5, grouseへpush
+alias push2cals='bash ~/db/shscripts/rsyncs/push2c0x.sh'
+alias fetch_form_cals='bash ~/db/shscripts/rsyncs/fetch_c0x.sh'
+# alias push2c3='bash ~/db/shscripts/push2c3.sh'
+# alias push2c4='bash ~/db/shscripts/push2c4.sh'
+
+# ログ監視
+alias logs='tail -f ~/matLocal/logs'
+# remote cmd
+alias rdo='remote_do_matfuncs.sh'
+
+# for mongoDB
+alias mongod='mongod --dbpath ~/db/mongoDB'
+
+alias mp4_m4a='afconvert -f m4af -d aac' # mp4 to m4a
+# nkf
+alias nkfu='nkf -w -Lu --overwrite' # 文字コードをUTF-8, 改行コードをLFに変換
+
+#gollum
+# alias start_wiki='gollum --mathjax --allow-uploads --show-all > ~/.gollum.log &'
+alias start_wiki='rackup ~/db/wiki/config.ru -D'
+alias stop_wiki='kill `pgrep -f rackup`'
+
+#------ directory
+alias wiki='cd ~/db/wiki'
+
+alias php='cd ~/db/php'
+alias ror='cd ~/db/ror'
+alias py='cd ~/db/myPy'
+alias shs='cd ~/db/shscripts'
+
+alias nfes15='cd ~/db/ror/nutfes2015'
+alias nfes14='cd ~/db/ror/nutfes2014'
+alias nfes13='cd ~/db/ror/nutfes2013'
+alias survey='cd ~/db/ror/nutfes-survey'
+
+# for lab works
+alias lab='cd ~/db/lab'
+alias web='cd ~/db/lab/web/'
+alias bibs='cd ~/db/apps/Mendeley'
+
+alias src='cd ~/db/lab/sources'
+alias pso='cd ~/db/lab/sources/pso2'
+alias dpso='cd ~/db/lab/sources/dpso'
+alias csopso='cd ~/db/lab/sources/csopso'
+alias oscdp='cd ~/db/lab/sources/oscdp'
+alias symcdp='cd ~/db/lab/sources/symetrical_cdp'
+alias mfuncs='cd ~/db/lab/sources/matFunctions'
+
+alias matl='cd ~/matLocal'
+alias mats='cd ~/mat_server'
+alias logbox='cd ~/db/lab/matLogBox'
+alias matlogbox='logbox'
+
+alias nlp='cd ~/db/lab/nlp14_tokyo/tex_sources'
+alias wmeeting='cd ~/db/lab/meeting'
+alias masterThesis='cd ~/db/lab/masterThesis/tex_sources'
+alias smc='cd ~/db/lab/SMC2014/tex_sources'
+alias nolta='cd ~/db/lab/NOLTA2014/tex_sources'
+alias jounal='cd ~/db/lab/myJounal_sym_auto/tex_sources'
+alias shinetsu='cd ~/db/lab/shinetsu2014/'
+alias ec='cd ~/db/lab/ec_symp14/tex_sources'
+alias cec='cd ~/db/lab/cec15/tex_sources/'

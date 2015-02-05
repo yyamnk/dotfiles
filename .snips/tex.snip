@@ -1,0 +1,184 @@
+# ********************** tex.snip ************************ #
+# create: 2013/11/14
+#
+# texファイル用snippet
+# 2014/05/14
+# bstと共有化
+# ****************************************************************** #
+
+snippet		comment
+	%---------- ${1:#:hoge} ----------
+	${0}
+
+# tex色付け用snippet
+
+# 削除 -> 赤
+snippet		color-red
+alias		red
+abbr		削除-> 赤
+  \textcolor{red}{\sout{
+	${0:red-text}
+  }}
+
+# 新規追加 -> 緑
+snippet		color-green
+alias		green
+abbr		新規追加-> 緑
+  \textcolor{green}{
+	${0:green-text}
+  }
+
+# 修正後
+snippet		color-blue
+alias		blue
+abbr		修正後-> 青
+  \textcolor{blue}{
+	${0:blue-text}
+  }
+
+snippet		color-add
+alias		add
+  %修正前
+  \textcolor{red}{\sout{
+	${1:修正前}
+  }}
+  %修正後
+  \textcolor{blue}{
+	 ${0:修正後}
+  }
+
+snippet		description
+abbr		details of this file
+options		head
+	%****************** `expand('%')` *******************
+	% created	 : `strftime("%Y-%b-%d")`
+	% Last Change: .
+	%-----------------------------------------------------------
+	% ${1:#:hoge}
+	%************************************************************
+	${0}
+
+snippet		update_description
+options  word
+  % --- changed（`strftime("%Y-%b-%d")`）
+  ${0}
+
+snippet		comment-section
+alias		com3
+abbr		3 row comment
+options		head
+	%=======================================================%
+	% ${1:#:hoge}
+	%=======================================================%
+	${0}
+
+snippet		sect
+abbr		%==== \section{} ====%
+alias		section
+	%=======================================================================%
+	\section{${1:#:new-section}}
+	%=======================================================================%{{{%
+	${0}
+	%}}}%
+
+snippet		insert-start
+alias		istart
+abbr		%-------- hoge --------%{{{% [CR] %}}}
+options  indent
+	%
+	%-------------------- ${1:#:fig} --------------------%{{{%
+	${0}
+	%}}}%
+	%
+
+snippet		comment-small
+abbr		%----
+options  word
+  %---- ${1:#:hoge}
+  ${0}
+
+snippet		marker-start
+alias		fstart
+abbr		%{{{%
+options		indent
+  %{{{%
+
+snippet		marker-end
+alias		fend
+abbr		%}}}%
+options		indent
+  %}}}%
+
+snippet		inline-math
+alias		im
+abbr		$ hoge $
+options		word
+	$${1}$ ${0}
+
+snippet		boldmath
+alias		bm
+abbr		bold math \bm{}
+options		word
+	\bm{${1}}${0}
+
+snippet		refeq
+abbr		Ep. (\ref{eq:hoge})
+options		word
+	Eq. (\ref{eq:${1}})${0}
+
+snippet		refeqj
+abbr		式 (\ref{eq:hoge})
+options		word
+	式 (\ref{eq:${1}}) ${0}
+
+snippet		refsec
+abbr		\ref{sec:hoge}
+options		word
+	\ref{sec:${1}}${0}
+
+snippet		reffig
+abbr		Fig. \ref{sec:hoge}
+options		word
+	Fig. \ref{fig:${1}}${0}
+
+snippet		cite
+abbr		\cite{}
+options		word
+	\cite{${1}}${0}
+
+snippet		fig
+abbr		for pdf inputs
+options		head
+	\begin{figure}
+		\newcommand*{\size}{${1:1}}
+		\centering
+		\includegraphics[mediaboxonly, width=\size\textwidth] {./figs/${2}}
+		\caption{${3}}
+		\label{fig:${4}}
+	\end{figure}
+
+snippet		subfig
+abbr		subfigure subfloat
+alias		subfloat, sub
+options		head
+	\subfloat[${1}]{
+		\includegraphics[mediaboxonly, width=\size\textwidth] {./figs/${2}}
+	}
+
+snippet		pb
+options		word
+	\bm{pb}_i
+
+snippet		pbij
+abbr		pb_{ij}
+options		word
+	pb_{${1:#:ij}}${0}
+
+snippet		gb
+options		word
+	\bm{gb}
+
+snippet		gbi
+abbr		gb_i
+options		word
+	gb_{${1:#:i}}${0}

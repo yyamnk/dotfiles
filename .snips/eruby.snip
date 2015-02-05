@@ -1,0 +1,35 @@
+snippet			td
+abbr				<td></td>
+options			head
+	<td>${0}</td>
+
+snippet			tr
+abbr				<tr></tr>
+options			head
+	<tr>${0}</tr>
+
+snippet			comment
+abbr				<!-- -->
+options			head
+	<!-- ${0} -->
+
+snippet			comment_ruby
+alias				rc
+abbr				<%# %>
+options			head
+	<%# ${0} %>
+
+snippet			rval
+abbr				#{} (expand ruby values)
+alias				ruby, value
+	#{${0}}
+
+snippet			ruby_text_expand
+abbr				<%= "" %>
+alias				rte, etext
+	<%= "${0}" %>
+
+snippet			ruby_text
+abbr				<%= '' %>
+alias				text, rt, rtext
+	<%= '${0}' %>

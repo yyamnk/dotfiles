@@ -1,0 +1,10 @@
+#****************** .vimshrc *******************
+# created	 : 2014-Jul-09
+# Last Change: 2015-Feb-05.
+#************************************************************
+
+alias reload='vimsh ~/.vimshrc'
+alias rl=reload
+
+# zshと同じaliasにする
+vimsh ~/.aliases

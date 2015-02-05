@@ -1,0 +1,59 @@
+# ********************** sh.snip ************************ #
+# create	 : 2014/05/05
+# Last Change: 2015-Feb-05.
+#
+# for bashrc, zshrc
+# ****************************************************************** #
+
+snippet		description
+abbr		details of this file
+options		head
+  #!/usr/bin/env sh
+  #****************** `expand('%')` *******************
+  # created: `strftime("%Y-%b-%d")`
+  # Last Change: .
+  #------------------------------------------------------------
+  # ${1:#:hoge}
+  #************************************************************
+  ${0}
+
+snippet		comment_short
+alias		coms
+abbr		# ---- hoge
+	#---- ${1:#:hoge}
+	${0}
+
+snippet		comment_medium
+alias		comm
+abbr		# ========= hoge
+	#======== ${1:#:hoge}
+	${0}
+
+snippet		comment_long
+alias		coml
+abbr		# --------- hoge
+	#----------------------------- ${1:#:hoge}
+	${0}
+
+snippet		comment_large
+alias		clarge large
+abbr		# //// hoge ////
+	# /////////////////// ${1:#:hoge} ///////////////// #
+	${0}
+
+snippet		comment-section
+alias		com3
+abbr		3 row comment
+	#-------------------------------------------------------#
+	# ${1:#:hoge}
+	#-------------------------------------------------------# {{{
+	${0}
+	# }}}
+
+snippet		fold_start
+alias		fstart flds
+abbr		#---- hoge ----# {{{ [CR] # }}}
+	#--------- ${1:#:hoge} ---------# {{{
+	${0}
+	# }}}
+

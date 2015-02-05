@@ -1,0 +1,42 @@
+# ********************** _.snip ************************ #
+# create	 : 2015/01/08
+# Last change: 2015-Feb-05.
+#
+# common snippets
+# ****************************************************************** #
+
+snippet		date1
+abbr		yyyy-Mon-dd
+	`strftime("%Y-%b-%d")`
+
+snippet		date2
+abbr		yyyy/mm/dd
+	`strftime("%Y/%m/%d")`
+
+snippet		filename
+abbr		basename
+alias		fname
+options		word
+	`expand('%')`
+
+snippet		filepath-full
+abbr		full path
+alias		fpath
+options		word
+  `expand('%:p')`
+
+snippet		lastchange
+abbr		Last change: .
+	Last Change: .
+
+snippet		bar-
+abbr		--------
+	--------------------------------
+
+snippet		bar=
+abbr		========
+	================================
+
+snippet		bar*
+abbr		********
+	********************************
