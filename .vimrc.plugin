@@ -15,7 +15,7 @@ let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#enable_camel_case = 1
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " 最初の候補を自動で選択
-let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_auto_select = 0
 " 区切り自動挿入
 let g:neocomplete#enable_auto_delimiter = 1
 
