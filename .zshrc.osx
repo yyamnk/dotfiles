@@ -1,6 +1,6 @@
 #****************** .zshrc.osx *******************
 # created: 2015/02/04
-# Last Change:2015-Feb-05.
+# Last Change:2015-Feb-06.
 #************************************************************
 
 # proxy 適用
@@ -14,22 +14,20 @@ if [ -d $HOME/.rbenv ]; then
     # rehashしないように変更
 fi
 
-# for tex
-export PATH=/usr/texbin:$PATH
-# for homebrew
-export PATH=/usr/local/bin:$PATH
-
 # for matlab
 if [ -d /applications/matlab_r2014a.app ]; then
     export PATH=/applications/matlab_r2014a.app/bin:$PATH
 elif [ -d /applications/matlab_r2007b ]; then
     export PATH=/applications/matlab_r2007b/bin:$PATH
 fi
-
-
 # R2007b, OpenGL使用時にexport
 # export DYLD_LIBRARY_PATH=/System/Library/Frameworks/JavaVM.framework/Libraries
 # ただしbrew installでは悪さをする. 必要なければunset
+
+# for tex
+export PATH=/usr/texbin:$PATH
+# for homebrew
+export PATH=/usr/local/bin:$PATH
 
 # for brew-cask
 # シンボリックリンク作成先, caskroomのDirを変更
