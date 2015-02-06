@@ -27,10 +27,13 @@ echo "install ruby v2.2.0"
 rbenv install 2.2.0
 rbenv global 2.2.0
 
-echo "The installs finished"
 echo "------------------------"
 echo "The current ruby virsion is ..."
 echo "------------------------"
 rbenv versions
 
+#-------------------------------------------------------#
+# いつもの
+#-------------------------------------------------------#
+gem install gollum
 
