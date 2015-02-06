@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--Last Change: 2015-Feb-06.-->
+
+<root>
+    <item>
+      <name>Google Japanese IME</name>
+
+      <inputsourcedef>
+        <name>googleJPN</name>
+        <inputsourceid_prefix>com.google.inputmethod.Japanese.base</inputsourceid_prefix>
+      </inputsourcedef>
+
+      <item>
+        <name>cmd−Lで esc + EISUU (google日本語入力のみ)</name> <!--[[[-->
+        <identifier>private.cmdL2esc-eisuu_googleJPN</identifier>
+        <inputsource_only>googleJPN</inputsource_only>
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::COMMAND_L,
+          KeyCode::ESCAPE, KeyCode::JIS_EISUU
+        </autogen><!--]]]-->
+      </item>
+
+      <item>
+        <name>alt−Lで esc + EISUU (google日本語入力のみ)</name> <!--[[[-->
+        <identifier>private.altL2esc-eisuu_googleJPN</identifier>
+        <inputsource_only>googleJPN</inputsource_only>
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::OPTION_L,
+          KeyCode::ESCAPE, KeyCode::JIS_EISUU
+        </autogen><!--]]]-->
+      </item>
+
+      <item>
+        <name>cc (dvorak jj) で esc + esc + EISUU (google日本語入力のみ)</name> <!--[[[-->
+        <appendix>cc -> esc (未確定キャンセル) + esc (vim ノーマルモード) + EISUU</appendix>
+        <identifier>private.cc2esc-esc-eisuu_googleJPN</identifier>
+        <inputsource_only>googleJPN</inputsource_only>
+        <autogen>
+          __DoublePressModifier__
+          KeyCode::C,
+          KeyCode::C, KeyCode::ESCAPE, KeyCode::ESCAPE, KeyCode::JIS_EISUU
+        </autogen><!--]]]-->
+      </item>
+
+      <item>
+        <name>jj (dvorak hh) で esc + esc + EISUU (google日本語入力のみ)</name> <!--[[[-->
+        <appendix>jj -> esc (未確定キャンセル) + esc (vim ノーマルモード) + EISUU</appendix>
+        <identifier>private.jj2esc-esc-eisuu_googleJPN</identifier>
+        <inputsource_only>googleJPN</inputsource_only>
+        <autogen>
+          __DoublePressModifier__
+          KeyCode::J,
+          KeyCode::J, KeyCode::ESCAPE, KeyCode::ESCAPE, KeyCode::JIS_EISUU
+        </autogen><!--]]]-->
+      </item>
+
+    </item>
+</root>

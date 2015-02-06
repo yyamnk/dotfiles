@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--Last Change: 2015-Feb-07.-->
+
+<root>
+    <item>
+      <name>TotalSpace2</name>
+
+      <appdef>
+        <appname>TOTALSPACE</appname>
+        <equal>com.binaryage.TotalSpaces2</equal>
+      </appdef>
+
+      <item>
+        <name>holding s to totalspace2, for dvorak</name>
+        <identifier>private.holding_S_to_totalspace_dvorak</identifier>
+        <inputsource_only>dvorak</inputsource_only>
+        <autogen>
+        __HoldingKeyToKey__
+        KeyCode::S,
+        @begin
+        KeyCode::S,
+        @end
+        @begin
+        KeyCode::K, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L, ModifierFlag::CONTROL_L, ModifierFlag::OPTION_L
+        @end
+        </autogen>
+      </item>
+
+      <item>
+        <name>holding s to totalspace2, for qwerty</name>
+        <identifier>private.holding_S_to_totalspace</identifier>
+        <autogen>
+        __HoldingKeyToKey__
+        KeyCode::S,
+        @begin
+        KeyCode::S,
+        @end
+        @begin
+        KeyCode::T, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L, ModifierFlag::CONTROL_L, ModifierFlag::OPTION_L
+        @end
+        </autogen>
+      </item>
+
+      <item>
+        <name>hjkl (qwerty) -> left,down,up,right (totalspace only)</name>
+        <identifier>private.tatalspace_arrows</identifier>
+        <only>TOTALSPACE</only>
+        <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
+        <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
+        <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
+        <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+      </item>
+
+    </item>
+</root>

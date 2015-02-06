@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<!--Last Change: 2015-Feb-07.-->
+<!-- [[[, ]]]: 折り畳みマーカ -->
+
+<root>
+  <list>
+
+    <!-- from https://gist.github.com/Gascar-ShunT/5df1952eeddc05ec87cc -->
+    <!-- define apple US layout -->
+    <inputsourcedef>
+      <name>US</name>
+      <inputsourceid_prefix>com.apple.keylayout.US</inputsourceid_prefix>
+    </inputsourcedef>
+    <!-- define apple dvorak layout -->
+    <inputsourcedef>
+      <name>dvorak</name>
+      <inputsourceid_prefix>com.apple.keylayout.Dvorak</inputsourceid_prefix>
+    </inputsourcedef>
+
+    <!-- yyamnk settings -->
+    <item>
+      <name>My settings</name>
+      <appendix></appendix>
+
+      <include path="hhkb.xml"/>
+      <include path="modkeys_brackets.xml"/>
+
+      <item>
+        <name>replace enter with backslash</name><!--[[[-->
+        <identifier>private.replace_enter_bsla</identifier>
+        <autogen>__KeyToKey__ KeyCode::RETURN, KeyCode::BACKSLASH</autogen>
+        <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::RETURN</autogen><!--]]]-->
+      </item>
+
+      <item>
+        <name>ctrl-L to TAB</name><!--[[[-->
+        <identifier>private.ctrlL2tab</identifier>
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::CONTROL_L, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+          KeyCode::CONTROL_L,
+          KeyCode::TAB
+        </autogen>
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::CONTROL_L, ModifierFlag::CONTROL_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::CONTROL_L,
+          KeyCode::TAB | ModifierFlag::COMMAND_L
+        </autogen>
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::CONTROL_L, ModifierFlag::CONTROL_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::CONTROL_L,
+          KeyCode::TAB | ModifierFlag::SHIFT_L
+        </autogen><!--]]]-->
+      </item>
+
+      <item>
+        <name>keys to Escape</name><!--[[[-->
+
+        <item>
+          <name>esc to esc + EISUU (Terminal only)</name><!--[[[-->
+          <identifier>private.esc2esc-eisuu_terminal</identifier>
+          <only>TERMINAL</only>
+          <autogen>
+            --KeyToKey--
+            KeyCode::ESCAPE,
+            KeyCode::ESCAPE, KeyCode::JIS_EISUU
+          </autogen>
+          <!--]]]-->
+        </item>
+
+        <item>
+          <name>cmd-R + cmd-L to esc</name><!--[[[-->
+          <identifier>private.cmdR-cmdL2esc</identifier>
+          <autogen>
+            __KeyToKey__
+            KeyCode::COMMAND_L, ModifierFlag::COMMAND_R,
+            KeyCode::ESCAPE
+          </autogen><!--]]]-->
+        </item>
+
+        <item>
+          <name>cmd-R + cmd-L to esc + EISUU (Terminal only)</name><!--[[[-->
+          <identifier>private.cmdR-cmdL2esc-eisuu_terminal</identifier>
+          <autogen>
+            --KeyToKey--
+            KeyCode::COMMAND_L, ModifierFlag::COMMAND_R,
+            KeyCode::ESCAPE, KeyCode::JIS_EISUU
+          </autogen>
+          <!--]]]-->
+        </item>
+
+        <item>
+          <name>control + [ to esc</name><!--[[[-->
+          <identifier>private.ctrl-[2esc</identifier>
+          <autogen>
+            __KeyToKey__
+            KeyCode::BRACKET_LEFT, ModifierFlag::CONTROL_L,
+            KeyCode::ESCAPE
+          </autogen><!--]]]-->
+        </item>
+
+        <item>
+          <name>control + c to esc</name><!--[[[-->
+          <identifier>private.ctrl-c2esc</identifier>
+          <autogen>
+            __KeyToKey__
+            KeyCode::C, ModifierFlag::CONTROL_L,
+            KeyCode::ESCAPE
+          </autogen><!--]]]-->
+        </item>
+
+        <item>
+          <name>ctrl + ; (dvorak s) to esc</name><!--[[[-->
+          <identifier>private.ctrl-semicolon2esc</identifier>
+          <autogen>
+            __KeyToKey__
+            KeyCode::SEMICOLON, ModifierFlag::CONTROL_L,
+            KeyCode::ESCAPE
+          </autogen><!--]]]-->
+        </item>
+
+        <item>
+          <name>ctrl + ; (dvorak s) to esc + eisuu (Terminal only)</name><!--[[[-->
+          <identifier>private.ctrl-semicolon2esc-eisuu_terminal</identifier>
+          <only>TERMINAL</only>
+          <autogen>
+            --KeyToKey--
+            KeyCode::SEMICOLON, ModifierFlag::CONTROL_L,
+            KeyCode::ESCAPE, KeyCode::JIS_EISUU
+          </autogen><!--]]]-->
+        </item>
+
+      <!-- ]]] -->
+      </item>
+
+
+      <item>
+        <name>ctrl + comma (dvorak w) to word delete</name><!--[[[-->
+        <identifier>private.word_delete</identifier>
+        <not>{{EMACS_MODE_IGNORE_APPS}}</not>
+        <autogen>
+          __KeyToKey__
+          KeyCode::COMMA, ModifierFlag::CONTROL_L,
+          KeyCode::DELETE, ModifierFlag::OPTION_R
+        </autogen><!--]]]-->
+      </item>
+
+      <item>
+        <name>mouse botton4 to cmd + [</name><!--[[[-->
+        <!-- logicool mk700 mouse -->
+        <symbol_map type="KeyCode" name="b4" value="0x3" />
+        <identifier>private.mouse_b4_cmd_[</identifier>
+        <inputsource_only>dvorak</inputsource_only>
+        <autogen>
+          __KeyToKey__ PointingButton::BUTTON4, KeyCode::MINUS, ModifierFlag::COMMAND_L
+        </autogen>
+      <!--]]]-->
+      </item>
+
+      <item>
+        <name>ctrl + space to LaunchBar</name><!--[[[-->
+        <identifier>private.launchbar</identifier>
+        <!-- LaunchBar path -->
+        <vkopenurldef>
+          <name>KeyCode::VK_OPEN_URL_LAUNCHBAR</name>
+          <url type="file">/Applications/LaunchBar.app</url>
+        </vkopenurldef>
+        <autogen>
+          __KeyToKey__
+          KeyCode::SPACE, ModifierFlag::CONTROL_L,
+          KeyCode::VK_OPEN_URL_LAUNCHBAR
+        </autogen><!--]]]-->
+      </item>
+
+      <item>
+        <name>hjkl -> left,down,up,right (skim only)</name><!--[[[-->
+        <identifier>private.skim_arrows</identifier>
+        <appdef>
+          <appname>SKIM</appname>
+          <equal>net.sourceforge.skim-app.skim</equal>
+        </appdef>
+        <only>SKIM</only>
+        <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
+        <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
+        <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
+        <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen><!--]]]-->
+      </item>
+
+      <item>
+        <name>holding k (dvorak t) to shortcat</name><!--[[[-->
+        <identifier>private.holding_k_to_shortcat</identifier>
+        <autogen>
+        __HoldingKeyToKey__
+        KeyCode::K,
+        @begin
+        KeyCode::K,
+        @end
+        @begin
+        KeyCode::K,
+        KeyCode::SEMICOLON, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L, ModifierFlag::CONTROL_L, ModifierFlag::OPTION_L,
+        Option::NOREPEAT
+        @end
+        </autogen><!--]]]-->
+      </item>
+
+      <include path="dvorak.xml"/>
+      <include path="disable_close_vim.xml"/>
+      <include path="safari.xml"/>
+      <include path="google_jpn.xml"/>
+      <include path="totalspace.xml"/>
+    </item>
+
+  </list>
+</root>

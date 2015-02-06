@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--Last Change: 2015-Feb-07.-->
+
+<root>
+  <item>
+    <name>Safari</name>
+    <appendix>終了しない!</appendix>
+    <appendix>全てのタブを一斉に閉じない!</appendix>
+
+    <appdef>
+      <appname>SAFARI</appname>
+      <equal>com.apple.Safari</equal>
+    </appdef>
+
+    <item>
+      <name>disable close all (cmd-alt-w), (only Safari for qwerty)</name>
+      <identifier>private.disable_close_all_safari</identifier>
+      <only>SAFARI</only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+        KeyCode::VK_NONE
+      </autogen>
+    </item>
+
+    <item>
+      <name>disable close all (cmd-alt-w), (only Safari, dvorak)</name>
+      <identifier>private.disable_close_all_safari_dvorak</identifier>
+      <only>SAFARI</only>
+      <inputsource_only>dvorak</inputsource_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::COMMA, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+        KeyCode::VK_NONE
+      </autogen>
+    </item>
+
+    <item>
+      <name>disable quit (only Safari, for qwerty)</name>
+      <identifier>private.disable_quit_safari</identifier>
+      <inputsource_only>dvorak</inputsource_only>
+      <only>SAFARI</only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::Q, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::VK_NONE
+      </autogen>
+    </item>
+
+    <item>
+      <name>disable quit (only Safari, for dvorak)</name>
+      <identifier>private.disable_quit_safari_dvorak</identifier>
+      <inputsource_only>dvorak</inputsource_only>
+      <only>SAFARI</only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::X, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::VK_NONE
+      </autogen>
+    </item>
+
+  </item>
+</root>

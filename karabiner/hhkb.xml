@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!--Last Change: 2015-Feb-07.-->
+
+<root>
+    <item>
+      <name>replace HHKB keys</name>
+      <!-- ref https://gist.github.com/Gascar-ShunT/5df1952eeddc05ec87cc -->
+
+      <devicevendordef>
+        <vendorname>PFU</vendorname>
+        <vendorid>0x0853</vendorid>
+      </devicevendordef>
+      <deviceproductdef>
+        <productname>HHKB</productname>
+        <productid>0x0100</productid>
+      </deviceproductdef>
+
+      <item>
+        <name>replace Backslash(\) with Delete in HHKB</name>
+        <identifier>private.replace_bsla_del_hhkb</identifier>
+        <device_only>DeviceVendor::PFU, DeviceProduct::HHKB</device_only>
+        <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::DELETE</autogen>
+        <autogen>__KeyToKey__ KeyCode::DELETE, KeyCode::BACKSLASH</autogen>
+      </item>
+
+      <item>
+        <name>Backquote(`) to Delete in HHKB</name>
+        <identifier>private.backquote2del_hhkb</identifier>
+        <device_only>DeviceVendor::PFU, DeviceProduct::HHKB</device_only>
+        <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::DELETE</autogen>
+      </item>
+
+      <item>
+        <name>Backquote(`) to Escape in HHKB</name>
+        <identifier>private.backquote2esc_hhkb</identifier>
+        <device_only>DeviceVendor::PFU, DeviceProduct::HHKB</device_only>
+        <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::ESCAPE</autogen>
+      </item>
+
+      <item>
+        <name>Escape to Backquote(`) in HHKB</name>
+        <identifier>private.esc2backquote_hhkb</identifier>
+        <device_only>DeviceVendor::PFU, DeviceProduct::HHKB</device_only>
+        <autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::BACKQUOTE</autogen>
+      </item>
+
+      <item>
+        <name>replace enter with backslash in HHKB</name>
+        <identifier>private.replace_return_bsla_hhkb</identifier>
+        <device_only>DeviceVendor::PFU, DeviceProduct::HHKB</device_only>
+        <autogen>__KeyToKey__ KeyCode::RETURN, KeyCode::BACKSLASH</autogen>
+        <autogen>__KeyToKey__ KeyCode::DELETE, KeyCode::RETURN</autogen>
+      </item>
+
+      <item>
+        <name>Backquote to spotlight for HHKB</name>
+        <device_only>DeviceVendor::PFU, DeviceProduct::HHKB</device_only>
+        <identifier>private.backquote2spotlight_hhkb</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::BACKQUOTE,
+          KeyCode::RETURN, ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+
+      <item>
+        <name>Bakcslash to RETURN for HHKB</name>
+        <device_only>DeviceVendor::PFU, DeviceProduct::HHKB</device_only>
+        <identifier>private.bsla2return_hhkb</identifier>
+        <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::RETURN</autogen>
+      </item>
+
+    </item>
+</root>

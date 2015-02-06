@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!--Last Change: 2015-Feb-07.-->
+
+<root>
+  <item>
+    <name>dvorak only</name>
+
+    <item>
+      <name>replace : with ; (dvorak only)</name>
+      <identifier>private.replace_semicolon_colon_dvorak</identifier>
+      <inputsource_only>dvorak</inputsource_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::Z, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+        KeyCode::Z,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::Z,
+        KeyCode::Z, ModifierFlag::SHIFT_L,
+      </autogen>
+    </item>
+
+    <item>
+      <name>ctrl k to line delete (dvorak only)</name>
+      <identifier>private.line_delete_dvorak</identifier>
+      <not>{{EMACS_MODE_IGNORE_APPS}}</not>
+      <inputsource_only>dvorak</inputsource_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::V, ModifierFlag::CONTROL_L,
+        KeyCode::DELETE, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+
+    <item>
+      <name>ctrl-h for dvorak</name>
+      <identifier>private.ctrl-h_dvorak</identifier>
+      <appendix>Dvorak's control-H to Delete をmod</appendix>
+      <appendix>ctrl + h = delete</appendix>
+      <appendix>ctrl cmd + h = cmd + delete</appendix>
+      <appendix>ctrl [ alt, Shift] + h = [alt, Shift] + h</appendix>
+      <inputsource_only>dvorak</inputsource_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::J,
+          MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION |
+          MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND |
+          ModifierFlag::CONTROL_L,
+        KeyCode::J,
+          ModifierFlag::OPTION_L, |
+          ModifierFlag::COMMAND_L, |
+          ModifierFlag::CONTROL_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::J,
+          MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND |
+          ModifierFlag::CONTROL_L |
+          ModifierFlag::NONE,
+        KeyCode::DELETE,
+          ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::J, ModifierFlag::CONTROL_L,
+        KeyCode::DELETE
+      </autogen>
+    </item>
+
+    <item>
+      <name>disable hide, dvorak cmd-h (dvorak only)</name><!--[[[-->
+      <identifier>private.disable_hide_dvorak</identifier>
+      <appendix>mod ctrl-h 以降に書く</appendix>
+      <inputsource_only>dvorak</inputsource_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::J,
+          MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND |
+          MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION |
+          ModifierFlag::CONTROL_L,
+        KeyCode::J,
+          ModifierFlag::COMMAND_L |
+          ModifierFlag::OPTION_L |
+          ModifierFlag::CONTROL_L,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::J,
+          MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND |
+          ModifierFlag::CONTROL_L,
+        KeyCode::J,
+          ModifierFlag::COMMAND_L |
+          ModifierFlag::CONTROL_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::J,
+          MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND |
+          MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+        KeyCode::J,
+          ModifierFlag::COMMAND_L |
+          ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::VK_NONE
+      </autogen><!--]]]-->
+    </item>
+
+  </item>
+</root>
