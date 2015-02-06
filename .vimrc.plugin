@@ -163,9 +163,9 @@ let g:Tex_ShowErrorContext = 0 " prev-mode window( below the quick window )をin
 " set pasteを使用すること（neosnippetも適用されない）
 "
 " global
-inoremap <buffer><expr> , smartchr#loop(', ', ',')
-inoremap <buffer><expr> ( smartchr#loop('()<LEFT>', '(')
-inoremap <buffer><expr> [ smartchr#loop('[]<LEFT>', '[')
+" inoremap <buffer><expr> , smartchr#loop(', ', ',')
+" inoremap <buffer><expr> ( smartchr#loop('()<LEFT>', '(')
+" inoremap <buffer><expr> [ smartchr#loop('[]<LEFT>', '[')
 " inoremap <buffer><expr> # smartchr#loop('# ', '#')
 
 " for tex

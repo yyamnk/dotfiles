@@ -5,7 +5,6 @@
 # ****************************************************************** #
 snippet			comment
 abbr				<!-- -->
-options			head
 	<!-- ${1:#:hoge} -->
 	${0}
 
@@ -20,28 +19,34 @@ abbr				-->
 	-->
 	${0}
 
+snippet			fold-start
+alias				fs
+abbr				<!--[[[-->
+	<!--[[[-->
+
+snippet			fold-end
+alias				fe
+abbr				<!--]]]-->
+	<!--]]]-->
+
 snippet			item
 abbr				<item></item>
-options			head
 	<item>
 		${0}
 	</item>
 
 snippet			name
 abbr				<name></name>
-options			head
 	<name>${1}</name>
 	${0}
 
 snippet			identifier
 abbr				<identifier></identifier>
-options			head
 	<identifier>${1}</identifier>
 	${0}
 
 snippet			keytokey
 abbr				__KeyToKey__
-options			head
 	__KeyToKey__
 
 snippet			keycode
@@ -52,21 +57,22 @@ snippet			modifierflag
 abbr				ModifierFlag::
 	ModifierFlag::
 
+snippet			autogen
+abbr				<autogen></autogen>
+		<autogen>${1}</autogen>
+		${0}
+
 snippet			entry
 alias				new
 abbr				add new entry <item>...</item>
-options			head
 	<item>
-		<name>${1:#:hoge}</name>
-		<identifier>${2:#:hoge}</identifier>
-		<autogen>
-			${0}
-		</autogen>
+		<name>${1:#:hoge}</name> <!-- [[[ -->
+		${0}
+		<!-- ]]] -->
 	</item>
 
 snippet			appendix
 abbr				<appendix></appendix>
-options			head
 	<appendix>${0}</appendix>
 
 

@@ -1,4 +1,4 @@
-" Last Change:2015-Feb-03.
+" Last Change:2015-Feb-06.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -120,9 +120,13 @@ set foldmethod=marker   " markerで折りたたみ位置を決定
 " set foldmethod=indent
 set foldcolumn=2
 set foldlevel=0 " vimで開くときにどのレベルまで折りたたんで表示するか
-autocmd FileType neosnippet :set nofoldenable " snippet だけは折り畳まない
-autocmd FileType tex :set foldmarker=%{{{%,%}}}% " マーカが数式と競合するのを回避
-autocmd FileType markdown :set foldlevel=2
+autocmd FileType neosnippet set nofoldenable " snippet だけは折り畳まない
+autocmd FileType tex set foldmarker=%{{{%,%}}}% " マーカが数式と競合するのを回避
+autocmd FileType markdown set foldlevel=2
+" autocmd FileType xml :set foldmethod=syntax foldlevel=3
+" let g:xml_syntax_folding = 1
+" autocmd FileType xml set foldmethod=syntax foldlevel=4
+autocmd FileType xml set foldlevel=0 foldmarker=[[[,]]]
 " }}}
 
 " ------------------------------------------------------- "
