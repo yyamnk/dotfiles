@@ -25,7 +25,7 @@ read -p "load settings? [yn]: " is_load
 if [ "${is_load}" = 'y' ]; then
 
     # 適用
-    scripts="${HOME}/.dotfiles/karabiner/import_*.sh"
+    scripts="${HOME}/.dotfiles/karabiner/bin/import_*.sh"
     for scrip in ${scripts}
     do
         echo '======== '${scrip}' ========'

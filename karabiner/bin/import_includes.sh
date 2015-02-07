@@ -14,8 +14,6 @@ $cli set option.emacsmode_controlM 1
 /bin/echo -n .
 $cli set remap.f12_to_volumeup 1
 /bin/echo -n .
-$cli set repeat.wait 20
-/bin/echo -n .
 $cli set remap.vimnormal_jk_toggle 1
 /bin/echo -n .
 $cli set remap.simultaneouskeypresses_vimode_sd 1
@@ -28,15 +26,9 @@ $cli set remap.holdcommandQ 1
 /bin/echo -n .
 $cli set remap.move_mouse_cursor_holding_slash 1
 /bin/echo -n .
-$cli set parameter.maximum_speed_of_scroll 40
-/bin/echo -n .
 $cli set option.tabmode_w 1
 /bin/echo -n .
 $cli set remap.fkeys_to_consumer_f1 1
-/bin/echo -n .
-$cli set remap.mouse_keys_mode_2 1
-/bin/echo -n .
-$cli set parameter.maximum_speed_of_pointer 60
 /bin/echo -n .
 $cli set remap.holding_e_to_expose 1
 /bin/echo -n .
@@ -51,8 +43,6 @@ $cli set passthrough.escapetab 1
 $cli set remap.space2controlL_space 1
 /bin/echo -n .
 $cli set remap.f11_to_volumedown 1
-/bin/echo -n .
-$cli set parameter.mousekey_high_speed_of_pointer 150
 /bin/echo -n .
 $cli set remap.simultaneouskeypresses_ss_to_capslock 1
 /bin/echo -n .

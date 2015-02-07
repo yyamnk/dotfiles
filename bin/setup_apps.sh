@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Feb-06.
+# Last Change: 2015-Feb-07.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -75,6 +75,8 @@ echo "change default shell to /usr/local/bin/zsh"
 sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
 chpass -s /usr/local/bin/zsh
 
+# karabiner設定
+sh ~/.dotfiles/karabiner/bin/setup.sh
 
 echo "qlColorCode setting ..."
 # utf8表示
@@ -90,3 +92,5 @@ echo "qlColorCode setting ...Done"
 # Rictyフォント
 # http://blog.sotm.jp/2014/01/10/Installing-SublimeText3-iTerm2-Ricty-on-MacOSX-109/
 curl -L 'https://gist.github.com/ysaotome/7286145/raw/installing_ricty_on_MacOSX.sh' | bash
+
+

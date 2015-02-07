@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-Feb-07.-->
+<!--Last Change: 2015-Feb-08.-->
 
 <root>
   <item>
@@ -26,7 +26,7 @@
 
     <item>
       <name>for qwerty</name>
-      <identifier>private.disable_close__vim</identifier>
+      <identifier>private.disable_close_vim</identifier>
       <windowname_only>vim_window</windowname_only>
       <only>TERMINAL</only>
       <autogen>

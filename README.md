@@ -1,6 +1,6 @@
 #dotfiles Setup
 
-##Clone dotfiles and alias
+##Clone dotfiles and put symbolic link
 
 ```
 # if proxy
@@ -23,3 +23,5 @@ open -a Safari https://github.com/settings/ssh
 git remote remove origin
 git remote add origin ssh://git@github.com/yyamnk/dotfiles.git
 ```
+
+##Karabiner setup

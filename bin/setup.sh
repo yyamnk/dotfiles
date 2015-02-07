@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #****************** setup.sh *******************
 # created: 2015-Feb-05
-# Last Change:2015-Feb-06.
+# Last Change:2015-Feb-07.
 #------------------------------------------------------------
 # githubからdotfilesを~/.dotfiles/へclone
 # ~.dotfiles/.* のシンボリックリンクをhomeに作成
@@ -32,3 +32,10 @@ source $HOME/.zshrc
 # neobundle install
 echo 'Installing neobundle.vim ...'
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+
+
+# brewでappを導入
+read -p "Do you want setup apps by brew? [yn]: " is_inst
+if [ "${is_inst}" = 'y' ]; then
+    bash $HOME/.dotfiles/bin/setup_apps.sh
+fi
