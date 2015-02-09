@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** karabiner/setup.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Feb-07.
+# Last Change: 2015-Feb-09.
 #------------------------------------------------------------
 # make symbolic links to ~/Library/Application\ Support/Karabiner/
 #************************************************************
@@ -9,7 +9,7 @@
 # check karabiner
 KARABINER_DIR=$HOME'/Library/Application Support/Karabiner'
 
-[ ! -e "${KARABINER_DIR}" ] && echo 'Karabiner is not found' && exit 1
+[ ! -e "${KARABINER_DIR}" ] && mkdir $KARABINER_DIR
 
 # symbolic links
 configs="${HOME}/.dotfiles/karabiner/*.xml"
