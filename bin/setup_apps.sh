@@ -24,12 +24,15 @@ brew install xpdf
 # ------------------------------------------------------- #
 # cask install for GUI application
 # ------------------------------------------------------- #
-brew cask install adobe-reader-jp
+brew cask install 1password
+brew cask install adobe-reader-ja
 brew cask install appcleaner
 brew cask install ccleaner
 brew cask install clamxav
 brew cask install controlplane
+brew cask install copy
 brew cask install coteditor
+brew cask install dropbox
 brew cask install evernote
 brew cask install gitX
 brew cask install google-chrome
@@ -45,6 +48,7 @@ brew cask install menumeters
 brew cask install monolingual
 brew cask install nosleep
 brew cask install pandoc
+brew cask install parallels9
 brew cask install shortcat
 brew cask install slate
 brew cask install the-unarchiver
@@ -79,11 +83,16 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 qlmanage -r
 echo "qlColorCode setting ...Done"
 
-# Rictyフォント
-# http://blog.sotm.jp/2014/01/10/Installing-SublimeText3-iTerm2-Ricty-on-MacOSX-109/
-curl -L 'https://gist.github.com/ysaotome/7286145/raw/installing_ricty_on_MacOSX.sh' | bash
-
-
 # Safari,
 # delete で history back
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool yes
+
+
+echo -n "Install Ricty font? [yn]: "
+read is_inst
+if [ "${is_inst}" = 'y' ]; then
+    # Rictyフォント
+    # http://blog.sotm.jp/2014/01/10/Installing-SublimeText3-iTerm2-Ricty-on-MacOSX-109/
+    curl -L 'https://gist.github.com/ysaotome/7286145/raw/installing_ricty_on_MacOSX.sh' | bash
+fi
+

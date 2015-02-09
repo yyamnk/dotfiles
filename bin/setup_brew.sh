@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** setup_brew.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Feb-06.
+# Last Change: 2015-Feb-09.
 #************************************************************
 
 # brew install
@@ -16,6 +16,5 @@ brew upgrade
 
 # add repositories
 brew tap caskroom/homebrew-cask
-# for totalspaces2
-brew tap vexus2/homebrew-cask
 brew tap caskroom/versions
+brew tap homebrew/x11
