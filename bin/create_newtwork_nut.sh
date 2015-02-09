@@ -35,6 +35,9 @@ setup()
 }
 
 
+#-------------------------------------------------------#
+# main
+#-------------------------------------------------------#
 # location
 location=nut
 sudo networksetup -createlocation $location

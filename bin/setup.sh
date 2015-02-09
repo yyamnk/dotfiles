@@ -41,15 +41,19 @@ brew install zsh
 brew install vim --with-lua --with-python3 --override-system-vi
 
 # /usr/local/bin/zsh を使う
-echo "change default shell to /usr/local/bin/zsh"
-sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
-chpass -s /usr/local/bin/zsh
+brewzsh=/usr/local/bin/zsh
+if [ ! `tail -n 1 /etc/shells` = $brewzsh ]; then
+    echo "change default shell to $brewzsh"
+    sudo sh -c "echo $brewzsh >> /etc/shells"
+    chpass -s $brewzsh
+fi
 
 
 # network location作成
 echo "create network location"
 bash $dotfiles/bin/create_newtwork_nut.sh
-# osxのnetwork location設定
+
+# change network location
 [ "${HTTPS_PROXY}" = 'http://proxy.nagaokaut.ac.jp:8080/' ] && sudo networksetup -switchtolocation nut || sudo networksetup -switchtolocation Automatic
 
 
