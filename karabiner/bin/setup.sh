@@ -16,7 +16,7 @@ configs="${HOME}/.dotfiles/karabiner/*.xml"
 for conf in ${configs}
 do
     echo 'symbolic link '$conf
-    ln -sf $conf "${KARABINER_DIR}"
+    ln -sf $conf "${KARABINER_DIR}/"
 done
 
 
