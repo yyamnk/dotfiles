@@ -55,10 +55,11 @@ bash $dotfiles/bin/create_newtwork_nut.sh
 
 # change network location
 [ "${HTTPS_PROXY}" = 'http://proxy.nagaokaut.ac.jp:8080/' ] && sudo networksetup -switchtolocation nut || sudo networksetup -switchtolocation Automatic
-
+echo ''
 
 #appを導入
-read -p "Do you want setup apps by brew? [yn]: " is_inst
+echo -n "Do you want setup apps by brew? [yn]: "
+read is_inst
 if [ "${is_inst}" = 'y' ]; then
     zsh $dotfiles/bin/setup_apps.sh
 fi

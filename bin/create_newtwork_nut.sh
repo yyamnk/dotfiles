@@ -11,7 +11,8 @@ get_services()
 {
     services=''
     networksetup -listallhardwareports | grep 'Hardware Port: Wi-Fi' > /dev/null
-    [ "$?" -eq 0 ] && services='Wi-Fi' ||
+    [ "$?" -eq 0 ] && services='Wi-Fi'
+
     networksetup -listallhardwareports | grep 'Hardware Port: Ethernet' > /dev/null
     [ "$?" -eq 0 ] && services=$services' Ethernet'
 }
