@@ -17,9 +17,8 @@ export use_proxy=yes
 
 echo "NUT proxy enable"
 
-if [ -e ~/.wgetrc ]; then
-    echo "wgetrc exist"
-else
-    ln -sf ~/Dropbox/dotfiles/.wgetrc ~/.wgetrc
-    echo "linked wgetrc"
-fi
+ln -sf $HOME/.dotfiles/.wgetrc $HOME/.wgetrc
+echo "linked wgetrc"
+
+ln -sf $HOME/.dotfiles/.curlrc $HOME/.curlrc
+echo "linked curlrc"

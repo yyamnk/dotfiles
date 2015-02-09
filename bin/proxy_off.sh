@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** proxy_off.sh *******************
 # created: 2014/11/08
-# Last Change:2015-Feb-03.
+# Last Change:2015-Feb-09.
 #
 # --- abst ---
 # nut proxy off
@@ -19,3 +19,4 @@ echo "NUT proxy disable"
 
 # check file exist -e
 [ -e ~/.wgetrc ] && unlink ~/.wgetrc && echo "wgetrc is deleted"
+[ -e ~/.curlrc ] && unlink ~/.curlrc && echo "curlrc is deleted"
