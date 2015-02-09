@@ -1,10 +1,13 @@
 #!/usr/bin/env sh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Feb-07.
+# Last Change: 2015-Feb-09.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
+
+echo "brew setup"
+bash $HOME/.dotfiles/bin/setup_brew.sh
 
 echo "basic apps install by brew ..."
 
@@ -76,7 +79,7 @@ sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
 chpass -s /usr/local/bin/zsh
 
 # karabiner設定
-sh ~/.dotfiles/karabiner/bin/setup.sh
+sh $HOME/.dotfiles/karabiner/bin/setup.sh
 
 echo "qlColorCode setting ..."
 # utf8表示
@@ -94,3 +97,6 @@ echo "qlColorCode setting ...Done"
 curl -L 'https://gist.github.com/ysaotome/7286145/raw/installing_ricty_on_MacOSX.sh' | bash
 
 
+# Safari,
+# delete で history back
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool yes
