@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** proxy_on.sh *******************
 # created: 2014/11/07
-# Last Change:2015-Feb-03.
+# Last Change:2015-Feb-09.
 #
 # --- abst ---
 # nut proxyをonにする.
@@ -20,6 +20,6 @@ echo "NUT proxy enable"
 if [ -e ~/.wgetrc ]; then
     echo "wgetrc exist"
 else
-    ln -s ~/Dropbox/dotfiles/.wgetrc ~/.wgetrc
+    ln -sf ~/Dropbox/dotfiles/.wgetrc ~/.wgetrc
     echo "linked wgetrc"
 fi

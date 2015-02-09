@@ -29,11 +29,13 @@ fi
     bash $dotfiles/bin/link_dots.sh
 
 # neobundle install
-echo 'Installing neobundle.vim ...'
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+if [ ! -d $HOME/.vim/bundle ]; then
+    echo 'Installing neobundle.vim ...'
+    curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+fi
 
 # brew + git, zsh, vim導入
-bash setup_brew.sh
+bash $dotfiles/bin/setup_brew.sh
 brew install git
 brew install zsh
 brew install vim --with-lua --with-python3 --override-system-vi
@@ -43,8 +45,16 @@ echo "change default shell to /usr/local/bin/zsh"
 sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
 chpass -s /usr/local/bin/zsh
 
+
+# network location作成
+echo "create network location"
+bash $dotfiles/bin/create_newtwork_nut.sh
+# osxのnetwork location設定
+[ "${HTTPS_PROXY}" = 'http://proxy.nagaokaut.ac.jp:8080/' ] && sudo networksetup -switchtolocation nut || sudo networksetup -switchtolocation Automatic
+
+
 #appを導入
 read -p "Do you want setup apps by brew? [yn]: " is_inst
 if [ "${is_inst}" = 'y' ]; then
-    zsh $HOME/.dotfiles/bin/setup_apps.sh
+    zsh $dotfiles/bin/setup_apps.sh
 fi
