@@ -3,6 +3,7 @@
 # created: 2015-Feb-05
 # Last Change:2015-Feb-09.
 #------------------------------------------------------------
+# 最低限の環境を整える
 # githubからdotfilesを~/.dotfiles/へclone
 # ~.dotfiles/.* のシンボリックリンクをhomeに作成
 #************************************************************
@@ -31,8 +32,19 @@ fi
 echo 'Installing neobundle.vim ...'
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
-# brewでappを導入
+# brew + git, zsh, vim導入
+bash setup_brew.sh
+brew install git
+brew install zsh
+brew install vim --with-lua --with-python3 --override-system-vi
+
+# /usr/local/bin/zsh を使う
+echo "change default shell to /usr/local/bin/zsh"
+sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
+chpass -s /usr/local/bin/zsh
+
+#appを導入
 read -p "Do you want setup apps by brew? [yn]: " is_inst
 if [ "${is_inst}" = 'y' ]; then
-    bash $HOME/.dotfiles/bin/setup_apps.sh
+    zsh $HOME/.dotfiles/bin/setup_apps.sh
 fi

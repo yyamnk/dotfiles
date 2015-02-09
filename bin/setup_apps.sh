@@ -1,21 +1,16 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
 # Last Change: 2015-Feb-09.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
-
-echo "brew setup"
-bash $HOME/.dotfiles/bin/setup_brew.sh
-
 echo "basic apps install by brew ..."
 
 # brew package install
 brew install brew-cask
 brew install ctags
 brew install gibo
-brew install git
 brew install hardlink
 brew install libdvdcss # for handbrak, library
 brew install lua
@@ -24,9 +19,7 @@ brew install rmtrash # command for move trash
 brew install the_silver_searcher
 brew install tmux
 brew install tree
-brew install vim --with-lua --with-python3 --override-system-vi
 brew install xpdf
-brew install zsh
 
 # ------------------------------------------------------- #
 # cask install for GUI application
@@ -71,12 +64,6 @@ brew cask install quicklook-csv
 # 不要ファイル削除
 brew cleanup
 brew cask cleanup
-
-
-# /usr/local/bin/zsh を使う
-echo "change default shell to /usr/local/bin/zsh"
-sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
-chpass -s /usr/local/bin/zsh
 
 # karabiner設定
 sh $HOME/.dotfiles/karabiner/bin/setup.sh
