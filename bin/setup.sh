@@ -78,6 +78,14 @@ if [ "$?" = 1 ]; then
     echo ''
 fi
 
+#-------------------------------------------------------#
+# write defaults
+#-------------------------------------------------------#
+echo -n "Write defaults? [yn]: "
+read is_inst
+if [ "${is_inst}" = 'y' ]; then
+    sh $HOME/.dotfiles/bin/
+fi
 
 #-------------------------------------------------------#
 # install apps by brew
@@ -101,17 +109,8 @@ fi
 # Ricty Font
 # http://blog.sotm.jp/2014/01/10/Installing-SublimeText3-iTerm2-Ricty-on-MacOSX-109/
 #-------------------------------------------------------#
-echo -n "Install Ricty font? [yn]: "
-read is_inst
-if [ "${is_inst}" = 'y' ]; then
-    curl -L 'https://gist.github.com/ysaotome/7286145/raw/installing_ricty_on_MacOSX.sh' | bash
+ls -l $HOME/Library/Fonts | grep "Ricty*.ttf" > /dev/null
+if [ "$?" = 1 ]; then
+    brew install ricty
 fi
 
-#-------------------------------------------------------#
-# write defaults
-#-------------------------------------------------------#
-echo -n "Write defaults? [yn]: "
-read is_inst
-if [ "${is_inst}" = 'y' ]; then
-    sh $HOME/.dotfiles/bin/
-fi
