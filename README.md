@@ -23,6 +23,7 @@ curl -sL https://raw.githubusercontent.com/yyamnk/dotfiles/master/bin/setup.sh |
 7. karabiner設定
 8. Rictyフォント インストール 
 [Ref.](http://blog.sotm.jp/2014/01/10/Installing-SublimeText3-iTerm2-Ricty-on-MacOSX-109/)
+9. いつもの`default write`を実行
 
 
 ##Manual settings

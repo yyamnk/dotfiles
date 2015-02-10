@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Feb-09.
+# Last Change: 2015-Feb-10.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -69,9 +69,6 @@ brew cask install quicklook-csv
 brew cleanup
 brew cask cleanup
 
-# karabiner設定
-sh $HOME/.dotfiles/karabiner/bin/setup.sh
-
 echo "qlColorCode setting ..."
 # utf8表示
 defaults write org.n8gray.QLColorCode textEncoding UTF-8
@@ -82,17 +79,3 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 # qlプラグイン 再読み込み
 qlmanage -r
 echo "qlColorCode setting ...Done"
-
-# Safari,
-# delete で history back
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool yes
-
-
-echo -n "Install Ricty font? [yn]: "
-read is_inst
-if [ "${is_inst}" = 'y' ]; then
-    # Rictyフォント
-    # http://blog.sotm.jp/2014/01/10/Installing-SublimeText3-iTerm2-Ricty-on-MacOSX-109/
-    curl -L 'https://gist.github.com/ysaotome/7286145/raw/installing_ricty_on_MacOSX.sh' | bash
-fi
-
