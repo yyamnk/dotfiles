@@ -16,6 +16,7 @@ brew install hardlink
 brew install libdvdcss # for handbrak, library
 brew install lua
 brew install nkf
+brew install peco
 brew install rmtrash # command for move trash
 brew install the_silver_searcher
 brew install tmux

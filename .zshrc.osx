@@ -1,6 +1,6 @@
 #****************** .zshrc.osx *******************
 # created: 2015/02/04
-# Last Change:2015-Feb-06.
+# Last Change:2015-Feb-10.
 #************************************************************
 
 # proxy 適用
@@ -35,3 +35,43 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom
 
 # secret key base
 [ -f ~/.secret.nutfes14 ] && source ~/.secret.nutfes14
+
+#-------------------------------------------------------#
+# peco dfind
+#-------------------------------------------------------# {{{
+# http://qiita.com/ymorired/items/4b0d8e95786efc1378b4
+function peco-dfind() {
+    local current_buffer=$BUFFER
+    # .git系など不可視フォルダは除外
+    local selected_dir="$(find . -maxdepth 5 -type d ! -path "*/.*"| peco)"
+    if [ -d "$selected_dir" ]; then
+        BUFFER="${current_buffer} \"${selected_dir}\""
+        CURSOR=$#BUFFER
+        # ↓決定時にそのまま実行するなら
+        #zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-dfind
+bindkey '^j' peco-dfind
+# }}}
+
+#-------------------------------------------------------#
+# peco-select-history
+# http://qiita.com/wada811/items/78b14181a4de0fd5b497
+#-------------------------------------------------------# {{{
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(history -n 1 | eval $tac | awk '!a[$0]++' | peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    # zle clear-screen
+}
+zle -N peco-select-history
+# 履歴からコマンド選択
+bindkey '^r' peco-select-history
+# }}}

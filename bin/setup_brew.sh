@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** setup_brew.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Feb-09.
+# Last Change: 2015-Feb-10.
 #************************************************************
 
 # brew install
@@ -18,3 +18,4 @@ brew upgrade
 brew tap caskroom/homebrew-cask
 brew tap caskroom/versions
 brew tap homebrew/x11
+brew tap peco/peco
