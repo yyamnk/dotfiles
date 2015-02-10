@@ -37,12 +37,12 @@ if [ ! -d $HOME/.vim/bundle ]; then
 fi
 
 #-------------------------------------------------------#
-# install brew, git, zsh, vim
+# install brew, zsh
 #-------------------------------------------------------#
-bash $dotfiles/bin/setup_brew.sh
-brew install git
-brew install zsh
-brew install vim --with-lua --with-python3 --override-system-vi
+if ! type brew > /dev/null 2>&1; then
+    bash $dotfiles/bin/setup_brew.sh
+    brew install zsh
+fi
 
 #-------------------------------------------------------#
 # change login shell
@@ -55,6 +55,13 @@ if [ ! `tail -n 1 /etc/shells` = $brewzsh ]; then
     chpass -s $brewzsh
 fi
 
+#-------------------------------------------------------#
+# setup git
+#-------------------------------------------------------#
+if [ "`which git`" = '/usr/bin/git' ]; then
+    brew install git
+    bash $dotfiles/setup_git.sh
+fi
 
 #-------------------------------------------------------#
 # create network location (nut) if no exist,

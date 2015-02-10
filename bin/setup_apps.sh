@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Feb-10.
+# Last Change: 2015-Feb-11.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -12,6 +12,7 @@ brew install brew-cask
 brew install coreutils
 brew install ctags
 brew install gibo
+brew install git
 brew install hardlink
 brew install libdvdcss # for handbrak, library
 brew install lua
@@ -21,7 +22,9 @@ brew install rmtrash # command for move trash
 brew install the_silver_searcher
 brew install tmux
 brew install tree
+brew install vim --with-lua --with-python3 --override-system-vi
 brew install xpdf
+brew install zsh
 
 # ------------------------------------------------------- #
 # cask install for GUI application
