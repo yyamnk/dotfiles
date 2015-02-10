@@ -45,9 +45,8 @@ if ! type brew > /dev/null 2>&1; then
 fi
 
 #-------------------------------------------------------#
-# change login shell
+# change login shell, /usr/local/bin/zsh を使う
 #-------------------------------------------------------#
-# /usr/local/bin/zsh を使う
 brewzsh=/usr/local/bin/zsh
 if [ ! `tail -n 1 /etc/shells` = $brewzsh ]; then
     echo "change default shell to $brewzsh"
@@ -80,12 +79,10 @@ fi
 
 #-------------------------------------------------------#
 # write defaults
+# デフォルト: 不可視ファイルは見えない( 0 )
 #-------------------------------------------------------#
-echo -n "Write defaults? [yn]: "
-read is_inst
-if [ "${is_inst}" = 'y' ]; then
-    sh $HOME/.dotfiles/bin/
-fi
+[ `defaults read com.apple.finder AppleShowAllFiles` = 0 ] && \
+    sh $HOME/.dotfiles/bin/write_defaults.sh
 
 #-------------------------------------------------------#
 # install apps by brew
@@ -99,15 +96,13 @@ fi
 #-------------------------------------------------------#
 # karabiner
 #-------------------------------------------------------#
-echo -n "setup karabiner? [yn]: "
-read is_inst
-if [ "${is_inst}" = 'y' ]; then
+ls -l $HOME/Library/Application\ Support | grep Karabiner > /dev/null
+if [ "$?" = 1 ]; then
     sh $HOME/.dotfiles/karabiner/bin/setup.sh
 fi
 
 #-------------------------------------------------------#
 # Ricty Font
-# http://blog.sotm.jp/2014/01/10/Installing-SublimeText3-iTerm2-Ricty-on-MacOSX-109/
 #-------------------------------------------------------#
 ls -l $HOME/Library/Fonts | grep "Ricty*.ttf" > /dev/null
 if [ "$?" = 1 ]; then
