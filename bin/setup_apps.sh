@@ -9,6 +9,7 @@ echo "basic apps install by brew ..."
 
 # brew package install
 brew install brew-cask
+brew install coreutils
 brew install ctags
 brew install gibo
 brew install hardlink
