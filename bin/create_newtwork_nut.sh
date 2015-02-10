@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/create_newtwork_nut.sh *******************
 # created: 2015-Feb-09
-# Last Change: 2015-Feb-09.
+# Last Change: 2015-Feb-11.
 #------------------------------------------------------------
 # create osx network location for nut
 #************************************************************
@@ -36,11 +36,8 @@ setup()
 }
 
 
-#-------------------------------------------------------#
-# main
-#-------------------------------------------------------#
-# location
 location=nut
+echo "networksetup -createlocation $location"
 sudo networksetup -createlocation $location
 sudo networksetup -switchtolocation $location
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #****************** setup.sh *******************
 # created: 2015-Feb-05
-# Last Change:2015-Feb-10.
+# Last Change:2015-Feb-11.
 #------------------------------------------------------------
 # 最低限の環境を整える
 # githubからdotfilesを~/.dotfiles/へclone
@@ -57,20 +57,25 @@ fi
 
 
 #-------------------------------------------------------#
-# create network location and apply it if necessary
+# create network location (nut) if no exist,
+# and switch to it if HTTPS_PROXY is enable
 #-------------------------------------------------------#
-# create
-echo "create network location"
-bash $dotfiles/bin/create_newtwork_nut.sh
+networksetup -listlocations | grep nut > /dev/null
+if [ "$?" = 1 ]; then
+    # create
+    bash $dotfiles/bin/create_newtwork_nut.sh
+    # change network location
+    [ "${HTTPS_PROXY}" = 'http://proxy.nagaokaut.ac.jp:8080/' ] && \
+        sudo networksetup -switchtolocation nut || \
+        sudo networksetup -switchtolocation Automatic
+    echo ''
+fi
 
-# change network location
-[ "${HTTPS_PROXY}" = 'http://proxy.nagaokaut.ac.jp:8080/' ] && sudo networksetup -switchtolocation nut || sudo networksetup -switchtolocation Automatic
-echo ''
 
 #-------------------------------------------------------#
 # install apps by brew
 #-------------------------------------------------------#
-echo -n "Do you want install apps by brew? [yn]: "
+echo -n "Install apps by brew? [yn]: "
 read is_inst
 if [ "${is_inst}" = 'y' ]; then
     zsh $dotfiles/bin/setup_apps.sh
@@ -79,7 +84,11 @@ fi
 #-------------------------------------------------------#
 # karabiner
 #-------------------------------------------------------#
-sh $HOME/.dotfiles/karabiner/bin/setup.sh
+echo -n "setup karabiner? [yn]: "
+read is_inst
+if [ "${is_inst}" = 'y' ]; then
+    sh $HOME/.dotfiles/karabiner/bin/setup.sh
+fi
 
 #-------------------------------------------------------#
 # Ricty Font
