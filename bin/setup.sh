@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #****************** setup.sh *******************
 # created: 2015-Feb-05
-# Last Change:2015-Feb-09.
+# Last Change:2015-Feb-10.
 #------------------------------------------------------------
 # 最低限の環境を整える
 # githubからdotfilesを~/.dotfiles/へclone
@@ -12,8 +12,10 @@
 set -e
 set -u
 
+#-------------------------------------------------------#
+# for dotfiles
+#-------------------------------------------------------#
 dotfiles=$HOME/.dotfiles
-
 # pull or clone
 if [ -d $dotfiles ]; then
     echo 'pull repo ...'
@@ -34,12 +36,17 @@ if [ ! -d $HOME/.vim/bundle ]; then
     curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 fi
 
-# brew + git, zsh, vim導入
+#-------------------------------------------------------#
+# install brew, git, zsh, vim
+#-------------------------------------------------------#
 bash $dotfiles/bin/setup_brew.sh
 brew install git
 brew install zsh
 brew install vim --with-lua --with-python3 --override-system-vi
 
+#-------------------------------------------------------#
+# change login shell
+#-------------------------------------------------------#
 # /usr/local/bin/zsh を使う
 brewzsh=/usr/local/bin/zsh
 if [ ! `tail -n 1 /etc/shells` = $brewzsh ]; then
@@ -49,17 +56,42 @@ if [ ! `tail -n 1 /etc/shells` = $brewzsh ]; then
 fi
 
 
-# network location作成
+#-------------------------------------------------------#
+# create network location and apply it if necessary
+#-------------------------------------------------------#
+# create
 echo "create network location"
 bash $dotfiles/bin/create_newtwork_nut.sh
 
 # change network location
-[ "${HTTPS_PROXY}" = 'http://proxy.nagaokaut.ac.jp:8080/' ] && sudo networksetup -switchtolocation nut || sudo networksetup -switchtolocation Automatic
+if [ "${HTTPS_PROXY}" = 'http://proxy.nagaokaut.ac.jp:8080/' ]; then
+    sudo networksetup -switchtolocation nut
+else
+    sudo networksetup -switchtolocation Automatic
+fi
 echo ''
 
-#appを導入
-echo -n "Do you want setup apps by brew? [yn]: "
+#-------------------------------------------------------#
+# install apps by brew
+#-------------------------------------------------------#
+echo -n "install apps by brew? [yn]: "
 read is_inst
 if [ "${is_inst}" = 'y' ]; then
     zsh $dotfiles/bin/setup_apps.sh
 fi
+
+#-------------------------------------------------------#
+# karabiner
+#-------------------------------------------------------#
+sh $HOME/.dotfiles/karabiner/bin/setup.sh
+
+#-------------------------------------------------------#
+# Ricty Font
+# http://blog.sotm.jp/2014/01/10/Installing-SublimeText3-iTerm2-Ricty-on-MacOSX-109/
+#-------------------------------------------------------#
+echo -n "install Ricty font? [yn]: "
+read is_inst
+if [ "${is_inst}" = 'y' ]; then
+    curl -L 'https://gist.github.com/ysaotome/7286145/raw/installing_ricty_on_MacOSX.sh' | bash
+fi
+
