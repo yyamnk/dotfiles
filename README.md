@@ -60,3 +60,13 @@ sudo scutil --set HostName fuga
 ```
 curl -sL https://raw.githubusercontent.com/yyamnk/dotfiles/master/bin/setup_basictex.sh | zsh
 ```
+
+
+###Ruby
+
+ruby 2.2.0, gollum
+
+```
+curl -sL https://raw.githubusercontent.com/yyamnk/dotfiles/master/bin/setup_ruby.sh | zsh
+```
+
