@@ -15,15 +15,15 @@ curl -sL https://raw.githubusercontent.com/yyamnk/dotfiles/master/bin/setup.sh |
 
 1. `~/.dotfiles/`へクローンして, 各設定ファイル`~/.hoge`のシンボリックリンクを貼る
 [Ref.](http://orgachem.hatenablog.com/entry/2014/05/13/001100)
-2. brew 導入
-3. brew cask install git, zsh, vim
-4. ログインシェルを`/usr/local/bin/zsh`へ変更
-5. proxy環境用 newtwork location を作成
-6. brew, brew caskでアプリをインストール
-7. karabiner設定
-8. Rictyフォント インストール 
+1. brew 導入
+1. brew cask install git, zsh, vim
+1. ログインシェルを`/usr/local/bin/zsh`へ変更
+1. proxy環境用 newtwork location を作成
+1. いつもの`default write`を実行
+1. brew, brew caskでアプリをインストール
+1. karabiner設定
+1. Rictyフォント インストール 
 [Ref.](http://blog.sotm.jp/2014/01/10/Installing-SublimeText3-iTerm2-Ricty-on-MacOSX-109/)
-9. いつもの`default write`を実行
 
 
 ##Manual settings

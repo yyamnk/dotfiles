@@ -47,7 +47,8 @@ if ! type brew > /dev/null 2>&1; then
 fi
 
 #-------------------------------------------------------#
-# change login shell, /usr/local/bin/zsh を使う
+# change login shell,
+# ログインシェルが/usr/local/bin/zshでないとき, /etc/shellsに追加
 #-------------------------------------------------------#
 brewzsh=/usr/local/bin/zsh
 if [ ! `tail -n 1 /etc/shells` = $brewzsh ]; then
