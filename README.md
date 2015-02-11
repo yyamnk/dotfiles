@@ -4,6 +4,8 @@
 
 ##Auto settings
 
+以下をコピペして基本環境を整える.
+
 ```
 # if proxy
 export HTTPS_PROXY=http://proxy.nagaokaut.ac.jp:8080/
@@ -28,6 +30,8 @@ curl -sL https://raw.githubusercontent.com/yyamnk/dotfiles/master/bin/setup.sh |
 
 ##Manual settings
 
+必要に応じてセットアップする
+
 ###Change remote repository using https to using ssh
 
 ```
@@ -49,4 +53,10 @@ sudo scutil --set HostName fuga
 ```
 # /etc/hosts
 127.0.0.1   localhost fuga
+```
+
+###Tex
+
+```
+curl -sL https://raw.githubusercontent.com/yyamnk/dotfiles/master/bin/setup_basictex.sh | zsh
 ```
