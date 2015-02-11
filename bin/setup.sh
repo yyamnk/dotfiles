@@ -23,6 +23,8 @@ if [ -d $dotfiles ]; then
 else
     echo 'cloe repo ...'
     git clone https://github.com/yyamnk/dotfiles $dotfiles
+    # デフォルトの参照先を決める
+    git branch --set-upstream-to=origin/master master
 fi
 
 # symbolic link
