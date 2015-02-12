@@ -1,4 +1,4 @@
-# Last Change: 2015-Feb-04.
+# Last Change: 2015-Feb-12.
 
 #-------------------------------------------------------#
 # General Settings
@@ -66,10 +66,8 @@ setopt auto_pushd                                  # cd -[tab]で過去の移動
 setopt pushd_ignore_dups                           # 重複した移動履歴を保存しない
 # コマンド履歴検索
 autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end # 入力中の文字列から検索
-bindkey "^N" history-beginning-search-forward-end  # 入力中の文字列から検索
+bindkey '^P' history-beginning-search-backward # 入力中の文字列から検索
+bindkey '^N' history-beginning-search-forward  # 入力中の文字列から検索
 # }}}
 
 #-------------------------------------------------------#
