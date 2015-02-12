@@ -55,6 +55,11 @@ sudo scutil --set HostName fuga
 127.0.0.1   localhost fuga
 ```
 
+###Keyboard Shortcuts
+
+* Launchpad&Dock > Turo Dock Hiding On/OFF: disable
+* Mission Control > Mission Control: disable
+
 ###Tex
 
 ```
