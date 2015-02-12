@@ -65,7 +65,6 @@ setopt share_history                               # 端末間の履歴を共有
 setopt auto_pushd                                  # cd -[tab]で過去の移動履歴から補完
 setopt pushd_ignore_dups                           # 重複した移動履歴を保存しない
 # コマンド履歴検索
-autoload history-search-end
 bindkey '^P' history-beginning-search-backward # 入力中の文字列から検索
 bindkey '^N' history-beginning-search-forward  # 入力中の文字列から検索
 # }}}
