@@ -57,8 +57,11 @@ sudo scutil --set HostName fuga
 
 ###Keyboard Shortcuts
 
-* Launchpad&Dock > Turo Dock Hiding On/OFF: disable
-* Mission Control > Mission Control: disable
+* System Preference
+    * Launchpad&Dock > Turo Dock Hiding On/OFF: disable
+    * Mission Control > Mission Control: disable
+* 1Password
+    * Gereral > Show 1Password mini : `alt-cmd-p`
 
 ###Tex
 
@@ -74,4 +77,3 @@ ruby 2.2.0, gollum
 ```
 curl -sL https://raw.githubusercontent.com/yyamnk/dotfiles/master/bin/setup_ruby.sh | zsh
 ```
-
