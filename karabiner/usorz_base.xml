@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<root>
+
+    <item>
+        <name>＜ローマ字モード＞ 左シフト＝スペース, 右シフト＝右コマンド</name>
+        <identifier>remap.usorz_space_command_r</identifier>
+
+        <include path="usorz_main.xml">
+            <replacementdef>
+                <replacementname>LEFT_THUMB</replacementname>
+                <replacementvalue>KeyCode::SPACE</replacementvalue>
+            </replacementdef>
+            <replacementdef>
+                <replacementname>RIGHT_THUMB</replacementname>
+                <replacementvalue>KeyCode::COMMAND_R</replacementvalue>
+            </replacementdef>
+        </include>
+    </item>
+
+    <item>
+        <name>＜ローマ字モード＞ 左シフト＝左コマンド, 右シフト＝スペース</name>
+        <identifier>remap.usorz_command_l_space</identifier>
+
+        <include path="usorz_main.xml">
+            <replacementdef>
+                <replacementname>LEFT_THUMB</replacementname>
+                <replacementvalue>KeyCode::COMMAND_L</replacementvalue>
+            </replacementdef>
+            <replacementdef>
+                <replacementname>RIGHT_THUMB</replacementname>
+                <replacementvalue>KeyCode::SPACE</replacementvalue>
+            </replacementdef>
+        </include>
+    </item>
+
+    <item>
+        <name>＜ローマ字モード＞ 左シフト＝左コマンド, 右シフト＝右コマンド</name>
+        <identifier>remap.usorz_command_l_command_r</identifier>
+
+        <include path="usorz_main.xml">
+            <replacementdef>
+                <replacementname>LEFT_THUMB</replacementname>
+                <replacementvalue>KeyCode::COMMAND_L</replacementvalue>
+            </replacementdef>
+            <replacementdef>
+                <replacementname>RIGHT_THUMB</replacementname>
+                <replacementvalue>KeyCode::COMMAND_R</replacementvalue>
+            </replacementdef>
+        </include>
+    </item>
+
+    <item>
+        <name>---</name>
+    </item>
+
+    <item>
+        <name>全角カンマと読点、全角ビリオドと句点をそれぞれ統合して[キーの右のキーを開放する</name>
+        <name>(P:， Z:． [:、) -> (P:、 Z:。 [:「) </name>
+        <name>(P,Zキーで≤や≥が入力されてしまう場合はチェックした方が幸せになれる)</name>
+        <identifier>remap.blandz</identifier>
+    </item>
+
+    <item>
+        <name>Y H N -> NULL</name>
+        <identifier>remap.yhn_null</identifier>
+    </item>
+
+    <item>
+        <name>---</name>
+    </item>
+
+    <item>
+        <name>MOD_KEY+U I O P [ ] -> MOD_KEY+Y U I O P [</name>
+        <name>MOD_KEY+J K L ; , -> MOD_KEY+H J K L ;</name>
+        <name>MOD_KEY+M , . / -> MOD_KEY+N M , .</name>
+    </item>
+
+
+
+    <item>
+        <name>control_L+右手アルファベットをずらす</name>
+        <identifier>remap.usorz_control_l_key</identifier>
+
+        <include path="usorz_modkey.xml">
+            <replacementdef>
+                <replacementname>MOD_KEY</replacementname>
+                <replacementvalue>CONTROL_L</replacementvalue>
+            </replacementdef>
+        </include>
+    </item>
+
+    <item>
+        <name>command_L+右手アルファベットをずらす</name>
+        <identifier>remap.usorz_command_l_key</identifier>
+
+        <include path="usorz_modkey.xml">
+            <replacementdef>
+                <replacementname>MOD_KEY</replacementname>
+                <replacementvalue>COMMAND_L</replacementvalue>
+            </replacementdef>
+        </include>
+    </item>
+
+    <item>
+        <name>shift_L+右手アルファベットをずらす</name>
+        <identifier>remap.usorz_shift_l_key</identifier>
+
+        <include path="usorz_modkey.xml">
+            <replacementdef>
+                <replacementname>MOD_KEY</replacementname>
+                <replacementvalue>SHIFT_L</replacementvalue>
+            </replacementdef>
+        </include>
+    </item>
+
+
+</root>

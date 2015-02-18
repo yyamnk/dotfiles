@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-Feb-07.-->
+<!--Last Change: 2015-Feb-13.-->
 <!-- [[[, ]]]: 折り畳みマーカ -->
 
 <root>
@@ -210,6 +210,14 @@
       <include path="safari.xml"/>
       <include path="google_jpn.xml"/>
       <include path="totalspace.xml"/>
+      <item>
+            <name>US親指シフト入力</name>
+            <include path="uso_base.xml" />
+      </item>
+      <item>
+        <name>US親指シフト入力orz</name>
+        <include path="usorz_base.xml" />
+      </item>
     </item>
 
   </list>

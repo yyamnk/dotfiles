@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<root>
+
+    {{JAPANESE_OYAYUBISHIFT_EXTRA}}
+    <inputmode_only>JAPANESE</inputmode_only>
+
+    <!-- Ctrol+右手アルファベットをずらす(日本語変換入力ソフトの文節操作等) -->
+    <!-- 上段 -->
+    <block>
+        <config_only>remap.yhn_null</config_only>
+        <autogen>--KeyToKey-- KeyCode::Y, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    </block>
+    <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::{{MOD_KEY}}, KeyCode::Y, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::{{MOD_KEY}}, KeyCode::U, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::{{MOD_KEY}}, KeyCode::I, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::{{MOD_KEY}}, KeyCode::O, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::{{MOD_KEY}}, KeyCode::P, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::{{MOD_KEY}}, KeyCode::BRACKET_LEFT, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <!-- 中段 -->
+    <block>
+        <config_only>remap.yhn_null</config_only>
+        <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    </block>
+    <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::{{MOD_KEY}}, KeyCode::H, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::{{MOD_KEY}}, KeyCode::J, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::{{MOD_KEY}}, KeyCode::K, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::{{MOD_KEY}}, KeyCode::L, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::{{MOD_KEY}}, KeyCode::SEMICOLON, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <!-- 下段 -->
+    <block>
+        <config_only>remap.yhn_null</config_only>
+        <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    </block>
+    <autogen>--KeyToKey-- KeyCode::M, ModifierFlag::{{MOD_KEY}}, KeyCode::N, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::COMMA, ModifierFlag::{{MOD_KEY}}, KeyCode::M, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::{{MOD_KEY}}, KeyCode::COMMA, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::{{MOD_KEY}}, KeyCode::DOT, ModifierFlag::{{MOD_KEY}}, KeyCode::VK_NONE</autogen>
+
+</root>
