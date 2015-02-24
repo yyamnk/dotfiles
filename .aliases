@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Feb-12.
+# Last Change:2015-Feb-24.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -138,6 +138,7 @@ alias start_wiki='rackup ~/db/wiki/config.ru -D --port 9200 && echo "start wiki 
 alias stop_wiki='kill `pgrep -f rackup`'
 
 #------ directory
+alias db='cd ~/db'
 alias wiki='cd ~/db/wiki'
 
 alias php='cd ~/db/php'
