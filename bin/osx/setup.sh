@@ -1,9 +1,11 @@
 #!/bin/bash
 #****************** bin/osx/setup.sh *******************
 # created: 2015-Feb-25
-# Last Change: 2015-Feb-25.
+# Last Change: 2015-Feb-26.
 #------------------------------------------------------------
 # mac setup
+# install zsh, git, karabiner, Ricty font
+# create network location for nut
 #************************************************************
 
 readonly SETUP_DIR="$HOME/.dotfiles/bin/osx"
@@ -57,19 +59,11 @@ fi
     sh $SETUP_DIR/write_defaults.sh
 
 #-------------------------------------------------------#
-# install apps by brew
-#-------------------------------------------------------#
-echo -n "Install apps by brew? [yn]: "
-read is_inst
-if [ "${is_inst}" = 'y' ]; then
-    zsh $SETUP_DIR/setup_apps.sh
-fi
-
-#-------------------------------------------------------#
 # karabiner
 #-------------------------------------------------------#
 ls -l $HOME/Library/Application\ Support | grep Karabiner > /dev/null
 if [ "$?" = 1 ]; then
+    brew cask install karabiner
     sh $SETUP_DIR/karabiner/bin/setup.sh
 fi
 
@@ -80,3 +74,13 @@ ls -l $HOME/Library/Fonts | grep "Ricty" > /dev/null
 if [ "$?" = 1 ]; then
     brew install ricty
 fi
+
+#-------------------------------------------------------#
+# install apps by brew
+#-------------------------------------------------------#
+echo ''
+echo 'To install apps, please execute'
+echo "zsh $SETUP_DIR/setup_apps.sh"
+echo ''
+
+echo 'Complete minimize osx setting!'
