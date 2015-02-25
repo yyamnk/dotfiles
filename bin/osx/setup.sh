@@ -56,6 +56,7 @@ fi
 # create network location (nut) if no exist,
 # and switch to it if HTTPS_PROXY is enable
 #-------------------------------------------------------#
+printf 'create network location for nut ...'
 networksetup -listlocations | grep nut > /dev/null
 if [ "$?" = 1 ]; then
     # create
@@ -65,6 +66,9 @@ if [ "$?" = 1 ]; then
         sudo networksetup -switchtolocation nut || \
         sudo networksetup -switchtolocation Automatic
     echo ''
+    echo 'done'
+else
+    echo 'skipped'
 fi
 
 #-------------------------------------------------------#
