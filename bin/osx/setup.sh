@@ -38,9 +38,18 @@ fi
 
 #-------------------------------------------------------#
 # setup git
+# brew install git & make symbolic link of contribute-tools to ~/bin/
 #-------------------------------------------------------#
+printf 'setup git ...'
 if [ "`which git`" = '/usr/bin/git' ]; then
     brew install git
+    # setup for git contribute
+    brew install coreutils
+    [ ! -d $HOME/bin ] && mkdir $HOME/bin
+    bash $HOME/.dotfiles/bin/setup_gitcontrib.sh
+    echo 'done'
+else
+    echo 'skipped'
 fi
 
 #-------------------------------------------------------#
