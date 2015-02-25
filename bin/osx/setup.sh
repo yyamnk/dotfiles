@@ -76,7 +76,7 @@ fi
 #-------------------------------------------------------#
 # Ricty Font
 #-------------------------------------------------------#
-ls -l $HOME/Library/Fonts | grep "Ricty*.ttf" > /dev/null
+ls -l $HOME/Library/Fonts | grep "Ricty" > /dev/null
 if [ "$?" = 1 ]; then
     brew install ricty
 fi
