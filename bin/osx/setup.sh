@@ -13,9 +13,13 @@ readonly SETUP_DIR="$HOME/.dotfiles/bin/osx"
 #-------------------------------------------------------#
 # install brew, zsh
 #-------------------------------------------------------#
+printf 'install brew and zsh ...'
 if ! type brew > /dev/null 2>&1; then
     bash $SETUP_DIR/setup_brew.sh
     brew install zsh
+    echo 'done'
+else
+    echo 'skipped'
 fi
 
 #-------------------------------------------------------#
