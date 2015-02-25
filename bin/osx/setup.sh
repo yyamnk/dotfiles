@@ -6,7 +6,7 @@
 # mac setup
 #************************************************************
 
-readonly SETUP_DIR="$dotfiles/bin/osx"
+readonly SETUP_DIR="$HOME/.dotfiles/bin/osx"
 
 #-------------------------------------------------------#
 # install brew, zsh
