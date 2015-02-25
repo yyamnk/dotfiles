@@ -27,10 +27,13 @@ fi
 # ログインシェルが/usr/local/bin/zshでないとき, /etc/shellsに追加
 #-------------------------------------------------------#
 readonly ZSH_BREW=/usr/local/bin/zsh
+printf "change default shell to $ZSH_BREW ..."
 if [ ! `tail -n 1 /etc/shells` = $ZSH_BREW ]; then
-    echo "change default shell to $ZSH_BREW"
     sudo sh -c "echo $ZSH_BREW >> /etc/shells"
     chpass -s $ZSH_BREW
+    echo 'done'
+else
+    echo 'skipped'
 fi
 
 #-------------------------------------------------------#
