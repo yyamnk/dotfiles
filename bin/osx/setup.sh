@@ -86,11 +86,17 @@ fi
 #-------------------------------------------------------#
 # karabiner
 #-------------------------------------------------------#
-ls -l $HOME/Library/Application\ Support | grep Karabiner > /dev/null
-if [ "$?" = 1 ]; then
+echo 'install karabiner ...'
+if ! brew cask list | grep karabiner > /dev/null 2>&1; then
     brew cask install karabiner
-    sh $SETUP_DIR/karabiner/bin/setup.sh
+    echo 'done'
+else
+    echo 'skipped'
 fi
+
+echo 'update karabiner settings ...'
+sh $HOME/.dotfiles/karabiner/bin/setup.sh
+echo 'done'
 
 #-------------------------------------------------------#
 # Ricty Font
