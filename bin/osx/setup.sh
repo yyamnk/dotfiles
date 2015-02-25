@@ -84,9 +84,21 @@ else
 fi
 
 #-------------------------------------------------------#
+# Ricty Font
+#-------------------------------------------------------#
+printf 'install Ricty Fonts ...'
+ls -l $HOME/Library/Fonts | grep "Ricty" > /dev/null
+if [ "$?" = 1 ]; then
+    brew install ricty
+    echo 'done'
+else
+    echo 'skipped'
+fi
+
+#-------------------------------------------------------#
 # karabiner
 #-------------------------------------------------------#
-echo 'install karabiner ...'
+printf 'install karabiner ...'
 if ! brew cask list | grep karabiner > /dev/null 2>&1; then
     brew cask install karabiner
     echo 'done'
@@ -98,17 +110,10 @@ echo 'update karabiner settings ...'
 sh $HOME/.dotfiles/karabiner/bin/setup.sh
 echo 'done'
 
-#-------------------------------------------------------#
-# Ricty Font
-#-------------------------------------------------------#
-printf 'install Ricty Fonts ...'
-ls -l $HOME/Library/Fonts | grep "Ricty" > /dev/null
-if [ "$?" = 1 ]; then
-    brew install ricty
-    echo 'done'
-else
-    echo 'skipped'
-fi
+echo ''
+echo 'To import karabiner settings, please execute'
+echo "bash $HOME/.dotfiles/karabiner/import.sh"
+echo ''
 
 #-------------------------------------------------------#
 # install apps by brew

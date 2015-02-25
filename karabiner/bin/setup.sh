@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** karabiner/setup.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Feb-10.
+# Last Change: 2015-Feb-26.
 #------------------------------------------------------------
 # make symbolic links to ~/Library/Application\ Support/Karabiner/
 #************************************************************
@@ -18,18 +18,3 @@ do
     echo 'symbolic link '$conf
     ln -sf $conf "${KARABINER_DIR}/"
 done
-
-
-# 以前の設定を適用するか
-read -p "load settings? [yn]: " is_load
-if [ "${is_load}" = 'y' ]; then
-
-    # 適用
-    scripts="${HOME}/.dotfiles/karabiner/bin/import_*.sh"
-    for scrip in ${scripts}
-    do
-        echo '======== '${scrip}' ========'
-        sh ${scrip}
-    done
-fi
-
