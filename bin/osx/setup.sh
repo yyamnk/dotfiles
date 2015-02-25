@@ -75,8 +75,13 @@ fi
 # write defaults
 # デフォルト: 不可視ファイルは見えない( 0 )
 #-------------------------------------------------------#
-[ `defaults read com.apple.finder AppleShowAllFiles` = 0 ] && \
+printf 'write defaults ...'
+if [ `defaults read com.apple.finder AppleShowAllFiles` = 0 ]; then
     sh $SETUP_DIR/write_defaults.sh
+    echo 'done'
+else
+    echo 'skipped'
+fi
 
 #-------------------------------------------------------#
 # karabiner
