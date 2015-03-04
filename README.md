@@ -72,8 +72,8 @@ curl -sL https://raw.githubusercontent.com/yyamnk/dotfiles/master/bin/setup_basi
 
 ###Ruby
 
-ruby 2.2.0, gollum
+ruby 2.2.0, bundler, gollum
 
 ```
-curl -sL https://raw.githubusercontent.com/yyamnk/dotfiles/master/bin/setup_ruby.sh | zsh
+curl -sL https://raw.githubusercontent.com/yyamnk/dotfiles/master/bin/osx/setup_ruby.sh | zsh
 ```

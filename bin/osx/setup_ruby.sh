@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 #****************** setup_ruby.sh *******************
 # created: 2015-Feb-02
-# Last Change: 2015-Feb-12.
+# Last Change: 2015-Mar-04.
 #------------------------------------------------------------
 # install ruby by homebrew
 #************************************************************
@@ -39,9 +39,12 @@ rbenv versions
 
 #-------------------------------------------------------#
 # install tools
+# システムのgemに入れるもののみ.
+# Rails関連gemは各プロジェクトにインストール
 #-------------------------------------------------------#
 echo "gem update"
 gem update
 
-echo "install gollumn by gem"
+echo "install bundler, gollumn"
 gem install gollum
+gem install bundler
