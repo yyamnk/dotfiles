@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Feb-24.
+# Last Change:2015-Mar-03.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -146,7 +146,8 @@ alias ror='cd ~/db/ror'
 alias py='cd ~/db/myPy'
 alias shs='cd ~/db/shscripts'
 
-alias nfes15='cd ~/db/ror/nutfes2015'
+# alias nfes15='cd ~/db/ror/nutfes2015'
+alias nfes15='cd ~/db/nfes15'
 alias nfes14='cd ~/db/ror/nutfes2014'
 alias nfes13='cd ~/db/ror/nutfes2013'
 alias survey='cd ~/db/ror/nutfes-survey'
