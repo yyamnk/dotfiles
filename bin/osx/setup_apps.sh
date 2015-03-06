@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Feb-25.
+# Last Change: 2015-Mar-06.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -16,8 +16,10 @@ brew install git
 brew install hardlink
 brew install libdvdcss # for handbrak, library
 brew install lua
+brew install mongodb
 brew install nkf
 brew install peco
+brew install postgresql
 brew install rmtrash # command for move trash
 brew install the_silver_searcher
 brew install tmux
