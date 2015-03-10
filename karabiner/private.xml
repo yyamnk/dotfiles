@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-Feb-07.-->
+<!--Last Change: 2015-Mar-09.-->
 <!-- [[[, ]]]: 折り畳みマーカ -->
 
 <root>
@@ -182,6 +182,7 @@
           <equal>net.sourceforge.skim-app.skim</equal>
         </appdef>
         <only>SKIM</only>
+        <uielementrole_not>AXTextField</uielementrole_not>
         <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
         <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
         <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
