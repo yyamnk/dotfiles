@@ -1,5 +1,5 @@
 //---------- .slate.js ----------------
-// Last Change: 2015-Feb-04.
+// Last Change: 2015-Mar-12.
 // for dvorak user
 //-------------------------------------
 // http://www.infiniteloop.co.jp/blog/2013/08/osx_slate/
@@ -52,13 +52,26 @@ var corners = slate.bind(util.key('c'), slate.operation('chain', {
 }));
 
 // 左右
+// slate.bind(util.key('b'), slate.operation('chain', {
+//   operations: _.map(['left', 'right'], function(d) {
+//     return slate.operation('push', {
+//       direction: d,
+//       style: 'bar-resize:screenSizeX/2'
+//     });
+//   })
+// }));
+
+//幅3/8で左, 5/8で右
+var left_third_eight = slate.operation('push', {
+  direction : 'left',
+  style: 'bar-resize:screenSizeX*3/8'
+});
+var right_five_eight = slate.operation('push', {
+  direction : 'right',
+  style: 'bar-resize:screenSizeX*5/8'
+});
 slate.bind(util.key('b'), slate.operation('chain', {
-  operations: _.map(['left', 'right'], function(d) {
-    return slate.operation('push', {
-      direction: d,
-      style: 'bar-resize:screenSizeX/2'
-    });
-  })
+  'operations' : [ left_third_eight, right_five_eight ]
 }));
 
 // 最大化
