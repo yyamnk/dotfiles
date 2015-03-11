@@ -1,4 +1,4 @@
-" Last Change:2015-Feb-06.
+" Last Change:2015-Mar-12.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -159,7 +159,7 @@ au BufRead,BufNew * match JpSpace /　/
 " set numberwidth=3 " 行数表示の桁数
 " set columns=85 " numberwidthを含め, この列数で折りたたみ, vspでも適用されてる...
 set wrap " 折りたたみ行う
-set colorcolumn=83 " 83文字(行番号4+80)でラインを入れる, imac1/4サイズでぴったり
+set colorcolumn=80 " 80文字でラインを入れる
 
 " カラースキーマ関連
 " http://blog.remora.cx/2012/10/let-us-use-solarized.html
