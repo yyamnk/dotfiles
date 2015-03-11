@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Mar-09.
+# Last Change: 2015-Mar-10.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -14,6 +14,7 @@ brew install ctags
 brew install gibo
 brew install git
 brew install hardlink
+brew install heroku-toolbelt
 brew install libdvdcss # for handbrak, library
 brew install lua
 brew install mongodb
