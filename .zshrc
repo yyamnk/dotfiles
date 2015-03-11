@@ -1,4 +1,4 @@
-# Last Change: 2015-Feb-25.
+# Last Change: 2015-Mar-11.
 
 #-------------------------------------------------------#
 # General Settings
@@ -216,6 +216,7 @@ case "${OSTYPE}" in
 darwin*)
     [ -f ~/.zshrc.osx ] && source ~/.zshrc.osx
     [ -f ~/.aliases ] && source ~/.aliases
+    [ -f ~/.aliases.zsh ] && source ~/.aliases.zsh
     ;;
 linux*)
     [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux
