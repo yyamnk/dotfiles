@@ -88,7 +88,8 @@ pickle-email-*.html
 
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
-config/secrets.yml
+# config/secrets.yml
+# 環境変数を読み込む設定にしているならcommitに含める
 
 ## Environment normalisation:
 /.bundle
@@ -309,7 +310,7 @@ pickle-email-*.html
 
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
-config/secrets.yml
+# config/secrets.yml
 
 ## Environment normalisation:
 /.bundle
