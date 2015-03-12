@@ -41,6 +41,7 @@ brew cask install clamxav
 brew cask install controlplane
 brew cask install copy
 brew cask install coteditor
+brew cask install dash
 brew cask install dropbox
 brew cask install evernote
 brew cask install gitX
