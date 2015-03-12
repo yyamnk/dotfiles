@@ -51,15 +51,15 @@ var corners = slate.bind(util.key('c'), slate.operation('chain', {
   })
 }));
 
-// 左右
-// slate.bind(util.key('b'), slate.operation('chain', {
-//   operations: _.map(['left', 'right'], function(d) {
-//     return slate.operation('push', {
-//       direction: d,
-//       style: 'bar-resize:screenSizeX/2'
-//     });
-//   })
-// }));
+//左右
+slate.bind(util.key('b'), slate.operation('chain', {
+  operations: _.map(['left', 'right'], function(d) {
+    return slate.operation('push', {
+      direction: d,
+      style: 'bar-resize:screenSizeX/2'
+    });
+  })
+}));
 
 //幅3/8で左, 5/8で右
 var left_third_eight = slate.operation('push', {
@@ -70,8 +70,21 @@ var right_five_eight = slate.operation('push', {
   direction : 'right',
   style: 'bar-resize:screenSizeX*5/8'
 });
-slate.bind(util.key('b'), slate.operation('chain', {
-  'operations' : [ left_third_eight, right_five_eight ]
+// slate.bind(util.key('v'), slate.operation('chain', {
+//   'operations' : [ left_third_eight, right_five_eight ]
+// }));
+
+//幅1/3で左, 2/3で右
+var left_one_third = slate.operation('push', {
+  direction : 'left',
+  style: 'bar-resize:screenSizeX/3'
+});
+var right_two_third = slate.operation('push', {
+  direction : 'right',
+  style: 'bar-resize:screenSizeX*2/3'
+});
+slate.bind(util.key('v'), slate.operation('chain', {
+  'operations' : [ left_one_third, right_two_third ]
 }));
 
 // 最大化
@@ -82,7 +95,7 @@ slate.bind(util.key('s'), function(win) {
 });
 
 // undo
-slate.bind(util.key('l'), slate.operation('undo'));
+slate.bind(util.key('-'), slate.operation('undo'));
 
 // 幅を1/4, 左へ移動
 slate.bind(util.key('g'), function(win) {
