@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_basictex.sh *******************
 # created: 2015-Feb-09
-# Last Change:2015-Feb-09.
+# Last Change:2015-Mar-13.
 #-----------------------------------------------------------
 # 1. installing BasicTeX
 # 2. update texLive by tlmgr
@@ -28,6 +28,7 @@ sudo tlmgr --no-persistent-downloads update --self --all
 
 echo "------------ latexmk install ---------------"
 sudo tlmgr --no-persistent-downloads install latexmk
+sudo tlmgr --no-persistent-downloads install latexdiff
 
 # timesフォント
 echo "------------ install times font pkgs --------------------"
