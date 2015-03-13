@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Mar-11.
+# Last Change:2015-Mar-12.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -147,6 +147,7 @@ alias nfes15='cd ~/db/nfes15'
 alias nfes14='cd ~/db/ror/nutfes2014'
 alias nfes13='cd ~/db/ror/nutfes2013'
 alias survey='cd ~/db/ror/nutfes-survey'
+alias be='bundle exec'
 
 # for lab works
 alias lab='cd ~/db/lab'
