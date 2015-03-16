@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Mar-12.
+# Last Change:2015-Mar-16.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -149,30 +149,32 @@ alias nfes13='cd ~/db/ror/nutfes2013'
 alias survey='cd ~/db/ror/nutfes-survey'
 alias be='bundle exec'
 
+#-------------------------------------------------------#
 # for lab works
-alias lab='cd ~/db/lab'
-alias web='cd ~/db/lab/web/'
-alias bibs='cd ~/db/apps/Mendeley'
+#-------------------------------------------------------#
+alias lab='cd ~/copy/lab'
+alias web='cd ~/copy/lab/web/'
+alias bibs='cd ~/copy/apps/Mendeley'
 
-alias src='cd ~/db/lab/sources'
-alias pso='cd ~/db/lab/sources/pso2'
-alias dpso='cd ~/db/lab/sources/dpso'
-alias csopso='cd ~/db/lab/sources/csopso'
-alias oscdp='cd ~/db/lab/sources/oscdp'
-alias symcdp='cd ~/db/lab/sources/symetrical_cdp'
-alias mfuncs='cd ~/db/lab/sources/matFunctions'
-
+alias src='cd ~/copy/lab/sources'
+alias pso='cd ~/copy/lab/sources/pso2'
+alias dpso='cd ~/copy/lab/sources/dpso'
+alias csopso='cd ~/copy/lab/sources/csopso'
+alias oscdp='cd ~/copy/lab/sources/oscdp'
+alias symcdp='cd ~/copy/lab/sources/symetrical_cdp'
+alias mfuncs='cd ~/copy/lab/sources/matFunctions'
+# lab matlab
+alias logbox='cd ~/copy/lab/matLogBox'
 alias matl='cd ~/matLocal'
 alias mats='cd ~/mat_server'
-alias logbox='cd ~/db/lab/matLogBox'
 alias matlogbox='logbox'
 
-alias nlp='cd ~/db/lab/nlp14_tokyo/tex_sources'
-alias wmeeting='cd ~/db/lab/meeting'
-alias masterThesis='cd ~/db/lab/masterThesis/tex_sources'
-alias smc='cd ~/db/lab/SMC2014/tex_sources'
-alias nolta='cd ~/db/lab/NOLTA2014/tex_sources'
-alias jounal='cd ~/db/lab/myJounal_sym_auto/tex_sources'
-alias shinetsu='cd ~/db/lab/shinetsu2014/'
-alias ec='cd ~/db/lab/ec_symp14/tex_sources'
-alias cec='cd ~/db/lab/cec15/tex_sources/'
+alias nlp='cd ~/copy/lab/nlp14_tokyo/tex_sources'
+alias wmeeting='cd ~/copy/lab/meeting'
+alias masterThesis='cd ~/copy/lab/masterThesis/tex_sources'
+alias smc='cd ~/copy/lab/SMC2014/tex_sources'
+alias nolta='cd ~/copy/lab/NOLTA2014/tex_sources'
+alias jounal='cd ~/copy/lab/myJounal_sym_auto/tex_sources'
+alias shinetsu='cd ~/copy/lab/shinetsu2014/'
+alias ec='cd ~/copy/lab/ec_symp14/tex_sources'
+alias cec='cd ~/copy/lab/cec15/tex_sources/'
