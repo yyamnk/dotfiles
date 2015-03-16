@@ -24,7 +24,8 @@ brew cask cleanup
 echo "================= TeX Live Maneger Update ======================="
 
 echo "------------ tlmgr update itself and all packages ---------------"
-sudo tlmgr --no-persistent-downloads update --self --all
+sudo tlmgr --no-persistent-downloads update --self
+sudo tlmgr --no-persistent-downloads update --all
 
 echo "------------ latexmk install ---------------"
 sudo tlmgr --no-persistent-downloads install latexmk
