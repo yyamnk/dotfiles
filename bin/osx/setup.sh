@@ -85,6 +85,7 @@ echo 'done'
 printf 'install Ricty Fonts ...'
 ls -l $HOME/Library/Fonts | grep "Ricty" > /dev/null
 if [ "$?" = 1 ]; then
+    brew install Caskroom/cask/xquartz
     brew install ricty
     echo 'done'
 else
@@ -111,6 +112,8 @@ echo 'To import karabiner settings, please execute'
 echo "bash $HOME/.dotfiles/karabiner/import.sh"
 echo ''
 
+echo 'Complete minimize osx setting!'
+
 #-------------------------------------------------------#
 # install apps by brew
 #-------------------------------------------------------#
@@ -119,4 +122,4 @@ echo 'To install apps, please execute'
 echo "zsh $SETUP_DIR/setup_apps.sh"
 echo ''
 
-echo 'Complete minimize osx setting!'
+
