@@ -88,6 +88,10 @@ if [ "$?" = 1 ]; then
     brew install Caskroom/cask/xquartz
     brew install ricty
     echo 'done'
+    echo '# copy fonts to ~/Library/Fonts/'
+    echo 'cp -f /usr/local/Cellar/ricty/3.2.4/share/fonts/Ricty*.ttf ~/Library/Fonts/'
+    echo '# update font lib'
+    echo 'fc-cache -vf'
 else
     echo 'skipped'
 fi
