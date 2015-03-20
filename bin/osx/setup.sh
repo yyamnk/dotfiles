@@ -109,7 +109,7 @@ echo 'done'
 
 echo ''
 echo 'To import karabiner settings, please execute'
-echo "bash $HOME/.dotfiles/karabiner/import.sh"
+echo "bash $HOME/.dotfiles/karabiner/bin/import.sh"
 echo ''
 
 echo 'Complete minimize osx setting!'
