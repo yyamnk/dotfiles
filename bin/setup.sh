@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** bin/setup.sh *******************
 # created: 2015-Feb-05
-# Last Change: 2015-Feb-25.
+# Last Change: 2015-Mar-20.
 #------------------------------------------------------------
 # 最低限の環境を整える
 # githubからdotfilesを~/.dotfiles/へclone
@@ -24,6 +24,7 @@ else
     echo 'cloe repo ...'
     git clone https://github.com/yyamnk/dotfiles $dotfiles
     # デフォルトの参照先を決める
+    cd $dotfiles
     git branch --set-upstream-to=origin/master master
 fi
 
