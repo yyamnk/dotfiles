@@ -1,7 +1,7 @@
 # ~/.tmuxinator/cec.yml
 
 name: cec
-root: ~/copy/lab/cec15/
+root: ~/db/lab/cec15/
 
 
 # Optional tmux socket
