@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** bin/osx/setup.sh *******************
 # created: 2015-Feb-25
-# Last Change: 2015-Feb-26.
+# Last Change: 2015-Mar-20.
 #------------------------------------------------------------
 # mac setup
 # install zsh, git, karabiner, Ricty font
@@ -76,12 +76,8 @@ fi
 # デフォルト: 不可視ファイルは見えない( 0 )
 #-------------------------------------------------------#
 printf 'write defaults ...'
-if [ `defaults read com.apple.finder AppleShowAllFiles` = 0 ]; then
-    sh $SETUP_DIR/write_defaults.sh
-    echo 'done'
-else
-    echo 'skipped'
-fi
+sh $SETUP_DIR/write_defaults.sh
+echo 'done'
 
 #-------------------------------------------------------#
 # Ricty Font
