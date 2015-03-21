@@ -77,3 +77,11 @@ ruby 2.2.0, bundler, gollum
 ```
 curl -sL https://raw.githubusercontent.com/yyamnk/dotfiles/master/bin/osx/setup_ruby.sh | zsh
 ```
+
+###e-mail
+
+`~/Library/Mail/V2/`, `~/Library/Containers/com.apple.mail` をコピー
+
+[参考](http://emapictures.tv/how-to-backuprestore-mac-mail-in-marvericks/)
+
+
