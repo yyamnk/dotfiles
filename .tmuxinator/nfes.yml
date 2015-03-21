@@ -21,12 +21,14 @@ root: ~/db/nfes15/new_members/
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
 # startup_window: logs
 
+pre: pg_ctl start
 windows:
   - editor:
-      layout: main-vertical
+      layout: tiled
       panes:
-        - # empty, zsh
-        - # empty, zsh
-        - vim docs/build-log2.md
+        - git status
+        - vim docs
+        -
+        - bundle exec rails c
   - server: bundle exec rails s
-  - logs: tail -f log/development.log
+  - logs: open http://localhost:3000/staffs -a Google\ Chrome & tail -f log/development.log
