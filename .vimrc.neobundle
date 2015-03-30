@@ -1,4 +1,4 @@
-" Last Change:2015-Feb-05.
+" Last Change:2015-Mar-21.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -107,6 +107,8 @@ function! s:LoadBundles()
     " ウインドウマネージャ
     NeoBundle 'spolu/dwm.vim'
     NeoBundle 'kannokanno/unite-dwm' " :Unite dwm, dwm_new を追加
+    NeoBundle 'christoomey/vim-tmux-navigator' " vimとtmuxをシームレスに移動
+    NeoBundle 'drmikehenry/vim-fixkey' " <S-Left>が効かなかったので
 
     filetype plugin on
     filetype indent on

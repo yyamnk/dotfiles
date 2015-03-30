@@ -573,3 +573,31 @@ let g:indentLine_color_term = 244
 " ------------------------------------------------------- " {{{
 nnoremap <C-f> :call DWM_Focus()<CR>
 " }}}
+"
+"-------------------------------------------------------"
+" vim-tmux-navigator
+"-------------------------------------------------------" {{{
+" <S-Left>等が効かなかったので変更
+" http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
+" for iTerm, xterm Defaults preset
+" set <S-Left>="<ESC>[[1;2D"
+" set <S-Down>=^[[1;2B
+" set <S-Up>=^[[1;2A
+" set <S-Right>=^[[1;2C
+
+" set <S-Up>=^[[1;2A <S-Down>=^[[1;2B <S-Right>=^[[1;2C <S-Left>=^[[1;2D
+" nnoremap <S-Left> :echo s-left
+if &term =~ '^screen' && exists('$TMUX')
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <S-Left>=\e[1;*2D"
+    execute "set <S-Down>=\e[1;*2B"
+    execute "set <S-Up>=\e[1;*2A"
+    execute "set <S-Right>=\e[1;*2C"
+endif
+
+let g:tmux_navigator_no_mappings = 1
+nnoremap <Silent> <S-Left> :TmuxNavigateLeft<cr>
+nnoremap <Silent> <S-xDown> :TmuxNavigateDown<cr>
+nnoremap <Silent> <S-xUp> :TmuxNavigateUp<cr>
+nnoremap <Silent> <S-xRight> :TmuxNavigateRight<cr>
+" }}}

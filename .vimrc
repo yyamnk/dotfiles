@@ -1,4 +1,4 @@
-" Last Change:2015-Mar-12.
+" Last Change:2015-Mar-21.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -38,13 +38,6 @@ nnoremap j gj
 nnoremap k gk
 nnoremap :: :w<cr>
 nnoremap Q <Nop>
-
-" http://lambdalisue.hatenablog.com/entry/2013/06/23/071344
-" Shift + 矢印でウィンドウフォーカスを移動
-nnoremap <S-Left>  <C-w>h<CR>
-nnoremap <S-Right> <C-w>l<CR>
-nnoremap <S-Up>    <C-w>k<CR>
-nnoremap <S-Down>  <C-w>j<CR>
 
 " vim設定ファイル
 nnoremap <silent> <Space>ev :<C-u>edit $MYVIMRC<CR>
@@ -453,4 +446,3 @@ endif
 
 " neobundle pluginの設定追加
 source $HOME/.vimrc.plugin
-
