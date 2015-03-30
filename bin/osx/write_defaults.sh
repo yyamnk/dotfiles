@@ -51,9 +51,13 @@ echo 'full Keyboard access'
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 echo 'enable tap'
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad DragLock -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -int 1
+defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
 defaults write com.apple.AppleMultitouchTrackpad DragLock -int 1
 defaults write com.apple.AppleMultitouchTrackpad Dragging -int 1
+
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
