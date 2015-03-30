@@ -14,14 +14,14 @@ echo "=================== write defaults ==================="
 # finder
 echo 'show invisible files'
 defaults write com.apple.finder AppleShowAllFiles -bool true
+echo 'Show all filename extensions in Finder'
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 echo 'show full path of current directory'
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 echo 'Expand save panel by default'
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 echo 'Expand print panel by default'
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-echo 'Sidebar icon size: Small'
-defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
 
 # dock
 echo 'fast mission control animation'
