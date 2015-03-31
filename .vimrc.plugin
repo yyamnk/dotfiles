@@ -585,19 +585,21 @@ nnoremap <C-f> :call DWM_Focus()<CR>
 " set <S-Up>=^[[1;2A
 " set <S-Right>=^[[1;2C
 
-" set <S-Up>=^[[1;2A <S-Down>=^[[1;2B <S-Right>=^[[1;2C <S-Left>=^[[1;2D
-" nnoremap <S-Left> :echo s-left
 if &term =~ '^screen' && exists('$TMUX')
     " tmux will send xterm-style keys when its xterm-keys option is on
-    execute "set <S-Left>=\e[1;*2D"
-    execute "set <S-Down>=\e[1;*2B"
-    execute "set <S-Up>=\e[1;*2A"
-    execute "set <S-Right>=\e[1;*2C"
+    execute "set <S-Left>=\e[1;2D"
+    " iterm2, $TERM=xterm-256color, <S-Left>  send ^[[1;2D
+    execute "set <S-Down>=\e[1;2B"
+    " iterm2, $TERM=xterm-256color, <S-Down>  send ^[[1;2B
+    execute "set <S-Up>=\e[1;2A"
+    " iterm2, $TERM=xterm-256color, <S-Up>    send ^[[1;2A
+    execute "set <S-Right>=\e[1;2C"
+    " iterm2, $TERM=xterm-256color, <S-Right> send ^[[1;2C
 endif
 
 let g:tmux_navigator_no_mappings = 1
-nnoremap <Silent> <S-Left> :TmuxNavigateLeft<cr>
-nnoremap <Silent> <S-xDown> :TmuxNavigateDown<cr>
-nnoremap <Silent> <S-xUp> :TmuxNavigateUp<cr>
-nnoremap <Silent> <S-xRight> :TmuxNavigateRight<cr>
+nnoremap <silent> <S-Left> :TmuxNavigateLeft<cr>
+nnoremap <silent> <S-xDown> :TmuxNavigateDown<cr>
+nnoremap <silent> <S-xUp> :TmuxNavigateUp<cr>
+nnoremap <silent> <S-xRight> :TmuxNavigateRight<cr>
 " }}}
