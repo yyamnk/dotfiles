@@ -1,4 +1,4 @@
-" Last Change:2015-Mar-21.
+" Last Change:2015-Apr-02.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -125,6 +125,10 @@ autocmd FileType xml set foldlevel=0 foldmarker=[[[,]]]
 " ------------------------------------------------------- "
 " 画面表示
 " ------------------------------------------------------- " {{{
+set ambiwidth=double " 全角文字の表示指定
+" 同時にiterm2 Preferences > Profile > Text > Double-Width Charactersの
+" Treat ambiguous-width characters as double width.
+" にチェックを入れる.
 set number " 行番号表示
 set laststatus=2 " 画面最下部のステータス行を 常に表示(2)
 set cmdheight=2  " ステータス行より下のメッセージ表示欄の行数
