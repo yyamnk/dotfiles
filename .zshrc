@@ -1,4 +1,4 @@
-# Last Change: 2015-Mar-31.
+# Last Change: 2015-Apr-01.
 
 #-------------------------------------------------------#
 # General Settings
@@ -194,6 +194,18 @@ function pdfcompress() {
 # Quick Lock without debug
 function ql() {
     qlmanage -p $1 &>/dev/null
+}
+
+# png -> pdf変換
+function png2pdf() {
+    PDFORIGIN="${1:r}_org.pdf"
+    PDFOUTPUT="${1:r}.pdf"
+    # png -> pdf
+    convert $1 $PDFORIGIN
+    # compress pdf
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFOUTPUT $PDFORIGIN
+    # remove tmp
+    rm $PDFORIGIN
 }
 
 # }}}
