@@ -14,8 +14,6 @@ $cli set option.emacsmode_controlM 1
 /bin/echo -n .
 $cli set remap.f12_to_volumeup 1
 /bin/echo -n .
-$cli set remap.vimnormal_jk_toggle 1
-/bin/echo -n .
 $cli set remap.simultaneouskeypresses_vimode_sd 1
 /bin/echo -n .
 $cli set remap.simultaneouskeypresses_expose_kl 1
