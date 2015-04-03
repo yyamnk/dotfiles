@@ -26,5 +26,5 @@ windows:
       layout: even-horizontal
       panes:
         - git tree && git status
-        - vim
+        - vim .
   - git: git tree -100
