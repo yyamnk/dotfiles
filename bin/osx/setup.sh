@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** bin/osx/setup.sh *******************
 # created: 2015-Feb-25
-# Last Change: 2015-Mar-20.
+# Last Change: 2015-Apr-03.
 #------------------------------------------------------------
 # mac setup
 # install zsh, git, karabiner, Ricty font
@@ -92,6 +92,18 @@ if [ "$?" = 1 ]; then
     echo 'cp -f /usr/local/Cellar/ricty/3.2.4/share/fonts/Ricty*.ttf ~/Library/Fonts/'
     echo '# update font lib'
     echo 'fc-cache -vf'
+else
+    echo 'skipped'
+fi
+
+#-------------------------------------------------------#
+# Control Plane
+#-------------------------------------------------------#
+printf 'install controlplane ...'
+if ! brew cask list | grep controlplane > /dev/null 2>&1; then
+    brew cask install controlplane
+    ln -sf $HOME/.dotfiles/control_plane/com.dustinrue.ControlPlane.plist ~/Library/Preferences/
+    echo 'done'
 else
     echo 'skipped'
 fi
