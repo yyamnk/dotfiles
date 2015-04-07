@@ -1,6 +1,7 @@
 # global
 [core]
 	excludesfile = ~/.gitignore_global
+	quotepath = false
 [difftool "latex"]
 	cmd = latexdiff  \"$LOCAL\" \"$REMOTE\"
 [alias]
