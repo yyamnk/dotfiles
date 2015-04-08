@@ -104,6 +104,19 @@ if ! brew cask list | grep controlplane > /dev/null 2>&1; then
     brew cask install controlplane
     ln -sf $HOME/.dotfiles/control_plane/com.dustinrue.ControlPlane.plist ~/Library/Preferences/
     echo 'done'
+    echo ''
+    echo 'please change /private/etc/sudoers.tmp'
+    echo ''
+    echo 'sudo visudo'
+    echo '------------------------------'
+    echo '# /private/etc/sudoers.tmp'
+    echo ' ... '
+    echo '# allow enable/disable internal keyboard without password'
+    echo '%admin	ALL=(ALL) ALL, NOPASSWD: /sbin/kextload, /sbin/kextunload'
+    echo ' ... '
+    echo '------------------------------'
+    echo 'see http://qiita.com/shuhei/items/fcaee827b9bf256820b6'
+    echo ''
 else
     echo 'skipped'
 fi
