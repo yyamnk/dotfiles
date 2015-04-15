@@ -603,3 +603,13 @@ nnoremap <silent> <S-xDown> :TmuxNavigateDown<cr>
 nnoremap <silent> <S-xUp> :TmuxNavigateUp<cr>
 nnoremap <silent> <S-xRight> :TmuxNavigateRight<cr>
 " }}}
+"
+"
+"-------------------------------------------------------"
+" neco-look
+"-------------------------------------------------------" {{{
+" 優先度を上げる, rankが高いものが優先
+call neocomplete#custom_source('look', 'rank',  10)
+" bufferが5,
+" }}}
+"

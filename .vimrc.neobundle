@@ -1,4 +1,4 @@
-" Last Change:2015-Mar-21.
+" Last Change:2015-Apr-15.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -45,7 +45,7 @@ function! s:LoadBundles()
     NeoBundle 'Shougo/neosnippet'
     NeoBundle 'Shougo/neosnippet-snippets'
     NeoBundle 'honza/vim-snippets'
-    NeoBundle 'https://github.com/ujihisa/neco-look.git' " lookを使って英単語補完
+    NeoBundle 'ujihisa/neco-look.git' " lookを使って英単語補完
     " ------ カーソル移動
     NeoBundle 'Lokaltog/vim-easymotion'
     " ------ その他入力補助

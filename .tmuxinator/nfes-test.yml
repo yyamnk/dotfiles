@@ -1,6 +1,6 @@
 # ~/.tmuxinator/nfes.yml
 
-name: nfes
+name: nfes-test
 root: ~/db/nfes15/test_admin_permission/
 
 # Optional tmux socket
