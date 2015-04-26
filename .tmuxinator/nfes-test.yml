@@ -1,7 +1,7 @@
 # ~/.tmuxinator/nfes.yml
 
 name: nfes-test
-root: ~/db/nfes15/test_admin_permission/
+root: ~/db/nfes15/sample_admin_roles/
 
 # Optional tmux socket
 # socket_name: foo
@@ -31,4 +31,4 @@ windows:
         -
         - bundle exec rails c
   - server: bundle exec rails s
-  - logs: open http://localhost:3000/staffs -a Google\ Chrome & tail -f log/development.log
+  - logs: open http://localhost:3000/admin -a Google\ Chrome & tail -f log/development.log

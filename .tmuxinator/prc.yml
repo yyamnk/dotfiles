@@ -1,7 +1,7 @@
 # ~/.tmuxinator/prc.yml
 
 name: prc
-root: ~/db/lab/prc_circuit/
+root: ~/db/lab/prc_circuit/experiment_records/
 
 # Optional tmux socket
 # socket_name: foo
@@ -26,5 +26,5 @@ windows:
       layout: even-horizontal
       panes:
         - git tree && git status
-        - vim .
+        - laa
   - git: git tree -100
