@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Apr-03.
+# Last Change: 2015-Apr-26.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -60,9 +60,10 @@ brew cask install nosleep
 brew cask install pandoc
 brew cask install parallels9
 brew cask install shortcat
+brew cask install seil
+brew cask install skim
 brew cask install slack
 brew cask install slate
-brew cask install skim
 brew cask install skepe
 brew cask install the-unarchiver
 brew cask install textexpander3
