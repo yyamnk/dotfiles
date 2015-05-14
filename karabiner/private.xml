@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-Mar-09.-->
+<!--Last Change: 2015-May-14.-->
 <!-- [[[, ]]]: 折り畳みマーカ -->
 
 <root>
@@ -204,6 +204,24 @@
         Option::NOREPEAT
         @end
         </autogen><!--]]]-->
+      </item>
+
+      <!-- PS2/USB 変換器 -->
+      <devicevendordef>
+        <vendorname>ROUTE-R</vendorname>
+        <vendorid>0x4d9</vendorid>
+      </devicevendordef>
+      <deviceproductdef>
+        <productname>RC-U2MK</productname>
+        <productid>0x1400</productid>
+      </deviceproductdef>
+      <item>
+        <name>PS2/USB変換のみ JIS配列右端一字左ずらし</name>
+        <appendix>JIS to USを使う必要はない, JIS_UNDERSCOREさえ入れ替えればOK</appendix>
+        <appendix>JIS_UNDERSCORE to shift</appendix>
+        <identifier>private.jis_rightend_delete</identifier>
+        <device_only>DeviceVendor::ROUTE-R, DeviceProduct::RC-U2MK</device_only>
+        <autogen>__KeyToKey__ KeyCode::JIS_UNDERSCORE, KeyCode::SHIFT_R</autogen>
       </item>
 
       <include path="dvorak.xml"/>
