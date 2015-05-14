@@ -1,0 +1,34 @@
+# ~/.tmuxinator/nfes-gmana.yml
+
+name: nfes-gmana
+root: ~/db/nfes15/group_manager/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+pre: pg_ctl start
+windows:
+  - editor:
+      layout: tiled
+      panes:
+        - git tree && git status
+        - vim README.md
+        -
+        - bundle exec rails c
+  - server: bundle exec rails s
+  - logs: open http://localhost:3000/admin -a Google\ Chrome & tail -f log/development.log

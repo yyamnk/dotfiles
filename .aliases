@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Mar-16.
+# Last Change:2015-Apr-27.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -148,6 +148,8 @@ alias nfes14='cd ~/db/ror/nutfes2014'
 alias nfes13='cd ~/db/ror/nutfes2013'
 alias survey='cd ~/db/ror/nutfes-survey'
 alias be='bundle exec'
+alias bep='RAILS_ENV=production bundle exec'
+
 
 #-------------------------------------------------------#
 # for lab works
