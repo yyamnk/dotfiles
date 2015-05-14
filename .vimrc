@@ -1,4 +1,4 @@
-" Last Change:2015-Apr-02.
+" Last Change:2015-May-14.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -21,7 +21,7 @@ au BufNewFile,BufRead *.md set filetype=markdown " .mdのフィルタイプ指�
 let mapleader = "\<Space>"
 nnoremap ZQ <Nop> " 保存せず閉じるZQ, 保存して閉じるZZ
 " inoremap <Space>e <End>
-inoremap <C-d> <Del>
+" inoremap <C-d> <Del> " インサートモードでインデント操作したいので無効化
 inoremap <C-b> <Left>
 " inoremap <C-n> <BS>
 " inoremap <C-m> <CR>
