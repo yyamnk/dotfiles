@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-May-14.-->
+<!--Last Change: 2015-Jun-04.-->
 <!-- [[[, ]]]: 折り畳みマーカ -->
 
 <root>
@@ -22,7 +22,51 @@
       <name>My settings</name>
       <appendix></appendix>
 
+      <item>
+        <name>Control+M to Return</name>
+        <identifier>private.emacsmode_controlM</identifier>
+        <autogen>__KeyToKey__ KeyCode::M, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::RETURN</autogen>
+      </item>
+
+
       <include path="hhkb.xml"/>
+
+      <!-- PS2/USB 変換器 -->
+      <devicevendordef>
+        <vendorname>ROUTE-R</vendorname>
+        <vendorid>0x4d9</vendorid>
+      </devicevendordef>
+      <deviceproductdef>
+        <productname>RC-U2MK</productname>
+        <productid>0x1400</productid>
+      </deviceproductdef>
+      <item>
+        <name>JIS_UNDERSCORE to SHIFT-R ( when type only, send ')')</name>
+        <appendix>JIS to USを使う必要はない, JIS_UNDERSCOREさえ入れ替えればOK</appendix>
+        <appendix>JIS_UNDERSCORE to shift</appendix>
+        <identifier>private.jis_underscore_to_shift</identifier>
+        <device_only>DeviceVendor::ROUTE-R, DeviceProduct::RC-U2MK</device_only>
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::JIS_UNDERSCORE,
+          KeyCode::SHIFT_R,
+          KeyCode::KEY_0, ModifierFlag::SHIFT_R
+        </autogen>
+      </item>
+      <item>
+        <name>Capslock -> TAB</name>
+        <appendix>seilのみで設定するとmodkeys2bracketsで上書きされる．</appendix>
+        <appendix>osx設定: change Capslock to no action</appendix>
+        <appendix>seil設定: change Capslock to keycode 110</appendix>
+        <identifier>private.jis_capslock_ctrl-L</identifier>
+        <device_only>DeviceVendor::ROUTE-R, DeviceProduct::RC-U2MK</device_only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::PC_APPLICATION,
+          KeyCode::TAB,
+        </autogen>
+      </item>
+
       <include path="modkeys_brackets.xml"/>
 
       <item>
@@ -175,6 +219,22 @@
       </item>
 
       <item>
+        <name>ctrl + TAB to LaunchBar (未完成)</name><!--[[[-->
+        <identifier>private.launchbar_tab</identifier>
+        <appendix>ctrl-TABではkeydownが出ない．LaunchBarに設定する</appendix>
+        <!-- LaunchBar path -->
+        <vkopenurldef>
+          <name>KeyCode::VK_OPEN_URL_LAUNCHBAR</name>
+          <url type="file">/Applications/LaunchBar.app</url>
+        </vkopenurldef>
+        <autogen>
+          __KeyToKey__
+          KeyCode::TAB, ModifierFlag::CONTROL_L,
+          KeyCode::VK_OPEN_URL_LAUNCHBAR
+        </autogen><!--]]]-->
+      </item>
+
+      <item>
         <name>hjkl -> left,down,up,right (skim only)</name><!--[[[-->
         <identifier>private.skim_arrows</identifier>
         <appdef>
@@ -206,29 +266,24 @@
         </autogen><!--]]]-->
       </item>
 
-      <!-- PS2/USB 変換器 -->
-      <devicevendordef>
-        <vendorname>ROUTE-R</vendorname>
-        <vendorid>0x4d9</vendorid>
-      </devicevendordef>
-      <deviceproductdef>
-        <productname>RC-U2MK</productname>
-        <productid>0x1400</productid>
-      </deviceproductdef>
-      <item>
-        <name>PS2/USB変換のみ JIS配列右端一字左ずらし</name>
-        <appendix>JIS to USを使う必要はない, JIS_UNDERSCOREさえ入れ替えればOK</appendix>
-        <appendix>JIS_UNDERSCORE to shift</appendix>
-        <identifier>private.jis_rightend_delete</identifier>
-        <device_only>DeviceVendor::ROUTE-R, DeviceProduct::RC-U2MK</device_only>
-        <autogen>__KeyToKey__ KeyCode::JIS_UNDERSCORE, KeyCode::SHIFT_R</autogen>
-      </item>
-
       <include path="dvorak.xml"/>
       <include path="disable_close_vim.xml"/>
       <include path="safari.xml"/>
       <include path="google_jpn.xml"/>
       <include path="totalspace.xml"/>
+
+      <item>
+        <name>Holding "I" Key to Mission Control (Expose)</name>
+        <identifier>private.holding_i_to_expose</identifier>
+        <autogen>
+          __HoldingKeyToKey__
+          KeyCode::I, ModifierFlag::NONE,
+          KeyCode::I,
+          KeyCode::VK_NONE,
+          KeyCode::EXPOSE_ALL,
+          Option::NOREPEAT,
+        </autogen>
+      </item>
     </item>
 
   </list>

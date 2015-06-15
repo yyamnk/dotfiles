@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-Feb-07.-->
+<!--Last Change: 2015-Jun-03.-->
 
 <root>
     <item>
@@ -11,7 +11,7 @@
       </appdef>
 
       <item>
-        <name>holding s to totalspace2, for dvorak</name>
+        <name>holding s(qwerty) to totalspace2, for dvorak</name>
         <identifier>private.holding_S_to_totalspace_dvorak</identifier>
         <inputsource_only>dvorak</inputsource_only>
         <autogen>
@@ -27,7 +27,7 @@
       </item>
 
       <item>
-        <name>holding s to totalspace2, for qwerty</name>
+        <name>holding s(qwerty) to totalspace2, for qwerty</name>
         <identifier>private.holding_S_to_totalspace</identifier>
         <autogen>
         __HoldingKeyToKey__
@@ -37,6 +37,22 @@
         @end
         @begin
         KeyCode::T, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L, ModifierFlag::CONTROL_L, ModifierFlag::OPTION_L
+        @end
+        </autogen>
+      </item>
+
+      <item>
+        <name>holding s(dvorak) to totalspace2, for dvorak</name>
+        <identifier>private.holding_semicolon_to_totalspace_dvorak</identifier>
+        <inputsource_only>dvorak</inputsource_only>
+        <autogen>
+        __HoldingKeyToKey__
+        KeyCode::SEMICOLON,
+        @begin
+        KeyCode::SEMICOLON,
+        @end
+        @begin
+        KeyCode::K, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L, ModifierFlag::CONTROL_L, ModifierFlag::OPTION_L
         @end
         </autogen>
       </item>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-Feb-07.-->
+<!--Last Change: 2015-May-16.-->
 
 <root>
     <item>
@@ -50,11 +50,18 @@
       </item>
 
       <item>
-        <name>without HHKB</name><!--[[[-->
+        <name>otherwise keybord</name><!--[[[-->
         <appendix>only shift-LR to ()</appendix>
         <appendix>only alt-LR   to []</appendix>
         <appendix>TAB           to {</appendix>
         <appendix>\             to }</appendix>
+        <appendix>PS2/USB経由 realforce, 要seil設定:</appendix>
+        <appendix>enable NFER key -> 55 (cmd-L)</appendix>
+        <appendix>enable XFER key -> 54 (cmd-R)</appendix>
+        <appendix>enable KATAKANA key -> 54 (cmd-R)</appendix>
+        <appendix>recommend</appendix>
+        <appendix>change ctrl-L -> 58 (alt-L)</appendix>
+        <appendix>change alt-L -> 55 (cmd-L)</appendix>
         <identifier>private.modkeys2brackets</identifier>
         <!-- shift to () -->
         <autogen>
@@ -64,7 +71,7 @@
         </autogen>
         <autogen>
           __KeyOverlaidModifier__
-          KeyCode::SHIFT_R, ModifierFlag::SHIFT_R| ModifierFlag::NONE, KeyCode::SHIFT_R,
+          KeyCode::SHIFT_R, ModifierFlag::SHIFT_R | ModifierFlag::NONE, KeyCode::SHIFT_R,
           KeyCode::KEY_0, ModifierFlag::SHIFT_L
         </autogen>
         <!-- alt to []-->
@@ -91,7 +98,6 @@
         </autogen>
       <!--]]]-->
       </item>
-
 
     </item>
 </root>
