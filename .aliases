@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Apr-27.
+# Last Change:2015-Jun-15.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -171,12 +171,12 @@ alias matl='cd ~/matLocal'
 alias mats='cd ~/mat_server'
 alias matlogbox='logbox'
 
-alias nlp='cd ~/db/lab/nlp14_tokyo/tex_sources'
+alias nlp='cd ~/db/lab/nlp15_tokyo/tex_sources'
 alias wmeeting='cd ~/db/lab/meeting'
 alias masterThesis='cd ~/db/lab/masterThesis/tex_sources'
 alias smc='cd ~/db/lab/SMC2014/tex_sources'
-alias nolta='cd ~/db/lab/NOLTA2014/tex_sources'
-alias jounal='cd ~/db/lab/myJounal_sym_auto/tex_sources'
+alias nolta='cd ~/db/lab/NOLTA2015/tex_sources'
+alias jounal='cd ~/db/lab/myJounal_prco/tex_sources'
 alias shinetsu='cd ~/db/lab/shinetsu2014/'
 alias ec='cd ~/db/lab/ec_symp14/tex_sources'
 alias cec='cd ~/db/lab/cec15/tex_sources/'
