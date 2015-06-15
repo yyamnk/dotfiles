@@ -1,4 +1,4 @@
-" Last Change:2015-May-14.
+" Last Change:2015-Jun-06.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -36,15 +36,23 @@ inoremap <C-w> <C-o>db
 " カーソルが文末にあるときの挙動が気に入らない...
 nnoremap j gj
 nnoremap k gk
-nnoremap :: :w<cr>
+" nnoremap :: :w<cr> " ホームポジションでやりたい．小指だと辛い．
+nnoremap tt :w<cr>
 nnoremap Q <Nop>
 
 " vim設定ファイル
-nnoremap <silent> <Space>ev :<C-u>edit $MYVIMRC<CR>
-nnoremap <silent> <Space>en :<C-u>edit $DOTSDIR/.vimrc.neobundle<CR>
-nnoremap <silent> <Space>ep :<C-u>edit $DOTSDIR/.vimrc.plugin<CR>
-nnoremap <silent> <Space>rv :<C-u>source $MYVIMRC<CR>
-nnoremap <silent> <Space>es :NeoSnippetEdit<CR>
+nnoremap <silent> <Leader>ev :<C-u>edit $MYVIMRC<CR>
+nnoremap <silent> <Leader>en :<C-u>edit $DOTSDIR/.vimrc.neobundle<CR>
+nnoremap <silent> <Leader>ep :<C-u>edit $DOTSDIR/.vimrc.plugin<CR>
+nnoremap <silent> <Leader>rv :<C-u>source $MYVIMRC<CR>
+nnoremap <silent> <Leader>es :NeoSnippetEdit<CR>
+
+" インデント操作, <<, >>は不便, インサートモードと同じ設定にする
+nnoremap <Leader>t >>
+nnoremap <Leader>d <<
+vnoremap <Leader>t >>
+vnoremap <Leader>d <<
+
 " }}}
 
 " ------------------------------------------------------- "
@@ -92,6 +100,7 @@ set softtabstop=4        " 連続した空白に対してタブやバックス�
 " .rhtmlと.rbと.erbと.ymlでタブ幅を変更
 au BufNewFile,BufRead *.rhtml set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.rb    set tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.rake  set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.erb   set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.yml   set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.css   set tabstop=2 shiftwidth=2 softtabstop=2
@@ -447,6 +456,7 @@ if has('path_extra')
     set tags+=tags;/Users/yyama
 endif
 " }}}
+
 
 " neobundle pluginの設定追加
 source $HOME/.vimrc.plugin

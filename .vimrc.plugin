@@ -70,7 +70,11 @@ inoremap <expr><Tab>
 \   neocomplete#complete_common_string() :
 \ pumvisible() ? "\<C-n>" : "\<Tab>"
 
-imap <expr><C-n>
+
+" c-gがsurround-vimのインサートモードと競合するので無効化
+let g:surround_no_insert_mappings = 1
+
+imap <expr><C-g>
 \ neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<C-n>"
 

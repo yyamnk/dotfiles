@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Apr-26.
+# Last Change: 2015-May-17.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -18,6 +18,7 @@ brew install heroku-toolbelt
 brew install libdvdcss # for handbrak, library
 brew install lua
 brew install mongodb
+brew install cmigemo # 日本語をローマ字変換, vim migemoで利用
 brew install nkf
 brew install peco
 brew install postgresql
