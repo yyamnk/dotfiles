@@ -1,4 +1,4 @@
-" Last Change:2015-May-17.
+" Last Change:2015-Jun-20.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -130,7 +130,9 @@ function! s:InitNeoBundle()
             call neobundle#begin(expand('~/.vim/bundle/'))
             NeoBundleFetch 'Shougo/neobundle.vim'
             call neobundle#end()
+            call neobundle#begin(expand('~/.vim/bundle/'))
             call s:LoadBundles()
+            call neobundle#end()
         catch
             call s:WithoutBundles()
         endtry
