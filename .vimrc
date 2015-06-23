@@ -1,4 +1,4 @@
-" Last Change:2015-Jun-06.
+" Last Change:2015-Jun-19.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -94,10 +94,10 @@ command! HighlightInfo call s:get_highlight_info()
 " タブ, インデント関連
 " ------------------------------------------------------- " {{{
 set expandtab
-set tabstop=4            " 画面上でタブ文字が占める幅
-set shiftwidth=4         " 自動インデントでずれる幅
-set softtabstop=4        " 連続した空白に対してタブやバックスペースでカーソルが動く幅
-" .rhtmlと.rbと.erbと.ymlでタブ幅を変更
+set tabstop=4     " 画面上でタブ文字が占める幅
+set shiftwidth=4  " 自動インデントでずれる幅
+set softtabstop=4 " 連続した空白に対してタブやバックスペースでカーソルが動く幅
+" タブ幅を変更
 au BufNewFile,BufRead *.rhtml set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.rb    set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.rake  set tabstop=2 shiftwidth=2 softtabstop=2
@@ -106,6 +106,7 @@ au BufNewFile,BufRead *.yml   set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.css   set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.js    set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.xml   set tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.tex   set tabstop=2 shiftwidth=2 softtabstop=2
 
 set autoindent           " 改行時に前の行のインデントを継続する
 set smartindent          " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
