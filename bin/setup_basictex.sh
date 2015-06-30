@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_basictex.sh *******************
 # created: 2015-Feb-09
-# Last Change:2015-Mar-13.
+# Last Change:2015-Jun-15.
 #-----------------------------------------------------------
 # 1. installing BasicTeX
 # 2. update texLive by tlmgr
@@ -67,5 +67,12 @@ kanji-config-updmap hiragino
 echo "------------ install my defaul-use packages --------------------"
 sudo tlmgr --no-persistent-downloads install cases algorithms ulem multirow subfigmat subfigure
 sudo tlmgr --no-persistent-downloads install soul cancel comment xifthen ifmtarg
+
+sudo tlmgr --no-persistent-downloads install type1c
+sudo tlmgr --no-persistent-downloads install cm-super
+# いい加減，フォント周りがうざい
+sudo tlmgr --no-persistent-downloads install collection-fontsrecommended
+# python, matplotlibで使う
+sudo tlmgr --no-persistent-downloads install dvipng
 
 echo "================= TeX Live Maneger Finish======================="
