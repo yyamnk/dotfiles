@@ -78,6 +78,10 @@ imap <expr><C-g>
 \ neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<C-n>"
 
+smap <expr><C-g>
+\ neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<C-n>"
+
 " インソートモードを抜けたらマーカーを削除
 autocmd InsertLeave * NeoSnippetClearMarkers
 
