@@ -1,4 +1,4 @@
-" Last Change:2015-Jun-19.
+" Last Change:2015-Jul-02.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -58,20 +58,6 @@ vnoremap <Leader>d <<
 " ------------------------------------------------------- "
 " syntax
 " ------------------------------------------------------- " {{{
-" au BufNewFile,BufRead *.md set filetype=markdown
-au BufNewFile,BufRead *.md call MkdSyntax()
-function! MkdSyntax()
-    " markdownで$$ or $囲みのときにsyntaxを追加
-    syntax include @texMathZoneGroup syntax/tex.vim
-    syn region displaymaths matchgroup=markdownMaths start="\$\$" end="\$\$" keepend contains=@texMathZoneGroup
-    syn region inlinemaths matchgroup=markdownMaths start="\$" end="\$" keepend contains=@texMathZoneGroup
-    hi def link markdownMaths SpecialComment
-    " syn region markdownItalic start=" \s_\S\@="  end=" \S\@<=_\|_\S\@="  keepend contains=markdownLineStart
-    " hi def link markdownItalic                htmlItalic
-    " markdownで'_', アンダースコアのErrorが消えない... latexの下付き文字とかがErrorになってる.
-    syntax clear markdownItalic markdownError
-endfunction
-
 syntax on " 構文ハイライトを有効化
 
 " ---------カーソル下のHighlightInfoを表示--------- " {{{
@@ -163,7 +149,7 @@ au BufRead,BufNew * match JpSpace /　/
 
 " 折り返し幅
 " set textwidth=80 " 自動的に改行を挿入する幅
-" set numberwidth=3 " 行数表示の桁数
+set numberwidth=2 " 行数表示の桁数
 " set columns=85 " numberwidthを含め, この列数で折りたたみ, vspでも適用されてる...
 set wrap " 折りたたみ行う
 set colorcolumn=80 " 80文字でラインを入れる
