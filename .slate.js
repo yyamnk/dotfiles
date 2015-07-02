@@ -1,5 +1,5 @@
 //---------- .slate.js ----------------
-// Last Change: 2015-Mar-12.
+// Last Change: 2015-Jul-02.
 // for dvorak user
 //-------------------------------------
 // http://www.infiniteloop.co.jp/blog/2013/08/osx_slate/
@@ -45,7 +45,7 @@ var corners = slate.bind(util.key('c'), slate.operation('chain', {
   operations: _.map(['top-right', 'top-left', 'bottom-left', 'bottom-right'], function(d) {
     return slate.operation('corner', {
       direction: d,
-      width: 'screenSizeX/2',
+      width: 'screenSizeX/3',
       height: 'screenSizeY/2'
     });
   })
@@ -83,8 +83,21 @@ var right_two_third = slate.operation('push', {
   direction : 'right',
   style: 'bar-resize:screenSizeX*2/3'
 });
+// slate.bind(util.key('v'), slate.operation('chain', {
+//   'operations' : [ left_one_third, right_two_third ]
+// }));
+
+//幅30%で左, 70%で右
+var left_third_ten = slate.operation('push', {
+  direction : 'left',
+  style: 'bar-resize:screenSizeX/10*3'
+});
+var right_third_ten = slate.operation('push', {
+  direction : 'right',
+  style: 'bar-resize:screenSizeX/10*7'
+});
 slate.bind(util.key('v'), slate.operation('chain', {
-  'operations' : [ left_one_third, right_two_third ]
+  'operations' : [ left_third_ten, right_third_ten ]
 }));
 
 // 最大化
@@ -97,32 +110,32 @@ slate.bind(util.key('s'), function(win) {
 // undo
 slate.bind(util.key('-'), slate.operation('undo'));
 
-// 幅を1/4, 左へ移動
+// 幅を1/6, 左へ移動
 slate.bind(util.key('g'), function(win) {
   if (!win) return;
   var targetWin = win.rect();              // get win info
   var screen = win.screen().visibleRect(); // get screen info
   // 対象のウインドウ幅, 高さを決定
-  targetWin.width = (screen.width / 4);
+  targetWin.width = (screen.width / 6);
   targetWin.hight = (screen.hight / 2);
   // xを変更,
-  x = ( Math.floor(targetWin.x / (screen.width / 4)) -1 ) * (screen.width / 4);
+  x = ( Math.floor(targetWin.x / (screen.width / 6)) -1 ) * (screen.width / 6);
   // ウインドウが外に出ないように
   targetWin.x = Math.max(x, 0);
   // 適用
   win.doOperation('move', targetWin);
 });
 
-// 幅を1/4, 右へ移動
+// 幅を1/6, 右へ移動
 slate.bind(util.key('r'), function(win) {
   if (!win) return;
   var targetWin = win.rect(); // 対象のwin, desktopのscreenを取得
   var screen = win.screen().visibleRect(); // 対象のウインドウ幅, 高さを決定
-  targetWin.width = (screen.width / 4);
+  targetWin.width = (screen.width / 6);
   targetWin.hight = (screen.hight / 2);
   // targetWin.xによってxを変更
-  x = ( Math.ceil(targetWin.x / (screen.width / 4)) + 1) * (screen.width / 4);
+  x = ( Math.ceil(targetWin.x / (screen.width / 6)) ) * (screen.width / 6);
   // ウインドウが外に出ないように
-  targetWin.x = Math.min(x, 0.75 * screen.width);
+  targetWin.x = Math.min(x, screen.width/6);
   win.doOperation('move', targetWin); // 適用
 });

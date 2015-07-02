@@ -1,7 +1,7 @@
 #================
 # .slate
 #
-# Last Change: 2015-Feb-05.
+# Last Change: 2015-Jul-02.
 # for dvorak user
 #================
 
@@ -26,16 +26,21 @@ bind c:alt focus behind
 
 # nudge Bindings, 移動
 # 1/8で12.5%
-bind d:alt;cmd nudge -12.5% +0   # h for qwerty
-bind h:alt;cmd nudge +0   +12.5% # j for qwerty
-bind t:alt;cmd nudge +0   -12.5% # k for qwerty
-bind n:alt;cmd nudge +12.5% +0   # l for qwerty
+# 1/6で17%
+# bind d:alt;cmd nudge -12.5% +0   # h for qwerty
+# bind h:alt;cmd nudge +0   +12.5% # j for qwerty
+# bind t:alt;cmd nudge +0   -12.5% # k for qwerty
+# bind n:alt;cmd nudge +12.5% +0   # l for qwerty
+bind d:alt;cmd nudge -17% +0   # h for qwerty
+bind h:alt;cmd nudge +0   +17% # j for qwerty
+bind t:alt;cmd nudge +0   -17% # k for qwerty
+bind n:alt;cmd nudge +17% +0   # l for qwerty
 
 # Resize Bindings
-bind d:alt;ctrl;cmd resize -12.5% +0  # h for qwerty
-bind h:alt;ctrl;cmd resize +0 +25%    # j for qwerty
-bind t:alt;ctrl;cmd resize +0 -25%    # k for qwerty
-bind n:alt;ctrl;cmd resize +12.5% +0  # l for qwerty
+bind d:alt;ctrl;cmd resize -17% +0  # h for qwerty
+bind h:alt;ctrl;cmd resize +0 +17%    # j for qwerty
+bind t:alt;ctrl;cmd resize +0 -17%    # k for qwerty
+bind n:alt;ctrl;cmd resize +17% +0  # l for qwerty
 
 # Window Hints
 bind s:alt hint UHIDETONAS
