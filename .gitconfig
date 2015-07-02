@@ -5,7 +5,7 @@
 [difftool "latex"]
 	cmd = latexdiff  \"$LOCAL\" \"$REMOTE\"
 [alias]
-	tree = log --graph --all --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s\"
+	tree = log --graph --date=short --format=\"%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)\"
 [pager]
 	log = diff-highlight | less
 	show = diff-highlight | less
