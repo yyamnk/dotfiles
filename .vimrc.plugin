@@ -616,4 +616,14 @@ nnoremap <silent> <S-xRight> :TmuxNavigateRight<cr>
 call neocomplete#custom_source('look', 'rank',  10)
 " bufferが5,
 " }}}
-"
+
+"-------------------------------------------------------"
+" vim-markdown-quote-syntax
+"-------------------------------------------------------" {{{
+let g:markdown_quote_syntax_filetypes = {
+        \ "matlab" : {
+        \   "start" : "matlab",
+        \},
+  \}
+
+" }}}

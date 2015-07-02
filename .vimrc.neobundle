@@ -1,4 +1,4 @@
-" Last Change:2015-May-17.
+" Last Change:2015-Jul-02.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -86,10 +86,11 @@ function! s:LoadBundles()
     NeoBundle 'rainux/vim-desert-warm-256'
 
     " ------- MarkDown
-    " NeoBundle 'plasticboy/vim-markdown'
-    NeoBundle 'nelstrom/vim-markdown-folding'
-    " filetypeがmkdに固定される？
-    " NeoBundle 'tpope/vim-markdown'
+    " NeoBundle 'plasticboy/vim-markdown' " code blockの#でfoldingがかかる
+    NeoBundle 'rcmdnk/vim-markdown' " 上の改良
+    NeoBundle 'godlygeek/tabular'   " tableで使う?
+    NeoBundle 'joker1007/vim-markdown-quote-syntax' " code blockで言語によるハイライト
+    NeoBundle 'nelstrom/vim-markdown-folding' " code blockで#があっても折りたたみしない
     NeoBundle 'kannokanno/previm'
     NeoBundle 'tyru/open-browser.vim'
     " ------- その他
@@ -129,8 +130,8 @@ function! s:InitNeoBundle()
         try
             call neobundle#begin(expand('~/.vim/bundle/'))
             NeoBundleFetch 'Shougo/neobundle.vim'
-            call neobundle#end()
             call s:LoadBundles()
+            call neobundle#end()
         catch
             call s:WithoutBundles()
         endtry
