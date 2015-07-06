@@ -1,4 +1,4 @@
-" Last Change:2015-Jul-02.
+" Last Change:2015-Jul-06.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -12,7 +12,13 @@ set notimeout         " no timeout for keymap
 "ビープ音すべてを無効にする
 set visualbell t_vb=
 set noerrorbells "エラーメッセージの表示時にビープを鳴らさない
-au BufNewFile,BufRead *.md set filetype=markdown " .mdのフィルタイプ指定
+" }}}
+
+"-------------------------------------------------------"
+" set FileType
+"-------------------------------------------------------" {{{
+au BufNewFile,BufRead *.md set filetype=markdown     " .mdのフィルタイプ指定
+au BufNewFile,BufRead *.snip set filetype=neosnippet " .snipのフィルタイプ指定
 " }}}
 
 " ------------------------------------------------------- "

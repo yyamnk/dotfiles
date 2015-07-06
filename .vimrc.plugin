@@ -49,7 +49,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 "------------------------------------------------------------
 " snippets setting
 "------------------------------------------------------------" {{{
-" デフォルトのスニペット保存先：'.vim/bundle/neosnippet/autoload/neosnippet/snippets/'
+" デフォルトのスニペット保存先: .vim/bundle/neosnippet-snippets/neosnippets/markdown.snip
 " 優先して読み込むスニペットファイルの配置場所. 重複する場合には置き換えられる.
 " let g:neosnippet#snippets_directory='~/.mySnippets, ~/.vim/bundle/vim-snippets/snippets'
 let g:neosnippet#snippets_directory='~/.snips/'
