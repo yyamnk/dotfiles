@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Jun-26.
+# Last Change:2015-Jul-02.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -40,7 +40,7 @@ alias gco='git checkout'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gst='git status'
-alias gt='git tree -10'
+alias gt='git tree -20'
 
 # for rsh tesla
 alias stes13='ssh gr rsh tesla13'
