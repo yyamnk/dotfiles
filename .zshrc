@@ -212,6 +212,11 @@ function png2pdf() {
     rm $PDFORIGIN
 }
 
+# ag検索してでpeco絞り込み，vimで該当行を開く
+# http://qiita.com/fmy/items/b92254d14049996f6ec3
+function agvim () {
+  vim $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+}
 # }}}
 
 # dotfiles保管場所
