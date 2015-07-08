@@ -1,4 +1,4 @@
-# Last Change: 2015-Apr-01.
+# Last Change: 2015-Jul-08.
 
 #-------------------------------------------------------#
 # General Settings
@@ -188,7 +188,11 @@ function tailc() {
 # オプションの比較 http://za.toypark.in/html/2010/09-17.html
 function pdfcompress() {
     output="${1:r}_gs.pdf"
-    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$output $1
+    gs -sDEVICE=pdfwrite \
+    -dCompatibilityLevel=1.4 \
+    -dPDFSETTINGS=/default \
+    -dNOPAUSE -dQUIET -dBATCH \
+    -sOutputFile=$output $1
 }
 
 # Quick Lock without debug
