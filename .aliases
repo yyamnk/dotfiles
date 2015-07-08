@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Jul-02.
+# Last Change:2015-Jul-08.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -26,6 +26,10 @@ alias vp="vim $DOTSDIR/.vimrc.plugin"
 alias ....='cd ../../'
 alias grep='grep --color'
 alias g=grep
+# ディレクトリ末尾に'\', 半角表示
+alias tree='tree -F --charset=C'
+# 擬似tree, http://qiita.com/yone098@github/items/bba8a42de6b06e40983b
+# pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/| /g'
 
 
 #-------------------------------------------------------#
