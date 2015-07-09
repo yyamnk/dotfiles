@@ -228,6 +228,12 @@ function mktexdir () {
     mkdir tex_src/build # 中間ファイル置き場
     tree -L 2 tex_src   # 結果表示
 }
+
+# latexmk to ./build dir
+function latexmkb () {
+    latexmk -pvc -interaction=nonstopmode -jobname=./build/${1:r} $1
+    open ./build/${1:r}.pdf -a skim.app
+}
 # }}}
 
 # dotfiles保管場所
