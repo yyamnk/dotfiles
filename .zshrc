@@ -1,4 +1,4 @@
-# Last Change: 2015-Jul-08.
+# Last Change: 2015-Jul-09.
 
 #-------------------------------------------------------#
 # General Settings
@@ -216,6 +216,17 @@ function png2pdf() {
 # http://qiita.com/fmy/items/b92254d14049996f6ec3
 function agvim () {
   vim $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+}
+
+# create tex dir
+function mktexdir () {
+    mkdir tex_src
+    mkdir tex_src/figs
+    mkdir tex_src/tables
+    mkdir tex_src/style_files
+    mkdir tex_src/sections
+    mkdir tex_src/build # 中間ファイル置き場
+    tree -L 2 tex_src   # 結果表示
 }
 # }}}
 
