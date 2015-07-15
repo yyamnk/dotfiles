@@ -46,6 +46,8 @@ alias gdh='git diff HEAD HEAD^'
 alias gst='git status --short --branch'
 alias gt='git tree -20'
 alias gtl='git tree-detail'
+# tig
+alias tb='tig blame'
 
 # for rsh tesla
 alias stes13='ssh gr rsh tesla13'
