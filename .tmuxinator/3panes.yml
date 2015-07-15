@@ -1,7 +1,6 @@
-# ~/.tmuxinator/wiki.yml
+# ~/.tmuxinator/3panes.yml
 
-name: wiki
-root: ~/db/wiki
+name: 3panes
 
 # Optional tmux socket
 # socket_name: foo
@@ -20,12 +19,18 @@ root: ~/db/wiki
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
 # startup_window: logs
-pre: rackup ~/db/wiki/config.ru -D --port 9200 && echo "start wiki port:9200" && open -a Safari http://localhost:9200
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t 3panes
 
 windows:
   - editor:
-      layout: bcb6,253x98,0,0{83x98,0,0,92,84x98,84,0,97,84x98,169,0,98}
+      layout: cefb,253x98,0,0{78x98,0,0[78x50,0,0,109,78x47,0,51,113],86x98,79,0,110,87x98,166,0,111}
       panes:
-        - git tree
-        - vim .
+        -
+        -
+        -
         -
