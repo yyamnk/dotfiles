@@ -1,4 +1,4 @@
-" Last Change:2015-Jul-13.
+" Last Change:2015-Jul-16.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -58,7 +58,8 @@ function! s:LoadBundles()
     NeoBundle 'tpope/vim-surround'       " 使い方: http://doruby.kbmj.com/aisi/20100310/surround.vim
     NeoBundle 'h1mesuke/vim-alignta.git' " <<hogefuga % -> %で左寄せ, 余白 hoga%fuga
     " NeoBundle 'gerw/vim-latex-suite'     " vim-latex, vimからplatex, dvipdfmx実行
-    NeoBundle 'lervag/vimtex'
+    " NeoBundle 'lervag/vimtex'
+    NeoBundle 'LaTeX-Box-Team/LaTeX-Box' " Lightweight らしい
     NeoBundle 'jimsei/winresizer.git'    " windowをhjklで変更 :WinResizeStartResize, or c-e
     NeoBundle 't9md/vim-choosewin'       " 各ウインドウにオーバーレイ表示->選択で移動 可能
     NeoBundle 'thinca/vim-quickrun'      " vimで編集中に実行
