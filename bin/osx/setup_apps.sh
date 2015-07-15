@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-May-17.
+# Last Change: 2015-Jul-15.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -9,6 +9,7 @@ echo "basic apps install by brew ..."
 
 # brew package install
 brew install brew-cask
+brew install cmigemo # 日本語をローマ字変換, vim migemoで利用
 brew install coreutils
 brew install ctags
 brew install gibo
@@ -18,16 +19,17 @@ brew install heroku-toolbelt
 brew install libdvdcss # for handbrak, library
 brew install lua
 brew install mongodb
-brew install cmigemo # 日本語をローマ字変換, vim migemoで利用
 brew install nkf
 brew install peco
 brew install postgresql
 brew install reattach-to-user-namespace # tmux内のvimでクリップボード併用を可能に
 brew install rmtrash # command for move trash
 brew install the_silver_searcher
+brew install tig
 brew install tmux
 brew install tree
 brew install vim --with-lua --with-python3 --override-system-vi
+brew install w3m
 brew install xpdf
 brew install zsh
 
