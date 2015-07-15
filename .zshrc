@@ -1,4 +1,4 @@
-# Last Change: 2015-Jul-09.
+# Last Change: 2015-Jul-14.
 
 #-------------------------------------------------------#
 # General Settings
@@ -73,7 +73,7 @@ bindkey '^N' history-beginning-search-forward  # 入力中の文字列から検�
 #-------------------------------------------------------#
 # Completion
 #-------------------------------------------------------# {{{
-autoload -U compinit; compinit                      # 補完機能を有効にする
+autoload -U compinit; compinit -u                   # 補完機能を有効にする
 setopt auto_param_slash                             # ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
 setopt mark_dirs                                    # ファイル名の展開でディレクトリにマッチした場合 末尾に / を付加
 setopt correct                                      # コマンドのスペルを訂正する
@@ -232,7 +232,12 @@ function mktexdir () {
 # latexmk to ./build dir
 function latexmkb () {
     latexmk -pvc -interaction=nonstopmode -jobname=./build/${1:r} $1
-    open ./build/${1:r}.pdf -a skim.app
+}
+
+# search text browser
+alc()
+{
+    w3m "http://eow.alc.co.jp/"$1"/UTF-8/?ref=sa"
 }
 # }}}
 
