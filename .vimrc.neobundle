@@ -1,4 +1,4 @@
-" Last Change:2015-Jun-20.
+" Last Change:2015-Jul-13.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -57,12 +57,14 @@ function! s:LoadBundles()
     NeoBundle 'LeafCage/yankround.vim'   " 貼付け後にヤンク履歴を遡ってテキストを貼り付ける
     NeoBundle 'tpope/vim-surround'       " 使い方: http://doruby.kbmj.com/aisi/20100310/surround.vim
     NeoBundle 'h1mesuke/vim-alignta.git' " <<hogefuga % -> %で左寄せ, 余白 hoga%fuga
-    NeoBundle 'gerw/vim-latex-suite'     " vim-latex, vimからplatex, dvipdfmx実行
+    " NeoBundle 'gerw/vim-latex-suite'     " vim-latex, vimからplatex, dvipdfmx実行
+    NeoBundle 'lervag/vimtex'
     NeoBundle 'jimsei/winresizer.git'    " windowをhjklで変更 :WinResizeStartResize, or c-e
     NeoBundle 't9md/vim-choosewin'       " 各ウインドウにオーバーレイ表示->選択で移動 可能
     NeoBundle 'thinca/vim-quickrun'      " vimで編集中に実行
     NeoBundle 'vim-scripts/autodate.vim' " 最終更新日を自動挿入
     NeoBundle 'deton/jasegment.vim'      " vim 日本語 utf8で単語移動を可能に
+    NeoBundle 'cohama/lexima.vim' " 括弧閉じる
     " ------ matlab用
     NeoBundle 'lazywei/vim-matlab'       " matlab用syntax
     " ------ 見た目変更
