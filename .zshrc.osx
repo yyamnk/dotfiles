@@ -1,6 +1,6 @@
 #****************** .zshrc.osx *******************
 # created: 2015/02/04
-# Last Change:2015-Feb-10.
+# Last Change:2015-Jul-15.
 #************************************************************
 
 # proxy 適用
@@ -35,6 +35,9 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom
 
 # secret key base
 [ -f ~/.secret.nutfes14 ] && source ~/.secret.nutfes14
+
+# for autojump
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 #-------------------------------------------------------#
 # peco dfind

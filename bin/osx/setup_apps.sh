@@ -8,6 +8,7 @@
 echo "basic apps install by brew ..."
 
 # brew package install
+brew install autojump
 brew install brew-cask
 brew install cmigemo # 日本語をローマ字変換, vim migemoで利用
 brew install coreutils
