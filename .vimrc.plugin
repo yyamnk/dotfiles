@@ -628,6 +628,9 @@ let g:markdown_quote_syntax_filetypes = {
         \ "matlab" : {
         \   "start" : "matlab",
         \},
+        \ "tex" : {
+        \   "start" : "tex",
+        \},
   \}
 
 " }}}
