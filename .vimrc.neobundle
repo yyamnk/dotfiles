@@ -49,6 +49,7 @@ function! s:LoadBundles()
     " ------ カーソル移動
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'haya14busa/vim-migemo'
+    NeoBundle 'deton/jasegment.vim'      " vim 日本語 utf8で単語移動を可能に
     " ------ その他入力補助
     NeoBundle 'scrooloose/syntastic'     " syntax check
     NeoBundle 'osyo-manga/vim-over'      " :s/hoge/HOGE をリアルタイム表示
@@ -58,14 +59,14 @@ function! s:LoadBundles()
     NeoBundle 'tpope/vim-surround'       " 使い方: http://doruby.kbmj.com/aisi/20100310/surround.vim
     NeoBundle 'h1mesuke/vim-alignta.git' " <<hogefuga % -> %で左寄せ, 余白 hoga%fuga
     " NeoBundle 'gerw/vim-latex-suite'     " vim-latex, vimからplatex, dvipdfmx実行
-    " NeoBundle 'lervag/vimtex'
-    NeoBundle 'LaTeX-Box-Team/LaTeX-Box' " Lightweight らしい
+    NeoBundle 'lervag/vimtex'            " foldingあり, latex-boxよりもomni補完が早い気がする
+    " NeoBundle 'LaTeX-Box-Team/LaTeX-Box' " Lightweightらしい．folding無し
     NeoBundle 'jimsei/winresizer.git'    " windowをhjklで変更 :WinResizeStartResize, or c-e
     NeoBundle 't9md/vim-choosewin'       " 各ウインドウにオーバーレイ表示->選択で移動 可能
     NeoBundle 'thinca/vim-quickrun'      " vimで編集中に実行
     NeoBundle 'vim-scripts/autodate.vim' " 最終更新日を自動挿入
-    NeoBundle 'deton/jasegment.vim'      " vim 日本語 utf8で単語移動を可能に
-    NeoBundle 'cohama/lexima.vim' " 括弧閉じる
+    NeoBundle 'cohama/lexima.vim'        " 括弧閉じる
+    NeoBundle 'itchyny/dictionary.vim'   " macの辞書を引く
     " ------ matlab用
     NeoBundle 'lazywei/vim-matlab'       " matlab用syntax
     " ------ 見た目変更
@@ -89,11 +90,11 @@ function! s:LoadBundles()
     NeoBundle 'rainux/vim-desert-warm-256'
 
     " ------- MarkDown
-    " NeoBundle 'plasticboy/vim-markdown' " code blockの#でfoldingがかかる
-    NeoBundle 'rcmdnk/vim-markdown' " 上の改良
-    NeoBundle 'godlygeek/tabular'   " tableで使う?
+    " NeoBundle 'plasticboy/vim-markdown'           " code blockの#でfoldingがかかる
+    NeoBundle 'rcmdnk/vim-markdown'                 " 上の改良
+    NeoBundle 'godlygeek/tabular'                   " tableで使う?
     NeoBundle 'joker1007/vim-markdown-quote-syntax' " code blockで言語によるハイライト
-    NeoBundle 'nelstrom/vim-markdown-folding' " code blockで#があっても折りたたみしない
+    NeoBundle 'nelstrom/vim-markdown-folding'       " code blockで#があっても折りたたみしない
     NeoBundle 'kannokanno/previm'
     NeoBundle 'tyru/open-browser.vim'
     " ------- その他
