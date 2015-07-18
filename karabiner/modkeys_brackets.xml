@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-May-16.-->
+<!--Last Change: 2015-Jul-18.-->
 
 <root>
     <item>
@@ -8,7 +8,8 @@
       <item>
         <name>HHKB only</name><!--[[[-->
         <appendix>only shift-LR to ()</appendix>
-        <appendix>only alt-LR   to []</appendix>
+        <appendix>only cmd-LR   to []</appendix>
+        <appendix>only alt-LR   to JIS_EISUU, JIS_KANA</appendix>
         <appendix>TAB           to {</appendix>
         <appendix>delete        to }</appendix>
         <identifier>private.modkeys2brackets_hhkb</identifier>
@@ -24,15 +25,30 @@
           KeyCode::SHIFT_R, ModifierFlag::SHIFT_R| ModifierFlag::NONE, KeyCode::SHIFT_R,
           KeyCode::KEY_0, ModifierFlag::SHIFT_L
         </autogen>
-        <!-- alt to []-->
+        <!-- alt to JIS_EISUU, JIS_KANA-->
         <autogen>
           __KeyOverlaidModifier__
-          KeyCode::OPTION_L, ModifierFlag::OPTION_L | ModifierFlag::NONE, KeyCode::OPTION_L,
+          KeyCode::OPTION_L, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+          KeyCode::OPTION_L,
+          KeyCode::JIS_EISUU
+        </autogen>
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::OPTION_R, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+          KeyCode::OPTION_R,
+          KeyCode::JIS_KANA
+        </autogen>
+        <!-- cmd to []-->
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::COMMAND_L, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+          KeyCode::COMMAND_L,
           KeyCode::MINUS
         </autogen>
         <autogen>
           __KeyOverlaidModifier__
-          KeyCode::OPTION_R, ModifierFlag::OPTION_R | ModifierFlag::NONE, KeyCode::OPTION_R,
+          KeyCode::COMMAND_R, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+          KeyCode::COMMAND_R,
           KeyCode::EQUAL
         </autogen>
         <!-- TAB, delete to {}-->
