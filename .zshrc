@@ -1,4 +1,4 @@
-# Last Change: 2015-Jul-14.
+# Last Change: 2015-Jul-18.
 
 #-------------------------------------------------------#
 # General Settings
@@ -261,6 +261,9 @@ darwin*)
     [ -f ~/.zshrc.osx ] && source ~/.zshrc.osx
     [ -f ~/.aliases ] && source ~/.aliases
     [ -f ~/.aliases.zsh ] && source ~/.aliases.zsh
+    # for antigen
+    [ -f ~/.antigen/antigen.zsh ] && source ~/.antigen/antigen.zsh
+    [ -f ~/.antigen_bundles ] && source ~/.antigen_bundles
     ;;
 linux*)
     [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux

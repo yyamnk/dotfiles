@@ -1,0 +1,6 @@
+# Last Change: 2015-Jul-18.
+
+#-------------------------------------------------------#
+# manage zsh bundles by antigen
+#-------------------------------------------------------#
+antigen bundle zsh-users/zsh-syntax-highlighting
