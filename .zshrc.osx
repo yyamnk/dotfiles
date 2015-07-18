@@ -1,6 +1,6 @@
 #****************** .zshrc.osx *******************
 # created: 2015/02/04
-# Last Change:2015-Jul-15.
+# Last Change:2015-Jul-18.
 #************************************************************
 
 # proxy 適用
@@ -27,7 +27,7 @@ fi
 # for tex
 export PATH=/usr/texbin:$PATH
 # for homebrew
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # for brew-cask
 # シンボリックリンク作成先, caskroomのDirを変更
