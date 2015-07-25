@@ -1,4 +1,4 @@
-" Last Change:2015-Jul-16.
+" Last Change:2015-Jul-20.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -50,6 +50,8 @@ function! s:LoadBundles()
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'haya14busa/vim-migemo'
     NeoBundle 'deton/jasegment.vim'      " vim 日本語 utf8で単語移動を可能に
+    NeoBundle 'haya14busa/incsearch.vim' " fuzzy検索
+    NeoBundle 'haya14busa/incsearch-fuzzy.vim'
     " ------ その他入力補助
     NeoBundle 'scrooloose/syntastic'     " syntax check
     NeoBundle 'osyo-manga/vim-over'      " :s/hoge/HOGE をリアルタイム表示
