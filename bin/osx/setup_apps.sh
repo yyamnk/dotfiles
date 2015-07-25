@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Jul-15.
+# Last Change: 2015-Jul-20.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -9,6 +9,7 @@ echo "basic apps install by brew ..."
 
 # brew package install
 brew install autojump
+brew install aspell --with-lang-en # useage: aspell -c bar.txt
 brew install brew-cask
 brew install cmigemo # 日本語をローマ字変換, vim migemoで利用
 brew install coreutils
