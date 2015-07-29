@@ -1,4 +1,4 @@
-# Last Change: 2015-Jul-18.
+# Last Change: 2015-Jul-30.
 
 #-------------------------------------------------------#
 # General Settings
@@ -171,7 +171,9 @@ function tskim() {
 # zip tex_sources (current DIR)
 function tex2zip() {
     echo "---- zip current DIR files to 'texsrc_$(date +%y%m%d).zip'"
-    zip -r texsrc_$(date +%y%m%d).zip * -x "*.git/" "diff/*" "*.DS_Store" "getDiff.sh" "getDiff.config" "texsrc_$(date +%y%m%d).zip"
+    zip -r texsrc_$(date +%y%m%d).zip * \
+        -x "*.git/" "diff/*" "*.DS_Store" "getDiff.sh" "getDiff.config" \
+        "texsrc_$(date +%y%m%d).zip" "build/*"
 }
 
 # markdown -> pdf
