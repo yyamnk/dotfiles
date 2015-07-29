@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Jul-25.
+# Last Change: 2015-Jul-29.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -14,6 +14,7 @@ brew install brew-cask
 brew install cmigemo # 日本語をローマ字変換, vim migemoで利用
 brew install coreutils
 brew install ctags
+brew install diff-pdf
 brew install gibo
 brew install git
 brew install hardlink
