@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Jul-18.
+# Last Change:2015-Jul-27.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -45,6 +45,7 @@ alias gdc='git diff --cached'
 alias gdh='git diff HEAD HEAD^'
 alias gst='git status --short --branch'
 alias gt='git tree -20'
+alias gta='git tree --all'
 alias gtl='git tree-detail'
 # tig
 alias tb='tig blame'
