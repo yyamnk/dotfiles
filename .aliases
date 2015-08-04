@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Jul-30.
+# Last Change:2015-Aug-04.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -164,11 +164,11 @@ alias bep='RAILS_ENV=production bundle exec'
 #-------------------------------------------------------#
 # for lab works
 #-------------------------------------------------------#
-alias lab='cd ~/db/lab'
+alias lab='cd ~/lab'
 alias web='cd ~/db/lab/web/'
 alias bibs='cd ~/db/apps/Mendeley'
 
-alias src='cd ~/db/lab/sources'
+alias src='cd ~/lab/src_lib/'
 alias pso='cd ~/db/lab/sources/pso2'
 alias dpso='cd ~/db/lab/sources/dpso'
 alias csopso='cd ~/db/lab/sources/csopso'
