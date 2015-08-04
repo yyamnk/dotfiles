@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** bin/setup.sh *******************
 # created: 2015-Feb-05
-# Last Change: 2015-Mar-20.
+# Last Change: 2015-Aug-04.
 #------------------------------------------------------------
 # 最低限の環境を整える
 # githubからdotfilesを~/.dotfiles/へclone
@@ -32,6 +32,9 @@ fi
 [ -e $dotfiles/bin/link_dots.sh ] && \
     echo 'update symbolic links ...' && \
     bash $dotfiles/bin/link_dots.sh
+[ -e $dotfiles/matlab/startup.m -a -e $HOME/matlab ] && \
+    echo 'update symbolic links matlab/startup.m' && \
+    ln -sf $dotfiles/matlab/startup.m $HOME/matlab/
 
 # neobundle install
 if [ ! -d $HOME/.vim/bundle ]; then
