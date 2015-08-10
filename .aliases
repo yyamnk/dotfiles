@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Aug-04.
+# Last Change:2015-Aug-10.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -42,7 +42,8 @@ alias gca='git commit --amend'
 alias gco='git checkout'
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias gdh='git diff HEAD HEAD^'
+alias gdh='git diff HEAD^ HEAD'
+alias gds='git diff --name-status'
 alias gst='git status --short --branch'
 alias gt='git tree -20'
 alias gta='git tree --all'
