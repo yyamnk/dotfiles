@@ -1,6 +1,6 @@
 %******************* startup.m *******************
 % Created: 2013/10/16
-% Last Change: 2015-Aug-04.
+% Last Change: 2015-Aug-09.
 % MATLAB startup file
 %******************************************************
 
@@ -22,6 +22,7 @@ if( (ismac == 0) & (ispc == 0) )
 %--- for mac
 elseif (ismac == 1)
     addpath(genpath('~/lab/src_lib/matlab/'));
+    addpath(genpath('~/lab/src_lib/archive/'));
 end
 
 %-------------------------------------------------------- %
