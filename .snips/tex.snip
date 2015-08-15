@@ -16,36 +16,36 @@ snippet		comment
 snippet		color-red
 alias		red
 abbr		削除-> 赤
-  \textcolor{red}{\sout{
+	\textcolor{red}{\sout{
 	${0:red-text}
-  }}
+	}}
 
 # 新規追加 -> 緑
 snippet		color-green
 alias		green
 abbr		新規追加-> 緑
-  \textcolor{green}{
+	\textcolor{green}{
 	${0:green-text}
-  }
+	}
 
 # 修正後
 snippet		color-blue
 alias		blue
 abbr		修正後-> 青
-  \textcolor{blue}{
+	\textcolor{blue}{
 	${0:blue-text}
-  }
+	}
 
 snippet		color-add
 alias		add
-  %修正前
-  \textcolor{red}{\sout{
+	%修正前
+	\textcolor{red}{\sout{
 	${1:修正前}
-  }}
-  %修正後
-  \textcolor{blue}{
+	}}
+	%修正後
+	\textcolor{blue}{
 	 ${0:修正後}
-  }
+	}
 
 snippet		description
 abbr		details of this file
@@ -53,15 +53,15 @@ options		head
 	%****************** `expand('%')` *******************
 	% Created	 : `strftime("%Y-%b-%d")`
 	% Last Change: .
-	%-----------------------------------------------------------
+	%-------------------------------------------------------------------------
 	% ${1:#:hoge}
-	%************************************************************
+	%*************************************************************************
 	${0}
 
 snippet		update_description
 options  word
-  % --- changed（`strftime("%Y-%b-%d")`）
-  ${0}
+	% --- changed（`strftime("%Y-%b-%d")`）
+	${0}
 
 snippet		comment-section
 alias		com3
@@ -94,20 +94,20 @@ options  indent
 snippet		comment-small
 abbr		%----
 options  word
-  %---- ${1:#:hoge}
-  ${0}
+	%---- ${1:#:hoge}
+	${0}
 
 snippet		marker-start
 alias		fstart
 abbr		%{{{%
 options		indent
-  %{{{%
+	%{{{%
 
 snippet		marker-end
 alias		fend
 abbr		%}}}%
 options		indent
-  %}}}%
+	%}}}%
 
 snippet		inline-math
 alias		im
