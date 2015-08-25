@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_basictex.sh *******************
 # created: 2015-Feb-09
-# Last Change:2015-Jun-15.
+# Last Change:2015-Aug-24.
 #-----------------------------------------------------------
 # 1. installing BasicTeX
 # 2. update texLive by tlmgr
@@ -74,5 +74,6 @@ sudo tlmgr --no-persistent-downloads install cm-super
 sudo tlmgr --no-persistent-downloads install collection-fontsrecommended
 # python, matplotlibで使う
 sudo tlmgr --no-persistent-downloads install dvipng
-
+# pdfの余白制御
+sudo tlmgr --no-persistent-downloads install pdfcrop
 echo "================= TeX Live Maneger Finish======================="
