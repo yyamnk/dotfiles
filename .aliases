@@ -70,6 +70,7 @@ alias proxy_off="source $DOTSDIR/bin/proxy_off.sh"
 case "${OSTYPE}" in
 # for mac
 darwin*)
+    alias top="top -u" # デフォルトはCPU消費順になってない
     alias caskroom="cd /usr/local/Caskroom/"
 
     # rm -> move trash
@@ -127,10 +128,8 @@ darwin*)
 
     # rsync関連
     # circuit 3-5, grouseへpush
-    alias push2cals='bash ~/db/shscripts/rsyncs/push2c0x.sh'
+    alias push2cals='bash ~/lab/src_lib/shellscripts/rsyncs/push2c0x.sh'
     alias fetch_form_cals='bash ~/db/shscripts/rsyncs/fetch_c0x.sh'
-    # alias push2c3='bash ~/db/shscripts/push2c3.sh'
-    # alias push2c4='bash ~/db/shscripts/push2c4.sh'
 
     # ログ監視
     alias logs='tail -f ~/matLocal/logs'
@@ -193,5 +192,11 @@ darwin*)
     alias nolta='cd ~/lab/docs_my/conferences/nolta15/tex_src/'
     alias jounal='cd ~/lab/docs_my/journals/oprc_nolta/tex_src/'
     alias shinetsu='cd ~/lab/docs_my/workshops/shinetsu15/'
+    ;;
+linux*)
+    # for cluster, circuit-c*
+    if [ `hostname | cut -c 1-9` = "circuit-c" ]; then
+        alias mat='matlab -nodisplay -nodesktop -nosplash'
+    fi
     ;;
 esac
