@@ -1,4 +1,4 @@
-" Last Change:2015-Jul-10.
+" Last Change:2015-Aug-26.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -99,6 +99,7 @@ au BufNewFile,BufRead *.css   set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.js    set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.xml   set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.tex   set tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.html  set tabstop=2 shiftwidth=2 softtabstop=2
 
 set autoindent           " 改行時に前の行のインデントを継続する
 set smartindent          " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
