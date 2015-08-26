@@ -1,4 +1,4 @@
-# Last Change: 2015-Jul-30.
+# Last Change: 2015-Aug-26.
 
 #-------------------------------------------------------#
 # General Settings
@@ -261,7 +261,6 @@ case "${OSTYPE}" in
 # mac
 darwin*)
     [ -f ~/.zshrc.osx ] && source ~/.zshrc.osx
-    [ -f ~/.aliases ] && source ~/.aliases
     [ -f ~/.aliases.zsh ] && source ~/.aliases.zsh
     # for antigen
     [ -f ~/.antigen/antigen.zsh ] && source ~/.antigen/antigen.zsh
@@ -272,4 +271,5 @@ linux*)
     ;;
 esac
 
+[ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local

@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Aug-15.
+# Last Change:2015-Aug-26.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -30,6 +30,8 @@ alias g=grep
 alias tree='tree -F --charset=C'
 # 擬似tree, http://qiita.com/yone098@github/items/bba8a42de6b06e40983b
 # pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/| /g'
+# tmuxでscreen-256colorを設定するとsshで文字化け
+alias ssh='TERM=xterm ssh' # sshではxtermを使う
 
 
 #-------------------------------------------------------#
@@ -65,126 +67,131 @@ alias proxy_off="source $DOTSDIR/bin/proxy_off.sh"
 #-------------------------------------------------------#
 # for mac
 #-------------------------------------------------------#
-alias caskroom="cd /usr/local/Caskroom/"
+case "${OSTYPE}" in
+# for mac
+darwin*)
+    alias caskroom="cd /usr/local/Caskroom/"
 
-# rm -> move trash
-alias rm='rmtrash'
-# for maxima, 矢印や補完を使えるrmaximaを使用する
-alias maxima='rmaxima'
-alias op='open'
-# open current with gitX
-alias gx='open ./ -a gitX'
+    # rm -> move trash
+    alias rm='rmtrash'
+    # for maxima, 矢印や補完を使えるrmaximaを使用する
+    alias maxima='rmaxima'
+    alias op='open'
+    # open current with gitX
+    alias gx='open ./ -a gitX'
 
-# matlab
-alias mat='/Applications/MATLAB_R2014a.app/bin/matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
-alias matd='/Applications/MATLAB_R2014a.app/bin/matlab -nosplash -nodesktop'
-alias mat7='/Applications/MATLAB_R2007b/bin/matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
-alias mat7d='/Applications/MATLAB_R2007b/bin/matlab -nojvm -nosplash -nodesktop'
+    # matlab
+    alias mat='/Applications/MATLAB_R2014a.app/bin/matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
+    alias matd='/Applications/MATLAB_R2014a.app/bin/matlab -nosplash -nodesktop'
+    alias mat7='/Applications/MATLAB_R2007b/bin/matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
+    alias mat7d='/Applications/MATLAB_R2007b/bin/matlab -nojvm -nosplash -nodesktop'
 
-# MATLAB_R2007B関連
-# alias matlab='DYLD_LIBRARY_PATH=/System/Library/Frameworks/JavaVM.framework/Libraries \
-#     /Applications/MATLAB_R2007b/bin/matlab -nojvm -nosplash -desktop -nodisplay'
-# alias matlabDisp='DYLD_LIBRARY_PATH=/System/Library/Frameworks/JavaVM.framework/Libraries \
-#     /Applications/MATLAB_R2007b/bin/matlab -nodesktop -nosplash -nojvm'
-# alias matlabJave='DYLD_LIBRARY_PATH=/System/Library/Frameworks/JavaVM.framework/Libraries \
-#     /Applications/MATLAB_R2007b/bin/matlab -nodesktop -nosplash'
-#
+    # MATLAB_R2007B関連
+    # alias matlab='DYLD_LIBRARY_PATH=/System/Library/Frameworks/JavaVM.framework/Libraries \
+    #     /Applications/MATLAB_R2007b/bin/matlab -nojvm -nosplash -desktop -nodisplay'
+    # alias matlabDisp='DYLD_LIBRARY_PATH=/System/Library/Frameworks/JavaVM.framework/Libraries \
+    #     /Applications/MATLAB_R2007b/bin/matlab -nodesktop -nosplash -nojvm'
+    # alias matlabJave='DYLD_LIBRARY_PATH=/System/Library/Frameworks/JavaVM.framework/Libraries \
+    #     /Applications/MATLAB_R2007b/bin/matlab -nodesktop -nosplash'
+    #
 
-# tex
-# alias tex2dvi='platex FILENAME.tex'
-# alias dvi2pdf='dvipdfmx -f hiragino.map FILENAME.dvi'
-# alias tex2text='detex -e align, equation, eqnarray, cases, subnumcases, tabular main.tex > main.txt'
-alias tlmgr='tlmgr --no-persistent-downloads'
-# alias sudo tlmgr='sudo tlmgr --no-persistent-downloads'
-alias stlmgr='sudo tlmgr --no-persistent-downloads'
-alias latexmkc='latexmk -pvc -interaction=nonstopmode'
-alias latexmkclear='latexmk -c'
-alias latexmkp='latexmk -interaction=nonstopmode -pv'
-alias tex2rtf='latex2rtf -E0 main.tex'
+    # tex
+    # alias tex2dvi='platex FILENAME.tex'
+    # alias dvi2pdf='dvipdfmx -f hiragino.map FILENAME.dvi'
+    # alias tex2text='detex -e align, equation, eqnarray, cases, subnumcases, tabular main.tex > main.txt'
+    alias tlmgr='tlmgr --no-persistent-downloads'
+    # alias sudo tlmgr='sudo tlmgr --no-persistent-downloads'
+    alias stlmgr='sudo tlmgr --no-persistent-downloads'
+    alias latexmkc='latexmk -pvc -interaction=nonstopmode'
+    alias latexmkclear='latexmk -c'
+    alias latexmkp='latexmk -interaction=nonstopmode -pv'
+    alias tex2rtf='latex2rtf -E0 main.tex'
 
-alias vma='vim main.tex'
+    alias vma='vim main.tex'
 
-# postgreSQL
-# http://qiita.com/tstomoki/items/0f1a930bd42a8e1fdaac
-# set default postgresql
-export PGDATA=/usr/local/var/postgres
-alias pgup='pg_ctl start -l ~/.pgserver.log'
-alias pgdown='pg_ctl stop -s -m fast'
-alias pgstat='pg_ctl status'
-
-
-# karabiner
-alias karabiner-cd='cd ~/db/apps/Karabiner/'
-alias karabiner-edit='vim ~/Library/Application\ Support/Karabiner/private.xml'
-alias karabiner-backup='/Applications/Karabiner.app/Contents/Library/bin/karabiner export > ~/db/apps/Karabiner/karabiner-import.sh'
-alias karabiner-restore='sh ~/db/apps/Karabiner/karabiner-import.sh'
-alias karabiner='/Applications/Karabiner.app/Contents/Library/bin/karabiner'
-
-# rsync関連
-# circuit 3-5, grouseへpush
-alias push2cals='bash ~/db/shscripts/rsyncs/push2c0x.sh'
-alias fetch_form_cals='bash ~/db/shscripts/rsyncs/fetch_c0x.sh'
-# alias push2c3='bash ~/db/shscripts/push2c3.sh'
-# alias push2c4='bash ~/db/shscripts/push2c4.sh'
-
-# ログ監視
-alias logs='tail -f ~/matLocal/logs'
-# remote cmd
-alias rdo='remote_do_matfuncs.sh'
-
-# for mongoDB
-alias mongod='mongod --dbpath ~/db/mongoDB'
-# mp4 to m4a
-alias mp4_m4a='afconvert -f m4af -d aac'
-# nkf 文字コードをUTF-8, 改行コードをLFに変換
-alias nkfu='nkf -w -Lu --overwrite'
-
-#gollum
-# alias start_wiki='gollum --mathjax --allow-uploads --show-all > ~/.gollum.log &'
-alias start_wiki='rackup ~/db/wiki/config.ru -D --port 9200 && echo "start wiki port:9200" && open -a Safari http://localhost:9200'
-alias stop_wiki='kill `pgrep -f rackup`'
-
-#------ directory
-alias db='cd ~/db'
-alias wiki='cd ~/db/wiki'
-
-alias php='cd ~/db/php'
-alias ror='cd ~/db/ror'
-alias py='cd ~/db/myPy'
-alias shs='cd ~/db/shscripts'
-
-# alias nfes15='cd ~/db/ror/nutfes2015'
-alias nfes15='cd ~/db/nfes15'
-alias nfes14='cd ~/db/ror/nutfes2014'
-alias nfes13='cd ~/db/ror/nutfes2013'
-alias survey='cd ~/db/ror/nutfes-survey'
-alias be='bundle exec'
-alias bep='RAILS_ENV=production bundle exec'
+    # postgreSQL
+    # http://qiita.com/tstomoki/items/0f1a930bd42a8e1fdaac
+    # set default postgresql
+    export PGDATA=/usr/local/var/postgres
+    alias pgup='pg_ctl start -l ~/.pgserver.log'
+    alias pgdown='pg_ctl stop -s -m fast'
+    alias pgstat='pg_ctl status'
 
 
-#-------------------------------------------------------#
-# for lab works
-#-------------------------------------------------------#
-alias lab='cd ~/lab'
-alias web='cd ~/db/lab/web/'
-alias bibs='cd ~/db/apps/Mendeley'
-alias exp='cd ~/lab/experiments/'
+    # karabiner
+    alias karabiner-cd='cd ~/db/apps/Karabiner/'
+    alias karabiner-edit='vim ~/Library/Application\ Support/Karabiner/private.xml'
+    alias karabiner-backup='/Applications/Karabiner.app/Contents/Library/bin/karabiner export > ~/db/apps/Karabiner/karabiner-import.sh'
+    alias karabiner-restore='sh ~/db/apps/Karabiner/karabiner-import.sh'
+    alias karabiner='/Applications/Karabiner.app/Contents/Library/bin/karabiner'
 
-alias src='cd ~/lab/src_lib/'
-alias pso='cd ~/db/lab/sources/pso2'
-alias dpso='cd ~/db/lab/sources/dpso'
-alias csopso='cd ~/db/lab/sources/csopso'
-alias oscdp='cd ~/db/lab/sources/oscdp'
-alias symcdp='cd ~/db/lab/sources/symetrical_cdp'
-alias mfuncs='cd ~/db/lab/sources/matFunctions'
-# lab matlab
-alias logbox='cd ~/db/lab/matLogBox'
-alias matl='cd ~/matLocal'
-alias mats='cd ~/mat_server'
-alias matlogbox='logbox'
+    # rsync関連
+    # circuit 3-5, grouseへpush
+    alias push2cals='bash ~/db/shscripts/rsyncs/push2c0x.sh'
+    alias fetch_form_cals='bash ~/db/shscripts/rsyncs/fetch_c0x.sh'
+    # alias push2c3='bash ~/db/shscripts/push2c3.sh'
+    # alias push2c4='bash ~/db/shscripts/push2c4.sh'
 
-# docs_my
-alias wmeeting='cd ~/lab/docs_my/reports/'
-alias nolta='cd ~/lab/docs_my/conferences/nolta15/tex_src/'
-alias jounal='cd ~/lab/docs_my/journals/oprc_nolta/tex_src/'
-alias shinetsu='cd ~/lab/docs_my/workshops/shinetsu15/'
+    # ログ監視
+    alias logs='tail -f ~/matLocal/logs'
+    # remote cmd
+    alias rdo='remote_do_matfuncs.sh'
+
+    # for mongoDB
+    alias mongod='mongod --dbpath ~/db/mongoDB'
+    # mp4 to m4a
+    alias mp4_m4a='afconvert -f m4af -d aac'
+    # nkf 文字コードをUTF-8, 改行コードをLFに変換
+    alias nkfu='nkf -w -Lu --overwrite'
+
+    #gollum
+    # alias start_wiki='gollum --mathjax --allow-uploads --show-all > ~/.gollum.log &'
+    alias start_wiki='rackup ~/db/wiki/config.ru -D --port 9200 && echo "start wiki port:9200" && open -a Safari http://localhost:9200'
+    alias stop_wiki='kill `pgrep -f rackup`'
+
+    #------ directory
+    alias db='cd ~/db'
+    alias wiki='cd ~/db/wiki'
+
+    alias php='cd ~/db/php'
+    alias ror='cd ~/db/ror'
+    alias py='cd ~/db/myPy'
+    alias shs='cd ~/db/shscripts'
+
+    # alias nfes15='cd ~/db/ror/nutfes2015'
+    alias nfes15='cd ~/db/nfes15'
+    alias nfes14='cd ~/db/ror/nutfes2014'
+    alias nfes13='cd ~/db/ror/nutfes2013'
+    alias survey='cd ~/db/ror/nutfes-survey'
+    alias be='bundle exec'
+    alias bep='RAILS_ENV=production bundle exec'
+
+
+    #-------------------------------------------------------#
+    # for lab works
+    #-------------------------------------------------------#
+    alias lab='cd ~/lab'
+    alias web='cd ~/db/lab/web/'
+    alias bibs='cd ~/db/apps/Mendeley'
+    alias exp='cd ~/lab/experiments/'
+
+    alias src='cd ~/lab/src_lib/'
+    alias pso='cd ~/db/lab/sources/pso2'
+    alias dpso='cd ~/db/lab/sources/dpso'
+    alias csopso='cd ~/db/lab/sources/csopso'
+    alias oscdp='cd ~/db/lab/sources/oscdp'
+    alias symcdp='cd ~/db/lab/sources/symetrical_cdp'
+    alias mfuncs='cd ~/db/lab/sources/matFunctions'
+    # lab matlab
+    alias logbox='cd ~/db/lab/matLogBox'
+    alias matl='cd ~/matLocal'
+    alias mats='cd ~/mat_server'
+    alias matlogbox='logbox'
+
+    # docs_my
+    alias wmeeting='cd ~/lab/docs_my/reports/'
+    alias nolta='cd ~/lab/docs_my/conferences/nolta15/tex_src/'
+    alias jounal='cd ~/lab/docs_my/journals/oprc_nolta/tex_src/'
+    alias shinetsu='cd ~/lab/docs_my/workshops/shinetsu15/'
+    ;;
+esac
