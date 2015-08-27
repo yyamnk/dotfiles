@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Aug-26.
+# Last Change:2015-Aug-27.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -63,6 +63,9 @@ alias stes16='ssh gr rsh tesla16'
 alias proxy_on="source $DOTSDIR/bin/proxy_on.sh"
 alias proxy_off="source $DOTSDIR/bin/proxy_off.sh"
 
+# tmux
+alias tmux_sync_on="tmux set-window-option synchronize-panes on"
+alias tmux_sync_off="tmux set-window-option synchronize-panes off"
 
 #-------------------------------------------------------#
 # for mac
@@ -70,7 +73,7 @@ alias proxy_off="source $DOTSDIR/bin/proxy_off.sh"
 case "${OSTYPE}" in
 # for mac
 darwin*)
-    alias top="top -u" # デフォルトはCPU消費順になってない
+    alias top="top -u -R" # デフォルトはCPU消費順になってない. メモリ計算重い
     alias caskroom="cd /usr/local/Caskroom/"
 
     # rm -> move trash
@@ -129,7 +132,7 @@ darwin*)
     # rsync関連
     # circuit 3-5, grouseへpush
     alias push2cals='bash ~/lab/src_lib/shellscripts/rsyncs/push2c0x.sh'
-    alias fetch_form_cals='bash ~/db/shscripts/rsyncs/fetch_c0x.sh'
+    alias fetch_cals='bash ~/lab/src_lib/shellscripts/rsyncs/fetch_c0x.sh'
 
     # ログ監視
     alias logs='tail -f ~/matLocal/logs'
