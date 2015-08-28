@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Aug-27.
+# Last Change:2015-Aug-28.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -109,7 +109,7 @@ darwin*)
     alias latexmkc='latexmk -pvc -interaction=nonstopmode'
     alias latexmkclear='latexmk -c'
     alias latexmkp='latexmk -interaction=nonstopmode -pv'
-    alias tex2rtf='latex2rtf -E0 main.tex'
+    alias tex2rtf='latex2rtf -b ./build/main.bbl -a ./build/main.aux -E0'
 
     alias vma='vim main.tex'
 
