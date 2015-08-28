@@ -49,6 +49,25 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
 let g:neocomplete#sources#omni#input_patterns.tex = '\v\\\a*(ref|cite)\a*([^]]*\])?\{([^}]*,)*[^}]*'
+
+
+"
+"--- for neco-look
+" 優先度を上げる, rankが高いものが優先
+call neocomplete#custom_source('look', 'rank',  10)
+" bufferが5,
+"
+" 全てのファイルタイプで buffer 補完を無効にする
+" call neocomplete#custom#source('buffer',
+" \ 'disabled_filetypes', {'_' : 1})
+"
+" disabled_filetypesに2つ設定する方法がわからなかったので，別々に登録させる．
+" mdで buffer 補完を無効にする
+autocmd FileType markdown call neocomplete#custom_source('buffer',
+\ 'disabled_filetypes', {'markdown' : 1})
+" texで buffer 補完を無効にする, 一度にmdとtexを設定できないものか．
+autocmd FileType tex call neocomplete#custom_source('buffer',
+\ 'disabled_filetypes', {'tex' : 1})
 " ---------------------------------------------------------- " }}}
 
 
@@ -618,15 +637,6 @@ nnoremap <silent> <S-xUp> :TmuxNavigateUp<cr>
 nnoremap <silent> <S-xRight> :TmuxNavigateRight<cr>
 " }}}
 "
-"
-"-------------------------------------------------------"
-" neco-look
-"-------------------------------------------------------" {{{
-" 優先度を上げる, rankが高いものが優先
-call neocomplete#custom_source('look', 'rank',  10)
-" bufferが5,
-" }}}
-
 "-------------------------------------------------------"
 " vim-markdown-quote-syntax
 "-------------------------------------------------------" {{{
