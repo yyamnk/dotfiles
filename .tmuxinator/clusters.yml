@@ -30,8 +30,13 @@ windows:
   - editor:
       layout: tiled
       panes:
+        -
         - ssh c3
         - ssh c4
+        - ssh c5
+        - ssh c6
+        - ssh c7
+        - ssh c8
         - ssh te13 -t zsh
         - ssh te14 -t zsh
         - ssh te15 -t zsh
