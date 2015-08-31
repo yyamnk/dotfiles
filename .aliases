@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Aug-28.
+# Last Change:2015-Aug-31.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -89,6 +89,7 @@ darwin*)
     alias matd='/Applications/MATLAB_R2014a.app/bin/matlab -nosplash -nodesktop'
     alias mat7='/Applications/MATLAB_R2007b/bin/matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
     alias mat7d='/Applications/MATLAB_R2007b/bin/matlab -nojvm -nosplash -nodesktop'
+    alias distcomp='cd /Applications/MATLAB_R2014a.app/toolbox/distcomp/'
 
     # MATLAB_R2007B関連
     # alias matlab='DYLD_LIBRARY_PATH=/System/Library/Frameworks/JavaVM.framework/Libraries \
@@ -200,6 +201,12 @@ linux*)
     # for cluster, circuit-c*
     if [ `hostname | cut -c 1-9` = "circuit-c" ]; then
         alias mat='matlab -nodisplay -nodesktop -nosplash'
+        [ `hostname | cut -c 11` -ge 5 -a `hostname | cut -c 11` -le 8 ]; \
+            alias distcomp='cd /usr/local/MATLAB/R2014a/toolbox/distcomp'
+    fi
+    # for tesla*
+    if [ `hostname | cut -c 1-5` = "tesla" ]; then
+        alias distcomp='cd /usr/local/MATLAB/R2011b/toolbox/distcomp/'
     fi
     ;;
 esac
