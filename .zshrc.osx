@@ -1,18 +1,10 @@
 #****************** .zshrc.osx *******************
 # created: 2015/02/04
-# Last Change:2015-Jul-18.
+# Last Change:2015-Sep-02.
 #************************************************************
 
 # proxy 適用
 source set_proxy_by_networksetup.sh
-
-# for rbenv
-if [ -d $HOME/.rbenv ]; then
-    eval "$(rbenv init - --no-rehash)"
-    # homebrew で入れた場合にはrbenv init -のみでOKのよう.
-    # https://github.com/sstephenson/rbenv#understanding-path
-    # rehashしないように変更
-fi
 
 # for matlab
 if [ -d /applications/matlab_r2014a.app ]; then
@@ -78,3 +70,19 @@ zle -N peco-select-history
 # 履歴からコマンド選択
 bindkey '^r' peco-select-history
 # }}}
+#
+
+# for rbenv
+if [ -d $HOME/.rbenv ]; then
+    eval "$(rbenv init - --no-rehash)"
+    # homebrew で入れた場合にはrbenv init -のみでOKのよう.
+    # https://github.com/sstephenson/rbenv#understanding-path
+    # rehashしないように変更
+fi
+
+# for pyenv
+if [ -d $HOME/.pyenv ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)" # zshrcの最後に書かないと効かない?
+fi
