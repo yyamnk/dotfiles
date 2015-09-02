@@ -1,4 +1,4 @@
-# Last Change: 2015-Aug-26.
+# Last Change: 2015-Sep-01.
 
 #-------------------------------------------------------#
 # General Settings
@@ -234,6 +234,15 @@ function mktexdir () {
 # latexmk to ./build dir
 function latexmkb () {
     latexmk -pvc -interaction=nonstopmode -jobname=./build/${1:r} $1
+}
+
+# latexdiff + latexmk
+function latexdiffmk () {
+    # ex) latexdiff-vc --git --flatten -r HEAD^ main.tex
+    latexdiff-vc --git --flatten -r $1 $2
+    OUTPUT="${2:r}-diff${1:r}.tex"
+    latexmk -pvc -interaction=nonstopmode -jobname=./diff/${OUTPUT:r} $OUTPUT
+    # mv $OUTPUT ./diff/
 }
 
 # search text browser
