@@ -1,5 +1,6 @@
 # ********************** python.snip **************************** #
 # create: 2014/05/23
+# Last Change: 2015-Sep-04.
 #
 # pythonsnippet
 # ****************************************************************** #
@@ -7,9 +8,14 @@ snippet		description
 options		head
 	#!/usr/bin/env python3
 	# -*- coding: utf-8 -*-
-	# ****************** `expand('%:t')` *******************
-	# Created	 : `strftime("%Y-%b-%d")`
-	# Last Change: .
-	# ${1:#:hoge}
-	# ************************************************************
+
+	""" `expand('%:t')` ${1:#:簡単な説明文}
+
+	${1:#:AboutThisFile}
+
+	Created	 : `strftime("%Y-%b-%d")`
+	Last Change: .
+	"""
+	___author___ = 'yyamnk'
+
 	${0}

@@ -547,5 +547,3 @@ c = get_config()
 # If True, any %store-d variables will be automatically restored when IPython
 # starts.
 # c.StoreMagics.autorestore = False
-
-from imp import reload
