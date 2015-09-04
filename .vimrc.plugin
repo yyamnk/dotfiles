@@ -196,10 +196,11 @@ let g:Tex_ShowErrorContext = 0 " prev-mode window( below the quick window )をin
 " set pasteを使用すること（neosnippetも適用されない）
 "
 " global
-" inoremap <buffer><expr> , smartchr#loop(', ', ',')
+inoremap <buffer><expr> , smartchr#loop(', ', ',')
 " inoremap <buffer><expr> ( smartchr#loop('()<LEFT>', '(')
 " inoremap <buffer><expr> [ smartchr#loop('[]<LEFT>', '[')
 " inoremap <buffer><expr> # smartchr#loop('# ', '#')
+inoremap <buffer><expr> = smartchr#loop(' = ', ' == ', '=')
 
 " for tex
 autocmd FileType *tex inoremap <buffer><expr> . smartchr#loop('. ', '.', '...')
@@ -554,7 +555,9 @@ let g:ctrlp_clear_cache_on_exit = 0   " 終了時キャッシュをクリアし�
 " {{{
 " By default, autodate.vim searches a keyword 'Last Change:.'
 let g:autodate_format = '%Y-%b-%d'
-let g:autodate_lines = 5 " 最初の5行でのみ有効化 -> neosnippet対策
+let g:autodate_lines = 20
+" 最初の10行でのみ有効化 -> neosnippet対策
+au BufNewFile,BufRead *.neosnippet let g:autodate_lines = 3
 "  au FileType neosnippet set autodetaOFF " snippet では無効
 " ----------------------------------------------------- }}}
 
