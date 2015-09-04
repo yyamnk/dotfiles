@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Aug-31.
+# Last Change:2015-Sep-03.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -66,6 +66,9 @@ alias proxy_off="source $DOTSDIR/bin/proxy_off.sh"
 # tmux
 alias tmux_sync_on="tmux set-window-option synchronize-panes on"
 alias tmux_sync_off="tmux set-window-option synchronize-panes off"
+
+# python
+alias ipython="ipython3 --profile=yyamnk --matplotlib"
 
 #-------------------------------------------------------#
 # for mac
