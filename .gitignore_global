@@ -519,8 +519,8 @@ docs/_build/
 # PyBuilder
 target/
 
-
-
+# ipython history
+.ipython/*/history.sqlite
 
 
 # for secret_key_base
