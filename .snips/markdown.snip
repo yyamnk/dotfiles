@@ -38,11 +38,12 @@ abbr		\begin{align} ... \end{align}
 		${0}
 	\end{align}$$
 
-snippet		```
+snippet		codeblock
 abbr		``` ```
 options		head
-	```
-	```
+	\`\`\`
+	${0}
+	\`\`\`
 
 snippet		comment
 abbr		<!-- -->
@@ -64,3 +65,24 @@ options		head
 	Created    : `strftime("%Y-%b-%d")`
 	Last Change: .
 	-->
+
+snippet		sh
+abbr		sh codeblock
+options		head
+	\`\`\`sh
+	${0}
+	\`\`\`
+
+snippet		pyb
+abbr		python codeblock
+options		head
+	\`\`\`python
+	${0}
+	\`\`\`
+
+snippet		psqlb
+abbr		psql codeblock
+options		head
+	\`\`\`psql
+	${0}
+	\`\`\`
