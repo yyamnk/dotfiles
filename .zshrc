@@ -1,4 +1,4 @@
-# Last Change: 2015-Sep-01.
+# Last Change: 2015-Sep-09.
 
 #-------------------------------------------------------#
 # General Settings
@@ -249,6 +249,20 @@ function latexdiffmk () {
 alc()
 {
     w3m "http://eow.alc.co.jp/"$1"/UTF-8/?ref=sa"
+}
+
+# cd + ls
+function cdls (){
+    cd $1 && ls
+}
+
+# RPROMPT toggle
+function toggle_rprompt (){
+    if [ -n "$RPROMPT" ]; then # non zero length
+        export RPROMPT=''            # 右側のプロンプトを無くす
+    else
+        export RPROMPT=$tmp_rprompt  # 右側のプロンプト
+    fi
 }
 # }}}
 
