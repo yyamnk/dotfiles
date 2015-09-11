@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2015-Sep-08.
+# Last Change: 2015-Sep-11.
 #************************************************************
 
 brew install python3
@@ -15,4 +15,6 @@ pip3 install ipython
 pip3 install pandas
 pip3 install psycopg2
 pip3 install sqlalchemy
+pip3 install alembic
+pip3 install jedi
 # pip3 install virtualenv virtualenvwrapper
