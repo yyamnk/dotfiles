@@ -1,6 +1,6 @@
 # ********************** python.snip **************************** #
 # create: 2014/05/23
-# Last Change: 2015-Sep-09.
+# Last Change: 2015-Sep-10.
 #
 # pythonsnippet
 # ****************************************************************** #
@@ -14,7 +14,7 @@ options		head
 	${1:#:AboutThisFile}
 
 	Created	 : `strftime("%Y-%b-%d")`
-	Last Change: 2015-Sep-09.
+	Last Change: 2015-Sep-10.
 	"""
 	___author___ = 'yyamnk'
 
@@ -28,3 +28,22 @@ options		head
 	${1}
 	"""
 	${0}
+
+snippet		com3
+abbr		3 rows comment
+options		head
+	#----------------------------
+	# ${1}
+	#----------------------------
+	${0}
+
+snippet		class
+abbr		class Hoge() ...
+options		head
+	class ${1:#:Name}(${2:#:object}):
+		"""
+		${3:#:クラス説明}
+
+		Attributes:
+		Usage:
+		"""

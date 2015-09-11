@@ -37,7 +37,7 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete " jedi-vimを使う
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " ruby omni補完
@@ -69,7 +69,6 @@ autocmd FileType markdown call neocomplete#custom_source('buffer',
 autocmd FileType tex call neocomplete#custom_source('buffer',
 \ 'disabled_filetypes', {'tex' : 1})
 " ---------------------------------------------------------- " }}}
-
 
 "------------------------------------------------------------
 " snippets setting
@@ -110,6 +109,18 @@ smap <expr><C-g>
 " インソートモードを抜けたらマーカーを削除
 autocmd InsertLeave * NeoSnippetClearMarkers
 
+" }}}
+
+"-------------------------------------------------------"
+" jedi-vim Setting
+"-------------------------------------------------------" {{{
+autocmd FileType python setlocal omnifunc=jedi#completions
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 " }}}
 
 "------------------------------------------------------------
@@ -659,3 +670,4 @@ let g:markdown_quote_syntax_filetypes = {
 "-------------------------------------------------------" {{{
 map z/ <Plug>(incsearch-fuzzy-/)
 " }}}
+
