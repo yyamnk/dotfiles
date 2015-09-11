@@ -521,6 +521,7 @@ target/
 
 # ipython history
 .ipython/*/history.sqlite
+.ipython/*/db
 
 
 # for secret_key_base
