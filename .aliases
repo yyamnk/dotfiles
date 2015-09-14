@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Sep-03.
+# Last Change:2015-Sep-14.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -64,6 +64,7 @@ alias proxy_on="source $DOTSDIR/bin/proxy_on.sh"
 alias proxy_off="source $DOTSDIR/bin/proxy_off.sh"
 
 # tmux
+alias mytmux='tmux new-session \; source-file ~/.tmux.conf.3panes-horizontal'
 alias tmux_sync_on="tmux set-window-option synchronize-panes on"
 alias tmux_sync_off="tmux set-window-option synchronize-panes off"
 
