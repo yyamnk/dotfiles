@@ -1,4 +1,4 @@
-" Last Change:2015-Sep-11.
+" Last Change:2015-Sep-16.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -95,7 +95,7 @@ function! s:LoadBundles()
 
     " ------- MarkDown
     " NeoBundle 'plasticboy/vim-markdown'           " code blockの#でfoldingがかかる
-    NeoBundle 'rcmdnk/vim-markdown'                 " 上の改良
+    " NeoBundle 'rcmdnk/vim-markdown'                 " 上の改良, 重い
     NeoBundle 'godlygeek/tabular'                   " tableで使う?
     NeoBundle 'joker1007/vim-markdown-quote-syntax' " code blockで言語によるハイライト
     NeoBundle 'nelstrom/vim-markdown-folding'       " code blockで#があっても折りたたみしない
