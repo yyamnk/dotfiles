@@ -12,6 +12,7 @@ brew install aspell --with-lang-en # useage: aspell -c bar.txt
 brew install autojump
 brew install brew-cask
 brew install cmigemo # 日本語をローマ字変換, vim migemoで利用
+brew install colordiff
 brew install coreutils
 brew install ctags
 brew install diff-pdf
