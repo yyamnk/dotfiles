@@ -1,15 +1,15 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Jul-29.
+# Last Change: 2015-Sep-16.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
 echo "basic apps install by brew ..."
 
 # brew package install
-brew install autojump
 brew install aspell --with-lang-en # useage: aspell -c bar.txt
+brew install autojump
 brew install brew-cask
 brew install cmigemo # 日本語をローマ字変換, vim migemoで利用
 brew install coreutils
@@ -26,6 +26,7 @@ brew install nkf
 brew install pandoc
 brew install peco
 brew install postgresql
+brew install ranger
 brew install reattach-to-user-namespace # tmux内のvimでクリップボード併用を可能に
 brew install rmtrash # command for move trash
 brew install the_silver_searcher
