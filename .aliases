@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Sep-14.
+# Last Change:2015-Sep-16.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -70,6 +70,9 @@ alias tmux_sync_off="tmux set-window-option synchronize-panes off"
 
 # python
 alias ipython="ipython3 --profile=yyamnk --matplotlib"
+
+# diff
+alias diff="diff -u"
 
 #-------------------------------------------------------#
 # for mac
