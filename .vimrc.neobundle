@@ -130,8 +130,8 @@ function! s:LoadBundles()
             \ 'depends' : 'xolox/vim-misc',
           \ }
     " ウインドウマネージャ
-    NeoBundle 'spolu/dwm.vim'
-    NeoBundle 'kannokanno/unite-dwm' " :Unite dwm, dwm_new を追加
+    " NeoBundle 'spolu/dwm.vim' " tmuxに任せる
+    " NeoBundle 'kannokanno/unite-dwm' " :Unite dwm, dwm_new を追加
     NeoBundle 'christoomey/vim-tmux-navigator' " vimとtmuxをシームレスに移動
     NeoBundle 'drmikehenry/vim-fixkey' " <S-Left>が効かなかったので
 
