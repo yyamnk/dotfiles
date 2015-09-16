@@ -31,7 +31,9 @@ function! s:LoadBundles()
       \ }
     NeoBundle 'Shougo/vimshell'
     " ------ unite関連
-    NeoBundle 'Shougo/unite.vim'
+    NeoBundleLazy 'Shougo/unite.vim', {
+        \ 'autoload' : {'command': ['Unite']},
+    \ }
     NeoBundle 'https://github.com/Shougo/neomru.vim'
     NeoBundle 'Shougo/vimfiler'
     NeoBundle 'h1mesuke/unite-outline'
@@ -96,11 +98,24 @@ function! s:LoadBundles()
     " ------- MarkDown
     " NeoBundle 'plasticboy/vim-markdown'           " code blockの#でfoldingがかかる
     " NeoBundle 'rcmdnk/vim-markdown'                 " 上の改良, 重い
-    NeoBundle 'godlygeek/tabular'                   " tableで使う?
-    NeoBundle 'joker1007/vim-markdown-quote-syntax' " code blockで言語によるハイライト
-    NeoBundle 'nelstrom/vim-markdown-folding'       " code blockで#があっても折りたたみしない
-    NeoBundle 'kannokanno/previm'
-    NeoBundle 'tyru/open-browser.vim'
+    " tableで使う?
+    NeoBundleLazy 'godlygeek/tabular', {
+        \ 'autoload' : {'filetype' : ['markdown']},
+    \}
+    " code blockで言語によるハイライト
+    NeoBundleLazy 'joker1007/vim-markdown-quote-syntax', {
+        \ 'autoload' : {'filetype' : ['markdown']},
+    \}
+    " code blockで#があっても折りたたみしない
+    NeoBundleLazy 'nelstrom/vim-markdown-folding', {
+        \ 'autoload' : {'filetype' : ['markdown']},
+    \}
+    NeoBundleLazy 'kannokanno/previm', {
+        \ 'autoload' : {'filetype' : ['markdown']},
+    \}
+    NeoBundleLazy 'tyru/open-browser.vim', {
+        \ 'autoload' : {'filetype' : ['markdown']},
+    \}
     " ------- その他
     " Qiita
     NeoBundle 'mattn/webapi-vim'
