@@ -96,17 +96,14 @@ function! s:LoadBundles()
     NeoBundle 'rainux/vim-desert-warm-256'
 
     " ------- MarkDown
-    " NeoBundle 'plasticboy/vim-markdown'           " code blockの#でfoldingがかかる
-    " NeoBundle 'rcmdnk/vim-markdown'                 " 上の改良, 重い
+    " NeoBundle 'plasticboy/vim-markdown'   " code blockの#でfoldingがかかる
+    NeoBundle 'rcmdnk/vim-markdown'       " 上の改良
+    " code blockで言語別シンタックス
+    NeoBundle 'joker1007/vim-markdown-quote-syntax'
     " tableで使う?
     NeoBundleLazy 'godlygeek/tabular', {
         \ 'autoload' : {'filetype' : ['markdown']},
     \}
-    " code blockで言語によるハイライト
-    NeoBundleLazy 'joker1007/vim-markdown-quote-syntax', {
-        \ 'autoload' : {'filetype' : ['markdown']},
-    \}
-    " code blockで#があっても折りたたみしない
     NeoBundleLazy 'nelstrom/vim-markdown-folding', {
         \ 'autoload' : {'filetype' : ['markdown']},
     \}
