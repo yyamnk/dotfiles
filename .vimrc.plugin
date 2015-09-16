@@ -113,17 +113,16 @@ autocmd InsertLeave * NeoSnippetClearMarkers
 
 "-------------------------------------------------------"
 " jedi-vim Setting
+" ref) http://kozo2.hatenablog.com/entry/2014/01/22/050714
 "-------------------------------------------------------" {{{
-autocmd FileType python setlocal omnifunc=jedi#completions
-" docstringは表示しない
-autocmd FileType python setlocal completeopt-=preview
+autocmd FileType python setlocal omnifunc=jedi#completions " jedi-vim 有効化
+autocmd FileType python setlocal completeopt-=preview " docstringは表示しない
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
-" 以下neosnippetが展開できなかったので削除
-" if !exists('g:neocomplete#force_omni_input_patterns')
-"     let g:neocomplete#force_omni_input_patterns = {}
-" endif
-" let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 " }}}
 
 "------------------------------------------------------------
