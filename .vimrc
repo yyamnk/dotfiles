@@ -1,4 +1,4 @@
-" Last Change:2015-Aug-26.
+" Last Change:2015-Sep-17.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -17,8 +17,9 @@ set noerrorbells "エラーメッセージの表示時にビープを鳴らさ�
 "-------------------------------------------------------"
 " set FileType
 "-------------------------------------------------------" {{{
-au BufNewFile,BufRead *.md set filetype=markdown     " .mdのフィルタイプ指定
-au BufNewFile,BufRead *.snip set filetype=neosnippet " .snipのフィルタイプ指定
+au BufNewFile,BufRead *.md   set filetype=markdown
+au BufNewFile,BufRead *.snip set filetype=neosnippet
+au BufNewFile,BufRead *.pyx  set filetype=python
 " }}}
 
 " ------------------------------------------------------- "
