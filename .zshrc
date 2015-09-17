@@ -1,4 +1,4 @@
-# Last Change: 2015-Sep-09.
+# Last Change: 2015-Sep-17.
 
 #-------------------------------------------------------#
 # General Settings
@@ -29,14 +29,18 @@ setopt IGNOREEOF
 autoload -U colors; colors # プロンプトに色を付ける
 
 # 一般ユーザ時
+# プロンプト変数:
+# %n ユーザ名
+# %# ユーザ種別(rootで'#', それ以外で'%')
 # tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
-tmp_prompt="%{${fg[cyan]}%}%# %{${reset_color}%}"
+tmp_prompt="%{${fg[cyan]}%}$ %{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
 tmp_rprompt="%{${fg[green]}%}[%~]%{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # rootユーザ時(太字にし、アンダーバーをつける)
 if [ ${UID} -eq 0 ]; then
+    tmp_prompt="%{${fg[cyan]}%}# %{${reset_color}%}" # ユーザ種別表示'#'
     tmp_prompt="%B%U${tmp_prompt}%u%b"
     tmp_prompt2="%B%U${tmp_prompt2}%u%b"
     tmp_rprompt="%B%U${tmp_rprompt}%u%b"
