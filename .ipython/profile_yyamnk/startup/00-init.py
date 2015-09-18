@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # ****************** 00-init.py *******************
 # Created	 : 2015-Sep-02
-# Last Change: 2015-Sep-04.
+# Last Change: 2015-Sep-18.
 # -----------------------------------
 # ipython 起動時に自動実行
 # ************************************************************
@@ -13,3 +13,5 @@ import matplotlib.pyplot as plt
 
 from pandas import Series, DataFrame
 import pandas as pd
+from pprint import pprint as pp
+import sys

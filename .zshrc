@@ -1,4 +1,4 @@
-# Last Change: 2015-Sep-17.
+# Last Change: 2015-Sep-18.
 
 #-------------------------------------------------------#
 # General Settings
@@ -280,6 +280,9 @@ fi
 
 # for local bin
 [ -d $HOME/bin ] && export PATH=$HOME/bin:$PATH
+
+# for python
+export PYTHONPATH=${HOME}/src_lib/python
 
 #---------------------
 # 環境依存設定
