@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Sep-16.
+# Last Change: 2015-Sep-23.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -19,6 +19,7 @@ brew install diff-pdf
 brew install gibo
 brew install git
 brew install hardlink
+brew install hub
 brew install heroku-toolbelt
 brew install libdvdcss # for handbrak, library
 brew install lua
