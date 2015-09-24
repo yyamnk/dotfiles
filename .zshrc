@@ -1,4 +1,4 @@
-# Last Change: 2015-Sep-18.
+# Last Change: 2015-Sep-24.
 
 #-------------------------------------------------------#
 # General Settings
@@ -283,6 +283,8 @@ fi
 
 # for python
 export PYTHONPATH=${HOME}/src_lib/python
+# for cec2013 banchmark suite
+export CEC13DATA=${PYTHONPATH}/cec2013single/cec2013single/cec2013_data
 
 #---------------------
 # 環境依存設定
