@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Sep-23.
+# Last Change: 2015-Sep-24.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -79,6 +79,8 @@ brew cask install textexpander3
 brew cask install totalspaces
 brew cask install transmit
 brew cask install trim-enabler
+brew cask install vagrant
+brew cask install virtualbox
 brew cask install vlc
 brew cask install xquartz
 brew cask install xtrafinder
