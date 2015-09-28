@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-Jun-04.-->
+<!--Last Change: 2015-Sep-28.-->
 <!-- [[[, ]]]: 折り畳みマーカ -->
 
 <root>
@@ -263,6 +263,19 @@
         KeyCode::SEMICOLON, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L, ModifierFlag::CONTROL_L, ModifierFlag::OPTION_L,
         Option::NOREPEAT
         @end
+        </autogen><!--]]]-->
+      </item>
+
+      <item>
+        <name>Control+O to KANA/EISUU (toggle) for dvorak map</name><!--[[[-->
+        <appendix>(Except in Virtual Machine, RDC)</appendix>
+        <appendix>keycode::S (dvorak O)で日/英をトグル</appendix>
+        <identifier>private.controlO2kanaeisuu</identifier>
+        <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
+        <autogen>
+          __KeyToKey__
+          KeyCode::S,
+          MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE, KeyCode::VK_JIS_TOGGLE_EISUU_KANA
         </autogen><!--]]]-->
       </item>
 
