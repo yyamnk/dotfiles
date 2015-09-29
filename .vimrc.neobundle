@@ -1,4 +1,4 @@
-" Last Change:2015-Sep-16.
+" Last Change:2015-Sep-28.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -36,8 +36,10 @@ function! s:LoadBundles()
     \ }
     NeoBundle 'https://github.com/Shougo/neomru.vim'
     NeoBundle 'Shougo/vimfiler'
-    NeoBundle 'h1mesuke/unite-outline'
+    NeoBundle 'Shougo/unite-outline'
     NeoBundle 'vim-scripts/taglist.vim'
+    NeoBundle 'tsukkee/unite-help'
+    NeoBundle 'thinca/vim-unite-history'
     "------- git関連
     NeoBundle 'tpope/vim-fugitive' " Gitコマンドを実行
     " ------ 補完・スニペット

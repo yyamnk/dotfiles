@@ -274,8 +274,7 @@ noremap <Leader>ud :Unite directory_mru directory_rec/async:<CR>
 " noremap <Leader>um :Unite directory_mru<CR>
 noremap <Leader>uo :Unite outline<CR>
 noremap <Leader>ur :Unite file_rec/async:$HOME/Dropbox/mybrain/<CR>
-" unite-dwm 必要
-noremap <Leader>w :Unite dwm<CR>
+noremap <Leader>uh :Unite help<CR>
 
 
 " 参考:
