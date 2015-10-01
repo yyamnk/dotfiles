@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2015-Sep-17.
+# Last Change: 2015-Sep-28.
 #************************************************************
 
 brew install pyenv
@@ -21,3 +21,4 @@ pip install restview # rst viewer. depending 'readme'
 # to fix it,
 # cd ~/.pyenv/versions/miniconda3-3.9.1/lib/python3.4/site-packages
 # mv README README.txt
+pip install pudb
