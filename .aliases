@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Sep-24.
+# Last Change:2015-Oct-01.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -49,7 +49,7 @@ alias gds='git diff --name-status'
 alias gst='git status --short --branch'
 alias gt='git tree -20'
 alias gta='git tree --all'
-alias gtl='git tree-detail'
+alias gtd='git tree-detail'
 # tig
 alias tb='tig blame'
 
@@ -185,7 +185,7 @@ darwin*)
     # for lab works
     #-------------------------------------------------------#
     alias lab='cd ~/lab'
-    alias web='cd ~/db/lab/web/'
+    alias web='cd ~/db/lab_web/'
     alias bibs='cd ~/db/apps/Mendeley'
     alias exp='cd ~/lab/experiments/'
 
