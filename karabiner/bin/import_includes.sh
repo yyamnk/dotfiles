@@ -30,8 +30,6 @@ $cli set remap.fkeys_to_consumer_f1 1
 /bin/echo -n .
 $cli set remap.holding_e_to_expose 1
 /bin/echo -n .
-$cli set remap.expose_mode2 1
-/bin/echo -n .
 $cli set option.tabmode_q 1
 /bin/echo -n .
 $cli set parameter.mousekey_repeat_wait_of_pointer 15

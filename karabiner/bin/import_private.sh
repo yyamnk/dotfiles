@@ -56,4 +56,7 @@ $cli set private.ctrl-semicolon2esc 1
 /bin/echo -n .
 $cli set private.line_delete_dvorak 1
 /bin/echo -n .
+$cli set private.emacsmode_controlM 1
+/bin/echo -n .
+$cli set private.controlO2kanaeisuu 1
 /bin/echo
