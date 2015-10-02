@@ -1,12 +1,15 @@
 #!/usr/bin/env sh
 #****************** setup_brew.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Feb-11.
+# Last Change: 2015-Oct-02.
 #************************************************************
 
 # brew install
 echo 'Installing brew ...'
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo 'Installing brew cask ...'
+brew install caskroom/cask/brew-cask
 
 echo "brew update & upgrade"
 # homebrew update
