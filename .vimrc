@@ -1,4 +1,4 @@
-" Last Change:2015-Sep-17.
+" Last Change:2015-Oct-05.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -124,6 +124,7 @@ autocmd FileType markdown set foldlevel=2
 " let g:xml_syntax_folding = 1
 " autocmd FileType xml set foldmethod=syntax foldlevel=4
 autocmd FileType xml set foldlevel=0 foldmarker=[[[,]]]
+autocmd FileType python set foldmethod=indent
 " }}}
 
 " ------------------------------------------------------- "
