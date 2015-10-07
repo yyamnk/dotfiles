@@ -1,4 +1,4 @@
-" Last Change:2015-Sep-28.
+" Last Change:2015-Oct-07.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -74,6 +74,7 @@ function! s:LoadBundles()
     NeoBundle 'vim-scripts/autodate.vim' " 最終更新日を自動挿入
     NeoBundle 'cohama/lexima.vim'        " 括弧閉じる
     NeoBundle 'itchyny/dictionary.vim'   " macの辞書を引く
+    NeoBundle 'tyru/caw.vim'             " コメントアウト/イン でトグル
     " ------ syntax
     NeoBundle 'lazywei/vim-matlab' " matlab用syntax
     NeoBundle 'exu/pgsql.vim'      " postgresql用syntax

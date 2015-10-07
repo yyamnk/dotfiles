@@ -672,3 +672,9 @@ let g:markdown_quote_syntax_filetypes = {
 map z/ <Plug>(incsearch-fuzzy-/)
 " }}}
 
+"-------------------------------------------------------"
+" tyru/caw.vim, toggle comment in/out
+"-------------------------------------------------------" {{{
+nmap <Leader>c <Plug>(caw:i:toggle)
+vmap <Leader>c <Plug>(caw:i:toggle)
+" }}}
