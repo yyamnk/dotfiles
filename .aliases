@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Oct-01.
+# Last Change:2015-Oct-08.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -73,7 +73,7 @@ alias ipython="ipython3 --profile=yyamnk --matplotlib --pprint --no-banner"
 
 # diff
 # alias diff="diff -u"
-if [[ -x `which colordiff` ]]; then
+if [[ -e /usr/local/bin/colordiff ]]; then
   alias diff='colordiff -u'
 else
   alias diff='diff -u'
@@ -143,8 +143,8 @@ darwin*)
 
     # rsync関連
     # circuit 3-5, grouseへpush
-    alias push2cals='bash ~/lab/src_lib/shellscripts/rsyncs/push2c0x.sh'
-    alias fetch_cals='bash ~/lab/src_lib/shellscripts/rsyncs/fetch_c0x.sh'
+    alias push2cals='bash ~/lab/src_lib/shellscripts/rsyncs/push2hosts.sh'
+    alias fetch_cals='bash ~/lab/src_lib/shellscripts/rsyncs/fetch_hosts.sh'
 
     # ログ監視
     alias logs='tail -f ~/matLocal/logs'
