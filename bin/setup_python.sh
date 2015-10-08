@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2015-Sep-28.
+# Last Change: 2015-Oct-08.
 #************************************************************
 
 brew install pyenv
@@ -22,3 +22,7 @@ pip install restview # rst viewer. depending 'readme'
 # cd ~/.pyenv/versions/miniconda3-3.9.1/lib/python3.4/site-packages
 # mv README README.txt
 pip install pudb
+pip install arrow # better datetime
+pip install rq    # simple job-queue
+pip install rq-dashboard
+pip install git+https://github.com/Supervisor/supervisor.git # 4.0でpython3対応

@@ -30,6 +30,7 @@ brew install peco
 brew install postgresql
 brew install ranger
 brew install reattach-to-user-namespace # tmux内のvimでクリップボード併用を可能に
+brew install redis   # NoSQL, for python rq
 brew install rmtrash # command for move trash
 brew install rsync
 brew install the_silver_searcher
