@@ -1,4 +1,4 @@
-# Last Change: 2015-Sep-24.
+# Last Change: 2015-Oct-08.
 
 #-------------------------------------------------------#
 # General Settings
@@ -302,6 +302,22 @@ linux*)
     [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux
     ;;
 esac
+
+
+# for rbenv
+if [ -d $HOME/.rbenv ]; then
+    eval "$(rbenv init - --no-rehash)"
+    # homebrew で入れた場合にはrbenv init -のみでOKのよう.
+    # https://github.com/sstephenson/rbenv#understanding-path
+    # rehashしないように変更
+fi
+
+# for pyenv
+if [ -d $HOME/.pyenv ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)" # zshrcの最後に書かないと効かない?
+fi
 
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
