@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Sep-28.
+# Last Change: 2015-Oct-08.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -31,6 +31,7 @@ brew install postgresql
 brew install ranger
 brew install reattach-to-user-namespace # tmux内のvimでクリップボード併用を可能に
 brew install rmtrash # command for move trash
+brew install rsync
 brew install the_silver_searcher
 brew install tig
 brew install tmux
