@@ -74,10 +74,17 @@ alias ipython="ipython3 --profile=yyamnk --matplotlib --pprint --no-banner"
 # diff
 # alias diff="diff -u"
 if [[ -e /usr/local/bin/colordiff ]]; then
-  alias diff='colordiff -u'
+    alias diff='colordiff -u'
 else
-  alias diff='diff -u'
+    alias diff='diff -u'
 fi
+
+# supervisor
+if [[ -e ${HOME}/.pyenv/shims/supervisorctl ]]; then
+    alias supervisorctl='supervisorctl -c ~/conf/supervisor/supervisord.conf'
+    alias supervisord_up='supervisord -c ~/conf/supervisor/supervisord.conf'
+fi
+#
 #-------------------------------------------------------#
 # for mac
 #-------------------------------------------------------#
@@ -190,17 +197,9 @@ darwin*)
     alias exp='cd ~/lab/experiments/'
 
     alias src='cd ~/lab/src_lib/'
-    alias pso='cd ~/db/lab/sources/pso2'
-    alias dpso='cd ~/db/lab/sources/dpso'
-    alias csopso='cd ~/db/lab/sources/csopso'
-    alias oscdp='cd ~/db/lab/sources/oscdp'
-    alias symcdp='cd ~/db/lab/sources/symetrical_cdp'
-    alias mfuncs='cd ~/db/lab/sources/matFunctions'
     # lab matlab
-    alias logbox='cd ~/db/lab/matLogBox'
     alias matl='cd ~/matLocal'
     alias mats='cd ~/mat_server'
-    alias matlogbox='logbox'
 
     # docs_my
     alias wmeeting='cd ~/lab/docs_my/reports/'
