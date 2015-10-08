@@ -84,7 +84,7 @@ if [[ -e ${HOME}/.pyenv/shims/supervisorctl ]]; then
     alias supervisorctl='supervisorctl -c ~/conf/supervisor/supervisord.conf'
     alias supervisord_up='supervisord -c ~/conf/supervisor/supervisord.conf'
 fi
-#
+
 #-------------------------------------------------------#
 # for mac
 #-------------------------------------------------------#
@@ -140,6 +140,8 @@ darwin*)
     alias pgdown='pg_ctl stop -s -m fast'
     alias pgstat='pg_ctl status'
 
+    # rq-dashboard
+    alias rq-dashboard_open='open http://127.0.0.1:9181/ -a Google\ Chrome'
 
     # karabiner
     alias karabiner-cd='cd ~/db/apps/Karabiner/'
