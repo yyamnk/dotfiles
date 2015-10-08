@@ -5,23 +5,36 @@
 #************************************************************
 
 # get pyenv
-if [ -e /usr/local/bin/brew ]; then
-    brew install pyenv
+echo 'checking pyenv ...'
+if [ -e ${HOME}/.pyenv ]; then
+    echo 'pyenv found.'
 else
-    git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+    echo 'pyenv not found. getting pyenv ...'
+    if [ -e /usr/local/bin/brew -a ]; then
+        brew install pyenv
+    else
+        git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+    fi
 fi
 
 # by miniconda
-if [ -e ${HOME}/.pyenv/version ]; then
+echo 'checking miniconda ...'
+if [ `cat ~/.pyenv/version | grep 'miniconda'` ]; then
+    echo 'miniconda found.'
+else
+    echo 'install miniconda ...'
     pyenv install miniconda3-3.16.0
     pyenv rehash
     pyenv global miniconda3-3.16.0
 fi
 
 # get packages
+echo 'start install conda packages'
 conda install numpy scipy matplotlib ipython pandas
 conda install numba cython
 conda install psycopg2 sqlalchemy
+echo ''
+echo 'start install pip packages'
 pip install alembic
 pip install restview # rst viewer. depending 'readme'
 # check OSX bug for installing readme-0.6.0, http://bugs.python.org/issue24633
