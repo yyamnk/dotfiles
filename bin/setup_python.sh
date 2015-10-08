@@ -1,15 +1,22 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2015-Oct-08.
+# Last Change: 2015-Oct-09.
 #************************************************************
 
-brew install pyenv
+# get pyenv
+if [ -e /usr/local/bin/brew ]; then
+    brew install pyenv
+else
+    git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+fi
 
 # by miniconda
-pyenv install miniconda3-3.9.1
-pyenv rehash
-pyenv global miniconda3-3.9.1
+if [ -e ${HOME}/.pyenv/version ]; then
+    pyenv install miniconda3-3.16.0
+    pyenv rehash
+    pyenv global miniconda3-3.16.0
+fi
 
 # get packages
 conda install numpy scipy matplotlib ipython pandas
