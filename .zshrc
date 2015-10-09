@@ -26,6 +26,9 @@ setopt IGNOREEOF
 #-------------------------------------------------------#
 # Prompt
 #-------------------------------------------------------# {{{
+# add colors function path
+[ -e $HOME/usr/local/share/zsh/5.1.1/functions ] && \
+    fpath=($HOME/usr/local/share/zsh/5.1.1/functions $fpath)
 autoload -U colors; colors # プロンプトに色を付ける
 
 # 一般ユーザ時
