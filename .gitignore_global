@@ -519,6 +519,9 @@ docs/_build/
 # PyBuilder
 target/
 
+# redis dump
+dump.rdb
+
 # ipython history
 .ipython/*/history.sqlite
 .ipython/*/db
