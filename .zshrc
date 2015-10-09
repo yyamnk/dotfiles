@@ -1,4 +1,4 @@
-# Last Change: 2015-Oct-08.
+# Last Change: 2015-Oct-09.
 
 #-------------------------------------------------------#
 # General Settings
@@ -276,9 +276,9 @@ if [ -e ${HOME}/.dotfiles ]; then
 else
     export DOTSDIR="${HOME}"
 fi
-[ -e $DOTSDIR/bin/ ] && export PATH=$DOTSDIR/bin:$PATH
 
 # for local bin
+[ -d $HOME/usr/local/bin ] && export PATH=$HOME/usr/local/bin:$PATH
 [ -d $HOME/bin ] && export PATH=$HOME/bin:$PATH
 
 # for python

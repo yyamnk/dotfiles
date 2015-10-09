@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 #****************** link_dots.sh *******************
 # created: 2014/12/01
-# Last Change:2015-Oct-08.
+# Last Change:2015-Oct-09.
 #------------------------------------------------------------
 # ~/.dotfiles/ にある.hogeのシンボリックリンクをhomeへ貼る
 #************************************************************
+
+echo 'update symbolic links ...'
 
 # dotfiles
 dotfiles="${HOME}/.dotfiles/.*"
@@ -17,16 +19,7 @@ do
         *..        ) ;;
         *.git      ) ;;
         *          )
-            echo 'link '$df
+            echo "link $df to ${HOME}"
             ln -sf $df ~/
     esac
 done
-
-# my spell files for vim
-echo 'link ~/.dotfiles/vim-spell/* ~/.vim/spell/'
-[ ! -e ${HOME}/.vim/spell ] && mkdir -p ${HOME}/.vim/spell
-ln -sf ~/.dotfiles/vim-spell/* ~/.vim/spell/
-
-# conf dir
-echo 'link ~/.dotfiles/conf ~/'
-ln -sf ~/.dotfiles/conf ~/
