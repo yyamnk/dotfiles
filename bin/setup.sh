@@ -68,27 +68,39 @@ bash $dotfiles/bin/link_bins.sh
     ln -sf $dotfiles/matlab/startup.m $HOME/matlab/
 
 # my spell files for vim
-echo 'link ~/.dotfiles/vim-spell/* ~/.vim/spell/'
-[ ! -e ${HOME}/.vim/spell ] && mkdir -p ${HOME}/.vim/spell
-ln -sf ~/.dotfiles/vim-spell/* ~/.vim/spell/
+[ ! -e ${HOME}/.vim/spell ] && \
+    echo 'link ~/.dotfiles/vim-spell/* ~/.vim/spell/' && \
+    mkdir -p ${HOME}/.vim/spell && \
+    ln -sf ~/.dotfiles/vim-spell/* ~/.vim/spell/
 
 # conf dir
-echo 'link ~/.dotfiles/conf/supervisor/* ~/conf/supervisor/ (create only)'
-# DO NOT UPDATE FORCE
-ln -s ~/.dotfiles/conf/supervisor/* ~/conf/supervisor/
+[ ! -e ${HOME}/conf/supervisor ] && \
+    echo 'link ~/.dotfiles/conf/supervisor/* ~/conf/supervisor/' && \
+    ln -s ~/.dotfiles/conf/supervisor/* ~/conf/supervisor
 
 
 echo ''
 echo '======================================'
 echo 'install neobundle'
 echo '======================================'
-if [ ! -d $HOME/.vim/bundle ]; then
+if [ -d $HOME/.vim/bundle ]; then
+    echo 'skipped'
+else
     echo 'Installing neobundle.vim ...'
     curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
-else
-    echo 'skipped'
 fi
 
+echo ''
+echo '======================================'
+echo 'get git diff-highlight'
+echo '======================================'
+if [ -e $HOME/bin/diff-highlight ]; then
+    echo 'already exist.'
+else
+    curl -sL https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight > \
+    $HOME/bin/diff-highlight && chmod +x $HOME/bin/diff-highlight && \
+    echo 'diff-highlight is installed to ~/bin/'
+fi
 
 echo ''
 echo '##### setup finished. #####'
