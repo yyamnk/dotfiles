@@ -1,10 +1,10 @@
 #****************** .zshrc.osx *******************
 # created: 2015/02/04
-# Last Change:2015-Oct-08.
+# Last Change:2015-Oct-09.
 #************************************************************
 
 # proxy 適用
-source set_proxy_by_networksetup.sh
+source $DOTSDIR/bin/set_proxy_by_networksetup.sh
 
 # for matlab
 if [ -d /applications/matlab_r2014a.app ]; then
