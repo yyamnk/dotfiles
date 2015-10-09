@@ -16,5 +16,6 @@ case "${OSTYPE}" in
 darwin*)
     ln -sf $BINDIR/disable_keyboard.sh $HOME/bin/
     ln -sf $BINDIR/enable_keyboard.sh $HOME/bin/
+    ln -sf $BINDIR/set_proxy_by_networksetup.sh $HOME/bin/
     ;;
 esac

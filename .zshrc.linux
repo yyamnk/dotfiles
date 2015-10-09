@@ -1,6 +1,15 @@
+#! /usr/bin/bash
 #****************** .zshrc.linux *******************
 # created: 2015-Feb-25
-# Last Change:2015-Feb-25.
+# Last Change:2015-Oct-09.
 #************************************************************
 
 setxkbmap dvorak
+
+# set proxy
+if [ `/sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}' | grep 133.44` ]; then
+    source "$DOTSDIR/bin/proxy_on.sh"
+else
+    source "$DOTSDIR/bin/proxy_off.sh"
+fi
+
