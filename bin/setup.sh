@@ -31,7 +31,7 @@ fi
 
 echo ''
 echo '======================================'
-echo 'create ~/usr/local/bin/, ~/bin/'
+echo 'create ~/usr/local/bin/, ~/bin/, ~/conf/'
 echo '======================================'
 # for user installed programs
 if [ ! -e $HOME/usr/local/bin ]; then
@@ -39,6 +39,14 @@ if [ ! -e $HOME/usr/local/bin ]; then
 else
     echo "$HOME/usr/local/bin already exist."
 fi
+
+# for supervisor configs
+if [ ! -e $HOME/conf/supervisor ]; then
+    mkdir -p $HOME/conf/supervisor && echo "$HOME/conf/supervisor is created."
+else
+    echo "$HOME/conf/supervisor already exist."
+fi
+
 # for my scripts
 if [ ! -e $HOME/bin ]; then
     mkdir $HOME/bin && echo "$HOME/bin is created."
@@ -65,8 +73,9 @@ echo 'link ~/.dotfiles/vim-spell/* ~/.vim/spell/'
 ln -sf ~/.dotfiles/vim-spell/* ~/.vim/spell/
 
 # conf dir
-echo 'link ~/.dotfiles/conf/ ~/conf'
-ln -sf ~/.dotfiles/conf ~/conf
+echo 'link ~/.dotfiles/conf/supervisor/* ~/conf/supervisor/ (create only)'
+# DO NOT UPDATE FORCE
+ln -s ~/.dotfiles/conf/supervisor/* ~/conf/supervisor/
 
 
 echo ''

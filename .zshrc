@@ -300,9 +300,12 @@ darwin*)
     # for antigen
     [ -f ~/.antigen/antigen.zsh ] && source ~/.antigen/antigen.zsh
     [ -f ~/.antigen_bundles ] && source ~/.antigen_bundles
+    export RQWORKER_NUM=3 # supervisor + rq で起動するワーカ数
     ;;
 linux*)
     [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux
+    # プロセッサーの数だけ開く
+    export RQWORKER_NUM=`grep processor /proc/cpuinfo | wc -l`
     ;;
 esac
 
