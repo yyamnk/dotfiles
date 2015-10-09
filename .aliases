@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Oct-08.
+# Last Change:2015-Oct-09.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -210,6 +210,10 @@ darwin*)
     alias shinetsu='cd ~/lab/docs_my/workshops/shinetsu15/'
     ;;
 linux*)
+    # use zsh, vim under home
+    [ -e ${HOME}/usr/local/bin/zsh ] && alias zsh='${HOME}/usr/local/bin/zsh'
+    [ -e ${HOME}/usr/local/bin/vim ] && alias vim='${HOME}/usr/local/bin/vim'
+
     # for cluster, circuit-c*
     if [ `hostname | cut -c 1-9` = "circuit-c" ]; then
         alias mat='matlab -nodisplay -nodesktop -nosplash'
