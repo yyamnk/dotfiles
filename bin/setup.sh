@@ -41,10 +41,10 @@ else
 fi
 
 # for supervisor configs
-if [ ! -e $HOME/conf/supervisor ]; then
-    mkdir -p $HOME/conf/supervisor && echo "$HOME/conf/supervisor is created."
+if [ ! -e $HOME/conf ]; then
+    mkdir $HOME/conf && echo "$HOME/conf is created."
 else
-    echo "$HOME/conf/supervisor already exist."
+    echo "$HOME/conf already exist."
 fi
 
 # for my scripts
@@ -74,9 +74,9 @@ bash $dotfiles/bin/link_bins.sh
     ln -sf ~/.dotfiles/vim-spell/* ~/.vim/spell/
 
 # conf dir
-[ ! -e ${HOME}/conf/supervisor ] && \
+[ -e ${HOME}/conf/supervisor ] && \
     echo 'link ~/.dotfiles/conf/supervisor/* ~/conf/supervisor/' && \
-    ln -s ~/.dotfiles/conf/supervisor/* ~/conf/supervisor
+    ln -sf ~/.dotfiles/conf/supervisor/* ~/conf/supervisor
 
 
 echo ''

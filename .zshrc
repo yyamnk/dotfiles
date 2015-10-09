@@ -286,8 +286,12 @@ fi
 
 # for python
 export PYTHONPATH=${HOME}/src_lib/python
+
 # for cec2013 banchmark suite
 export CEC13DATA=${PYTHONPATH}/cec2013single/cec2013single/cec2013_data
+
+# for supervisor, hostname を展開してsocketファイル名に
+export HOST=`hostname`
 
 #---------------------
 # 環境依存設定
