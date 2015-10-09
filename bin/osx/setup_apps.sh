@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Oct-08.
+# Last Change: 2015-Oct-09.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -31,6 +31,8 @@ brew install postgresql
 brew install ranger
 brew install reattach-to-user-namespace # tmux内のvimでクリップボード併用を可能に
 brew install redis   # NoSQL, for python rq
+# add alias for supervisor controll
+ln -sf /usr/local/bin/redis-server ~/usr/local/bin/
 brew install rmtrash # command for move trash
 brew install rsync
 brew install the_silver_searcher
