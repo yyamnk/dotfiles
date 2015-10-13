@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** bin/setup.sh *******************
 # created: 2015-Feb-05
-# Last Change: 2015-Oct-09.
+# Last Change: 2015-Oct-13.
 #------------------------------------------------------------
 # 最低限の環境を整える
 # githubからdotfilesを~/.dotfiles/へclone
@@ -43,6 +43,7 @@ fi
 # for supervisor configs
 if [ ! -e $HOME/conf ]; then
     mkdir $HOME/conf && echo "$HOME/conf is created."
+    mkdir $HOME/conf/supervisor/ && echo "$HOME/conf/supervisor/ is created."
 else
     echo "$HOME/conf already exist."
 fi
