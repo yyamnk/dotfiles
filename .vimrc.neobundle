@@ -1,4 +1,4 @@
-" Last Change:2015-Oct-07.
+" Last Change:2015-Oct-13.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -31,9 +31,7 @@ function! s:LoadBundles()
       \ }
     NeoBundle 'Shougo/vimshell'
     " ------ unite関連
-    NeoBundleLazy 'Shougo/unite.vim', {
-        \ 'autoload' : {'command': ['Unite']},
-    \ }
+    NeoBundle 'Shougo/unite.vim'
     NeoBundle 'https://github.com/Shougo/neomru.vim'
     NeoBundle 'Shougo/vimfiler'
     NeoBundle 'Shougo/unite-outline'
