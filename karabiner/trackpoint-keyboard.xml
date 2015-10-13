@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--Last Change: 2015-Oct-04.-->
+
+<root>
+  <item>
+    <name>trackpoint keyboard only</name>
+
+    <devicevendordef>
+      <vendorname>Lenovo</vendorname>
+      <vendorid>0x17ef</vendorid>
+    </devicevendordef>
+    <deviceproductdef>
+      <productname>trapo</productname>
+      <productid>0x6047</productid>
+    </deviceproductdef>
+
+    <!--
+    <item>
+      <name>replace alt to cmd</name>
+      <identifier>private.replace_alt_cmd</identifier>
+      <device_only>DeviceVendor::Lenovo, DeviceProduct::trapo</device_only>
+      <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+    </item>
+         -->
+
+  </item>
+</root>
