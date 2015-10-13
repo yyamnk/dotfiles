@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Oct-09.
+# Last Change:2015-Oct-13.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -134,8 +134,6 @@ darwin*)
 
     # postgreSQL
     # http://qiita.com/tstomoki/items/0f1a930bd42a8e1fdaac
-    # set default postgresql
-    export PGDATA=/usr/local/var/postgres
     alias pgup='pg_ctl start -l ~/.pgserver.log'
     alias pgdown='pg_ctl stop -s -m fast'
     alias pgstat='pg_ctl status'

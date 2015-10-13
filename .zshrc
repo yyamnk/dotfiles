@@ -1,4 +1,4 @@
-# Last Change: 2015-Oct-09.
+# Last Change: 2015-Oct-14.
 
 #-------------------------------------------------------#
 # General Settings
@@ -304,10 +304,15 @@ darwin*)
     # for antigen
     [ -f ~/.antigen/antigen.zsh ] && source ~/.antigen/antigen.zsh
     [ -f ~/.antigen_bundles ] && source ~/.antigen_bundles
+    # set default postgresql
+    export PGDATA=/usr/local/var/postgres
+    # for qr workers by supervisor
     export RQWORKER_NUM=3 # supervisor + rq で起動するワーカ数
     ;;
 linux*)
     [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux
+    # set default postgresql
+    [ -e /var/lib/pgsql/9.4/data ] && export PGDATA=/var/lib/pgsql/9.4/data
     # プロセッサーの数だけ開く
     export RQWORKER_NUM=`grep processor /proc/cpuinfo | wc -l`
     ;;
