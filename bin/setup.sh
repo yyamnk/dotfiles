@@ -95,8 +95,8 @@ bash $dotfiles/bin/link_bins.sh
 
 # ~/lab/src_lib/ alias to ~/src_lib/
 [ -e ${HOME}/lab/src_lib ] && \
-    echo 'link ~/lab/src_lib ~/src_lib' && \
-    ln -sf ~/lab/src_lib ~/src_lib
+    echo 'link ~/lab/src_lib ~/' && \
+    ln -sf ~/lab/src_lib ~/
 
 
 echo ''
