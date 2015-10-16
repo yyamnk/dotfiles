@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Oct-13.
+# Last Change:2015-Oct-16.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -84,6 +84,8 @@ if [[ -e ${HOME}/.pyenv/shims/supervisorctl ]]; then
     alias supervisorctl='supervisorctl -c ~/conf/supervisor/supervisord.conf'
     alias supervisord_up='supervisord -c ~/conf/supervisor/supervisord.conf'
 fi
+
+alias src='cd ~/lab/src_lib/'
 
 #-------------------------------------------------------#
 # for mac
@@ -196,7 +198,6 @@ darwin*)
     alias bibs='cd ~/db/apps/Mendeley'
     alias exp='cd ~/lab/experiments/'
 
-    alias src='cd ~/lab/src_lib/'
     # lab matlab
     alias matl='cd ~/matLocal'
     alias mats='cd ~/mat_server'

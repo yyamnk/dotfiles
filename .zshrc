@@ -1,4 +1,4 @@
-# Last Change: 2015-Oct-14.
+# Last Change: 2015-Oct-16.
 
 #-------------------------------------------------------#
 # General Settings
@@ -285,7 +285,7 @@ fi
 [ -d $HOME/bin ] && export PATH=$HOME/bin:$PATH
 
 # for python
-export PYTHONPATH=${HOME}/src_lib/python
+export PYTHONPATH=${HOME}/lab/src_lib/python
 
 # for cec2013 banchmark suite
 export CEC13DATA=${PYTHONPATH}/cec2013single/cec2013single/cec2013_data

@@ -93,12 +93,6 @@ bash $dotfiles/bin/link_bins.sh
     echo 'link ~/.dotfiles/conf/supervisor/* ~/conf/supervisor/' && \
     ln -sf ~/.dotfiles/conf/supervisor/* ~/conf/supervisor
 
-# ~/lab/src_lib/ alias to ~/src_lib/
-[ -e ${HOME}/lab/src_lib ] && \
-    echo 'link ~/lab/src_lib ~/' && \
-    ln -sf ~/lab/src_lib ~/
-
-
 echo ''
 echo '======================================'
 echo 'install neobundle'
