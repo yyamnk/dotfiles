@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** bin/setup.sh *******************
 # created: 2015-Feb-05
-# Last Change: 2015-Oct-13.
+# Last Change: 2015-Oct-16.
 #------------------------------------------------------------
 # 最低限の環境を整える
 # githubからdotfilesを~/.dotfiles/へclone
@@ -50,9 +50,23 @@ fi
 
 # for my scripts
 if [ ! -e $HOME/bin ]; then
-    mkdir $HOME/bin && echo "$HOME/bin is created."
+    mkdir $HOME/bin && echo "$HOME/bin/ is created."
 else
-    echo "$HOME/bin already exist."
+    echo "$HOME/bin/ already exist."
+fi
+
+# for lab
+if [ ! -e $HOME/lab ]; then
+    mkdir $HOME/lab && echo "$HOME/lab/ is created."
+else
+    echo "$HOME/lab/ already exist."
+fi
+
+# for lab/src_lib
+if [ ! -e $HOME/lab/src_lib/ ]; then
+    mkdir $HOME/lab/src_lib && echo "$HOME/lab/src_lib/ is created."
+else
+    echo "$HOME/lab/src_lib/ already exist."
 fi
 
 
@@ -78,6 +92,11 @@ bash $dotfiles/bin/link_bins.sh
 [ -e ${HOME}/conf/supervisor ] && \
     echo 'link ~/.dotfiles/conf/supervisor/* ~/conf/supervisor/' && \
     ln -sf ~/.dotfiles/conf/supervisor/* ~/conf/supervisor
+
+# ~/lab/src_lib/ alias to ~/src_lib/
+[ -e ${HOME}/lab/src_lib ] && \
+    echo 'link ~/lab/src_lib ~/src_lib' && \
+    ln -sf ~/lab/src_lib ~/src_lib
 
 
 echo ''
