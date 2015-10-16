@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2015-Oct-09.
+# Last Change: 2015-Oct-16.
 #************************************************************
 
 # get pyenv
@@ -46,3 +46,7 @@ pip install arrow # better datetime
 pip install rq    # simple job-queue
 pip install rq-dashboard
 pip install git+https://github.com/Supervisor/supervisor.git # 4.0でpython3対応
+pip install rq-scheduler
+pip install peewee # simplo ORM
+pip install GitPython
+pip install click
