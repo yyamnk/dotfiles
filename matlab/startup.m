@@ -1,6 +1,6 @@
 %******************* startup.m *******************
 % Created: 2013/10/16
-% Last Change: 2015-Aug-26.
+% Last Change: 2015-Oct-19.
 % MATLAB startup file
 %******************************************************
 
@@ -16,9 +16,9 @@ feature('DefaultCharacterSet', 'UTF8');
 %--- not win & not mac
 if( (ismac == 0) & (ispc == 0) )
     % genpath以下を再帰的にaddpath
-    addpath(genpath('~/src_lib/matlab'));
-    addpath(genpath('~/src_lib/archive'));
-    addpath('~/shscripts');
+    addpath(genpath('~/lab/src_lib/matlab'));
+    addpath(genpath('~/lab/src_lib/archive'));
+    addpath('~/lab/src_lib/shellscripts/');
 
 %--- for mac
 elseif (ismac == 1)
