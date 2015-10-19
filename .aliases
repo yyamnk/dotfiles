@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Oct-16.
+# Last Change:2015-Oct-19.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -87,6 +87,10 @@ fi
 
 alias src='cd ~/lab/src_lib/'
 
+# matlab
+alias mat='matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
+alias matd='matlab -nosplash -nodesktop'
+
 #-------------------------------------------------------#
 # for mac
 #-------------------------------------------------------#
@@ -105,8 +109,6 @@ darwin*)
     alias gx='open ./ -a gitX'
 
     # matlab
-    alias mat='/Applications/MATLAB_R2014a.app/bin/matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
-    alias matd='/Applications/MATLAB_R2014a.app/bin/matlab -nosplash -nodesktop'
     alias mat7='/Applications/MATLAB_R2007b/bin/matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
     alias mat7d='/Applications/MATLAB_R2007b/bin/matlab -nojvm -nosplash -nodesktop'
     alias distcomp='cd /Applications/MATLAB_R2014a.app/toolbox/distcomp/'
