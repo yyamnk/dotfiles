@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2015-Oct-16.
+# Last Change: 2015-Oct-20.
 #************************************************************
 
 # get pyenv
@@ -50,3 +50,6 @@ pip install rq-scheduler
 pip install peewee # simplo ORM
 pip install GitPython
 pip install click
+
+# syntax
+conda install pep8 pyflakes
