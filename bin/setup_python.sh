@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2015-Oct-21.
+# Last Change: 2015-Oct-23.
 #************************************************************
 
 # get pyenv
@@ -48,11 +48,11 @@ pip install git+https://github.com/Supervisor/supervisor.git # 4.0でpython3対�
 pip install peewee # simplo ORM
 pip install GitPython
 pip install click
+pip install rq-dashboard
 
 # syntax
 conda install pep8 pyflakes
 
 # scheduler -> use supervisor
-# pip install rq-dashboard
 # pip install APScheduler
 # pip install python-daemon-3K
