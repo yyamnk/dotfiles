@@ -12,5 +12,93 @@
         <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS</device_only>
       </item>
 
+      <item>
+        <name>US like keys remapping</name>
+        <item>
+          <name>kinesis-keyboard only</name><!--[[[-->
+          <appendix>kinesis |{} to {}| (US右上3key)</appendix>
+          <appendix>backslash to { (US), backslash to slash (dvorak) kenesis:qwtyで印字Pの右, '|\' key)</appendix>
+          <appendix>{ to } (US), </appendix>
+          <identifier>private.kinesis_uslike</identifier>
+          <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS</device_only>
+          <!-- backslash to slash (dvorak) -->
+          <autogen>
+            __KeyToKey__
+            KeyCode::BACKSLASH, KeyCode::BRACKET_LEFT
+          </autogen>
+          <!-- { to = slash -->
+          <autogen>
+            __KeyToKey__
+            KeyCode::BRACKET_LEFT, KeyCode::BRACKET_RIGHT
+          </autogen>
+          <autogen>
+            __KeyToKey__
+            KeyCode::BRACKET_RIGHT, KeyCode::BACKSLASH
+          </autogen>
+        </item>
+      </item>
+
+      <item>
+        <name>Modifier keys to brackets</name>
+
+        <item>
+          <name>kinesis-keyboard only</name><!--[[[-->
+          <appendix>only shift-LR to ()</appendix>
+          <appendix>only cmd-LR   to JIS_EISUU, JIS_KANA</appendix>
+          <appendix>only alt-L, allow down to []</appendix>
+          <appendix>TAB, to {</appendix>
+          <appendix>[ to } (OS: dvorak, kenesis:qwtyで0の右, '-' key)</appendix>
+          <identifier>private.modkeys2brackets_kinesis</identifier>
+          <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS</device_only>
+          <!-- shift to () -->
+          <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SHIFT_L,
+            KeyCode::KEY_9, ModifierFlag::SHIFT_L
+          </autogen>
+          <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::SHIFT_R, ModifierFlag::SHIFT_R| ModifierFlag::NONE, KeyCode::SHIFT_R,
+            KeyCode::KEY_0, ModifierFlag::SHIFT_L
+          </autogen>
+          <!-- cmd to JIS_EISUU, JIS_KANA-->
+          <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::COMMAND_L, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+            KeyCode::COMMAND_L,
+            KeyCode::JIS_EISUU
+          </autogen>
+          <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::COMMAND_R, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+            KeyCode::COMMAND_R,
+            KeyCode::JIS_KANA
+          </autogen>
+          <!-- alt, allow-down to []-->
+          <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::OPTION_L, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+            KeyCode::OPTION_L,
+            KeyCode::MINUS
+          </autogen>
+          <autogen>
+            __KeyToKey__
+            KeyCode::CURSOR_DOWN, KeyCode::EQUAL
+          </autogen>
+          <!-- TAB, [ to {}-->
+          <autogen>
+            __KeyToKey__
+            KeyCode::TAB, KeyCode::MINUS, ModifierFlag::SHIFT_L,
+            Option::NOREPEAT
+          </autogen>
+          <autogen>
+            __KeyToKey__
+            KeyCode::MINUS, KeyCode::EQUAL, ModifierFlag::SHIFT_R,
+            Option::NOREPEAT
+          </autogen>
+        <!--]]]-->
+        </item>
+      </item>
+
   </item>
 </root>
