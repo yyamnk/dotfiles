@@ -71,6 +71,7 @@
       <include path="trackpoint-keyboard.xml"/>
       <include path="kinesis.xml"/>
       <include path="modkeys_brackets.xml"/>
+      <include path="holding_sd2vim.xml"/>
 
       <item>
         <name>JIS_UNDERSCORE to SHIFT-R ( when type only, send ')')</name>

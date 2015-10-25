@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!-- https://github.com/tekezo/Karabiner/blob/master/src/core/server/Resources/include/checkbox/simultaneouskeypresses_vi_mode.xml -->
+<root>
+  <item>
+    <name>Simultaneous Vi Mode (mod)</name>
+    <item>
+      <name>What's Simultaneous Vi Mode?</name>
+      <appendix>Push S and D keys simultaneously and keep them pressing.</appendix>
+      <appendix>Then you can use Vi style navigation by HJKL.</appendix>
+      <appendix>- HJKL to Left/Down/Up/Right</appendix>
+      <identifier vk_config="true">notsave.private.simultaneouskeypresses_vimode</identifier>
+
+      {{ SIMULTANEOUS_VI_MODE_EXTRA }}
+
+      <autogen>__ShowStatusMessage__ Vi Mode(mod)</autogen>
+      <autogen>__KeyToKey__ {{VI_H}}, KeyCode::CURSOR_LEFT</autogen>
+      <autogen>__KeyToKey__ {{VI_J}}, KeyCode::CURSOR_DOWN</autogen>
+      <autogen>__KeyToKey__ {{VI_K}}, KeyCode::CURSOR_UP</autogen>
+      <autogen>__KeyToKey__ {{VI_L}}, KeyCode::CURSOR_RIGHT</autogen>
+    </item>
+    <item>
+      <name>Simultaneous Key Presses [S+D] turns on "Simultaneous Vi Mode"</name>
+      <identifier>private.simultaneouskeypresses_vimode_sd</identifier>
+      <autogen>
+        __SimultaneousKeyPresses__
+        KeyCode::D, KeyCode::S,
+        KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_simultaneouskeypresses_vimode
+      </autogen>
+    </item>
+    <item>
+      <name>Simultaneous Key Presses [X+C] turns on "Simultaneous Vi Mode" with shift</name>
+      <identifier>private.simultaneouskeypresses_vimode_sd_shift</identifier>
+      <autogen>
+        __SimultaneousKeyPresses__
+        KeyCode::X, KeyCode::C,
+        KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_simultaneouskeypresses_vimode,
+        ModifierFlag::SHIFT_L
+      </autogen>
+    </item>
+    <item>
+      <name>Simultaneous Key Presses [W+E] turns on "Simultaneous Vi Mode" with cmd</name>
+      <identifier>private.simultaneouskeypresses_vimode_sd_cmd</identifier>
+      <autogen>
+        __SimultaneousKeyPresses__
+        KeyCode::W, KeyCode::E,
+        KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_simultaneouskeypresses_vimode,
+        ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+  </item>
+</root>
