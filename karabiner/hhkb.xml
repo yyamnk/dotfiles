@@ -1,19 +1,10 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-Feb-07.-->
+<!--Last Change: 2015-Oct-25.-->
 
 <root>
     <item>
       <name>replace HHKB keys</name>
       <!-- ref https://gist.github.com/Gascar-ShunT/5df1952eeddc05ec87cc -->
-
-      <devicevendordef>
-        <vendorname>PFU</vendorname>
-        <vendorid>0x0853</vendorid>
-      </devicevendordef>
-      <deviceproductdef>
-        <productname>HHKB</productname>
-        <productid>0x0100</productid>
-      </deviceproductdef>
 
       <item>
         <name>replace Backslash(\) with Delete in HHKB</name>
@@ -70,5 +61,68 @@
         <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::RETURN</autogen>
       </item>
 
+      <item>
+        <name>Modifier keys to brackets</name>
+
+        <item>
+          <name>HHKB only</name><!--[[[-->
+          <appendix>only shift-LR to ()</appendix>
+          <appendix>only cmd-LR   to []</appendix>
+          <appendix>only alt-LR   to JIS_EISUU, JIS_KANA</appendix>
+          <appendix>TAB           to {</appendix>
+          <appendix>delete        to }</appendix>
+          <identifier>private.modkeys2brackets_hhkb</identifier>
+          <device_only>DeviceVendor::PFU, DeviceProduct::HHKB</device_only>
+          <!-- shift to () -->
+          <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SHIFT_L,
+            KeyCode::KEY_9, ModifierFlag::SHIFT_L
+          </autogen>
+          <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::SHIFT_R, ModifierFlag::SHIFT_R| ModifierFlag::NONE, KeyCode::SHIFT_R,
+            KeyCode::KEY_0, ModifierFlag::SHIFT_L
+          </autogen>
+          <!-- alt to JIS_EISUU, JIS_KANA-->
+          <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::OPTION_L, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+            KeyCode::OPTION_L,
+            KeyCode::JIS_EISUU
+          </autogen>
+          <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::OPTION_R, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+            KeyCode::OPTION_R,
+            KeyCode::JIS_KANA
+          </autogen>
+          <!-- cmd to []-->
+          <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::COMMAND_L, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+            KeyCode::COMMAND_L,
+            KeyCode::MINUS
+          </autogen>
+          <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::COMMAND_R, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+            KeyCode::COMMAND_R,
+            KeyCode::EQUAL
+          </autogen>
+          <!-- TAB, delete to {}-->
+          <autogen>
+            __KeyToKey__
+            KeyCode::TAB, KeyCode::MINUS, ModifierFlag::SHIFT_L,
+            Option::NOREPEAT
+          </autogen>
+          <autogen>
+            __KeyToKey__
+            KeyCode::DELETE, KeyCode::EQUAL, ModifierFlag::SHIFT_R,
+            Option::NOREPEAT
+          </autogen>
+        <!--]]]-->
+        </item>
+      </item>
     </item>
 </root>

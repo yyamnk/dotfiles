@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--Last Change: 2015-Oct-25.-->
+
+<root>
+  <item>
+    <name>replace KINESIS keys</name>
+
+      <item>
+        <name>danish dollar to backslash for kinesis (Mac mode)</name>
+        <identifier>private.danish_dollar2backslash</identifier>
+        <autogen>__KeyToKey__ KeyCode::DANISH_DOLLAR, KeyCode::BACKSLASH</autogen>
+        <device_only>DeviceVendor::KINESIS, DeviceProduct::KINESIS</device_only>
+      </item>
+
+  </item>
+</root>

@@ -1,18 +1,74 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-Oct-04.-->
+<!--Last Change: 2015-Oct-25.-->
 
 <root>
   <item>
     <name>trackpoint keyboard only</name>
 
-    <devicevendordef>
-      <vendorname>Lenovo</vendorname>
-      <vendorid>0x17ef</vendorid>
-    </devicevendordef>
-    <deviceproductdef>
-      <productname>trapo</productname>
-      <productid>0x6047</productid>
-    </deviceproductdef>
+    <item>
+      <name>Modifier keys to brackets</name>
+      <item>
+        <name>trackpoint-keyboard only</name><!--[[[-->
+        <appendix>only shift-LR  to ()</appendix>
+        <appendix>only Win/prtSc to JIS_EISUU, JIS_KANA, otherwise alt-LR</appendix>
+        <appendix>only alt-LR    to [], otherwise cmd-LR</appendix>
+        <appendix>TAB            to {</appendix>
+        <appendix>enter          to }</appendix>
+        <identifier>private.modkeys2brackets_trapo</identifier>
+        <device_only>DeviceVendor::Lenovo, DeviceProduct::trapo</device_only>
+        <!-- shift to () -->
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SHIFT_L,
+          KeyCode::KEY_9, ModifierFlag::SHIFT_L
+        </autogen>
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::SHIFT_R, ModifierFlag::SHIFT_R| ModifierFlag::NONE, KeyCode::SHIFT_R,
+          KeyCode::KEY_0, ModifierFlag::SHIFT_L
+        </autogen>
+        <!-- single alt to JIS_EISUU/JIS_KANA, otherwise cmd-->
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::OPTION_L, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+          KeyCode::COMMAND_L,
+          KeyCode::JIS_EISUU
+        </autogen>
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::OPTION_R, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+          KeyCode::COMMAND_R,
+          KeyCode::JIS_KANA
+        </autogen>
+        <!-- single Win/prtSc to [], otherwise alt-->
+        <!-- single Win -> KeyCode::COMMAND_L -->
+        <!-- single prtSc -> KeyCode::F13 -->
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::COMMAND_L, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+          KeyCode::OPTION_L,
+          KeyCode::MINUS
+        </autogen>
+        <!-- Change PrtSc to alt_R -->
+        <autogen>
+          __KeyToKey__
+          KeyCode::F13,
+          KeyCode::EQUAL
+        </autogen>
+        <!-- TAB, delete to {} -->
+        <autogen>
+          __KeyToKey__
+          KeyCode::TAB, KeyCode::MINUS, ModifierFlag::SHIFT_L,
+          Option::NOREPEAT
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::DELETE, KeyCode::EQUAL, ModifierFlag::SHIFT_R,
+          Option::NOREPEAT
+        </autogen>
+      <!--]]]-->
+      </item>
+    </item>
 
     <!--
     <item>
