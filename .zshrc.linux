@@ -13,7 +13,7 @@ else
     source "$DOTSDIR/bin/proxy_off.sh"
 fi
 
-# add path for postgres
+# add path for postgres9.4
 if [ -e /usr/pgsql-9.4/bin/ ]; then
     export PATH=/usr/pgsql-9.4/bin:$PATH
 fi
