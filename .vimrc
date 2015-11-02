@@ -1,4 +1,4 @@
-" Last Change:2015-Oct-05.
+" Last Change:2015-Oct-30.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -12,6 +12,8 @@ set notimeout         " no timeout for keymap
 "ビープ音すべてを無効にする
 set visualbell t_vb=
 set noerrorbells "エラーメッセージの表示時にビープを鳴らさない
+" 0埋め数字を10進数として扱う for インクリメント
+set nf=""
 " }}}
 
 "-------------------------------------------------------"
