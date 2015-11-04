@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Oct-09.
+# Last Change: 2015-Nov-04.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -16,6 +16,7 @@ brew install colordiff
 brew install coreutils
 brew install ctags
 brew install diff-pdf
+brew install fzf
 brew install gibo
 brew install git
 brew install hardlink
@@ -72,6 +73,7 @@ brew cask install menumeters
 brew cask install monolingual
 brew cask install nosleep
 brew cask install parallels9
+brew cask install pgadmin3
 brew cask install seil
 brew cask install shortcat
 brew cask install showyedge

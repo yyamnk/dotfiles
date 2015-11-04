@@ -568,7 +568,7 @@ let g:ctrlp_clear_cache_on_exit = 0   " 終了時キャッシュをクリアし�
 " {{{
 " By default, autodate.vim searches a keyword 'Last Change:.'
 let g:autodate_format = '%Y-%b-%d'
-let g:autodate_lines = 20
+let g:autodate_lines = 40
 " 最初の10行でのみ有効化 -> neosnippet対策
 au BufNewFile,BufRead *.neosnippet let g:autodate_lines = 3
 "  au FileType neosnippet set autodetaOFF " snippet では無効

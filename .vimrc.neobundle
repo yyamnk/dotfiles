@@ -1,4 +1,4 @@
-" Last Change:2015-Oct-13.
+" Last Change:2015-Nov-04.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -38,6 +38,7 @@ function! s:LoadBundles()
     NeoBundle 'vim-scripts/taglist.vim'
     NeoBundle 'tsukkee/unite-help'
     NeoBundle 'thinca/vim-unite-history'
+    NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf',  'do': './install --all' }
     "------- git関連
     NeoBundle 'tpope/vim-fugitive' " Gitコマンドを実行
     " ------ 補完・スニペット
