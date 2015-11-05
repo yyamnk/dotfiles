@@ -59,4 +59,11 @@ $cli set private.line_delete_dvorak 1
 $cli set private.emacsmode_controlM 1
 /bin/echo -n .
 $cli set private.controlO2kanaeisuu 1
+/bin/echo -n .
+$cli set private.simultaneouskeypresses_vimode_sd 1
+/bin/echo -n .
+$cli set private.simultaneouskeypresses_vimode_sd_shift 1
+/bin/echo -n .
+$cli set private.simultaneouskeypresses_vimode_sd_cmd 1
+/bin/echo -n .
 /bin/echo

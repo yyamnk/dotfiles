@@ -14,8 +14,6 @@ $cli set option.emacsmode_controlM 1
 /bin/echo -n .
 $cli set remap.f12_to_volumeup 1
 /bin/echo -n .
-$cli set remap.simultaneouskeypresses_vimode_sd 1
-/bin/echo -n .
 $cli set remap.simultaneouskeypresses_expose_kl 1
 /bin/echo -n .
 $cli set remap.simultaneouskeypresses_cmdtab_tabq 1
@@ -46,6 +44,8 @@ $cli set parameter.mouse_key_scroll_natural_direction 1
 /bin/echo -n .
 $cli set repeat.initial_wait 200
 /bin/echo -n .
-$cli set option.emacsmode_force_controlM_vm=1
+$cli set option.emacsmode_force_controlM_vm 1
+/bin/echo -n .
+$cli set remap.pointing_relative_rightclick_to_scroll 1
 /bin/echo -n .
 /bin/echo
