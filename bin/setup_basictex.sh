@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_basictex.sh *******************
 # created: 2015-Feb-09
-# Last Change:2015-Aug-24.
+# Last Change:2015-Nov-05.
 #-----------------------------------------------------------
 # 1. installing BasicTeX
 # 2. update texLive by tlmgr
@@ -39,6 +39,8 @@ sudo tlmgr --no-persistent-downloads install newtx fontaxes boondox txfonts ec h
 echo "------------ install japanese pkgs --------------------"
 echo "tlmgr install uptex jfontmaps jsclasses japanese-otf"
 sudo tlmgr --no-persistent-downloads install ptex japanese-otf jfontmaps jsclasses
+# for pandoc + ja
+sudo tlmgr --no-persistent-downloads install collection-langcjk luatexja ctablestack filehook
 
 
 echo "------------ Symbolic Links for Hiragino --------------------"
