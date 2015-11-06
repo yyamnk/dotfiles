@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Nov-04.
+# Last Change: 2015-Nov-06.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -59,6 +59,7 @@ brew cask install coteditor
 brew cask install dash
 brew cask install dropbox
 brew cask install evernote
+brew cask install fluid
 brew cask install gitX
 brew cask install google-chrome
 brew cask install google-japanese-ime
