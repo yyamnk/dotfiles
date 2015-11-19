@@ -1,4 +1,4 @@
-" Last Change:2015-Nov-16.
+" Last Change:2015-Nov-20.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -78,6 +78,8 @@ function! s:LoadBundles()
     " ------ syntax
     NeoBundle 'lazywei/vim-matlab' " matlab用syntax
     NeoBundle 'exu/pgsql.vim'      " postgresql用syntax
+    NeoBundleLazy "vim-scripts/python_fold", {
+        \ "autoload": { "filetypes": [ "python", "python3", "djangohtml"] }}
     " ------ 見た目変更
     NeoBundle 'bling/vim-airline'
     NeoBundle 'ujihisa/unite-colorscheme'
