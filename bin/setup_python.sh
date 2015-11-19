@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2015-Oct-23.
+# Last Change: 2015-Nov-18.
 #************************************************************
 
 # get pyenv
@@ -56,3 +56,6 @@ conda install pep8 pyflakes
 # scheduler -> use supervisor
 # pip install APScheduler
 # pip install python-daemon-3K
+
+# evolutionary computation framework
+pip install deap
