@@ -1,4 +1,4 @@
-" Last Change:2015-Nov-04.
+" Last Change:2015-Nov-16.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -74,6 +74,7 @@ function! s:LoadBundles()
     NeoBundle 'cohama/lexima.vim'        " 括弧閉じる
     NeoBundle 'itchyny/dictionary.vim'   " macの辞書を引く
     NeoBundle 'tyru/caw.vim'             " コメントアウト/イン でトグル
+    NeoBundle 'rhysd/vim-grammarous'           " 文法チェック
     " ------ syntax
     NeoBundle 'lazywei/vim-matlab' " matlab用syntax
     NeoBundle 'exu/pgsql.vim'      " postgresql用syntax
