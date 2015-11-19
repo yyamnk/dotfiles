@@ -119,6 +119,8 @@ autocmd FileType python setlocal omnifunc=jedi#completions " jedi-vim 有効化
 autocmd FileType python setlocal completeopt-=preview " docstringは表示しない
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
+let g:jedi#show_call_signatures = 2   " 2 shows call signatures in the command line
+set noshowmode
 if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
