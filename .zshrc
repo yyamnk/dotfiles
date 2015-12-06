@@ -1,4 +1,4 @@
-# Last Change: 2015-Oct-16.
+# Last Change: 2015-Dec-03.
 
 #-------------------------------------------------------#
 # General Settings
@@ -202,6 +202,11 @@ function pdfcompress() {
     -dPDFSETTINGS=/default \
     -dNOPAUSE -dQUIET -dBATCH \
     -sOutputFile=$output $1
+}
+
+function gifcompress() {
+    output="${1:r}_cp.gif"
+    gifsicle -O3 $1 -o $output
 }
 
 # Quick Lock without debug
