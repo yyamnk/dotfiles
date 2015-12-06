@@ -1,5 +1,5 @@
 //---------- .slate.js ----------------
-// Last Change: 2015-Jul-02.
+// Last Change: 2015-Nov-23.
 // for dvorak user
 //-------------------------------------
 // http://www.infiniteloop.co.jp/blog/2013/08/osx_slate/
@@ -87,17 +87,17 @@ var right_two_third = slate.operation('push', {
 //   'operations' : [ left_one_third, right_two_third ]
 // }));
 
-//幅30%で左, 70%で右
-var left_third_ten = slate.operation('push', {
+//幅28%で左, 72%で右
+var left_28p = slate.operation('push', {
   direction : 'left',
-  style: 'bar-resize:screenSizeX/10*3'
+  style: 'bar-resize:screenSizeX/10*2.8'
 });
-var right_third_ten = slate.operation('push', {
+var right_72p = slate.operation('push', {
   direction : 'right',
-  style: 'bar-resize:screenSizeX/10*7'
+  style: 'bar-resize:screenSizeX/10*7.2'
 });
 slate.bind(util.key('v'), slate.operation('chain', {
-  'operations' : [ left_third_ten, right_third_ten ]
+  'operations' : [ left_28p, right_72p ]
 }));
 
 // 最大化
