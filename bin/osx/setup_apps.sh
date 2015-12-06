@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Nov-06.
+# Last Change: 2015-Nov-29.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -18,6 +18,7 @@ brew install ctags
 brew install diff-pdf
 brew install fzf
 brew install gibo
+brew install gifsicle  # compress gif, use -O3 option
 brew install git
 brew install hardlink
 brew install hub
