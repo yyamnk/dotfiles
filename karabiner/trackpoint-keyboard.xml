@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-Oct-25.-->
+<!--Last Change: 2015-Dec-08.-->
 
 <root>
   <item>
@@ -10,8 +10,8 @@
       <item>
         <name>trackpoint-keyboard only</name><!--[[[-->
         <appendix>only shift-LR  to ()</appendix>
-        <appendix>only Win/prtSc to JIS_EISUU, JIS_KANA, otherwise alt-LR</appendix>
         <appendix>only alt-LR    to [], otherwise cmd-LR</appendix>
+        <appendix>only Win/prtSc to alt-LR</appendix>
         <appendix>TAB            to {</appendix>
         <appendix>enter          to }</appendix>
         <identifier>private.modkeys2brackets_trapo</identifier>
@@ -27,33 +27,32 @@
           KeyCode::SHIFT_R, ModifierFlag::SHIFT_R| ModifierFlag::NONE, KeyCode::SHIFT_R,
           KeyCode::KEY_0, ModifierFlag::SHIFT_L
         </autogen>
-        <!-- single alt to JIS_EISUU/JIS_KANA, otherwise cmd-->
+        <!-- single alt to [], otherwise cmd-->
         <autogen>
           __KeyOverlaidModifier__
           KeyCode::OPTION_L, ModifierFlag::OPTION_L | ModifierFlag::NONE,
           KeyCode::COMMAND_L,
-          KeyCode::JIS_EISUU
+          KeyCode::MINUS
         </autogen>
         <autogen>
           __KeyOverlaidModifier__
           KeyCode::OPTION_R, ModifierFlag::OPTION_R | ModifierFlag::NONE,
           KeyCode::COMMAND_R,
-          KeyCode::JIS_KANA
+          KeyCode::EQUAL
         </autogen>
-        <!-- single Win/prtSc to [], otherwise alt-->
+        <!-- single Win/prtSc to alt-->
         <!-- single Win -> KeyCode::COMMAND_L -->
         <!-- single prtSc -> KeyCode::F13 -->
         <autogen>
-          __KeyOverlaidModifier__
-          KeyCode::COMMAND_L, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+          __KeyToKey__
+          KeyCode::COMMAND_L,
           KeyCode::OPTION_L,
-          KeyCode::MINUS
         </autogen>
         <!-- Change PrtSc to alt_R -->
         <autogen>
           __KeyToKey__
           KeyCode::F13,
-          KeyCode::EQUAL
+          KeyCode::OPTION_R
         </autogen>
         <!-- TAB, delete to {} -->
         <autogen>
