@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Oct-19.
+# Last Change:2015-Dec-09.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -199,6 +199,7 @@ darwin*)
     alias web='cd ~/db/lab_web/'
     alias bibs='cd ~/db/apps/Mendeley'
     alias exp='cd ~/lab/experiments/'
+    alias oprc='cd ~/lab/src_lib/python/oprc'
 
     # lab matlab
     alias matl='cd ~/matLocal'
@@ -206,9 +207,7 @@ darwin*)
 
     # docs_my
     alias wmeeting='cd ~/lab/docs_my/reports/'
-    alias nolta='cd ~/lab/docs_my/conferences/nolta15/tex_src/'
-    alias jounal='cd ~/lab/docs_my/journals/oprc_nolta/tex_src/'
-    alias shinetsu='cd ~/lab/docs_my/workshops/shinetsu15/'
+    alias journal='cd ~/lab/docs_my/journals/oprc_nolta/tex_src/'
     ;;
 linux*)
     # use zsh, vim under home
