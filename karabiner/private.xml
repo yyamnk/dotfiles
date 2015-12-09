@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-Oct-25.-->
+<!--Last Change: 2015-Dec-09.-->
 <!-- [[[, ]]]: 折り畳みマーカ -->
 
 <root>
@@ -299,16 +299,22 @@
       </item>
 
       <item>
-        <name>Control+O to KANA/EISUU (toggle) for dvorak map</name><!--[[[-->
+        <name>Control+[O, N] to [KANA, EISUU] for dvorak map</name><!--[[[-->
         <appendix>(Except in Virtual Machine, RDC)</appendix>
-        <appendix>keycode::S (dvorak O)で日/英をトグル</appendix>
+        <appendix>keycode::S (dvorak O)でKANA</appendix>
+        <appendix>keycode::L (dvorak N)でEISUU</appendix>
         <identifier>private.controlO2kanaeisuu</identifier>
         <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
         <autogen>
           __KeyToKey__
-          KeyCode::S,
-          MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE, KeyCode::VK_JIS_TOGGLE_EISUU_KANA
-        </autogen><!--]]]-->
+          KeyCode::S, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+          KeyCode::JIS_KANA
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+          KeyCode::JIS_EISUU
+        </autogen>
       </item>
 
       <include path="dvorak.xml"/>
