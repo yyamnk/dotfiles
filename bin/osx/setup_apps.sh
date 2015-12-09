@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Nov-29.
+# Last Change: 2015-Dec-09.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -21,8 +21,8 @@ brew install gibo
 brew install gifsicle  # compress gif, use -O3 option
 brew install git
 brew install hardlink
-brew install hub
 brew install heroku-toolbelt
+brew install hub
 brew install libdvdcss # for handbrak, library
 brew install lua
 brew install mongodb
@@ -33,14 +33,13 @@ brew install postgresql
 brew install ranger
 brew install reattach-to-user-namespace # tmux内のvimでクリップボード併用を可能に
 brew install redis   # NoSQL, for python rq
-# add alias for supervisor controll
-ln -sf /usr/local/bin/redis-server ~/usr/local/bin/
 brew install rmtrash # command for move trash
 brew install rsync
 brew install the_silver_searcher
 brew install tig
 brew install tmux
 brew install tree
+brew install dos2unix  # includes unix2dos, unix2mat
 brew install vim --with-lua --with-python3 --override-system-vi
 brew install w3m
 brew install xpdf
@@ -83,8 +82,9 @@ brew cask install skepe
 brew cask install skim
 brew cask install slack
 brew cask install slate
-brew cask install the-unarchiver
 brew cask install textexpander3
+brew cask install the-unarchiver
+brew cask install thunderbird
 brew cask install totalspaces
 brew cask install transmit
 brew cask install trim-enabler
@@ -93,6 +93,7 @@ brew cask install virtualbox
 brew cask install vlc
 brew cask install xquartz
 brew cask install xtrafinder
+
 
 # quick look plugin
 brew cask install qlcolorcode
