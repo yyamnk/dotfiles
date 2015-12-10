@@ -1,4 +1,4 @@
-# Last Change: 2015-Dec-03.
+# Last Change: 2015-Dec-10.
 
 #-------------------------------------------------------#
 # General Settings
@@ -251,9 +251,9 @@ function latexmkb () {
 # latexdiff + latexmk
 function latexdiffmk () {
     # ex) latexdiff-vc --git --flatten -r HEAD^ main.tex
-    latexdiff-vc --git --flatten -r $1 $2
+    latexdiff-vc --git --flatten --force -r $1 $2
     OUTPUT="${2:r}-diff${1:r}.tex"
-    latexmk -pvc -interaction=nonstopmode -jobname=./diff/${OUTPUT:r} $OUTPUT
+    latexmk -pv -interaction=nonstopmode -jobname=./diff/${OUTPUT:r} $OUTPUT
     # mv $OUTPUT ./diff/
 }
 
