@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Dec-09.
+# Last Change:2015-Dec-10.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -101,7 +101,7 @@ darwin*)
     alias caskroom="cd /usr/local/Caskroom/"
 
     # rm -> move trash
-    alias rm='rmtrash'
+    alias rm='~/usr/local/osx-mv2trash/bin/mv2trash'
     # for maxima, 矢印や補完を使えるrmaximaを使用する
     alias maxima='rmaxima'
     alias op='open'

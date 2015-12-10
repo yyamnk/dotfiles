@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** bin/osx/setup.sh *******************
 # created: 2015-Feb-25
-# Last Change: 2015-Apr-03.
+# Last Change: 2015-Dec-10.
 #------------------------------------------------------------
 # mac setup
 # install zsh, git, karabiner, Ricty font
@@ -151,4 +151,9 @@ echo 'To install apps, please execute'
 echo "zsh $SETUP_DIR/setup_apps.sh"
 echo ''
 
-
+#-------------------------------------------------------#
+# install osx-mv2trash
+#-------------------------------------------------------#
+echo 'clone osx-mv2trash ...'
+git clone git@github.com:dankogai/osx-mv2trash.git ~/usr/local/osx-mv2trash
+echo 'done'
