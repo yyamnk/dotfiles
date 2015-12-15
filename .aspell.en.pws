@@ -1,4 +1,4 @@
-personal_ws-1.1 en 17 
+personal_ws-1.1 en 18 
 ACF
 quantile
 multimodal
@@ -12,6 +12,7 @@ divergently
 attractor
 autocorrelation
 Eq
+orthonormal
 PSO
 piecewise
 Lyapunov
