@@ -1,4 +1,4 @@
-# Last Change: 2015-Dec-10.
+# Last Change: 2015-Dec-15.
 
 #-------------------------------------------------------#
 # General Settings
@@ -195,6 +195,8 @@ function tailc() {
 # pdf圧縮
 # http://askubuntu.com/questions/113544/how-to-reduce-pdf-filesize
 # オプションの比較 http://za.toypark.in/html/2010/09-17.html
+# -dPDFSETTINGS=/default # 300dpi images
+# -dPDFSETTINGS=/ebook # 150dpi images
 function pdfcompress() {
     output="${1:r}_gs.pdf"
     gs -sDEVICE=pdfwrite \
