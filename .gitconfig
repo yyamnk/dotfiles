@@ -13,3 +13,5 @@
 	diff = diff-highlight | less
 [include]
 	path = .gitconfig.local
+[merge]
+	tool = vimdiff
