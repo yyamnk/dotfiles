@@ -1,6 +1,6 @@
-# ~/.tmuxinator/nfes-gmana.yml
+# ~/.tmuxinator/gmana.yml
 
-name: nfes-gmana
+name: gmana
 root: ~/db/nfes15/group_manager/
 
 # Optional tmux socket
