@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2015-Dec-16.
+# Last Change: 2016-Jan-06.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -49,6 +49,8 @@ brew install zsh
 # ------------------------------------------------------- #
 brew cask install 1password
 brew cask install adobe-reader-ja
+brew cask install airmail-beta
+brew cask install amazon-music
 brew cask install appcleaner
 brew cask install ccleaner
 brew cask install clamxav
