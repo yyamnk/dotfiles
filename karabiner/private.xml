@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--Last Change: 2015-Dec-09.-->
+<!--Last Change: 2016-Feb-04.-->
 <!-- [[[, ]]]: 折り畳みマーカ -->
 
 <root>
@@ -299,22 +299,22 @@
       </item>
 
       <item>
-        <name>Control+[O, N] to [KANA, EISUU] for dvorak map</name><!--[[[-->
+        <name>[e+u, h+t] to [KANA, EISUU] for dvorak map</name><!--[[[-->
         <appendix>(Except in Virtual Machine, RDC)</appendix>
-        <appendix>keycode::S (dvorak O)でKANA</appendix>
-        <appendix>keycode::L (dvorak N)でEISUU</appendix>
-        <identifier>private.controlO2kanaeisuu</identifier>
+        <appendix>Simultaneous Key Presses, keycode::D (dvorak O) + keycode::F (dvorak U) to KANA</appendix>
+        <appendix>Simultaneous Key Presses, keycode::J (dvorak H) + keycode::K (dvorak T) to EISUU</appendix>
+        <identifier>private.eu_ht2kana_eisuu</identifier>
         <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
         <autogen>
-          __KeyToKey__
-          KeyCode::S, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+          __SimultaneousKeyPresses__
+          KeyCode::D, KeyCode::F,
           KeyCode::JIS_KANA
         </autogen>
         <autogen>
-          __KeyToKey__
-          KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+          __SimultaneousKeyPresses__
+          KeyCode::J, KeyCode::K,
           KeyCode::JIS_EISUU
-        </autogen>
+        </autogen><!--]]]-->
       </item>
 
       <include path="dvorak.xml"/>
