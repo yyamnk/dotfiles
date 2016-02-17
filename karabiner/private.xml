@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--Last Change: 2016-Feb-04.-->
+<!--Last Change: 2016-Feb-12.-->
 <!-- [[[, ]]]: 折り畳みマーカ -->
 
 <root>
@@ -313,6 +313,25 @@
         <autogen>
           __SimultaneousKeyPresses__
           KeyCode::J, KeyCode::K,
+          KeyCode::JIS_EISUU
+        </autogen><!--]]]-->
+      </item>
+
+      <item>
+        <name>[Ctrl+j, Ctrl+k] to [KANA, EISUU] for dvorak map</name><!--[[[-->
+        <appendix>(Except in Virtual Machine, RDC)</appendix>
+        <appendix>CTRL + keycode::C (dvorak J) to KANA</appendix>
+        <appendix>CTRL + keycode::V (dvorak K) to EISUU</appendix>
+        <identifier>private.ctrl_jk2kana_eisuu</identifier>
+        <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
+        <autogen>
+          __KeyToKey__
+          KeyCode::C, ModifierFlag::CONTROL_L,
+          KeyCode::JIS_KANA
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::V, ModifierFlag::CONTROL_L,
           KeyCode::JIS_EISUU
         </autogen><!--]]]-->
       </item>
