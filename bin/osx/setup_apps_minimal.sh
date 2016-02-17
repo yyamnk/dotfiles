@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2016-Jan-06.
+# Last Change: 2016-Feb-17.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -25,7 +25,6 @@ brew install heroku-toolbelt
 brew install hub
 brew install libdvdcss # for handbrak, library
 brew install lua
-brew install mongodb
 brew install nkf
 brew install pandoc
 brew install peco
@@ -48,9 +47,7 @@ brew install zsh
 # cask install for GUI application
 # ------------------------------------------------------- #
 brew cask install 1password
-brew cask install adobe-reader-ja
 brew cask install airmail-beta
-brew cask install amazon-music
 brew cask install appcleaner
 brew cask install ccleaner
 brew cask install clamxav
@@ -59,38 +56,29 @@ brew cask install copy
 brew cask install coteditor
 brew cask install dash
 brew cask install dropbox
-brew cask install evernote
 brew cask install fluid
 brew cask install gitX
 brew cask install google-chrome
 brew cask install google-japanese-ime
-brew cask install handbrake
 brew cask install iterm2
 brew cask install karabiner
 brew cask install latexit
-brew cask install mactubes
 brew cask install marked
 brew cask install mendeley-desktop
 brew cask install menumeters
 brew cask install monolingual
 brew cask install nosleep
-brew cask install parallels9
 brew cask install pgadmin3
 brew cask install seil
-brew cask install shortcat
 brew cask install showyedge
-brew cask install skepe
 brew cask install skim
 brew cask install slack
 brew cask install slate
 brew cask install textexpander3
 brew cask install the-unarchiver
-brew cask install thunderbird
 brew cask install totalspaces
 brew cask install transmit
 brew cask install trim-enabler
-brew cask install vagrant
-brew cask install virtualbox
 brew cask install vlc
 brew cask install xquartz
 brew cask install xtrafinder
@@ -101,6 +89,9 @@ brew cask install qlcolorcode
 brew cask install qlmarkdown
 brew cask install qlstephen
 brew cask install quicklook-csv
+
+# gem
+gem install git-issue
 
 # 不要ファイル削除
 brew cleanup
