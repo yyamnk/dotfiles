@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** bin/osx/setup.sh *******************
 # created: 2015-Feb-25
-# Last Change: 2015-Dec-10.
+# Last Change: 2016-Feb-17.
 #------------------------------------------------------------
 # mac setup
 # install zsh, git, karabiner, Ricty font
@@ -148,7 +148,8 @@ echo 'Complete minimize osx setting!'
 #-------------------------------------------------------#
 echo ''
 echo 'To install apps, please execute'
-echo "zsh $SETUP_DIR/setup_apps.sh"
+echo "zsh $SETUP_DIR/setup_apps_minimal.sh"
+echo "zsh $SETUP_DIR/setup_apps_luxury"
 echo ''
 
 #-------------------------------------------------------#
