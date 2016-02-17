@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2016-Jan-26.
+# Last Change: 2016-Feb-17.
 #************************************************************
 
 # get pyenv
@@ -34,6 +34,7 @@ conda install numpy scipy matplotlib ipython pandas
 conda install numba cython
 conda install psycopg2 sqlalchemy
 conda install statsmodels
+conda install seaborn
 echo ''
 echo 'start install pip packages'
 pip install alembic
@@ -50,6 +51,7 @@ pip install peewee # simplo ORM
 pip install GitPython
 pip install click
 pip install rq-dashboard
+pip install prettyplotlib
 
 # syntax
 conda install pep8 pyflakes
