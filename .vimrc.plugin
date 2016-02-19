@@ -275,6 +275,7 @@ noremap <Leader>s :Unite line<CR>
 noremap <Leader>ud :Unite directory_mru directory_rec/async:<CR>
 " noremap <Leader>um :Unite directory_mru<CR>
 noremap <Leader>uo :Unite outline<CR>
+noremap <Leader>uO :Unite outline -no-quit<CR>
 noremap <Leader>ur :Unite file_rec/async:$HOME/Dropbox/mybrain/<CR>
 noremap <Leader>uh :Unite help<CR>
 
