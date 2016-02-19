@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # ****************** 00-init.py *******************
 # Created	 : 2015-Sep-02
-# Last Change: 2016-Feb-17.
+# Last Change: 2016-Feb-19.
 # -----------------------------------
 # ipython 起動時に自動実行
 # ************************************************************
@@ -23,6 +23,8 @@ from oprc import optimizers
 # figure settings
 import matplotlib as mpl
 import seaborn as sns
-sns.set_context('poster', rc={'figure.figsize': [8.0, 6.0], "lines.linewidth": 1.75})
+sns.set_context('poster',
+                font_scale=1.2,
+                rc={'figure.figsize': [8.0, 6.0], "lines.linewidth": 1.75})
 mpl.rcParams['legend.frameon'] = True
 mpl.rcParams['legend.shadow'] = True
