@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2016-Feb-17.
+# Last Change: 2016-Feb-23.
 #************************************************************
 
 # get pyenv
@@ -30,11 +30,19 @@ fi
 
 # get packages
 echo 'start install conda packages'
-conda install numpy scipy matplotlib ipython pandas
-conda install numba cython
-conda install psycopg2 sqlalchemy
-conda install statsmodels
-conda install seaborn
+conda install \
+    numpy \
+    scipy \
+    matplotlib \
+    ipython \
+    pandas \
+    numba \
+    cython \
+    psycopg2 \
+    sqlalchemy \
+    statsmodels \
+    seaborn \
+    dill
 echo ''
 echo 'start install pip packages'
 pip install alembic
