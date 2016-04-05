@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2015-Dec-10.
+# Last Change:2016-Apr-05.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -200,6 +200,7 @@ darwin*)
     alias bibs='cd ~/db/apps/Mendeley'
     alias exp='cd ~/lab/experiments/'
     alias oprc='cd ~/lab/src_lib/python/oprc'
+    alias test_oprc='python -m unittest discover -s ~/lab/src_lib/python/oprc/tests --pattern="*.py"'
 
     # lab matlab
     alias matl='cd ~/matLocal'
