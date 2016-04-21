@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2016-Apr-15.
+# Last Change: 2016-Apr-21.
 #************************************************************
 
 # get pyenv
@@ -62,7 +62,8 @@ pip install rq-dashboard
 pip install prettyplotlib
 
 # syntax
-conda install pep8 pyflakes
+conda install pep8
+pip install git+https://github.com/yyamnk/pyflakes.git
 
 # scheduler -> use supervisor
 # pip install APScheduler
