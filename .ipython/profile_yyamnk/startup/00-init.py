@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # ****************** 00-init.py *******************
 # Created	 : 2015-Sep-02
-# Last Change: 2016-Feb-19.
+# Last Change: 2016-Apr-19.
 # -----------------------------------
 # ipython 起動時に自動実行
 # ************************************************************
@@ -18,8 +18,6 @@ from pprint import pprint as pp
 import sys
 import pickle
 import math
-# import oprc
-from oprc import optimizers
 # figure settings
 import matplotlib as mpl
 import seaborn as sns
