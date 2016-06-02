@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2016-Apr-21.
+# Last Change: 2016-May-31.
 #************************************************************
 
 # get pyenv
@@ -71,3 +71,5 @@ pip install git+https://github.com/yyamnk/pyflakes.git
 
 # evolutionary computation framework
 pip install deap
+
+pip install git+https://github.com/sdispater/orator.git
