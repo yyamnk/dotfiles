@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** setup_apps_luxury.sh *******************
 # Created    : 2016-Feb-17
-# Last Change: 2016-Feb-17.
+# Last Change: 2016-May-18.
 #------------------------------------------------------------
 #************************************************************
 #
@@ -12,6 +12,7 @@ brew install mongodb
 brew cask install adobe-reader-ja
 brew cask install amazon-music
 brew cask install evernote
+brew cask install flux
 brew cask install handbrake
 brew cask install mactubes
 brew cask install parallels9
