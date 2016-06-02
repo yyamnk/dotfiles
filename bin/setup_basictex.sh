@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_basictex.sh *******************
 # created: 2015-Feb-09
-# Last Change:2015-Nov-05.
+# Last Change:2016-May-17.
 #-----------------------------------------------------------
 # 1. installing BasicTeX
 # 2. update texLive by tlmgr
@@ -41,7 +41,8 @@ echo "tlmgr install uptex jfontmaps jsclasses japanese-otf"
 sudo tlmgr --no-persistent-downloads install ptex japanese-otf jfontmaps jsclasses
 # for pandoc + ja
 sudo tlmgr --no-persistent-downloads install collection-langcjk luatexja ctablestack filehook
-
+# for algpseudocode.sty
+sudo tlmgr --no-persistent-downloads install algorithmicx
 
 echo "------------ Symbolic Links for Hiragino --------------------"
 # ヒラギノフォントを埋め込む
