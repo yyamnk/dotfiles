@@ -27,17 +27,33 @@ name: clusters
 # post: tmux -CC attach -t 3panes
 
 windows:
-  - editor:
+  - tesla:
       layout: tiled
       panes:
-        -
+        - ssh te01
+        - ssh te02
+        - ssh te03
+        - ssh te04
+        - ssh te05
+        - ssh te06
+        - ssh te07
+        - ssh te08
+        - ssh te09
+        - ssh te10
+        - ssh te11
+        - ssh te12
+        - ssh te13
+        - ssh te14
+        - ssh te15
+        - ssh te16
+  - circuit:
+      layout: tiled
+      panes:
+        - ssh c1
+        - ssh c2
         - ssh c3
         - ssh c4
-        - ssh c5
+        # - ssh c5
         - ssh c6
         - ssh c7
         - ssh c8
-        - ssh te13 -t zsh
-        - ssh te14 -t zsh
-        - ssh te15 -t zsh
-        - ssh te16 -t zsh
