@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2016-Feb-17.
+# Last Change: 2016-Jul-20.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -73,7 +73,7 @@ brew cask install seil
 brew cask install showyedge
 brew cask install skim
 brew cask install slack
-brew cask install slate
+brew cask install mattr-slate
 brew cask install textexpander3
 brew cask install the-unarchiver
 brew cask install totalspaces
