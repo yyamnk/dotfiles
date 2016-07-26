@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2016-Apr-14.
+# Last Change:2016-Jul-26.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -214,6 +214,7 @@ linux*)
     # use zsh, vim under home
     [ -e ${HOME}/usr/local/bin/zsh ] && alias zsh='${HOME}/usr/local/bin/zsh'
     [ -e ${HOME}/usr/local/bin/vim ] && alias vim='${HOME}/usr/local/bin/vim'
+    [ -e ${HOME}/usr/local/bin/tmux ] && alias tmux='LD_LIBRARY_PATH=${HOME}/usr/local/lib tmux'
 
     # for cluster, circuit-c*
     if [ `hostname | cut -c 1-9` = "circuit-c" ]; then
