@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2016-May-31.
+# Last Change: 2016-Jul-21.
 #************************************************************
 
 # get pyenv
@@ -42,7 +42,8 @@ conda install \
     sqlalchemy \
     statsmodels \
     seaborn \
-    dill
+    dill \
+    Pillow
 echo ''
 echo 'start install pip packages'
 pip install alembic
