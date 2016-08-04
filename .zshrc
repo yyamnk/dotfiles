@@ -1,4 +1,4 @@
-# Last Change: 2015-Dec-15.
+# Last Change: 2016-Jul-29.
 
 #-------------------------------------------------------#
 # General Settings
@@ -197,13 +197,20 @@ function tailc() {
 # オプションの比較 http://za.toypark.in/html/2010/09-17.html
 # -dPDFSETTINGS=/default # 300dpi images
 # -dPDFSETTINGS=/ebook # 150dpi images
-function pdfcompress() {
+function pdfcompress_gs() {
     output="${1:r}_gs.pdf"
     gs -sDEVICE=pdfwrite \
     -dCompatibilityLevel=1.4 \
-    -dPDFSETTINGS=/default \
+    -dPDFSETTINGS=/screen \
     -dNOPAUSE -dQUIET -dBATCH \
     -sOutputFile=$output $1
+}
+
+# slow but effective
+function pdfcompress_ps() {
+    output="${1:r}_ps.pdf"
+    tmp="${1:r}.ps"
+    pdf2ps $1 $tmp && ps2pdf $tmp $output
 }
 
 function gifcompress() {
