@@ -1,4 +1,4 @@
-# Last Change: 2016-Jul-29.
+# Last Change: 2016-Aug-10.
 
 #-------------------------------------------------------#
 # General Settings
@@ -238,7 +238,7 @@ function png2pdf() {
 # ag検索してでpeco絞り込み，vimで該当行を開く
 # http://qiita.com/fmy/items/b92254d14049996f6ec3
 function agvim () {
-  vim $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+  vim $(ag "$@" | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
 }
 
 # create tex dir
@@ -300,6 +300,8 @@ fi
 
 # for python
 export PYTHONPATH=${HOME}/lab/src_lib/python
+# for pyside
+export LD_LIBRARY_PATH=~/.pyenv/versions/miniconda3-3.9.1/lib/python3.4/site-packages/PySide
 
 # for cec2013 banchmark suite
 export CEC13DATA=${PYTHONPATH}/cec2013single/cec2013single/cec2013_data
