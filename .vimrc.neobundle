@@ -1,4 +1,4 @@
-" Last Change:2015-Nov-20.
+" Last Change:2016-Sep-07.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -50,6 +50,9 @@ function! s:LoadBundles()
     NeoBundle 'honza/vim-snippets'
     NeoBundle 'ujihisa/neco-look.git' " lookを使って英単語補完
     NeoBundle 'davidhalter/jedi-vim'
+    " NeoBundle 'hynek/vim-python-pep8-indent' " python auto indent
+    NeoBundleLazy 'hynek/vim-python-pep8-indent', {
+        \ "autoload": {"insert": 1, "filetypes": ["python", "python3", "djangohtml"]}}
     " ------ カーソル移動
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'haya14busa/vim-migemo'

@@ -145,7 +145,7 @@ let g:airline_right_sep = ''
 filetype plugin on
 let tex_flavor = 'latex'
 set grepprg=grep\ -nH\ $*
-filetype indent off " OPTIONAL: This enables automatic indentation as you type.
+" filetype indent off " OPTIONAL: This enables automatic indentation as you type.
 let g:Tex_DefaultTargetFormat = 'pdf' "標準で.pdfにコンパイルして開く
 let g:Tex_FormatDependency_pdf = 'dvi,pdf' " 依存関係を明示
 " dvi生成
