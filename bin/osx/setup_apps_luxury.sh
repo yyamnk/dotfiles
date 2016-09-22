@@ -1,13 +1,14 @@
 #!/usr/bin/env zsh
 #****************** setup_apps_luxury.sh *******************
 # Created    : 2016-Feb-17
-# Last Change: 2016-May-18.
+# Last Change: 2016-Sep-22.
 #------------------------------------------------------------
 #************************************************************
 #
 # CUI
 brew install mongodb
-#
+brew install node  # for nativefier
+npm install -g nativefier  # web page to native app
 # GUI
 brew cask install adobe-reader-ja
 brew cask install amazon-music

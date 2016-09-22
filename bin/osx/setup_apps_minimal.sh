@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2016-Jul-20.
+# Last Change: 2016-Aug-22.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -72,6 +72,7 @@ brew cask install pgadmin3
 brew cask install seil
 brew cask install showyedge
 brew cask install skim
+brew cask install sshfs  # mount FTP, SFTP
 brew cask install slack
 brew cask install mattr-slate
 brew cask install textexpander3
