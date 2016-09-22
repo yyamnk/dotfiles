@@ -1,4 +1,4 @@
-# Last Change: 2016-Aug-10.
+# Last Change: 2016-Sep-20.
 
 #-------------------------------------------------------#
 # General Settings
@@ -186,6 +186,12 @@ function tex2zip() {
 # markdown -> pdf
 function md2pdf() {
     pandoc $1 -o output.pdf -V documentclass=myltjsarticle --latex-engine=lualatex
+}
+
+# markdown -> doc
+function md2docx() {
+    output="${1:r}.docx"
+    pandoc -o $output -f markdown+ignore_line_breaks $1
 }
 
 function tailc() {
