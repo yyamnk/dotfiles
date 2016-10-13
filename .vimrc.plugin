@@ -215,7 +215,7 @@ inoremap <buffer><expr> , smartchr#loop(', ', ',')
 " inoremap <buffer><expr> ( smartchr#loop('()<LEFT>', '(')
 " inoremap <buffer><expr> [ smartchr#loop('[]<LEFT>', '[')
 " inoremap <buffer><expr> # smartchr#loop('# ', '#')
-inoremap <buffer><expr> = smartchr#loop(' = ', ' == ', '=')
+" inoremap <buffer><expr> = smartchr#loop(' = ', ' == ', '=')
 
 " for tex
 autocmd FileType *tex inoremap <buffer><expr> . smartchr#loop('. ', '.', '...')
