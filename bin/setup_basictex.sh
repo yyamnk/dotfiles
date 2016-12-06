@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_basictex.sh *******************
 # created: 2015-Feb-09
-# Last Change:2016-May-17.
+# Last Change:2016-Dec-06.
 #-----------------------------------------------------------
 # 1. installing BasicTeX
 # 2. update texLive by tlmgr
@@ -38,7 +38,8 @@ sudo tlmgr --no-persistent-downloads install newtx fontaxes boondox txfonts ec h
 # 日本語
 echo "------------ install japanese pkgs --------------------"
 echo "tlmgr install uptex jfontmaps jsclasses japanese-otf"
-sudo tlmgr --no-persistent-downloads install ptex japanese-otf jfontmaps jsclasses
+# sudo tlmgr --no-persistent-downloads install ptex platex japanese-otf jfontmaps jsclasses
+sudo tlmgr --no-persistent-downloads install collection-langjapanese
 # for pandoc + ja
 sudo tlmgr --no-persistent-downloads install collection-langcjk luatexja ctablestack filehook
 # for algpseudocode.sty
@@ -46,7 +47,14 @@ sudo tlmgr --no-persistent-downloads install algorithmicx
 
 echo "------------ Symbolic Links for Hiragino --------------------"
 # ヒラギノフォントを埋め込む
-cd `kpsewhich -var-value=TEXMFLOCAL`
+# https://texwiki.texjp.org/?TeX%20Live%2FMac#i9febc9b
+# フォントのインストール先は
+# {kpsewhich -var-value=TEXMFLOCAL}/fonts/opentype/hiragino/
+# とすること．texLiveのverによってTEXMFLOCALが変わる．
+# http://qiita.com/yyu/items/e3451caa86779b94abe1
+# で指摘されているように，BasicTexの場合には`20XXbasic/texmf-local`でないと動作しない!
+#
+cd `kpsewhich -var-value=TEXMFLOCAL`  # インストール直後は見つからない可能性あり
 sudo mkdir -p ./fonts/opentype/public/hiragino
 cd ./fonts/opentype/public/hiragino
 sudo ln -s "/Library/Fonts/ヒラギノ明朝 Pro W3.otf" ./HiraMinPro-W3.otf
@@ -79,4 +87,6 @@ sudo tlmgr --no-persistent-downloads install collection-fontsrecommended
 sudo tlmgr --no-persistent-downloads install dvipng
 # pdfの余白制御
 sudo tlmgr --no-persistent-downloads install pdfcrop
+# bib制御
+sudo tlmgr --no-persistent-downloads install biblatex logreq xstring filecontents biber
 echo "================= TeX Live Maneger Finish======================="
