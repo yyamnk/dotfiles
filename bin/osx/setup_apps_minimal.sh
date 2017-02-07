@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_apps.sh *******************
 # created: 2015-Feb-06
-# Last Change: 2016-Aug-22.
+# Last Change: 2016-Nov-22.
 #------------------------------------------------------------
 # set up for apps
 #************************************************************
@@ -63,6 +63,7 @@ brew cask install google-japanese-ime
 brew cask install iterm2
 brew cask install karabiner
 brew cask install latexit
+brew cask install macwinzipper
 brew cask install marked
 brew cask install mendeley-desktop
 brew cask install menumeters
