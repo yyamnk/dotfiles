@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #****************** bin/setup_basictex.sh *******************
 # created: 2015-Feb-09
-# Last Change:2016-Dec-06.
+# Last Change:2017-Jan-19.
 #-----------------------------------------------------------
 # 1. installing BasicTeX
 # 2. update texLive by tlmgr
@@ -89,4 +89,5 @@ sudo tlmgr --no-persistent-downloads install dvipng
 sudo tlmgr --no-persistent-downloads install pdfcrop
 # bib制御
 sudo tlmgr --no-persistent-downloads install biblatex logreq xstring filecontents biber
+sudo tlmgr --no-persistent-downloads install bigints
 echo "================= TeX Live Maneger Finish======================="
