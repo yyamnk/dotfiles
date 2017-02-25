@@ -1,4 +1,4 @@
-" Last Change:2016-Sep-07.
+" Last Change:2017-Feb-25.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -84,7 +84,8 @@ function! s:LoadBundles()
     NeoBundleLazy "vim-scripts/python_fold", {
         \ "autoload": { "filetypes": [ "python", "python3", "djangohtml"] }}
     " ------ 見た目変更
-    NeoBundle 'bling/vim-airline'
+    NeoBundle 'vim-airline/vim-airline'
+    NeoBundle 'vim-airline/vim-airline-themes'
     NeoBundle 'ujihisa/unite-colorscheme'
     NeoBundle 'ujihisa/unite-font'
     NeoBundle 'LeafCage/foldCC'     " foldingでインデントを反映させる
