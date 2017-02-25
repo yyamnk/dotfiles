@@ -7,7 +7,9 @@ source $HOME/.vimrc.neobundle
 " General
 " ------------------------------------------------------- " {{{
 set nocompatible      " viの互換性を優先せず, vimの機能を制限しない
-set clipboard+=unnamed " ヤンクとクリップボードを共有できると聞いて
+" set clipboard+=unnamed " ヤンクとクリップボードを共有できると聞いて for osx
+set clipboard=unnamedplus  " for linux
+
 set notimeout         " no timeout for keymap
 "ビープ音すべてを無効にする
 set visualbell t_vb=
