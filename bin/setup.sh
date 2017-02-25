@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** bin/setup.sh *******************
 # created: 2015-Feb-05
-# Last Change: 2015-Oct-16.
+# Last Change: 2017-Feb-26.
 #------------------------------------------------------------
 # 最低限の環境を整える
 # githubからdotfilesを~/.dotfiles/へclone
@@ -92,6 +92,17 @@ bash $dotfiles/bin/link_bins.sh
 [ -e ${HOME}/conf/supervisor ] && \
     echo 'link ~/.dotfiles/conf/supervisor/* ~/conf/supervisor/' && \
     ln -sf ~/.dotfiles/conf/supervisor/* ~/conf/supervisor
+
+
+#-------------------------------------------------------#
+# delete culr setting if no proxy
+#-------------------------------------------------------#
+if [[ ! -v https_proxy ]]; then
+    . $dotfiles/bin/proxy_off.sh && \
+    rm $HOME/.curlrc && \
+    echo 'proxy off and remove curlrc'
+fi
+
 
 echo ''
 echo '======================================'
