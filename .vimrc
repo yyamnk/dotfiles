@@ -1,4 +1,4 @@
-" Last Change:2015-Oct-30.
+" Last Change:2017-Feb-25.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -127,147 +127,6 @@ autocmd FileType markdown set foldlevel=2
 " autocmd FileType xml set foldmethod=syntax foldlevel=4
 autocmd FileType xml set foldlevel=0 foldmarker=[[[,]]]
 autocmd FileType python set foldmethod=indent
-" }}}
-
-" ------------------------------------------------------- "
-" 画面表示
-" ------------------------------------------------------- " {{{
-set ambiwidth=double " 全角文字の表示指定
-" 同時にiterm2 Preferences > Profile > Text > Double-Width Charactersの
-" Treat ambiguous-width characters as double width.
-" にチェックを入れる.
-set number " 行番号表示
-set laststatus=2 " 画面最下部のステータス行を 常に表示(2)
-set cmdheight=2  " ステータス行より下のメッセージ表示欄の行数
-set showmatch    " カーソル位置の括弧と対応する括弧を強調表示
-
-" 前回終了したカーソル行に移動
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
-
-" autocmd FileType *tex set spell " texのみスペルチェックをonに
-" autocmd FileType matlab set nospell " matlabのみスペルチェックをoff
-autocmd FileType tex set spell " texのみスペルチェックをoff
-set spelllang+=cjk " spellチェックから日本語を除外する
-" http://d.hatena.ne.jp/osyo-manga/20131117/1384691873
-
-" タブ文字等々を可視化
-" http://futuremix.org/2011/02/display-tab-full-width-space-chars-on-vim
-set listchars=tab:▸\ ,extends:❯,precedes:❮,trail:_ " 改行も表示する場合 ,eol:↲,
-set list          " 不可視文字を表示
-highlight SpecialKey cterm=NONE ctermfg=7 guifg=7
-highlight JpSpace cterm=underline ctermfg=8 guifg=7
-au BufRead,BufNew * match JpSpace /　/
-
-" 折り返し幅
-" set textwidth=80 " 自動的に改行を挿入する幅
-set numberwidth=2 " 行数表示の桁数
-" set columns=85 " numberwidthを含め, この列数で折りたたみ, vspでも適用されてる...
-set wrap " 折りたたみ行う
-set colorcolumn=80 " 80文字でラインを入れる
-
-" カラースキーマ関連
-" http://blog.remora.cx/2012/10/let-us-use-solarized.html
-" ==== colorschemeの選択 ==
-" colorscheme solarized
-" colorscheme hybrid
-" colorscheme desert
-" colorscheme desert-warm-256
-colorscheme jellybeans
-set t_Co=256
-
-" カーソルラインの色
-highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
-
-" --- desert用設定
-if g:colors_name ==? 'desert'
-    " hybridより借用
-    highlight Visual term=none cterm=none ctermbg=237   " 選択時の色
-    highlight Search term=none ctermfg=234 ctermbg=221  " 検索ハイライト
-    highlight   Pmenu ctermfg=250 ctermbg=237                       " NeocomplCasheでの補完候補窓
-    highlight   PmenuSel term=reverse cterm=reverse ctermfg=250 ctermbg=237 " NeocomplCasheでの候補選択時の色
-    highlight   MatchParen ctermfg=232 ctermbg=166
-    highlight Function term=bold ctermfg=221
-    " highlight Statement ctermfg=110
-    highlight CursorColumn ctermfg=NONE ctermbg=256
-endif
-
-" --- jellybeans用設定
-if g:colors_name ==? 'jellybeans'
-    highlight CursorColumn ctermfg=NONE ctermbg=234
-    " highlight LineNr ctermfg=186
-    highlight Statement ctermfg=111
-    highlight LineNr ctermfg=95 ctermbg=234 term=underline
-    highlight Normal ctermbg=235
-endif
-
-" --- solarized用設定
-if g:colors_name ==? 'solarized'
-    let g:solarized_contrast = "high"
-    let g:solarized_degrade = 1
-    set background=light
-    highlight linenr ctermfg=103
-    autocmd filetype *tex highlight comment term=bold ctermfg=4
-endif
-
-" --- morning設定( neocomplcasheウインドウ見えない...
-if g:colors_name ==? 'morning'
-    highlight Pmenu ctermbg=8 guibg=#606060
-    highlight PmenuSel ctermfg=130 ctermbg=81 guifg=#dddd00 guibg=#1f82cd
-    highlight PmenuSbar ctermbg=0 guibg=#d6d6d6
-endif
-
-" ---------カーソル下のhighlightInfoを表示--------- " {{{
-" http://qiita.com/pasela/items/903bb9f5ac1b9b17af2c
-function! s:get_syn_id(transparent)
-    let synid = synID(line('.'), col('.'), 1)
-    return a:transparent ? synIDtrans(synid) : synid
-endfunction
-function! s:get_syn_name(synid)
-    return synIDattr(a:synid, 'name')
-endfunction
-function! s:get_highlight_info()
-    execute "highlight " . s:get_syn_name(s:get_syn_id(0))
-    execute "highlight " . s:get_syn_name(s:get_syn_id(1))
-endfunction
-command! HighlightInfo call s:get_highlight_info()
-" }}}
-
-" -----------cursorlineを必要なときにだけ有効にする " {{{
-" http://d.hatena.ne.jp/thinca/20090530/1243615055
-augroup vimrc-auto-cursorline
-    autocmd!
-    autocmd CursorMoved,CursorMovedI * call Auto_cursorline('CursorMoved')
-    autocmd CursorHold,CursorHoldI * call Auto_cursorline('CursorHold')
-    autocmd WinEnter * call Auto_cursorline('WinEnter')
-    autocmd WinLeave * call Auto_cursorline('WinLeave')
-
-    let g:cursorline_lock = 0
-    function! Auto_cursorline(event)
-        if a:event ==# 'WinEnter'
-            setlocal cursorline
-            setlocal cursorcolumn
-            let g:cursorline_lock = 2
-        elseif a:event ==# 'WinLeave'
-            setlocal nocursorline
-            setlocal nocursorcolumn
-        elseif a:event ==# 'CursorMoved'
-            if g:cursorline_lock
-                if 1 < g:cursorline_lock
-                    let g:cursorline_lock = 1
-                else
-                    setlocal nocursorline
-                    setlocal nocursorcolumn
-                    let g:cursorline_lock = 0
-                endif
-            endif
-        elseif a:event ==# 'CursorHold'
-            setlocal cursorline
-            setlocal cursorcolumn
-            let g:cursorline_lock = 1
-        endif
-    endfunction
-augroup END
-" }}}
 " }}}
 
 " ------------------------------------------------------- "
@@ -458,3 +317,152 @@ endif
 
 " neobundle pluginの設定追加
 source $HOME/.vimrc.plugin
+
+
+" ------------------------------------------------------- "
+" 画面表示
+" put after vundle#end()
+" ------------------------------------------------------- " {{{
+set ambiwidth=double " 全角文字の表示指定
+" 同時にiterm2 Preferences > Profile > Text > Double-Width Charactersの
+" Treat ambiguous-width characters as double width.
+" にチェックを入れる.
+set number " 行番号表示
+set laststatus=2 " 画面最下部のステータス行を 常に表示(2)
+set cmdheight=2  " ステータス行より下のメッセージ表示欄の行数
+set showmatch    " カーソル位置の括弧と対応する括弧を強調表示
+
+" 前回終了したカーソル行に移動
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+
+" autocmd FileType *tex set spell " texのみスペルチェックをonに
+" autocmd FileType matlab set nospell " matlabのみスペルチェックをoff
+autocmd FileType tex set spell " texのみスペルチェックをoff
+set spelllang+=cjk " spellチェックから日本語を除外する
+" http://d.hatena.ne.jp/osyo-manga/20131117/1384691873
+
+" タブ文字等々を可視化
+" http://futuremix.org/2011/02/display-tab-full-width-space-chars-on-vim
+set listchars=tab:▸\ ,extends:❯,precedes:❮,trail:_ " 改行も表示する場合 ,eol:↲,
+set list          " 不可視文字を表示
+highlight SpecialKey cterm=NONE ctermfg=8
+highlight JpSpace cterm=underline ctermfg=9
+au BufRead,BufNew * match JpSpace /　/
+
+" 折り返し幅
+" set textwidth=80 " 自動的に改行を挿入する幅
+set numberwidth=2 " 行数表示の桁数
+" set columns=85 " numberwidthを含め, この列数で折りたたみ, vspでも適用されてる...
+set wrap " 折りたたみ行う
+set colorcolumn=80 " 80文字でラインを入れる
+
+" ---------カーソル下のhighlightInfoを表示--------- " {{{
+" http://qiita.com/pasela/items/903bb9f5ac1b9b17af2c
+function! s:get_syn_id(transparent)
+    let synid = synID(line('.'), col('.'), 1)
+    return a:transparent ? synIDtrans(synid) : synid
+endfunction
+function! s:get_syn_name(synid)
+    return synIDattr(a:synid, 'name')
+endfunction
+function! s:get_highlight_info()
+    execute "highlight " . s:get_syn_name(s:get_syn_id(0))
+    execute "highlight " . s:get_syn_name(s:get_syn_id(1))
+endfunction
+command! HighlightInfo call s:get_highlight_info()
+" }}}
+
+" -----------cursorlineを必要なときにだけ有効にする " {{{
+" http://d.hatena.ne.jp/thinca/20090530/1243615055
+augroup vimrc-auto-cursorline
+    autocmd!
+    autocmd CursorMoved,CursorMovedI * call Auto_cursorline('CursorMoved')
+    autocmd CursorHold,CursorHoldI * call Auto_cursorline('CursorHold')
+    autocmd WinEnter * call Auto_cursorline('WinEnter')
+    autocmd WinLeave * call Auto_cursorline('WinLeave')
+
+    let g:cursorline_lock = 0
+    function! Auto_cursorline(event)
+        if a:event ==# 'WinEnter'
+            setlocal cursorline
+            setlocal cursorcolumn
+            let g:cursorline_lock = 2
+        elseif a:event ==# 'WinLeave'
+            setlocal nocursorline
+            setlocal nocursorcolumn
+        elseif a:event ==# 'CursorMoved'
+            if g:cursorline_lock
+                if 1 < g:cursorline_lock
+                    let g:cursorline_lock = 1
+                else
+                    setlocal nocursorline
+                    setlocal nocursorcolumn
+                    let g:cursorline_lock = 0
+                endif
+            endif
+        elseif a:event ==# 'CursorHold'
+            setlocal cursorline
+            setlocal cursorcolumn
+            let g:cursorline_lock = 1
+        endif
+    endfunction
+augroup END
+" }}}
+
+
+" カラースキーマ関連
+set t_Co=256  " before colorscheme configure
+" http://blog.remora.cx/2012/10/let-us-use-solarized.html
+" ==== colorschemeの選択 ==
+" colorscheme solarized
+" colorscheme hybrid
+" colorscheme desert
+" colorscheme desert-warm-256
+" set background=dark
+colorscheme jellybeans  " no transparent in lxterm
+
+" カーソルラインの色
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+
+" --- desert用設定
+if get(g:, 'colors_name', '') ==? 'desert'
+    " hybridより借用
+    highlight Visual term=none cterm=none ctermbg=237   " 選択時の色
+    highlight Search term=none ctermfg=234 ctermbg=221  " 検索ハイライト
+    highlight   Pmenu ctermfg=250 ctermbg=237                       " NeocomplCasheでの補完候補窓
+    highlight   PmenuSel term=reverse cterm=reverse ctermfg=250 ctermbg=237 " NeocomplCasheでの候補選択時の色
+    highlight   MatchParen ctermfg=232 ctermbg=166
+    highlight Function term=bold ctermfg=221
+    " highlight Statement ctermfg=110
+    highlight CursorColumn ctermfg=NONE ctermbg=256
+endif
+
+" --- jellybeans用設定
+if get(g:, 'colors_name', '') ==? 'jellybeans'
+    " highlight CursorColumn ctermfg=NONE ctermbg=234
+    " " highlight LineNr ctermfg=186
+    " highlight Statement ctermfg=111
+    " highlight LineNr ctermfg=95 ctermbg=234 term=underline
+    " highlight Normal ctermbg=235
+    "
+    " transparency setting
+    let g:jellybeans_background_color_256='NONE'
+    set background=light
+    highlight LineNr ctermfg=95
+endif
+
+" --- solarized用設定
+if get(g:, 'colors_name', '') ==? 'solarized'
+    let g:solarized_contrast = "high"
+    let g:solarized_degrade = 1
+    set background=light
+    highlight linenr ctermfg=103
+    autocmd filetype *tex highlight comment term=bold ctermfg=4
+endif
+
+" --- morning設定( neocomplcasheウインドウ見えない...
+if get(g:, 'colors_name', '') ==? 'morning'
+    highlight Pmenu ctermbg=8 guibg=#606060
+    highlight PmenuSel ctermfg=130 ctermbg=81 guifg=#dddd00 guibg=#1f82cd
+    highlight PmenuSbar ctermbg=0 guibg=#d6d6d6
+endif
