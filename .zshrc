@@ -1,4 +1,4 @@
-# Last Change: 2016-Sep-20.
+# Last Change: 2017-Feb-26.
 
 #-------------------------------------------------------#
 # General Settings
@@ -108,6 +108,7 @@ zstyle ':completion:*' list-colors ''
 #-------------------------------------------------------#
 # colors
 #-------------------------------------------------------# {{{
+export TERM=xterm-256color
 export CLICOLOR=1
 # alias ls='ls -G -F -t' # lsに色付け
 
