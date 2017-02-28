@@ -1,0 +1,9 @@
+// Swap the functions of the Space key and the left Ctrl key.
+partial modifier_keys
+xkb_symbols "swap_ctrl_space" {
+    // nocaps with space
+    replace key <CAPS> { [ space, space ] };
+    modifier_map  Control { <SPCE>, <SPCE> };
+    replace key <SPCE> { [ Control_L ] };
+    // replace key <LCTL> { [ space ] };
+};

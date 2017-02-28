@@ -1,0 +1,8 @@
+xkb_keymap {
+	xkb_keycodes  { include "evdev+aliases(qwerty)"	};
+	xkb_types     { include "complete"	};
+	xkb_compat    { include "complete"	};
+	xkb_symbols   { include "pc+us(dvorak)+us(dvorak):2+inet(evdev)+shift(both_capslock)+yyamnk(swap_ctrl_space)"	};
+	//xkb_symbols   { include "pc+us(dvorak)+us(dvorak):2+inet(evdev)+shift(both_capslock)"	};
+	xkb_geometry  { include "pc(pc105)"	};
+};
