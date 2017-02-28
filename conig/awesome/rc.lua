@@ -41,7 +41,12 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
+-- beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
+
+-- selected color
+local chosen_theme = "blackburn"
+local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme)
+beautiful.init(theme_path)
 
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
