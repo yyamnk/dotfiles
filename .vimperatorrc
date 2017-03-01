@@ -1,7 +1,7 @@
 "=============== .vimperatorrc ===================
 " vimperator config file
 " Created    : 2017-Feb-24
-" Last Change: 2017-Mar-01.
+" Last Change: 2017-Mar-02.
 " vim: set filetype=vim :
 "=================================================
 
@@ -17,13 +17,16 @@ highlight Bell display:none
 " :oなどでの補完候補をサーチエンジン、履歴に限定
 set complete=sl
 " hint bind
-"nnoremap j f
+" fのバインドは解除できない?
+nnoremap c f
+nnoremap C F
 " Hintモードでアルファベット使用
-set hintchars=uhetonasid
+set hintchars=uhetonasidpg.ckmjw
 " ツールバーはアドオンとタブのみ表示
 " set gui=nonavigation
 " ツールバーはアドオンとタブのみ表示
-set gui=menus,nonavigation,tabs
+" set gui=nonavigation,tabs
+set gui=nonavigation,tabs,addons
 " commandモードでIMEオフ
 style! -name=iommandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 
