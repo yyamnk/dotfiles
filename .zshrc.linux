@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 #****************** .zshrc.linux *******************
 # created: 2015-Feb-25
-# Last Change:2015-Oct-26.
+# Last Change:2017-Mar-01.
 #************************************************************
 
 setxkbmap dvorak
@@ -17,3 +17,7 @@ fi
 if [ -e /usr/pgsql-9.4/bin/ ]; then
     export PATH=/usr/pgsql-9.4/bin:$PATH
 fi
+
+function show_battery() {
+    upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|to\ full|to\ empty|percentage"
+}
