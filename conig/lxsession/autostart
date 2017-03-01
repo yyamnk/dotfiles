@@ -1,0 +1,11 @@
+# Last Change: 2017-Mar-02.
+#
+# autostart for Lubuntu-aws profile
+# put this in ~/.config/lxsession/[DESKTOP_PROFILE_NAME]/
+#
+# do not use space. if you need, use script
+# https://wiki.lxde.org/en/LXSession#autostart_configuration_file
+#
+@/home/yyamnk/bin/set_myxkb.sh
+@/home/yyamnk/bin/set_trackpad.sh
+@/home/yyamnk/bin/xcalib_mbp17.sh
