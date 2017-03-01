@@ -555,4 +555,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- yyamnk addtional
 awful.util.spawn("/home/yyamnk/bin/set_myxkb.sh")
+awful.util.spawn("/home/yyamnk/bin/set_trackpad.sh")
 awful.util.spawn("/home/yyamnk/bin/xcalib_mbp17.sh")
