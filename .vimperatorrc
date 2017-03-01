@@ -53,4 +53,9 @@ hi HintActive color: black; background-color: #ff8700;
 "============================
 " vimperatorrcのリロード
 noremap ,r :source<Space>~/.vimperatorrc<CR>
-map d <M-w>
+
+
+"============================
+" pocket
+"============================
+nmap po :tabopen<Space>https://getpocket.com/a/queue/<CR>
