@@ -1,20 +1,29 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2016-Jul-26.
+# Last Change:2017-Mar-02.
 #************************************************************
 
 #-------------------------------------------------------#
 # for unix
 #-------------------------------------------------------#
 # lsに色付け
-alias la='ls -GFt'
-alias lh='ls -GFt | head'
-alias laa='ls -GFtalh'
-alias lg='ls -GFt | grep'
+case "${OSTYPE}" in
+# mac
+darwin*)
+    alias la='ls -GFt'
+    alias lh='ls -GFt | head'
+    alias laa='ls -GFtalh'
+    alias lg='ls -GFt | grep'
+    ;;
+linux*)
+    alias la='ls -Ft --color=tty'
+    alias lh='ls -Ft --color=tty| head'
+    alias laa='ls -Ftalh --color=tty'
+    alias lg='ls -Ft --color=tty | grep'
+    ;;
+esac
 
-alias h='~'
 alias dots='cd $DOTSDIR'
-alias v='vim'
 alias vv="vim $DOTSDIR/.vimrc"
 alias vn="vim $DOTSDIR/.vimrc.neobundle"
 alias vp="vim $DOTSDIR/.vimrc.plugin"
@@ -25,7 +34,6 @@ alias sz="source $DOTSDIR/.zshrc"
 alias vp="vim $DOTSDIR/.vimrc.plugin"
 alias ....='cd ../../'
 alias grep='grep --color'
-alias g=grep
 # ディレクトリ末尾に'\', 半角表示
 alias tree='tree -F --charset=C'
 # 擬似tree, http://qiita.com/yone098@github/items/bba8a42de6b06e40983b
