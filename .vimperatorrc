@@ -1,0 +1,53 @@
+"=============== .vimperatorrc ===================
+" vimperator config file
+" Created    : 2017-Feb-24
+" Last Change: 2017-Mar-01.
+" vim: set filetype=vim :
+"=================================================
+
+
+"============================
+" General
+"============================
+" 入力欄に自動フォーカスしない
+set focuscontent
+" ビジュアルベルを表示しない
+set visualbell
+highlight Bell display:none
+" :oなどでの補完候補をサーチエンジン、履歴に限定
+set complete=sl
+" hint bind
+"nnoremap j f
+" Hintモードでアルファベット使用
+set hintchars=uhetonasid
+" ツールバーはアドオンとタブのみ表示
+" set gui=nonavigation
+" ツールバーはアドオンとタブのみ表示
+set gui=menus,nonavigation,tabs
+" commandモードでIMEオフ
+style! -name=iommandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+
+
+"============================
+" control
+"============================
+" 移動量
+noremap j 10<C-e>
+noremap k 10<C-y>
+
+
+"============================
+" colorscheme
+"============================
+" デフォルトのヒント派手すぎ＞＜
+hi Hint font-family: Arial; font-size: 21px; font-weight: bold; text-shadow: -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black, 1px 1px 2px black; color: #33cccc;
+hi HintElem color: gray; background-color: #a1e4e6;
+hi HintActive color: black; background-color: #ff8700;
+
+
+"============================
+" reload
+"============================
+" vimperatorrcのリロード
+noremap ,r :source<Space>~/.vimperatorrc<CR>
+map d <M-w>
