@@ -1,4 +1,4 @@
-" Last Change:2017-Feb-25.
+" Last Change:2017-Mar-03.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -423,8 +423,6 @@ set t_Co=256  " before colorscheme configure
 " set background=dark
 colorscheme jellybeans  " no transparent in lxterm
 
-" カーソルラインの色
-highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 
 " --- desert用設定
 if get(g:, 'colors_name', '') ==? 'desert'
@@ -468,3 +466,9 @@ if get(g:, 'colors_name', '') ==? 'morning'
     highlight PmenuSel ctermfg=130 ctermbg=81 guifg=#dddd00 guibg=#1f82cd
     highlight PmenuSbar ctermbg=0 guibg=#d6d6d6
 endif
+
+" after colorscheme settings
+" cursorline
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+" colorcolumn
+highlight ColorColumn ctermbg=238
