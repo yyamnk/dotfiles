@@ -15,7 +15,7 @@ set focuscontent
 set visualbell
 highlight Bell display:none
 " :oなどでの補完候補をサーチエンジン、履歴に限定
-set complete=sl
+set complete=slh
 " hint bind
 " fのバインドは解除できない?
 nnoremap c f
