@@ -1,4 +1,4 @@
-" Last Change:2017-Mar-03.
+" Last Change:2017-Mar-16.
 
 " neobundle 設定を読む
 source $HOME/.vimrc.neobundle
@@ -447,8 +447,9 @@ if get(g:, 'colors_name', '') ==? 'jellybeans'
     "
     " transparency setting
     let g:jellybeans_background_color_256='NONE'
-    set background=light
-    highlight LineNr ctermfg=95
+    " set background=light
+    highlight LineNr ctermfg=95 ctermbg=none
+    highlight Normal ctermbg=none
 endif
 
 " --- solarized用設定
