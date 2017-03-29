@@ -18,12 +18,10 @@ highlight Bell display:none
 set complete=slh
 " hint bind
 " fのバインドは解除できない?
-nnoremap c f
-nnoremap C F
+nnoremap h f
+nnoremap H F
 " Hintモードでアルファベット使用
 set hintchars=uhetonasidpg.ckmjw
-" ツールバーはアドオンとタブのみ表示
-" set gui=nonavigation
 " ツールバーはアドオンとタブのみ表示
 " set gui=nonavigation,tabs
 set gui=nonavigation,tabs,addons
@@ -43,12 +41,18 @@ noremap <A-k> :tabNext<CR>
 " close
 noremap dd :tabclose<CR>
 noremap d <NOP>
+" back
+noremap <C-h> :back<CR>
+noremap <C-S-h> :forward<CR>
 
 " command line
 cmap <C-p> <UP>
 cmap <C-n> <Down>
 cmap <C-b> <Left>
 cmap <C-l> <Right>
+
+" insert mode
+imap <C-m> <CR>
 
 "============================
 " colorscheme
