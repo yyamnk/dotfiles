@@ -112,7 +112,7 @@ if [ -d $HOME/.vim/bundle ]; then
     echo 'skipped'
 else
     echo 'Installing neobundle.vim ...'
-    curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+    curl -sL https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 fi
 
 echo ''
