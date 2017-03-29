@@ -1,12 +1,13 @@
-" Last Change:2017-Mar-16.
+" Last Change:2017-Mar-29.
 
-" neobundle 設定を読む
-source $HOME/.vimrc.neobundle
 
 " ------------------------------------------------------- "
 " General
 " ------------------------------------------------------- " {{{
 set nocompatible      " viの互換性を優先せず, vimの機能を制限しない
+
+" neobundle 設定を読む, nocompatibleの後
+source $HOME/.vimrc.neobundle
 
 let OSTYPE = system('uname')
 if OSTYPE == "Darwin\n"
