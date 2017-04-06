@@ -1,15 +1,15 @@
 #! /usr/bin/bash
 #****************** .zshrc.linux *******************
 # created: 2015-Feb-25
-# Last Change:2017-Mar-29.
+# Last Change:2017-Apr-06.
 #************************************************************
 
-# set proxy
-if [ `/sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}' | grep 133.44` ]; then
-    source "$DOTSDIR/bin/proxy_on.sh"
-else
-    source "$DOTSDIR/bin/proxy_off.sh"
-fi
+# set nut proxy
+# if [ `/sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}' | grep 133.44` ]; then
+#     source "$DOTSDIR/bin/proxy_on.sh"
+# else
+#     source "$DOTSDIR/bin/proxy_off.sh"
+# fi
 
 # add path for postgres9.4
 if [ -e /usr/pgsql-9.4/bin/ ]; then
