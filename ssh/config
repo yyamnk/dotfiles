@@ -1,0 +1,9 @@
+Host github.com
+    Hostname ssh.github.com
+    Port 443
+    ProxyCommand nc -X connect -x proxy.cc.utsunomiya-u.ac.jp:8080 %h %p
+
+Host bitbucket.org
+    HostName altssh.bitbucket.org
+    port 443
+    ProxyCommand nc -X connect -x proxy.cc.utsunomiya-u.ac.jp:8080 %h %p
