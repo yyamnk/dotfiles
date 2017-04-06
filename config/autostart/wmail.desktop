@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=WMail
+Comment=The missing desktop client for Gmail and Google Inbox
+Exec=/home/yyamnk/usr/local/WMail-linux-x64/WMail --mailto=%u
+Icon=/home/yyamnk/usr/local/WMail-linux-x64/icon.png
+MimeType=x-scheme-handler/mailto;
+Terminal=false
+Type=Application
+Categories=Application;Network;Email;

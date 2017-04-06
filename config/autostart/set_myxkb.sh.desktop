@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/yyamnk/bin/set_myxkb.sh
+Hidden=false
+X-MATE-Autostart-enabled=true
+Name[en_US]=my keyboard setting
+Name=my keyboard setting
+Comment[en_US]=
+Comment=
