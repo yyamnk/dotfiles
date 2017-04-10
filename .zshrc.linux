@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 #****************** .zshrc.linux *******************
 # created: 2015-Feb-25
-# Last Change:2017-Apr-06.
+# Last Change:2017-Apr-10.
 #************************************************************
 
 # set nut proxy
@@ -19,3 +19,6 @@ fi
 function show_battery() {
     upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|to\ full|to\ empty|percentage"
 }
+
+# for texlive2016
+export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
