@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/bin/set_t460s.sh
+Hidden=false
+X-MATE-Autostart-enabled=true
+Name[en_US]=t460s_settings
+Name=t460s_settings
+Comment[en_US]=
+Comment=
