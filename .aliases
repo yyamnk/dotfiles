@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2017-Mar-02.
+# Last Change:2017-Apr-11.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -24,14 +24,6 @@ linux*)
 esac
 
 alias dots='cd $DOTSDIR'
-alias vv="vim $DOTSDIR/.vimrc"
-alias vn="vim $DOTSDIR/.vimrc.neobundle"
-alias vp="vim $DOTSDIR/.vimrc.plugin"
-alias vz="vim $DOTSDIR/.zshrc"
-alias vzo="vim $DOTSDIR/.zshrc.osx"
-alias va="vim $DOTSDIR/.aliases"
-alias sz="source $DOTSDIR/.zshrc"
-alias vp="vim $DOTSDIR/.vimrc.plugin"
 alias ....='cd ../../'
 alias grep='grep --color'
 # ディレクトリ末尾に'\', 半角表示
@@ -40,6 +32,16 @@ alias tree='tree -F --charset=C'
 # pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/| /g'
 # tmuxでscreen-256colorを設定するとsshで文字化け
 alias ssh='TERM=xterm ssh' # sshではxtermを使う
+
+
+#-------------------------------------------------------#
+# for lab works
+#-------------------------------------------------------#
+alias lab='cd ~/lab'
+alias web='cd ~/db/lab_web/'
+alias bibs='cd ~/db/apps/Mendeley'
+alias exp='cd ~/lab/experiments/'
+alias oprc='cd ~/lab/src_lib/python/oprc'
 
 
 #-------------------------------------------------------#
@@ -93,8 +95,6 @@ if [[ -e ${HOME}/.pyenv/shims/supervisorctl ]]; then
     alias supervisorctl='supervisorctl -c ~/conf/supervisor/supervisord.conf'
     alias supervisord_up='supervisord -c ~/conf/supervisor/supervisord.conf'
 fi
-
-alias src='cd ~/lab/src_lib/'
 
 # matlab
 alias mat='matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
@@ -199,16 +199,6 @@ darwin*)
     alias survey='cd ~/db/ror/nutfes-survey'
     alias be='bundle exec'
     alias bep='RAILS_ENV=production bundle exec'
-
-
-    #-------------------------------------------------------#
-    # for lab works
-    #-------------------------------------------------------#
-    alias lab='cd ~/lab'
-    alias web='cd ~/db/lab_web/'
-    alias bibs='cd ~/db/apps/Mendeley'
-    alias exp='cd ~/lab/experiments/'
-    alias oprc='cd ~/lab/src_lib/python/oprc'
 
     # lab matlab
     alias matl='cd ~/matLocal'
