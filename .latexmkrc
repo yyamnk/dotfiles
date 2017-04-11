@@ -8,6 +8,7 @@
 # 作業ディレクトリに .latexmkrc を作成する
 # http://konn-san.com/prog/why-not-latexmk.html
 #************************************************************
+use Config;
 
 $latex        = 'platex -synctex=1';
 $latex_silent = 'platex -synctex=1 -interaction=batchmode';
@@ -22,4 +23,10 @@ $pdf_mode     = 3; # generates pdf via dvipdfmx
 $pvc_view_file_via_temporary = 0;
 
 # Use Skim as a previewer
-$pdf_previewer    = "open -ga /Applications/Skim.app";
+# $pdf_previewer    = "open -ga /Applications/Skim.app";
+
+if ($Config{'osname'} eq 'linux') {
+    $pdf_previewer = 'evince';
+} else {
+    $pdf_previewer    = "open -ga /Applications/Skim.app";
+}
