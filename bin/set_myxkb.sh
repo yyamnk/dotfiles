@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** .dotfiles/bin/set_myxkb.sh *******************
 # Created    : 2017-Feb-28
-# Last Change: 2017-Mar-30.
+# Last Change: 2017-Apr-11.
 #************************************************************
 setxkbmap -option shift:both_capslock
 
@@ -9,8 +9,6 @@ $HOME/.dotfiles/bin/ctrl2space.sh  # xmodemap and xcape
 # do not use setxkbmap after the script.
 # xcape does not work well.
 
-# replace menu to Super_R
-xmodmap -e 'keycode 135 = Super_R'  # #135 is menu key (rigt click)
 # replace ; and :
 # keycode  52 = semicolon colon semicolon colon
 xmodmap -e 'keycode 52 = colon semicolon'
