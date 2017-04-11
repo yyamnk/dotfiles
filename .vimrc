@@ -483,3 +483,4 @@ endif
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 " colorcolumn
 highlight ColorColumn ctermbg=238
+highlight Visual ctermbg=250
