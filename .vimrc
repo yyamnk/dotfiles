@@ -1,4 +1,4 @@
-" Last Change:2017-Mar-29.
+" Last Change:2017-Apr-11.
 
 
 " ------------------------------------------------------- "
@@ -70,6 +70,10 @@ nnoremap <Leader>d <<
 vnoremap <Leader>t >>
 vnoremap <Leader>d <<
 
+" escape
+nnoremap <C-s> <ESC>
+vnoremap <C-s> <ESC>
+inoremap <C-s> <ESC>
 " }}}
 
 " ------------------------------------------------------- "

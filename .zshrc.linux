@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 #****************** .zshrc.linux *******************
 # created: 2015-Feb-25
-# Last Change:2017-Apr-10.
+# Last Change:2017-Apr-11.
 #************************************************************
 
 # set nut proxy
@@ -10,6 +10,10 @@
 # else
 #     source "$DOTSDIR/bin/proxy_off.sh"
 # fi
+
+# do not use <C-s> to stop and <C-q> to start
+stty stop undef
+stty start undef
 
 # add path for postgres9.4
 if [ -e /usr/pgsql-9.4/bin/ ]; then
