@@ -517,7 +517,8 @@ nnoremap <Leader>qr :QuickRun<CR>
 " previm, markdown preview with browser
 " ----------------------------- " {{{
 " open cmd
-let g:previm_open_cmd = 'open -a Safari'
+" let g:previm_open_cmd = 'open -a Safari'
+let g:previm_open_cmd = 'firefox'  " for ubuntu
 " 現在のファイルを対象としてブラウザを開く
 nnoremap <Leader>mp :PrevimOpen<CR>
 " }}}
