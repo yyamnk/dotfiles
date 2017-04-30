@@ -1,4 +1,4 @@
-" Last Change:2017-Apr-11.
+" Last Change:2017-Apr-30.
 
 
 " ------------------------------------------------------- "
@@ -45,7 +45,6 @@ inoremap <C-b> <Left>
 " HOME and END in insert mode
 inoremap <C-a> <HOME>
 inoremap <C-e> <END>
-inoremap <silent> jj <Esc>
 " inoremap <silent> hh <Esc>
 " j,  k による移動を折り返されたテキストでも自然に振る舞うように変更
 " 単語削除 カーソル前の単語を削除
@@ -70,10 +69,19 @@ nnoremap <Leader>d <<
 vnoremap <Leader>t >>
 vnoremap <Leader>d <<
 
+" auto ime off for fcitx
+" http://qiita.com/hoshitocat/items/a80d613ef73b7a06ec50
+function! ImInActivate()
+    call system('fcitx-remote -c')
+endfunction
+
 " escape
-nnoremap <C-s> <ESC>
-vnoremap <C-s> <ESC>
-inoremap <C-s> <ESC>
+nnoremap <C-s> <ESC>:call ImInActivate()<CR>
+vnoremap <C-s> <ESC>:call ImInActivate()<CR>
+inoremap <C-s> <ESC>:call ImInActivate()<CR>
+
+inoremap <silent> jj <Esc>:call ImInActivate()<CR>
+
 " }}}
 
 " ------------------------------------------------------- "
