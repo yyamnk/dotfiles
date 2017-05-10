@@ -1,9 +1,9 @@
 #!/bin/bash
 #****************** .dotfiles/bin/set_hhkb.sh *******************
 # Created    : 2017-Apr-24
-# Last Change: 2017-Apr-24.
+# Last Change: 2017-May-10.
 #************************************************************
-sleep 3
+sleep 1
 
 # --- swap ESC and `
 # defaults
