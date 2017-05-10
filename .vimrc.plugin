@@ -496,6 +496,7 @@ let g:quickrun_config = {
 \   },
 \}
 
+" for mac, with Marked app
 let g:quickrun_config.markdown = {
     \ 'outputter' : 'null',
     \ 'command'   : 'open',
@@ -520,7 +521,7 @@ nnoremap <Leader>qr :QuickRun<CR>
 " let g:previm_open_cmd = 'open -a Safari'
 let g:previm_open_cmd = 'firefox'  " for ubuntu
 " 現在のファイルを対象としてブラウザを開く
-nnoremap <Leader>mp :PrevimOpen<CR>
+nnoremap <Leader>pv :PrevimOpen<CR>
 " }}}
 
 " -----------------------------
