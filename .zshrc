@@ -1,4 +1,4 @@
-# Last Change: 2017-Mar-02.
+# Last Change: 2017-May-31.
 
 #-------------------------------------------------------#
 # General Settings
@@ -169,6 +169,9 @@ function tex2doc() {
     # detex -e align, equation, eqnarray, cases, subnumcases, tabular main.tex > main.txt
     pandoc -s main.tex -o main.doc
 }
+
+# tex -> rtf
+alias tex2rtf='latex2rtf -b "./build/main.bbl" -a ./build/main.aux -E0 main.tex'
 
 # platex + dvipdfmx + open with skim
 function tskim() {
