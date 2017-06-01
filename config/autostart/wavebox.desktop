@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Wavebox
+Comment=The next generation of web-desktop communication
+Exec=/home/yyamnk/usr/local/Wavebox-linux-x64/Wavebox --mailto=%u
+Icon=/home/yyamnk/usr/local/Wavebox-linux-x64/icon.png
+MimeType=x-scheme-handler/mailto;
+Terminal=false
+Type=Application
+Categories=Application;Network;Email;

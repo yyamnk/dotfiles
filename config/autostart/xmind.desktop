@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/home/yyamnk/usr/local/xmind/XMind_amd64/XMind
+Name=XMind
+Comment=Mind mapping software
+Path=/home/yyamnk/usr/local/xmind/XMind_amd64/
+Icon=/home/yyamnk/usr/local/xmind/new_branding_new_logo.png
