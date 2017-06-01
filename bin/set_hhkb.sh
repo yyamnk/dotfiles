@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** .dotfiles/bin/set_hhkb.sh *******************
 # Created    : 2017-Apr-24
-# Last Change: 2017-May-10.
+# Last Change: 2017-Jun-01.
 #************************************************************
 sleep 1
 
@@ -18,3 +18,10 @@ xmodmap -e 'keycode  49 = Escape NoSymbol Escape'
 # keycode  51 = backslash bar backslash bar
 xmodmap -e 'keycode 22 = backslash bar backslash bar'
 xmodmap -e 'keycode 51 = BackSpace BackSpace BackSpace BackSpace'
+
+
+# --- swap Numlock (FN + backspace) and delete
+# default
+# keycode  77 = Num_Lock NoSymbol Num_Lock  # FN + BackSpace
+# keycode 119 = Delete NoSymbol Delete
+xmodmap -e 'keycode  77 = Delete NoSymbol Delete'
