@@ -1,4 +1,4 @@
-# Last Change: 2017-May-31.
+# Last Change: 2017-Jun-05.
 
 #-------------------------------------------------------#
 # General Settings
@@ -124,6 +124,23 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # C-wでの削除でpathの'/'も単語区切りにする
 export WORDCHARS="*?_-.[]~&;=!#$%^(){}<>"
+# }}}
+
+#-------------------------------------------------------#
+# keybind
+#-------------------------------------------------------# {{{
+# tmux
+# with zsh xterm-256color, HOME key send "\eOH"
+# with zsh xterm-256color + tmux xterm-256color, HOME key send "\e[1~"
+# so, enable HOME and END in tmux,
+if [[ -n "$TMUX" ]]; then
+    bindkey "\e[1~" beginning-of-line
+    bindkey "\e[4~" end-of-line
+fi
+
+# word move
+bindkey "^[[1;5C" forward-word  # ctrl + right-arrow
+bindkey "^[[1;5D" backward-word  # ctrl + left-arrow
 # }}}
 
 #-------------------------------------------------------#
