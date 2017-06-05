@@ -1,7 +1,7 @@
 "=============== .vimperatorrc ===================
 " vimperator config file
 " Created    : 2017-Feb-24
-" Last Change: 2017-Mar-03.
+" Last Change: 2017-Jun-05.
 " vim: set filetype=vim :
 "=================================================
 
@@ -35,6 +35,7 @@ style! -name=iommandline-ime chrome://* #liberator-commandline-command input {im
 " 移動量
 noremap j 10<C-e>
 noremap k 10<C-y>
+noremap <del> <C-d>
 " tab
 noremap <A-j> :tabnext<CR>
 noremap <A-k> :tabNext<CR>
@@ -43,6 +44,7 @@ noremap dd :tabclose<CR>
 noremap d <NOP>
 " back
 noremap <C-h> :back<CR>
+noremap <BS> :back<CR>
 noremap <C-S-h> :forward<CR>
 
 " command line
