@@ -1,4 +1,4 @@
-" Last Change:2017-Apr-30.
+" Last Change:2017-Jun-05.
 
 
 " ------------------------------------------------------- "
@@ -55,6 +55,8 @@ nnoremap k gk
 " nnoremap :: :w<cr> " ホームポジションでやりたい．小指だと辛い．
 nnoremap tt :w<cr>
 nnoremap Q <Nop>
+nnoremap <del> <C-d>
+nnoremap <HOME> <C-a>
 
 " vim設定ファイル
 nnoremap <silent> <Leader>ev :<C-u>edit $MYVIMRC<CR>
