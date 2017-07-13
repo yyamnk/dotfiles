@@ -1,4 +1,4 @@
-" Last Change:2017-Jun-05.
+" Last Change:2017-Jul-13.
 
 
 " ------------------------------------------------------- "
@@ -90,6 +90,7 @@ inoremap <silent> jj <Esc>:call ImInActivate()<CR>
 " syntax
 " ------------------------------------------------------- " {{{
 syntax on " 構文ハイライトを有効化
+set synmaxcol=100  " 解析の文字数最大値を設定. 長いファイルで効果的
 
 " ---------カーソル下のHighlightInfoを表示--------- " {{{
 function! s:get_syn_id(transparent)
