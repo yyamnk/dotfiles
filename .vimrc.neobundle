@@ -1,4 +1,4 @@
-" Last Change:2017-Feb-25.
+" Last Change:2017-Jul-11.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -67,6 +67,7 @@ function! s:LoadBundles()
     NeoBundle 'LeafCage/yankround.vim'   " 貼付け後にヤンク履歴を遡ってテキストを貼り付ける
     NeoBundle 'tpope/vim-surround'       " 使い方: http://doruby.kbmj.com/aisi/20100310/surround.vim
     NeoBundle 'h1mesuke/vim-alignta.git' " <<hogefuga % -> %で左寄せ, 余白 hoga%fuga
+    NeoBundle 'junegunn/vim-easy-align'
     " NeoBundle 'gerw/vim-latex-suite'     " vim-latex, vimからplatex, dvipdfmx実行
     NeoBundle 'lervag/vimtex'            " foldingあり, latex-boxよりもomni補完が早い気がする
     " NeoBundle 'LaTeX-Box-Team/LaTeX-Box' " Lightweightらしい．folding無し
