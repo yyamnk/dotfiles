@@ -671,6 +671,12 @@ nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
 " }}}
 "
 "-------------------------------------------------------"
+" vim-markdown
+"-------------------------------------------------------" {{{
+let g:vim_markdown_conceal = 0  " disable conceal for []()
+" }}}
+"
+"-------------------------------------------------------"
 " vim-markdown-quote-syntax
 "-------------------------------------------------------" {{{
 let g:markdown_quote_syntax_filetypes = {
