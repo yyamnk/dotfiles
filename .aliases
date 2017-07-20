@@ -216,6 +216,7 @@ linux*)
     [ -e ${HOME}/usr/local/bin/zsh ] && alias zsh='${HOME}/usr/local/bin/zsh'
     [ -e ${HOME}/usr/local/bin/vim ] && alias vim='${HOME}/usr/local/bin/vim'
     [ -e ${HOME}/usr/local/bin/tmux ] && alias tmux='LD_LIBRARY_PATH=${HOME}/usr/local/lib tmux'
+    [ -e ${HOME}/wiki ] && alias wiki='cd ~/wiki'
 
     # for cluster, circuit-c*
     if [ `hostname | cut -c 1-9` = "circuit-c" ]; then
