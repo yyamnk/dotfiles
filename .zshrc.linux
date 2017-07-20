@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 #****************** .zshrc.linux *******************
 # created: 2015-Feb-25
-# Last Change:2017-Jul-04.
+# Last Change:2017-Jul-20.
 #************************************************************
 
 # set nut proxy
@@ -22,6 +22,21 @@ fi
 
 function show_battery() {
     upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|to\ full|to\ empty|percentage"
+}
+
+# avoid accidentally shutdown
+function poweroff(){
+    echo 'shutdown now, continue? [y or n]'
+    read ans
+    case $ans in
+        y)
+           echo 'shutdown now ...' && sleep 1
+           /sbin/poweroff
+           ;;
+        n)
+           echo 'abort!'
+           ;;
+    esac
 }
 
 # for texlive2016
