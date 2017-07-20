@@ -1,4 +1,4 @@
-" Last Change:2017-Jul-13.
+" Last Change:2017-Jul-19.
 
 
 " ------------------------------------------------------- "
@@ -90,7 +90,7 @@ inoremap <silent> jj <Esc>:call ImInActivate()<CR>
 " syntax
 " ------------------------------------------------------- " {{{
 syntax on " 構文ハイライトを有効化
-set synmaxcol=100  " 解析の文字数最大値を設定. 長いファイルで効果的
+set synmaxcol=150  " 解析の文字数最大値を設定. 長いファイルで効果的
 
 " ---------カーソル下のHighlightInfoを表示--------- " {{{
 function! s:get_syn_id(transparent)
@@ -126,6 +126,8 @@ au BufNewFile,BufRead *.js    set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.xml   set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.tex   set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.html  set tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.h     set tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.cpp   set tabstop=2 shiftwidth=2 softtabstop=2
 
 set autoindent           " 改行時に前の行のインデントを継続する
 set smartindent          " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
