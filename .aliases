@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2017-Apr-11.
+# Last Change:2017-Jul-20.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -32,6 +32,7 @@ alias tree='tree -F --charset=C'
 # pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/| /g'
 # tmuxでscreen-256colorを設定するとsshで文字化け
 alias ssh='TERM=xterm ssh' # sshではxtermを使う
+alias gxx='g++'
 
 
 #-------------------------------------------------------#
@@ -42,6 +43,8 @@ alias web='cd ~/db/lab_web/'
 alias bibs='cd ~/db/apps/Mendeley'
 alias exp='cd ~/lab/experiments/'
 alias oprc='cd ~/lab/src_lib/python/oprc'
+
+alias powertrain='cd ~/lab_yoshida/powertrain/02_EG_DS_to_TM'
 
 
 #-------------------------------------------------------#
