@@ -87,7 +87,7 @@ alias test_oprc='python -m unittest discover -s ~/lab/src_lib/python/oprc/tests 
 
 # diff
 # alias diff="diff -u"
-if [[ -e /usr/local/bin/colordiff ]]; then
+if [[ -x `which colordiff` ]]; then
     alias diff='colordiff -u'
 else
     alias diff='diff -u'
