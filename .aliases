@@ -38,13 +38,14 @@ alias gxx='g++'
 #-------------------------------------------------------#
 # for lab works
 #-------------------------------------------------------#
-alias lab='cd ~/lab'
+alias labt='cd ~/lab'
 alias web='cd ~/db/lab_web/'
 alias bibs='cd ~/db/apps/Mendeley'
 alias exp='cd ~/lab/experiments/'
 alias oprc='cd ~/lab/src_lib/python/oprc'
 
 alias powertrain='cd ~/lab_yoshida/powertrain/02_EG_DS_to_TM'
+alias laby='cd ~/lab_yoshida'
 
 
 #-------------------------------------------------------#
