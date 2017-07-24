@@ -117,6 +117,9 @@ autocmd InsertLeave * NeoSnippetClearMarkers
 "-------------------------------------------------------" {{{
 autocmd FileType python setlocal omnifunc=jedi#completions " jedi-vim 有効化
 autocmd FileType python setlocal completeopt-=preview " docstringは表示しない
+" FileTypeのみだと効かない
+autocmd BufRead,BufNewFile *.py setlocal omnifunc=jedi#completions " jedi-vim 有効化
+autocmd BufRead,BufNewFile *.py setlocal completeopt-=preview " docstringは表示しない
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#show_call_signatures = 2   " 2 shows call signatures in the command line
@@ -702,3 +705,4 @@ map z/ <Plug>(incsearch-fuzzy-/)
 nmap <Leader>c <Plug>(caw:i:toggle)
 vmap <Leader>c <Plug>(caw:i:toggle)
 " }}}
+"
