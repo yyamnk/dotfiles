@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2017-Jul-20.
+# Last Change:2017-Jul-24.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -103,6 +103,7 @@ fi
 alias mat='matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
 alias matd='matlab -nosplash -nodesktop'
 
+alias less='less -NsMS'
 #-------------------------------------------------------#
 # for mac
 #-------------------------------------------------------#
