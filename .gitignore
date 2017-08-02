@@ -1,0 +1,9 @@
+# ipython history
+.ipython/*/history.sqlite
+.ipython/*/db
+
+# for secret_key_base
+*.secret.*
+# for git config local
+*.gitconfig.local
+
