@@ -1,4 +1,4 @@
-" Last Change:2017-Jul-19.
+" Last Change:2017-Aug-07.
 
 
 " ------------------------------------------------------- "
@@ -30,6 +30,7 @@ set nf=""
 au BufNewFile,BufRead *.md   set filetype=markdown
 au BufNewFile,BufRead *.snip set filetype=neosnippet
 au BufNewFile,BufRead *.pyx  set filetype=python
+au BufNewFile,BufRead *.gp   set filetype=gnuplot
 " }}}
 
 " ------------------------------------------------------- "
@@ -126,8 +127,10 @@ au BufNewFile,BufRead *.js    set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.xml   set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.tex   set tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.html  set tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.h     set tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.cpp   set tabstop=2 shiftwidth=2 softtabstop=2
+" au BufNewFile,BufRead *.h     set tabstop=2 shiftwidth=2 softtabstop=2
+" au BufNewFile,BufRead *.cpp   set tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.pl    set tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.sh    set tabstop=2 shiftwidth=2 softtabstop=2
 
 set autoindent           " 改行時に前の行のインデントを継続する
 set smartindent          " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
