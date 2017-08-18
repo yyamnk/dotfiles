@@ -1,15 +1,34 @@
 # ********************** cpp.snip ************************ #
 # created	 : 2017-Jul-20
-# Last Change: 2017-Jul-24.
+# Last Change: 2017-Aug-08.
 #
 # ****************************************************************** #
 snippet		description
 abbr		/**** ****/
 options		head
-	/* `expand('%:t')`
-	 * Created	 : `strftime("%Y-%b-%d")`
-	 * Last Change: 2017-Jul-24.
-	 *
-	 * ${1:#:AboutThisFile}
-	 */
+	// ----------- `expand('%:t')` ----------
+	//
+	// ${1:#:AboutThisFile}
+	//
+	// Created	 : `strftime("%Y-%b-%d")`
+	// Last Change: 2017-Jul-24
+	// author: yyamnk
+	// --------------------------------------
+
+	${0}
+
+
+snippet		com3
+abbr		3 rows comment
+options		head
+	// ---------------------------
+	// ${1}
+	// ---------------------------
+	${0}
+
+
+snippet		comlong
+abbr		// ------ hoge -----
+options		head
+	// ----------------- ${1} -----------------
 	${0}
