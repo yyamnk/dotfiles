@@ -1,4 +1,4 @@
-# Last Change: 2017-Jun-05.
+# Last Change: 2017-Aug-22.
 
 #-------------------------------------------------------#
 # General Settings
@@ -356,6 +356,8 @@ linux*)
     [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux
     # set default postgresql
     [ -e /var/lib/pgsql/9.4/data ] && export PGDATA=/var/lib/pgsql/9.4/data
+    # set default rq-worker url
+    export REDIS_URL='redis://localhost:6379/0'  # port 6379, db 0
     # プロセッサーの数だけ開く
     export RQWORKER_NUM=`grep processor /proc/cpuinfo | wc -l`
     ;;
