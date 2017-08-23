@@ -123,7 +123,7 @@ echo '======================================'
 if [ -e $HOME/bin/diff-highlight ]; then
     echo 'already exist.'
 else
-    curl -sL https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight > \
+    curl -sL https://raw.githubusercontent.com/git/git/v2.9.5/contrib/diff-highlight/diff-highlight > \
     $HOME/bin/diff-highlight && chmod +x $HOME/bin/diff-highlight && \
     echo 'diff-highlight is installed to ~/bin/'
 fi
