@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2017-Jul-24.
+# Last Change:2017-Aug-24.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -219,6 +219,11 @@ linux*)
     [ -e ${HOME}/usr/local/bin/vim ] && alias vim='${HOME}/usr/local/bin/vim'
     [ -e ${HOME}/usr/local/bin/tmux ] && alias tmux='LD_LIBRARY_PATH=${HOME}/usr/local/lib tmux'
     [ -e ${HOME}/wiki ] && alias wiki='cd ~/wiki'
+
+    # replace rm to trash-put
+    # https://github.com/andreafrancia/trash-cli
+    alias rm=trash-put
+    # use real rm by \rm
 
     # for cluster, circuit-c*
     if [ `hostname | cut -c 1-9` = "circuit-c" ]; then

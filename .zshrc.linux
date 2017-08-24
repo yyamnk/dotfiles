@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 #****************** .zshrc.linux *******************
 # created: 2015-Feb-25
-# Last Change:2017-Jul-20.
+# Last Change:2017-Aug-24.
 #************************************************************
 
 # set nut proxy
@@ -41,8 +41,3 @@ function poweroff(){
 
 # for texlive2016
 export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
-
-# replace rm to trash-put
-# https://github.com/andreafrancia/trash-cli#but-sometimes-i-forgot-to-use-trash-put-really-cant-i
-alias rm=trash-put
-# use real rm by \rm
