@@ -41,3 +41,6 @@ function poweroff(){
 
 # for texlive2016
 export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
+
+# for trash-put
+export PATH=$HOME/.local/bin:$PATH
