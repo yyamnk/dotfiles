@@ -1,7 +1,7 @@
 "=============== .vimperatorrc ===================
 " vimperator config file
 " Created    : 2017-Feb-24
-" Last Change: 2017-Jun-05.
+" Last Change: 2017-Aug-29.
 " vim: set filetype=vim :
 "=================================================
 
@@ -24,7 +24,7 @@ nnoremap H F
 set hintchars=uhetonasidpg.ckmjw
 " ツールバーはアドオンとタブのみ表示
 " set gui=nonavigation,tabs
-set gui=nonavigation,tabs,addons
+set gui=tabs,noaddons,nomenu
 " commandモードでIMEオフ
 style! -name=iommandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 
