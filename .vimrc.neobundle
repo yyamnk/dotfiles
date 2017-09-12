@@ -1,4 +1,4 @@
-" Last Change:2017-Jul-17.
+" Last Change:2017-Sep-07.
 
 " ------------------------
 " NeoBundleを読み込む
@@ -106,8 +106,10 @@ function! s:LoadBundles()
     NeoBundle 'rainux/vim-desert-warm-256'
 
     " ------- MarkDown
-    " NeoBundle 'plasticboy/vim-markdown'   " code blockの#でfoldingがかかる
+    " NeoBundle 'plasticboy/vim-markdown'   " code blockの#でfolding, 重い
     " NeoBundle 'rcmdnk/vim-markdown'       " 上の改良
+    " NeoBundle 'gabrielelana/vim-markdown'   " list の中でcode block対応, 重い
+    " NeoBundle 'tpope/vim-markdown'  " 重い
     " code blockで言語別シンタックス
     NeoBundle 'joker1007/vim-markdown-quote-syntax'
     " tableで使う?
@@ -117,6 +119,7 @@ function! s:LoadBundles()
     NeoBundleLazy 'nelstrom/vim-markdown-folding', {
         \ 'autoload' : {'filetype' : ['markdown']},
     \}
+    " NeoBundleLazy 'kazuph/previm', {
     NeoBundleLazy 'kannokanno/previm', {
         \ 'autoload' : {'filetype' : ['markdown']},
     \}
