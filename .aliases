@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2017-Aug-24.
+# Last Change:2017-Sep-14.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -47,6 +47,12 @@ alias oprc='cd ~/lab/src_lib/python/oprc'
 alias powertrain='cd ~/lab_yoshida/powertrain/02_EG_DS_to_TM'
 alias laby='cd ~/lab_yoshida'
 
+
+#-------------------------------------------------------#
+# for office works
+#-------------------------------------------------------#
+alias udai='cd ~/Dropbox/udai'
+alias orders='cd ~/Dropbox/udai/orders/'
 
 #-------------------------------------------------------#
 # for git
