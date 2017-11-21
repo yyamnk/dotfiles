@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 #****************** .zshrc.linux *******************
 # created: 2015-Feb-25
-# Last Change:2017-Aug-24.
+# Last Change:2017-Nov-21.
 #************************************************************
 
 # set nut proxy
@@ -39,8 +39,8 @@ function poweroff(){
     esac
 }
 
-# for texlive2016
-export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
+# for texlive2017
+export PATH=$HOME/texlive/2017/bin/x86_64-linux:$PATH
 
 # for trash-put
 export PATH=$HOME/.local/bin:$PATH
