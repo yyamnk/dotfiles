@@ -1,9 +1,11 @@
-personal_ws-1.1 en 19 
+personal_ws-1.1 en 22 
 ACF
+CVT
 quantile
 multimodal
 optimizer
 minima
+drivetrain
 OPRC
 quantiles
 OSCDP
@@ -11,6 +13,7 @@ unimodal
 Eqs
 divergently
 attractor
+driveshaft
 autocorrelation
 Eq
 orthonormal
