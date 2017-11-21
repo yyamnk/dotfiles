@@ -1,4 +1,4 @@
-# Last Change: 2017-Aug-22.
+# Last Change: 2017-Nov-18.
 
 #-------------------------------------------------------#
 # General Settings
@@ -326,12 +326,13 @@ fi
 [ -d $HOME/bin ] && export PATH=$HOME/bin:$PATH
 
 # for python
-export PYTHONPATH=${HOME}/lab/src_lib/python
+export PYTHONPATH=${HOME}/lab_yoshida:${HOME}/lab/src_lib/python
 # for pyside
 export LD_LIBRARY_PATH=~/.pyenv/versions/miniconda3-3.9.1/lib/python3.4/site-packages/PySide
 
 # for cec2013 banchmark suite
-export CEC13DATA=${PYTHONPATH}/cec2013single/cec2013single/cec2013_data
+# export CEC13DATA=${PYTHONPATH}/cec2013single/cec2013single/cec2013_data
+export CEC13DATA=${HOME}/lab_yoshida/cec2013single/cec2013single/cec2013_data
 
 # for supervisor, hostname を展開してsocketファイル名に
 export HOST=`hostname`
