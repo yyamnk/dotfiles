@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** proxy_on.sh *******************
 # created: 2014/11/07
-# Last Change:2017-Apr-06.
+# Last Change:2017-Dec-15.
 #************************************************************
 echo "proxy enabling"
 
@@ -25,9 +25,6 @@ echo "linked curlrc"
 # git
 git config --global http.proxy $PROXY
 git config --global https.proxy $PROXY
-
-# ssh
-ln -sf  ~/.dotfiles/ssh/config ~/.ssh/
 
 # apt
 if [ -e /etc/apt ]; then
