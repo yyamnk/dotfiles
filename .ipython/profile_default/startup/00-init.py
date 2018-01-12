@@ -1,0 +1,1 @@
+/home/yyamnk/.ipython/profile_yyamnk/startup/00-init.py

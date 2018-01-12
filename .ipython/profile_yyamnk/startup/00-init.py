@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # ****************** 00-init.py *******************
 # Created	 : 2015-Sep-02
-# Last Change: 2017-Nov-21.
+# Last Change: 2017-Dec-08.
 # -----------------------------------
 # ipython 起動時に自動実行
 # ************************************************************
@@ -26,9 +26,17 @@ sns.set_context('poster',
                 rc={'figure.figsize': [8.0, 6.0],
                     "lines.linewidth": 2.0})
 plt.style.use('seaborn-ticks')
+# --- font settings
 # デフォルトsans-serifはubuntuにない
-mpl.rcParams['font.family'] = ["DejaVu Sans"]
-mpl.rcParams['mathtext.fontset'] = 'stix' # デフォルトsansはubuntuにない．
+# mpl.rcParams['font.family'] = ["DejaVu Sans"]
+mpl.rcParams['font.family'] = 'STIXGeneral'
+# mpl.rcParams['mathtext.fontset'] = 'stix' # デフォルトsansはubuntuにない．
+# Changing font to stix; and set bf to italic bold
+mpl.rcParams['mathtext.fontset'] = 'custom'
+mpl.rcParams['mathtext.it'] = 'STIXGeneral:italic'  # STIXは印刷時遅い?
+mpl.rcParams['mathtext.bf'] = 'STIXGeneral:italic:bold'
+mpl.rcParams['mathtext.cal'] = 'STIXGeneral:italic'
+mpl.rcParams['mathtext.rm'] = 'STIXGeneral:regular'
 # legend style
 mpl.rcParams['legend.frameon'] = True
 mpl.rcParams['legend.shadow'] = True
