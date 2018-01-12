@@ -1,0 +1,37 @@
+Host *
+    # 共通設定
+    # クリップボード共有で必要
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+Host github.com
+    Hostname ssh.github.com
+    Port 443
+    # for ubuntu
+    ProxyCommand nc -X connect -x proxy.cc.utsunomiya-u.ac.jp:8080 %h %p
+    # for cent7
+    # ProxyCommand ncat --proxy proxy.cc.utsunomiya-u.ac.jp:8080 %h %p
+
+Host bitbucket.org
+    HostName altssh.bitbucket.org
+    port 443
+    # for ubuntu
+    ProxyCommand nc -X connect -x proxy.cc.utsunomiya-u.ac.jp:8080 %h %p
+    # for cent7
+    # ProxyCommand ncat --proxy proxy.cc.utsunomiya-u.ac.jp:8080 %h %p
+
+Host kep3
+    HostName kepler3.mech.utsunomiya-u.ac.jp
+    IdentityFile ~/.ssh/id_rsa
+
+Host kep8
+    HostName kepler8.mech.utsunomiya-u.ac.jp
+    IdentityFile ~/.ssh/id_rsa
+
+Host kep9
+    HostName kepler9.mech.utsunomiya-u.ac.jp
+    IdentityFile ~/.ssh/id_rsa
+
+Host kep10
+    HostName kepler10.mech.utsunomiya-u.ac.jp
+    IdentityFile ~/.ssh/id_rsa
