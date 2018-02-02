@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # ****************** 00-init.py *******************
 # Created	 : 2015-Sep-02
-# Last Change: 2017-Dec-08.
+# Last Change: 2018-Feb-01.
 # -----------------------------------
 # ipython 起動時に自動実行
 # ************************************************************
@@ -11,6 +11,7 @@ from imp import reload
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+from matplotlib import cm
 import seaborn as sns
 
 from pandas import Series, DataFrame
@@ -19,6 +20,7 @@ from pprint import pprint as pp
 import sys
 import pickle
 import math
+import os
 
 # default figure settings
 sns.set_context('poster',
