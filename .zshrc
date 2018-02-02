@@ -1,4 +1,4 @@
-# Last Change: 2017-Nov-18.
+# Last Change: 2018-Jan-17.
 
 #-------------------------------------------------------#
 # General Settings
@@ -201,7 +201,8 @@ function tex2zip() {
     echo "---- zip current DIR files to 'texsrc_$(date +%y%m%d).zip'"
     zip -r texsrc_$(date +%y%m%d).zip * \
         -x "*.git/" "diff/*" "*.DS_Store" "getDiff.sh" "getDiff.config" \
-        "texsrc_$(date +%y%m%d).zip" "build/*"
+        "texsrc_$(date +%y%m%d).zip" "build/*" "versions/*" "main-diff*" \
+        "template/*" "build_log.md"
 }
 
 # markdown -> pdf
@@ -231,6 +232,13 @@ function pdfcompress_gs() {
     -dPDFSETTINGS=/screen \
     -dNOPAUSE -dQUIET -dBATCH \
     -sOutputFile=$output $1
+}
+
+# pdf join
+function pdfjoin() {
+    gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite \
+        -sOutputFile=merged.pdf \
+        input1.pdf input2.pdf
 }
 
 # slow but effective
@@ -291,6 +299,13 @@ function latexdiffmk () {
     OUTPUT="${2:r}-diff${1:r}.tex"
     latexmk -pv -interaction=nonstopmode -jobname=./diff/${OUTPUT:r} $OUTPUT
     # mv $OUTPUT ./diff/
+}
+
+# not work
+function latexdiffmkb () {
+    latexdiff-vc --git --flatten --force -r $1 $2
+    OUTPUT="${2:r}-diff${1:r}.tex"
+    latexmk -pvc -interaction=nonstopmode -jobname=./diff/${OUTPUT:r} $OUTPUT
 }
 
 # search text browser
