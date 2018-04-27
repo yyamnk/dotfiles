@@ -1,4 +1,4 @@
-# Last Change: 2018-Jan-17.
+# Last Change: 2018-Apr-26.
 
 #-------------------------------------------------------#
 # General Settings
@@ -295,7 +295,7 @@ function latexmkb () {
 # latexdiff + latexmk
 function latexdiffmk () {
     # ex) latexdiff-vc --git --flatten -r HEAD^ main.tex
-    latexdiff-vc --git --flatten --force -r $1 $2
+    latexdiff-vc --type=CFONT --git --flatten --force -r $1 $2
     OUTPUT="${2:r}-diff${1:r}.tex"
     latexmk -pv -interaction=nonstopmode -jobname=./diff/${OUTPUT:r} $OUTPUT
     # mv $OUTPUT ./diff/
@@ -303,7 +303,7 @@ function latexdiffmk () {
 
 # not work
 function latexdiffmkb () {
-    latexdiff-vc --git --flatten --force -r $1 $2
+    latexdiff-vc --type=CFONT --git --flatten --force -r $1 $2
     OUTPUT="${2:r}-diff${1:r}.tex"
     latexmk -pvc -interaction=nonstopmode -jobname=./diff/${OUTPUT:r} $OUTPUT
 }
