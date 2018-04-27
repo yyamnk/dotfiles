@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 #****************** .zshrc.linux *******************
 # created: 2015-Feb-25
-# Last Change:2017-Nov-21.
+# Last Change:2018-Apr-26.
 #************************************************************
 
 # set nut proxy
@@ -44,3 +44,7 @@ export PATH=$HOME/texlive/2017/bin/x86_64-linux:$PATH
 
 # for trash-put
 export PATH=$HOME/.local/bin:$PATH
+
+# for linuxbrew
+test -d ~/.linuxbrew && PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+test -d /home/linuxbrew/.linuxbrew && PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
