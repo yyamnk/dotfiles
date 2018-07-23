@@ -4,15 +4,28 @@
 # Last Change: 2018-Jul-23.
 #************************************************************
 
-# get anaconda
-echo 'checking miniconda ...'
-if [ -d $HOME/anaconda3/bin ]; then
-    echo 'anaconda3 found.'
+# get pyenv
+echo 'checking pyenv ...'
+if [ -e ${HOME}/.pyenv ]; then
+    echo 'pyenv found.'
 else
-    echo 'wget anaconda ...'
-    wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh \
-      --no-check-certificate
-    bash Anaconda3-5.2.0-Linux-x86_64.sh
+    echo 'pyenv not found. getting pyenv ...'
+    if [ -e /usr/local/bin/brew -a ]; then
+        brew install pyenv
+    else
+        git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+    fi
+fi
+
+# by miniconda
+echo 'checking miniconda ...'
+if [ `cat ~/.pyenv/version | grep 'miniconda'` ]; then
+    echo 'miniconda found.'
+else
+    echo 'install miniconda ...'
+    pyenv install miniconda3-3.16.0
+    pyenv rehash
+    pyenv global miniconda3-3.16.0
 fi
 
 # get packages
