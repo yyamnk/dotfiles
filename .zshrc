@@ -1,4 +1,4 @@
-# Last Change: 2018-Apr-26.
+# Last Change: 2018-Jul-23.
 
 #-------------------------------------------------------#
 # General Settings
@@ -389,11 +389,11 @@ if [ -d $HOME/.rbenv ]; then
 fi
 
 # for pyenv
-if [ -d $HOME/.pyenv ]; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)" # zshrcの最後に書かないと効かない?
-fi
+# if [ -d $HOME/.pyenv ]; then
+#     export PYENV_ROOT="$HOME/.pyenv"
+#     export PATH="$PYENV_ROOT/bin:$PATH"
+#     eval "$(pyenv init -)" # zshrcの最後に書かないと効かない?
+# fi
 
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
