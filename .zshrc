@@ -395,6 +395,11 @@ fi
 #     eval "$(pyenv init -)" # zshrcの最後に書かないと効かない?
 # fi
 
+# added by Anaconda3 installer
+if [ -d $HOME/anaconda3/bin ]; then
+    export PATH="$HOME/anaconda3/bin:$PATH"
+fi
+
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
