@@ -30,7 +30,8 @@ conda install \
     statsmodels \
     seaborn \
     dill \
-    Pillow
+    Pillow \
+    redis
 echo ''
 echo 'start install pip packages'
 pip install alembic
