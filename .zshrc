@@ -1,4 +1,4 @@
-# Last Change: 2018- 8月-21.
+# Last Change: 2018-Aug-23.
 
 #-------------------------------------------------------#
 # General Settings
@@ -253,6 +253,19 @@ function gifcompress() {
     gifsicle -O3 $1 -o $output
 }
 
+function pdf2eps() {
+    # no alpha support
+    output="${1:r}.eps"
+    inkscape $1 --export-eps=$output
+}
+
+# function eps_crop() {
+#     tmppdf="tmp_${1:r}.pdf"
+#     output="crop_${1}"
+#     gs -o $tmppdf -sDEVICE=pdfwrite -dEPSCrop $1
+#     gs -o $output -sDEVICE=pdfwrite -dEPSCrop $tmppdf
+# }
+
 # Quick Lock without debug
 function ql() {
     qlmanage -p $1 &>/dev/null
@@ -290,6 +303,11 @@ function mktexdir () {
 # latexmk to ./build dir
 function latexmkb () {
     latexmk -pvc -interaction=nonstopmode -jobname=./build/${1:r} $1
+}
+
+# latexmk to .
+function latexmkc () {
+    latexmk -pvc -interaction=nonstopmode $1
 }
 
 # latexdiff + latexmk
