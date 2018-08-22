@@ -1,4 +1,4 @@
-# Last Change: 2018-Jul-23.
+# Last Change: 2018- 8月-21.
 
 #-------------------------------------------------------#
 # General Settings
@@ -338,6 +338,7 @@ fi
 
 # for local bin
 [ -d $HOME/usr/local/bin ] && export PATH=$HOME/usr/local/bin:$PATH
+[ -d $HOME/local/bin ] && export PATH=$HOME/local/bin:$PATH
 [ -d $HOME/bin ] && export PATH=$HOME/bin:$PATH
 
 # for python
