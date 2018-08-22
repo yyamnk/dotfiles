@@ -10,6 +10,7 @@ BINDIR=$HOME/.dotfiles/bin
 ln -sf $BINDIR/proxy_on.sh $HOME/bin/
 ln -sf $BINDIR/proxy_off.sh $HOME/bin/
 # ln -sf $BINDIR/split_3panes_h.sh $HOME/bin/
+ln -sf $BINDIR/open_gmail.sh $HOME/bin/
 ln -sf $BINDIR/open_trello.sh $HOME/bin/
 ln -sf $BINDIR/open_uu-staffpage.sh $HOME/bin/
 ln -sf $BINDIR/open_contacts.sh $HOME/bin/
