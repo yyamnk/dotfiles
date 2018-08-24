@@ -1,6 +1,5 @@
 [Desktop Entry]
-Type=Application
-Exec=/home/bin/set_t480s.sh
-Hidden=false
-X-MATE-Autostart-enabled=true
 Name=t460s_settings
+Type=Application
+Exec=/home/yyamnk/bin/set_t480s.sh
+X-MATE-Autostart-enabled=true
