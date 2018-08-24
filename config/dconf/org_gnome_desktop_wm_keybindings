@@ -1,0 +1,8 @@
+[/]
+switch-to-workspace-up=['<Super>t']
+minimize=@as []
+switch-windows=['<Super>grave']
+switch-to-workspace-down=['<Super>h']
+switch-windows-backward=['<Shift><Super>grave']
+move-to-workspace-down=['<Alt><Super>h']
+move-to-workspace-up=['<Alt><Super>t']

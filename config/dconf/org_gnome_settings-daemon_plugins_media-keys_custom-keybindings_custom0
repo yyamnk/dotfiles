@@ -1,0 +1,4 @@
+[/]
+binding='<Alt>r'
+command='/home/yyamnk/bin/rofi_launch.sh'
+name='rofi'
