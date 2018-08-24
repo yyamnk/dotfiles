@@ -8,6 +8,7 @@ typeset -U PATH
 typeset -U fpath
 export EDITOR=vim                # エディタをvimに設定
 export LANG=en_US.UTF-8          # en_USロケール + 文字コードをUTF-8
+export LC_PAPER=ja_JP.UTF-8          # en_USロケール + 文字コードをUTF-8, use ~/.profile
 export KCODE=u                   # KCODEにUTF-8を設定
 setopt no_beep                   # ビープ音を鳴らさないようにする
 setopt print_eight_bit           # 日本語ファイル名を表示可能に

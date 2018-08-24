@@ -1,6 +1,6 @@
 #****************** .aliases *******************
 # created: 2015/02/03
-# Last Change:2017-Sep-14.
+# Last Change:2018- 8月-23.
 #************************************************************
 
 #-------------------------------------------------------#
@@ -101,10 +101,8 @@ else
 fi
 
 # supervisor
-if [[ -e ${HOME}/.pyenv/shims/supervisorctl ]]; then
-    alias supervisorctl='supervisorctl -c ~/conf/supervisor/supervisord.conf'
-    alias supervisord_up='supervisord -c ~/conf/supervisor/supervisord.conf'
-fi
+alias supervisorctl='supervisorctl -c ~/conf/supervisor/supervisord.conf'
+alias supervisord_up='supervisord -c ~/conf/supervisor/supervisord.conf'
 
 # matlab
 alias mat='matlab -nojvm -nosplash -nodesktop -nodisplay -noFigureWindows'
