@@ -1,4 +1,4 @@
-personal_ws-1.1 en 22 
+personal_ws-1.1 en 26 
 ACF
 CVT
 quantile
@@ -6,7 +6,10 @@ multimodal
 optimizer
 minima
 drivetrain
+adaptively
+Kutta
 OPRC
+deadband
 quantiles
 OSCDP
 unimodal
@@ -18,6 +21,7 @@ autocorrelation
 Eq
 orthonormal
 PSO
+Runge
 piecewise
 Lyapunov
 optimizers
