@@ -1,4 +1,4 @@
-" Last Change:2017-Sep-07.
+" Last Change:2019- 2月-20.
 
 
 " ------------------------------------------------------- "
@@ -366,6 +366,7 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 " autocmd FileType *tex set spell " texのみスペルチェックをonに
 " autocmd FileType matlab set nospell " matlabのみスペルチェックをoff
 autocmd FileType tex set spell " texのみスペルチェックをoff
+autocmd FileType text set spell " texのみスペルチェックをoff
 set spelllang+=cjk " spellチェックから日本語を除外する
 " http://d.hatena.ne.jp/osyo-manga/20131117/1384691873
 
@@ -476,6 +477,7 @@ if get(g:, 'colors_name', '') ==? 'jellybeans'
     " set background=light
     highlight LineNr ctermfg=95 ctermbg=none
     highlight Normal ctermbg=none
+    highlight NonText ctermbg=NONE guibg=NONE
 endif
 
 " --- solarized用設定
