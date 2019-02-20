@@ -1,4 +1,4 @@
-# Last Change: 2018-Aug-23.
+# Last Change: 2019-Feb-20.
 
 #-------------------------------------------------------#
 # General Settings
@@ -8,7 +8,8 @@ typeset -U PATH
 typeset -U fpath
 export EDITOR=vim                # エディタをvimに設定
 export LANG=en_US.UTF-8          # en_USロケール + 文字コードをUTF-8
-export LC_PAPER=ja_JP.UTF-8          # en_USロケール + 文字コードをUTF-8, use ~/.profile
+export LC_PAPER=ja_JP.UTF-8      # en_USロケール + 文字コードをUTF-8, use ~/.profile
+export LC_TIME=en_US.UTF-8       # 日時表示をEN
 export KCODE=u                   # KCODEにUTF-8を設定
 setopt no_beep                   # ビープ音を鳴らさないようにする
 setopt print_eight_bit           # 日本語ファイル名を表示可能に
@@ -104,6 +105,8 @@ zstyle ':completion:*' file-sort modification # 更新日時順にsort
 zstyle ':completion:*' list-colors ''
 
 #autoload predict-on; predict-on # 前方予測on 難しい...
+
+fpath=(~/.zshrc $fpath)
 # }}}
 
 #-------------------------------------------------------#
@@ -254,10 +257,24 @@ function gifcompress() {
     gifsicle -O3 $1 -o $output
 }
 
-function pdf2eps() {
+function pdf2eps_inkscape() {
     # no alpha support
     output="${1:r}.eps"
     inkscape $1 --export-eps=$output
+}
+
+function pdf2eps_pdftops() {
+    # no alpha support
+    pdfcrop --margins 5 $1
+    cropped="${1:r}-crop.pdf"
+    pdftops -level3 -r 125 -aaRaster yes -eps $cropped "${1:r}.eps"
+    rm $cropped
+}
+
+function svg2eps() {
+    # no alpha support
+    output="${1:r}.eps"
+    inkscape -f $1 -T -E $output
 }
 
 # function eps_crop() {
