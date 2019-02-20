@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #****************** bin/setup_python.sh *******************
 # created: 2015-Feb-12
-# Last Change: 2018- 8月-23.
+# Last Change: 2018- 9月-05.
 #************************************************************
 
 # get anaconda
@@ -39,6 +39,7 @@ conda install \
     rq \
     GitPython
 
+conda install pytorch torchvision -c pytorch
 
 echo ''
 echo 'start install pip packages'
@@ -49,6 +50,7 @@ echo 'start install pip packages'
 # mv README README.txt
 # pip install pudb
 # pip install git+https://github.com/Supervisor/supervisor.git # 4.0でpython3対応
+pip install --upgrade pip
 pip install git+ssh://git@github.com/Supervisor/supervisor.git # via ssh
 pip install peewee # simplo ORM, conda-forgeだと他のパッケージがダウングレードされる
 pip install rq-dashboard
