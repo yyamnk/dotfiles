@@ -1,4 +1,4 @@
-# Last Change: 2019-Feb-20.
+# Last Change: 2019-Nov-28.
 
 #-------------------------------------------------------#
 # General Settings
@@ -433,9 +433,9 @@ fi
 # fi
 
 # added by Anaconda3 installer
-if [ -d $HOME/anaconda3/bin ]; then
+# if [ -d $HOME/anaconda3/bin ]; then
 # export PATH="$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
-fi
+# fi
 
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
@@ -456,4 +456,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+#
 
+#
+conda activate lab
