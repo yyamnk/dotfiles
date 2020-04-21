@@ -1,4 +1,4 @@
-# Last Change: 2019-Nov-28.
+# Last Change: 2020-Apr-13.
 
 #-------------------------------------------------------#
 # General Settings
@@ -378,7 +378,7 @@ fi
 [ -d $HOME/bin ] && export PATH=$HOME/bin:$PATH
 
 # for python
-export PYTHONPATH=${HOME}/lab_yoshida:${HOME}/lab/src_lib/python
+export PYTHONPATH=${HOME}/lab_yoshida
 # for pyside
 export LD_LIBRARY_PATH=~/.pyenv/versions/miniconda3-3.9.1/lib/python3.4/site-packages/PySide
 

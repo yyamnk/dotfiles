@@ -1,4 +1,4 @@
-personal_ws-1.1 en 26 
+personal_ws-1.1 en 27 
 ACF
 CVT
 quantile
@@ -22,6 +22,7 @@ Eq
 orthonormal
 PSO
 Runge
+Jacobian
 piecewise
 Lyapunov
 optimizers
