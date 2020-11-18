@@ -1,7 +1,7 @@
 #!/bin/bash
 #****************** .dotfiles/bin/set_t460s.sh *******************
 # Created    : 2017-Apr-06
-# Last Change: 2020-Apr-21.
+# Last Change: 2020-Jun-10.
 #************************************************************
 sleep 3
 
@@ -12,4 +12,4 @@ sleep 3
 # keycode 107 = Print Sys_Req Print Sys_Req
 xmodmap -e 'keycode 107 = Super_R'  # #107 is print-screen key
 
-setxkbmap -option ctrl:swapcaps
+# setxkbmap -option ctrl:swapcaps
