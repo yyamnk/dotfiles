@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 #****************** .zshrc.linux *******************
 # created: 2015-Feb-25
-# Last Change:2020-Mar-31.
+# Last Change:2020-Dec-07.
 #************************************************************
 
 # set nut proxy
@@ -46,6 +46,8 @@ elif [ -e /usr/local/texlive/2018/ ]; then
     export PATH=/usr/local/texlive/2018/bin/x86_64-linux:$PATH
 elif [ -e /usr/local/texlive/2019/ ]; then
     export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
+elif [ -e /usr/local/texlive/2020/ ]; then
+    export PATH=/usr/local/texlive/2020/bin/x86_64-linux:$PATH
 fi
 
 # for trash-put
